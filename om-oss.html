@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Om oss · Sabimedia</title>
+<link rel="canonical" href="https://sabimedia.se/om-oss">
+<script>
+/* Skicka besökare från Firebase-adresserna och www vidare till huvudadressen sabimedia.se */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
+  location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
+</script>
+<meta name="description" content="Möt Safiya Ibrahim, grundaren bakom Sabimedia – webbyrå i Borås som bygger hemsidor åt småföretag i hela Sverige.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
+<link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="Sabimedia">
+<meta property="og:title" content="Om oss · Sabimedia">
+<meta property="og:description" content="Möt Safiya Ibrahim, grundaren bakom Sabimedia – webbyrå i Borås som bygger hemsidor åt småföretag i hela Sverige.">
+<meta property="og:url" content="https://sabimedia.se/om-oss">
+<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 800 kr">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "url": "https://sabimedia.se/om-oss", "mainEntity": {"@type": "Person", "name": "Safiya Ibrahim", "jobTitle": "Grundare", "image": "https://sabimedia.se/bilder/safiya.jpg", "worksFor": {"@id": "https://sabimedia.se/#foretag", "@type": "ProfessionalService", "name": "Sabimedia"}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Samma grund som sabimedia.html: varma neutrala toner, mörk plommon-grafit och rött från loggan som accent. */
+:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--gold:#f5a524;--plum:#241a2b;--radius:16px;--display:"Inter Tight","Inter",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep)}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;line-height:1.12}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.nav{position:sticky;top:0;z-index:40;background:#000}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
+.brand{display:flex;align-items:center}
+.brand img{display:block;height:42px;width:auto}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;color:#d8d0c5}
+.nav-links a:hover{color:#fff}
+.nav-links .cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:.6rem 1rem;font-weight:600;font-size:.9rem}
+.nav-links .cta:hover{background:var(--accent-deep);color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (max-width:900px){
+  .brand img{height:36px}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.1rem}
+  .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .menu-btn{display:grid}
+}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
+.page{padding-top:56px;padding-bottom:80px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:.85rem 1.4rem;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000;transform:translateY(-1px)}
+.nav-links a[aria-current]{color:#fff}
+/* About */
+.about{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,4vw,48px)}
+.about-photo{width:100%;max-width:300px;aspect-ratio:1;justify-self:center;border-radius:50%;padding:6px;background:var(--accent)}
+.about-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid var(--paper);display:block}
+.about-text{display:grid;gap:1rem}
+.about-text h1{font-size:clamp(2rem,4.4vw,3.1rem)}
+.about-text p{color:var(--ink-soft);max-width:60ch;margin:0}
+.about-facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;margin:.4rem 0 .2rem;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-facts dt{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.about-facts dd{margin:2px 0 0;font-weight:600}
+.about-sign{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.about-sign strong{font-family:var(--display);font-size:1.25rem}
+.about-sign small{display:block;color:var(--ink-soft);font-size:.9rem}
+@media (max-width:820px){.about{grid-template-columns:1fr}.about-photo{max-width:170px;justify-self:start;padding:6px}.about-photo img{border-width:4px}}
+@media (max-width:420px){.about-facts{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:28px 0 calc(32px + env(safe-area-inset-bottom,0px));color:var(--ink-soft);font-size:.9rem}
+@media (max-width:600px){.page{padding-top:28px;padding-bottom:56px}}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-soft);max-width:60ch;margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+.btn-accent{background:var(--accent);color:#fff;border:0;cursor:pointer;box-shadow:0 12px 28px -12px rgba(15,15,20,.18)}
+.btn-accent:hover{background:var(--accent-deep)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#kontakt{margin-top:24px;scroll-margin-top:96px}
+.contact p{margin:0}
+.form-note a{color:var(--accent-deep)}
+/* ---------- Contact ---------- */
+.contact{background:var(--plum);color:#fff;border-radius:24px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
+.contact h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.8rem 0 1rem}
+.contact .eyebrow{color:#b9adbf}
+.contact .lead{color:#b9adbf}
+.contact-sub{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:600;letter-spacing:-.02em;color:#b9adbf;margin:-.4rem 0 1.2rem}
+.contact-alt{display:grid;gap:.8rem;margin-top:2rem}
+.contact-alt a{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff;font-weight:500}
+.contact-alt a span{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.contact-alt svg{width:20px;height:20px}
+form{display:grid;gap:14px;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
+.field{display:grid;gap:.35rem;align-content:start}
+.field label{font-weight:600;font-size:.9rem}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:.8rem .95rem;font-size:1rem}
+.field textarea{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:.85rem;color:var(--ink-soft)}
+.reply-note{display:flex;align-items:center;gap:.6rem;font-size:.92rem;font-weight:600;color:var(--ink);background:var(--bg);border-radius:12px;padding:.7rem .9rem}
+.reply-note svg{width:20px;height:20px;flex:none;color:var(--ink)}
+.form-error{font-size:.9rem;font-weight:600;color:var(--accent-deep)}
+.field .req{color:var(--accent)}
+.field .opt{font-weight:400;color:var(--ink-soft)}
+.check{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem;cursor:pointer;width:fit-content}
+.check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
+.field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f5}
+.field-error{font-size:.82rem;font-weight:600;color:var(--accent-deep)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form button[disabled]{opacity:.7;cursor:wait}
+.sent{display:grid;gap:.6rem;text-align:center;padding:30px 10px}
+.sent h3{font-size:1.6rem}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+/* Tillgänglighet: platshållartext med tillräcklig kontrast */
+::placeholder{color:#736a75;opacity:1}
+/* Kalender överst i kontaktformuläret */
+.pick{display:grid;gap:12px;padding-bottom:18px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.step-t{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.02em;margin:0}
+.step-t span{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-family:var(--body);font-size:.8rem;font-weight:700;flex:none}
+.step-t small{font-family:var(--body);font-weight:500;font-size:.82rem;color:var(--ink-soft);letter-spacing:0}
+.cal-top{display:flex;align-items:center;justify-content:space-between}
+.cal-top b{font-size:1rem;text-transform:capitalize}
+.cal-nav{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:1.1rem;line-height:1}
+.cal-nav:disabled{opacity:.35;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.cal .dow{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);padding:.2rem 0}
+.cal button{aspect-ratio:1;border:0;border-radius:10px;background:var(--bg);font-weight:600;font-size:.92rem;cursor:pointer;transition:background .15s,color .15s}
+.cal button:hover:not(:disabled){background:var(--accent-soft)}
+.cal button:disabled{background:transparent;color:#736a75;text-decoration:line-through;text-decoration-color:rgba(113,106,117,.45);cursor:default;font-weight:400}
+.cal button.today{box-shadow:inset 0 0 0 1.5px var(--line)}
+.cal button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.slots button{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:.55rem 0;font-weight:600;font-size:.9rem;cursor:pointer}
+.slots button:hover{border-color:var(--ink)}
+.slots button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.hint{color:var(--ink-soft);font-size:.92rem}
+.picked{display:flex;align-items:center;gap:.6rem;background:var(--bg);border-radius:12px;padding:.7rem .9rem;font-weight:600;font-size:.95rem}
+.picked svg{width:20px;height:20px;color:var(--ink);flex:none}
+.alt-time{color:var(--ink-soft);font-size:.88rem}
+.alt-time a{color:var(--accent-deep);font-weight:600}
+@media (max-width:420px){.slots{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Startsida</a></li>
+      <li><a href="/#ingar">Tjänster</a></li>
+      <li><a href="/#exempel">Exempel</a></li>
+      <li><a href="/#priser">Paket</a></li>
+      <li><a href="/om-oss" aria-current="page">Om oss</a></li>
+      <li><a href="/#fragor">FAQ</a></li>
+      <li><a class="cta" href="/#kontakt">Kontakta oss</a></li>
+    </ul>
+    <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  </div>
+</header>
+
+<main class="wrap page">
+      <div class="about">
+        <div class="about-photo"><img src="bilder/safiya.jpg" alt="Safiya Ibrahim, grundare av Sabimedia" width="640" height="640"></div>
+        <div class="about-text">
+          <span class="eyebrow">Om oss</span>
+          <h1 class="about-h">Hej, jag heter <em class="hl">Safiya.</em></h1>
+          <p>Bakom Sabimedia står jag, Safiya Ibrahim. Jag driver Sabimedia som enskild firma i Borås och bygger hemsidor åt småföretag och egenföretagare i hela Sverige.</p>
+          <p>När du anlitar Sabimedia har du en och samma person att prata med hela vägen – från första samtalet tills sidan är live, och även efteråt. Inga säljare och inga mellanhänder. Det är jag som läser din förfrågan, och jag svarar inom 24 timmar.</p>
+          <dl class="about-facts">
+            <div><dt>Grundare</dt><dd>Safiya Ibrahim</dd></div>
+            <div><dt>Bas</dt><dd>Borås</dd></div>
+            <div><dt>Arbetar</dt><dd>Digitalt i hela Sverige</dd></div>
+            <div><dt>Företagsform</dt><dd>Enskild firma, F-skatt</dd></div>
+          </dl>
+          <div class="about-sign">
+            <div><strong>Safiya Ibrahim</strong><small>Grundare, Sabimedia</small></div>
+            <a class="btn btn-ink" href="#kontakt">Prata med mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact" id="kontakt">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h2>Låt dina kunder enkelt hitta, välja och beställa</h2>
+          <p class="contact-sub">– med en egen hemsida.</p>
+          <p class="lead">Berätta lite om ditt företag och vilket paket du är intresserad av. Vi återkommer inom 24 timmar med ett förslag – helt utan förpliktelser.</p>
+          <div class="contact-alt" id="contact-alt"><a href="mailto:hej@sabimedia.se"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>hej@sabimedia.se</a><a href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span>@sabimediaa</a></div>
+        </div>
+        <form id="form" novalidate>
+          <div class="pick">
+            <p class="step-t"><span>1</span>Välj dag och tid för ett gratis samtal <small>(valfritt)</small></p>
+            <div class="cal-top">
+              <button class="cal-nav" id="prev" type="button" aria-label="Föregående månad">‹</button>
+              <b id="month" aria-live="polite"></b>
+              <button class="cal-nav" id="next" type="button" aria-label="Nästa månad">›</button>
+            </div>
+            <div class="cal" id="cal"></div>
+            <div id="slots"><p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p></div>
+            <p class="picked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span id="picked-text">Ingen tid vald än</span></p>
+            <p class="alt-time">Funkar inte tiderna? <a id="alt-mail" href="mailto:hej@sabimedia.se">Skicka ett mejl</a> så hittar vi en tid.</p>
+          </div>
+          <p class="step-t"><span>2</span>Dina uppgifter</p>
+          <div class="two">
+            <div class="field"><label for="f-name">Ditt namn <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-company">Företag</label><input id="f-company" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="f-phone">Telefon <span class="opt">(valfritt)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="070-123 45 67"></div>
+            <div class="field"><label for="f-email">E-post <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="namn@foretag.se" required></div>
+          </div>
+          <label class="check"><input type="checkbox" id="f-has-web" aria-controls="web-field" aria-expanded="false">Jag har redan en hemsida</label>
+          <div class="field" id="web-field" hidden><label for="f-web">Nuvarande hemsida</label><input id="f-web" name="website" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="dittforetag.se" disabled></div>
+          <div class="field"><label for="f-plan">Paket</label><select id="f-plan" name="plan"><option value="">Vet inte än</option><option>Start</option><option>Grow</option><option>Pro</option></select></div>
+          <div class="field"><label for="f-msg">Berätta om ditt företag</label><textarea id="f-msg" name="message" placeholder="Vad säljer du? Har du Instagram? Något särskilt du vill ha på sidan?"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-accent" type="submit" id="form-submit">Skicka förfrågan</button>
+          <p class="reply-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Vi svarar på din förfrågan inom 24 timmar.</p>
+          <p class="form-note">Fält med * måste fyllas i. Dina uppgifter används bara för att besvara din förfrågan – läs mer i vår <a href="/integritetspolicy">integritetspolicy</a>.</p>
+        </form>
+      </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Sabimedia · Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></div>
+</footer>
+<script>
+const links = document.getElementById("nav-links"), menuBtn = document.getElementById("menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+</script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+const CONFIG = {
+  email: "hej@sabimedia.se",
+  formEndpoint: "https://formsubmit.co/ajax/hej@sabimedia.se",
+  /* Samma bokningslänk som i sabimedia.html. Tom sträng = ingen kalenderknapp */
+  booking: "/boka"
+};
+
+/* Kalender: vardagar kl. 10–20 i 30-minuterspass. Vald tid skickas med förfrågan. */
+const pad = n => String(n).padStart(2, "0");
+const dayFmt = new Intl.DateTimeFormat("sv-SE", { weekday: "long", day: "numeric", month: "long" });
+const monthFmt = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "numeric" });
+const today = new Date(); today.setHours(0, 0, 0, 0);
+let view = new Date(today.getFullYear(), today.getMonth(), 1);
+const lastView = new Date(today.getFullYear(), today.getMonth() + 2, 1);
+let picked = { date: null, time: null };
+function slotsFor(date) {
+  const out = [], now = new Date();
+  for (let m = 10 * 60; m < 20 * 60; m += 30) {
+    const t = new Date(date); t.setHours(0, m, 0, 0);
+    if (t - now >= 60 * 60 * 1000) out.push(`${pad(Math.floor(m / 60))}:${pad(m % 60)}`);
+  }
+  return out;
+}
+const bookable = d => d.getDay() % 6 !== 0 && d >= today && slotsFor(d).length > 0;
+const cap = s => s.replace(/^./, c => c.toUpperCase());
+function renderCal() {
+  $("#month").textContent = monthFmt.format(view);
+  $("#prev").disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
+  $("#next").disabled = view >= lastView;
+  const cells = ["mån", "tis", "ons", "tor", "fre", "lör", "sön"].map(d => `<span class="dow">${d}</span>`);
+  for (let i = 0; i < (view.getDay() + 6) % 7; i++) cells.push("<span></span>");
+  const n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+  for (let i = 1; i <= n; i++) {
+    const d = new Date(view.getFullYear(), view.getMonth(), i);
+    cells.push(`<button type="button" data-d="${+d}" ${bookable(d) ? "" : "disabled"} class="${+d === +today ? "today" : ""}" aria-pressed="${!!picked.date && +d === +picked.date}" aria-label="${dayFmt.format(d)}">${i}</button>`);
+  }
+  $("#cal").innerHTML = cells.join("");
+}
+function renderSlots() {
+  $("#slots").innerHTML = picked.date
+    ? `<div class="slots">${slotsFor(picked.date).map(t => `<button type="button" data-t="${t}" aria-pressed="${t === picked.time}">${t}</button>`).join("")}</div>`
+    : '<p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p>';
+  $("#picked-text").textContent = picked.date && picked.time ? cap(`${dayFmt.format(picked.date)} kl. ${picked.time}`)
+    : picked.date ? cap(`${dayFmt.format(picked.date)} – välj en tid`) : "Ingen tid vald än";
+}
+$("#cal").addEventListener("click", e => {
+  const b = e.target.closest("button[data-d]"); if (!b) return;
+  picked = { date: new Date(+b.dataset.d), time: null };
+  renderCal(); renderSlots();
+});
+$("#slots").addEventListener("click", e => {
+  const b = e.target.closest("button[data-t]"); if (!b) return;
+  picked.time = b.dataset.t; renderSlots();
+});
+$("#prev").addEventListener("click", () => { view.setMonth(view.getMonth() - 1); renderCal(); });
+$("#next").addEventListener("click", () => { view.setMonth(view.getMonth() + 1); renderCal(); });
+$("#alt-mail").href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Önskar en annan tid för samtal")}`;
+renderCal();
+
+/* Fältkontroller: namn och e-post krävs, telefon är valfritt men måste vara ett giltigt nummer om det fylls i */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+/* Webbadress: valfritt http(s):// och www, minst en punkt och en ändelse på två bokstäver, t.ex. sabimedia.se */
+const WEB_RE = /^(https?:\/\/)?([a-z0-9åäö]([a-z0-9åäö-]*[a-z0-9åäö])?\.)+[a-z]{2,}(:\d+)?(\/\S*)?$/i;
+function validPhone(v) {
+  if (!/^\+?[\d\s\-()]+$/.test(v)) return false;
+  const digits = v.replace(/\D/g, "");
+  return digits.length >= 7 && digits.length <= 15;
+}
+function setFieldError(el, msg) {
+  const field = el.closest(".field");
+  let note = field.querySelector(".field-error");
+  if (msg) {
+    if (!note) { note = document.createElement("p"); note.className = "field-error"; note.id = el.id + "-err"; field.append(note); }
+    note.textContent = msg;
+    el.setAttribute("aria-invalid", "true");
+    el.setAttribute("aria-describedby", note.id);
+  } else {
+    note?.remove();
+    el.removeAttribute("aria-invalid");
+    el.removeAttribute("aria-describedby");
+  }
+}
+function validate(f) {
+  const checks = [
+    [$("#f-name"), !f.name.trim() ? "Skriv ditt namn." : ""],
+    [$("#f-email"), !f.email.trim() ? "Skriv din e-postadress." : !EMAIL_RE.test(f.email.trim()) ? "E-postadressen ser inte rätt ut, t.ex. namn@foretag.se." : ""],
+    [$("#f-phone"), f.phone.trim() && !validPhone(f.phone.trim()) ? "Telefonnumret ser inte rätt ut, t.ex. 070-123 45 67." : ""],
+    [$("#f-web"), $("#f-has-web").checked && !(f.website || "").trim() ? "Skriv adressen till din hemsida, t.ex. dittforetag.se." : (f.website || "").trim() && !WEB_RE.test(f.website.trim()) ? "Webbadressen ser inte rätt ut, t.ex. dittforetag.se." : ""]
+  ];
+  checks.forEach(([el, msg]) => setFieldError(el, msg));
+  return checks.filter(([, msg]) => msg).map(([el, msg]) => ({ el, msg }));
+}
+/* Fältet för nuvarande hemsida visas bara när rutan är ikryssad */
+$("#f-has-web").addEventListener("change", e => {
+  const on = e.target.checked, input = $("#f-web");
+  $("#web-field").hidden = !on; input.disabled = !on;
+  e.target.setAttribute("aria-expanded", on);
+  if (on) input.focus(); else { input.value = ""; setFieldError(input, ""); }
+});
+["#f-name", "#f-email", "#f-phone", "#f-web"].forEach(sel => $(sel).addEventListener("input", e => {
+  if (e.target.getAttribute("aria-invalid")) validate(Object.fromEntries(new FormData($("#form"))));
+}));
+
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const form = e.target, f = Object.fromEntries(new FormData(form));
+  const error = $("#form-error"), submit = $("#form-submit");
+  const showError = html => { error.innerHTML = html; error.hidden = false; };
+  const problems = validate(f);
+  if (problems.length) {
+    if (problems.length > 1) showError("Kolla de markerade fälten, tack!"); else error.hidden = true;
+    problems[0].el.focus();
+    return;
+  }
+  if (f._honey) return;
+  error.hidden = true;
+  const when = picked.date && picked.time ? `${dayFmt.format(picked.date)} kl. ${picked.time}` : "";
+  const subject = when ? `Bokat samtal: ${when} – ${f.name}` : `Ny hemsideförfrågan från ${f.company || f.name}`;
+  const body = [
+    `Namn: ${f.name}`, `Företag: ${f.company || "-"}`, `Telefon: ${f.phone || "-"}`, `E-post: ${f.email || "-"}`, `Nuvarande hemsida: ${f.website || "Ingen"}`,
+    `Paket: ${f.plan || "Vet inte än"}`, "", f.message || ""
+  ].join("\n");
+  const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const thanks = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din förfrågan och svarar inom 24 timmar.</p></div>`;
+
+  if (!CONFIG.formEndpoint) {
+    location.href = mailto;
+    form.innerHTML = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Ditt mejlprogram öppnas med förfrågan ifylld – tryck bara på skicka. Vi svarar inom 24 timmar.</p></div>`;
+    return;
+  }
+  submit.disabled = true; submit.textContent = "Skickar…";
+  try {
+    const data = new FormData(form);
+    if (when) data.append("Önskad tid för samtal", when);
+    data.append("_subject", subject);
+    data.append("_template", "table");
+    const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
+    form.innerHTML = thanks;
+  } catch (err) {
+    console.warn("Formuläret kunde inte skickas:", err.message);
+    submit.disabled = false; submit.textContent = "Skicka förfrågan";
+    showError(`Något gick fel och förfrågan skickades inte. Försök igen eller <a href="${esc(mailto)}">mejla oss direkt</a>.`);
+  }
+});
+</script>
+</body>
+</html>

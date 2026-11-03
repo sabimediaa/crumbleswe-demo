@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Integritetspolicy · Sabimedia</title>
+<link rel="canonical" href="https://sabimedia.se/integritetspolicy">
+<script>
+/* Skicka besökare från Firebase-adresserna och www vidare till huvudadressen sabimedia.se */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
+  location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
+</script>
+<meta name="description" content="Så hanterar Sabimedia dina personuppgifter när du kontaktar oss eller anlitar oss för en hemsida.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
+<link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="Sabimedia">
+<meta property="og:title" content="Integritetspolicy · Sabimedia">
+<meta property="og:description" content="Så hanterar Sabimedia dina personuppgifter när du kontaktar oss eller anlitar oss för en hemsida.">
+<meta property="og:url" content="https://sabimedia.se/integritetspolicy">
+<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 800 kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Samma grund som sabimedia.html: varma neutrala toner, mörk plommon-grafit och rött från loggan som accent. */
+:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--plum:#241a2b;--display:"Inter Tight","Inter",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep)}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;line-height:1.12}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.nav{position:sticky;top:0;z-index:40;background:#000}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
+.brand{display:flex;align-items:center}
+.brand img{display:block;height:42px;width:auto}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;color:#d8d0c5}
+.nav-links a:hover{color:#fff}
+.nav-links .cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:.6rem 1rem;font-weight:600;font-size:.9rem}
+.nav-links .cta:hover{background:var(--accent-deep);color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (max-width:900px){
+  .brand img{height:36px}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.1rem}
+  .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .menu-btn{display:grid}
+}
+.hero{padding:56px 0 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);margin:.7rem 0 1rem}
+.hero p{color:var(--ink-soft);max-width:62ch;font-size:1.08rem}
+.meta{margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:48px;align-items:start;padding-bottom:80px}
+.toc{position:sticky;top:96px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.toc b{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.6rem}
+.toc ol{margin:0;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.93rem}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--accent-deep)}
+article{display:grid;gap:18px}
+article section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 30px}
+article h2{font-size:1.5rem;margin-bottom:.7rem;display:flex;gap:.7rem;align-items:baseline}
+article h2 span{font-family:var(--body);font-size:.85rem;font-weight:600;color:var(--ink-soft);min-width:1.6em}
+article p{margin:0 0 .8rem}
+article p:last-child,article ul:last-child{margin-bottom:0}
+article ul{margin:0 0 .8rem;padding-left:1.2rem;display:grid;gap:.35rem}
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin:.4rem 0 .8rem}
+th,td{text-align:left;padding:.65rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.2rem;margin:.4rem 0 0}
+.facts dt{color:var(--ink-soft)}
+.facts dd{margin:0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:28px 0 calc(32px + env(safe-area-inset-bottom,0px));color:var(--ink-soft);font-size:.9rem}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;gap:20px}
+  .toc{position:static}
+  article section{padding:22px 20px}
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{padding:.6rem 0;border-bottom:1px solid var(--line)}
+  td{border:0;padding:.15rem 0}
+  td:first-child{font-weight:700}
+}
+/* Tillgänglighet: platshållartext med tillräcklig kontrast */
+::placeholder{color:#736a75;opacity:1}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Startsida</a></li>
+      <li><a href="/#ingar">Tjänster</a></li>
+      <li><a href="/#exempel">Exempel</a></li>
+      <li><a href="/#priser">Paket</a></li>
+      <li><a href="/om-oss">Om oss</a></li>
+      <li><a href="/#fragor">FAQ</a></li>
+      <li><a class="cta" href="/#kontakt">Kontakta oss</a></li>
+    </ul>
+    <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="eyebrow">Integritetspolicy</span>
+    <h1>Så tar vi hand om dina uppgifter</h1>
+    <p>Här förklarar vi vilka personuppgifter vi behandlar när du hör av dig till oss eller anlitar oss för en hemsida, varför vi gör det och vilka rättigheter du har. Vi samlar bara in det vi behöver.</p>
+    <p class="meta">Senast uppdaterad: 31 oktober 2026</p>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Innehåll">
+      <b>Innehåll</b>
+      <ol>
+        <li><a href="#ansvarig">Vem ansvarar för personuppgifterna?</a></li>
+        <li><a href="#rattigheter">Dina rättigheter</a></li>
+        <li><a href="#uppgifter">Vilka uppgifter vi behandlar</a></li>
+        <li><a href="#syfte">Varför vi behandlar dem</a></li>
+        <li><a href="#mottagare">Vilka som kan ta del av dem</a></li>
+        <li><a href="#utanfor-eu">Överföring utanför EU/EES</a></li>
+        <li><a href="#lagring">Hur länge vi sparar dem</a></li>
+        <li><a href="#sakerhet">Så skyddar vi dem</a></li>
+        <li><a href="#kundsidor">Hemsidor vi bygger åt kunder</a></li>
+        <li><a href="#andringar">Ändringar i policyn</a></li>
+        <li><a href="#kontakt">Kontakta oss</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="ansvarig">
+        <h2><span>01</span>Vem ansvarar för personuppgifterna?</h2>
+        <p>Sabimedia, som drivs av Safiya Ibrahim, är personuppgiftsansvarig för de uppgifter som beskrivs i den här policyn. Det betyder att vi bestämmer varför och hur uppgifterna behandlas och att vi ansvarar för att det sker enligt dataskyddsförordningen (GDPR).</p>
+        <dl class="facts">
+          <dt>Företag</dt><dd>Sabimedia, enskild firma</dd>
+          <dt>Ansvarig</dt><dd>Safiya Ibrahim</dd>
+          <dt>Org.nr</dt><dd>010928-2947</dd>
+          <dt>E-post</dt><dd><a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></dd>
+          <dt>Ort</dt><dd>Borås – digitalt i hela Sverige</dd>
+        </dl>
+      </section>
+
+      <section id="rattigheter">
+        <h2><span>02</span>Dina rättigheter</h2>
+        <p>Du bestämmer över dina uppgifter. Enligt GDPR har du rätt att:</p>
+        <ul>
+          <li><b>få veta</b> vilka uppgifter vi har om dig och få en kopia av dem,</li>
+          <li><b>rätta</b> uppgifter som är fel eller ofullständiga,</li>
+          <li><b>få uppgifter raderade</b> när vi inte längre behöver dem eller inte har rätt att spara dem,</li>
+          <li><b>begränsa</b> hur vi använder dina uppgifter, till exempel medan vi utreder en invändning,</li>
+          <li><b>invända</b> mot behandling som vi gör med stöd av berättigat intresse,</li>
+          <li><b>flytta</b> uppgifter du själv lämnat till oss i ett vanligt digitalt format (dataportabilitet).</li>
+        </ul>
+        <p>Mejla oss på <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a> så svarar vi senast inom en månad. Om du tycker att vi hanterar dina uppgifter fel kan du lämna klagomål till Integritetsskyddsmyndigheten (IMY) på <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>.</p>
+      </section>
+
+      <section id="uppgifter">
+        <h2><span>03</span>Vilka uppgifter vi behandlar</h2>
+        <p><b>När du kontaktar oss</b> via formuläret, mejl, telefon eller sociala medier: namn, företagsnamn, telefonnummer, e-postadress, vilket paket du är intresserad av och det du skriver i ditt meddelande.</p>
+        <p><b>När du blir kund:</b> kontakt- och faktureringsuppgifter, organisations- eller personnummer när det behövs för fakturering, samt det material du skickar till oss för hemsidan – till exempel logga, bilder och texter.</p>
+        <p><b>När du besöker vår hemsida:</b> vi använder inga verktyg för att följa eller kartlägga besökare. Däremot hämtas typsnitt från Google Fonts, vilket gör att din IP-adress skickas till Google när sidan laddas.</p>
+      </section>
+
+      <section id="syfte">
+        <h2><span>04</span>Varför vi behandlar dem</h2>
+        <table>
+          <thead><tr><th>Syfte</th><th>Rättslig grund</th></tr></thead>
+          <tbody>
+            <tr><td>Svara på din förfrågan och ge dig ett prisförslag</td><td>Berättigat intresse – att kunna besvara dig när du hör av dig</td></tr>
+            <tr><td>Bygga, publicera och ge support på din hemsida</td><td>Avtal – för att kunna leverera det vi kommit överens om</td></tr>
+            <tr><td>Fakturering och bokföring</td><td>Rättslig förpliktelse – enligt bokföringslagen</td></tr>
+            <tr><td>Visa vår hemsida med rätt typsnitt</td><td>Berättigat intresse – att sidan ska fungera och se ut som den ska</td></tr>
+          </tbody>
+        </table>
+        <p>Vi använder aldrig dina uppgifter för att skicka reklam utan att du har bett om det, och vi säljer dem aldrig vidare.</p>
+      </section>
+
+      <section id="mottagare">
+        <h2><span>05</span>Vilka som kan ta del av dem</h2>
+        <p>Vi delar bara uppgifter när det behövs för att vi ska kunna göra vårt jobb. De som kan få tillgång är:</p>
+        <ul>
+          <li><b>Formulärtjänsten FormSubmit</b> – som tar emot det du skickar via kontaktformuläret och vidarebefordrar det till vår e-post.</li>
+          <li><b>Leverantörer av e-post och lagring</b> – där våra mejl och projektfiler sparas.</li>
+          <li><b>Webbhotell och domänleverantörer</b> – när vi sätter upp din hemsida på ditt konto.</li>
+          <li><b>Redovisning</b> – för fakturor och bokföring.</li>
+          <li><b>Google</b> – via Google Fonts när vår hemsida laddas.</li>
+          <li><b>Myndigheter</b> – om vi är skyldiga enligt lag, till exempel Skatteverket.</li>
+        </ul>
+        <p>Leverantörer som behandlar uppgifter för vår räkning får bara använda dem för att utföra tjänsten åt oss.</p>
+      </section>
+
+      <section id="utanfor-eu">
+        <h2><span>06</span>Överföring utanför EU/EES</h2>
+        <p>Vi försöker i första hand använda leverantörer som lagrar uppgifter inom EU/EES. Vissa leverantörer, som Google och FormSubmit, kan behandla uppgifter i länder utanför EU/EES, till exempel USA. Då sker överföringen med stöd av EU-kommissionens beslut om EU–US Data Privacy Framework eller EU:s standardavtalsklausuler, så att dina uppgifter får ett skydd som motsvarar det inom EU.</p>
+      </section>
+
+      <section id="lagring">
+        <h2><span>07</span>Hur länge vi sparar dem</h2>
+        <ul>
+          <li><b>Förfrågningar</b> som inte leder till ett uppdrag raderas senast 12 månader efter vår senaste kontakt.</li>
+          <li><b>Kunduppgifter och projektmaterial</b> sparas så länge vi har ett pågående uppdrag eller supportperiod med dig, och därefter så länge det behövs för att hantera eventuella frågor om leveransen.</li>
+          <li><b>Fakturor och bokföringsunderlag</b> sparas i sju år, eftersom bokföringslagen kräver det.</li>
+        </ul>
+        <p>Du kan alltid be oss radera uppgifter tidigare, så länge vi inte måste spara dem enligt lag.</p>
+      </section>
+
+      <section id="sakerhet">
+        <h2><span>08</span>Så skyddar vi dem</h2>
+        <p>Vi skyddar dina uppgifter med lösenord och tvåstegsverifiering på våra konton, krypterade anslutningar (SSL) och genom att bara ge tillgång till dem som behöver uppgifterna. Om något ändå skulle gå fel och det innebär en risk för dig meddelar vi dig och IMY enligt GDPR.</p>
+      </section>
+
+      <section id="kundsidor">
+        <h2><span>09</span>Hemsidor vi bygger åt kunder</h2>
+        <p>När vi bygger en hemsida med till exempel beställningsformulär eller orderhantering är det du som kund som är personuppgiftsansvarig för uppgifterna som dina besökare lämnar. Vi hjälper dig att sätta upp sidan på ett säkert sätt.</p>
+        <p>Om vi behöver komma åt dina besökares uppgifter för att ge support agerar vi personuppgiftsbiträde åt dig och använder bara uppgifterna för just det. Vill du ha ett personuppgiftsbiträdesavtal skriver vi gärna ett.</p>
+      </section>
+
+      <section id="andringar">
+        <h2><span>10</span>Ändringar i policyn</h2>
+        <p>Vi kan uppdatera policyn, till exempel om vi börjar använda en ny tjänst eller om lagen ändras. Den senaste versionen finns alltid här, och datumet högst upp visar när den ändrades senast. Vid större ändringar som påverkar dig som kund meddelar vi dig direkt.</p>
+      </section>
+
+      <section id="kontakt">
+        <h2><span>11</span>Kontakta oss</h2>
+        <p>Har du frågor om hur vi hanterar dina uppgifter, eller vill du använda någon av dina rättigheter? Mejla <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a> så hjälper vi dig.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Sabimedia · Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></div>
+</footer>
+<script>
+const links = document.getElementById("nav-links"), menuBtn = document.getElementById("menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "hosting": {
+    "predeploy": [
+      "bash scripts/build-site.sh"
+    ],
+    "public": "site",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "**/.*"
+    ],
+    "headers": [
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/!(*.@(jpg|png|webp|ico))",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|png|webp)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=604800"
+          }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 8765
+    },
+    "ui": {
+      "enabled": false
+    }
+  }
+}

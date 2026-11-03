@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sabimedia · Webbyrå i Borås – hemsida från 800 kr</title>
+<link rel="canonical" href="https://sabimedia.se/">
+<script>
+/* Skicka besökare från Firebase-adresserna och www vidare till huvudadressen sabimedia.se */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
+  location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
+</script>
+<meta name="description" content="Sabimedia är en webbyrå i Borås som bygger hemsidor för alla typer av småföretag – med produktlista, beställningar, betalning och egen adminpanel.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
+<link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="Sabimedia">
+<meta property="og:title" content="Sabimedia · Webbyrå i Borås – hemsida från 800 kr">
+<meta property="og:description" content="Sabimedia är en webbyrå i Borås som bygger hemsidor för alla typer av småföretag – med produktlista, beställningar, betalning och egen adminpanel.">
+<meta property="og:url" content="https://sabimedia.se/">
+<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 800 kr">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://sabimedia.se/#foretag", "name": "Sabimedia", "url": "https://sabimedia.se/", "logo": "https://sabimedia.se/bilder/ikon-512.png", "image": "https://sabimedia.se/bilder/delningsbild.jpg", "email": "hej@sabimedia.se", "sameAs": ["https://instagram.com/sabimediaa"], "description": "Webbyrå i Borås som bygger hemsidor åt småföretag i hela Sverige. Fast engångspris från 800 kr exkl. moms.", "founder": {"@type": "Person", "name": "Safiya Ibrahim"}, "address": {"@type": "PostalAddress", "addressLocality": "Borås", "addressCountry": "SE"}, "areaServed": {"@type": "Country", "name": "Sverige"}, "priceRange": "800–2000 kr", "makesOffer": [{"@type": "Offer", "name": "Start", "price": "800", "priceCurrency": "SEK", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Start"}}, {"@type": "Offer", "name": "Grow", "price": "1400", "priceCurrency": "SEK", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Grow"}}, {"@type": "Offer", "name": "Pro", "price": "2000", "priceCurrency": "SEK", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Pro"}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Sabimedia: varma neutrala toner, mörk plommon-grafit som bas och rött från loggan som accent. */
+:root{
+  --bg:#f7f4ef;
+  --paper:#ffffff;
+  --ink:#1b1620;
+  --ink-soft:#57505c;
+  --line:#e8e1d7;
+  --accent:#d42c33;
+  --accent-deep:#b8232a;
+  --accent-soft:#fbe8e6;
+  --plum:#241a2b;
+  --gold:#f5a524;
+  --display:"Inter Tight", "Inter", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius:16px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;text-wrap:balance;line-height:1.08}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-soft);max-width:60ch}
+.section{padding:clamp(64px,9vw,120px) 0}
+.section-head{display:grid;gap:.9rem;margin-bottom:clamp(32px,5vw,56px);max-width:760px}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.3rem)}
+.section-head .lead b{color:var(--ink)}
+.section.band{background:#efe8de}
+em.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:0;border-radius:10px;padding:.9rem 1.4rem;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 12px 28px -12px rgba(15,15,20,.18)}
+.btn-accent:hover{background:var(--accent-deep)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-line{background:var(--paper);box-shadow:inset 0 0 0 1px #d8d0c5}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.btn-sm{padding:.6rem 1rem;font-size:.9rem}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* ---------- Price tag ---------- */
+.price-tag{display:inline-flex;align-items:center;gap:1rem;margin-top:1.8rem;padding:14px 20px 14px 14px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 36px -26px rgba(15,15,20,.4)}
+.price-tag .from{display:grid;place-items:center;background:var(--accent);color:#fff;border-radius:12px;padding:.5rem .8rem;font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1;white-space:nowrap}
+.price-tag .from small{display:block;font-family:var(--body);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
+.price-tag p{font-size:.92rem;color:var(--ink-soft);line-height:1.4}
+.price-tag p b{color:var(--ink)}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:#000}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{display:block;height:42px;width:auto}
+.brand-foot img{height:44px}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;color:#d8d0c5}
+.nav-links a:hover{color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (max-width:900px){
+  .brand img{height:36px}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.1rem}
+  .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .menu-btn{display:grid}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(40px,7vw,90px) 0 clamp(56px,8vw,100px);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);margin:1rem 0 1.3rem}
+.hero .lead{margin-bottom:2rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:2rem;color:var(--ink-soft);font-size:.95rem}
+.trust span::before{content:"✓";color:var(--ink);font-weight:700;margin-right:.4rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem .4rem .45rem;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.88rem;font-weight:500}
+.badge b{background:var(--accent-soft);color:var(--accent-deep);border-radius:999px;padding:.1rem .55rem;font-size:.78rem}
+
+.stage{position:relative;aspect-ratio:1/0.92;min-height:340px}
+.stage-wrap{display:grid;gap:22px;min-width:0}
+.stage-more{justify-self:end}
+.shot{position:absolute;border-radius:16px;overflow:hidden;background:var(--paper);box-shadow:0 30px 60px -28px rgba(15,15,20,.45),0 0 0 1px rgba(15,15,20,.06)}
+.shot-bar{height:26px;display:flex;align-items:center;gap:5px;padding:0 10px;background:#f2ede6;border-bottom:1px solid var(--line)}
+.shot-bar i{width:8px;height:8px;border-radius:50%;background:#d8d0c5}
+.shot-bar i:first-child{background:#d8d0c5}
+.shot-bar .url{flex:1;margin-left:8px;height:16px;border-radius:999px;background:#fff;font-size:.68rem;line-height:16px;padding:0 10px;color:var(--ink-soft);max-width:220px}
+.shot-view{position:relative;overflow:hidden;width:100%;height:calc(100% - 26px)}
+.shot-view img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.stage-link{display:block;position:absolute;inset:0;text-decoration:none;color:inherit}
+.shot-a{width:88%;height:66%;right:0;top:8%;z-index:2}
+.shot-c{width:30%;height:76%;left:0;bottom:0;z-index:4;border-radius:28px;border:7px solid var(--ink)}
+.shot-c .shot-view{height:100%}
+.stage-link:hover .shot-a{transform:translateY(-4px)}
+.shot{transition:transform .3s ease}
+.case{position:absolute;z-index:5;right:0;bottom:2%;display:flex;align-items:center;gap:.7rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.7rem 1rem .7rem .7rem;box-shadow:0 18px 36px -20px rgba(15,15,20,.45);max-width:62%}
+.case img{width:42px;height:42px;border-radius:12px;object-fit:contain;background:#f2ede6;padding:4px;flex:none}
+.case b{display:block;font-size:.95rem;line-height:1.2}
+.case small{color:var(--ink-soft);font-size:.82rem}
+.sticker{position:absolute;z-index:5;left:20%;top:1%;display:flex;align-items:center;gap:.5rem;background:var(--ink);color:#fff;border-radius:999px;padding:.45rem .9rem;font-size:.8rem;font-weight:600;box-shadow:0 10px 24px -12px rgba(15,15,20,.5)}
+.sticker::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stage{max-width:560px;width:100%;margin:0 auto}
+  .stage-more{justify-self:center}
+}
+
+/* ---------- Features ---------- */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:.7rem;align-content:start}
+.feat .ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;margin-bottom:.4rem}
+.feat .ico svg{width:24px;height:24px}
+.feat h3{font-size:1.35rem}
+.feat p{color:var(--ink-soft)}
+.feat.big{grid-column:span 2;grid-row:span 2;background:var(--plum);color:#fff;border-color:var(--plum);grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.feat.big p{color:#b9adbf}
+.feat.big .ico{background:rgba(212,44,51,.18);color:#ff8a8f}
+.feat.big ul{list-style:none;margin:.4rem 0 0;padding:0;display:grid;gap:.5rem}
+.feat.big li{display:flex;gap:.6rem;color:#e8e1d7}
+.feat.big li::before{content:"✓";color:#ff8a8f;font-weight:700}
+.admin-mock{background:#fff;color:var(--ink);border-radius:16px;padding:16px;display:grid;gap:10px;font-size:.88rem;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.admin-mock .row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:10px 12px;border-radius:10px;background:#f2ede6}
+.admin-mock .row b{font-weight:600}
+.admin-mock .tag{font-size:.74rem;font-weight:700;padding:.2rem .55rem;border-radius:999px}
+.tag.new{background:#e0ecff;color:#1d4ed8}
+.tag.ok{background:#e2f5ea;color:#187a4c}
+.tag.wait{background:#fff1d6;color:#9a5b00}
+.admin-mock .top{display:flex;justify-content:space-between;align-items:baseline;padding:0 2px 4px}
+.admin-mock .top strong{font-family:var(--display);font-size:1.15rem}
+.admin-mock .top span{color:var(--ink-soft);font-size:.8rem}
+@media (max-width:980px){.features{grid-template-columns:1fr 1fr}.feat.big{grid-column:1/-1;grid-row:auto}}
+@media (max-width:640px){.features{grid-template-columns:1fr}.feat.big{grid-template-columns:1fr}}
+
+/* ---------- Examples ---------- */
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ex{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.ex-shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:#f2ede6;border-bottom:1px solid var(--line)}
+.ex-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.ex-body{padding:18px 20px 20px;display:grid;gap:.4rem}
+.ex-body small{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.ex-body h3{font-size:1.3rem}
+.ex-body p{color:var(--ink-soft)}
+.ex-note{margin-top:18px;color:var(--ink-soft);font-size:.92rem}
+@media (max-width:900px){.examples{grid-template-columns:1fr;max-width:520px}}
+
+/* ---------- Trust ---------- */
+.trust-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:18px}
+.review{margin:0;background:var(--plum);color:#fff;border-radius:var(--radius);padding:clamp(26px,4vw,40px);display:grid;gap:1.4rem;align-content:space-between}
+.review .stars{color:var(--gold);letter-spacing:.15em;font-size:1.1rem}
+.review blockquote{margin:0;font-family:var(--display);font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.38;font-weight:500;letter-spacing:-.02em}
+.review footer{display:flex;align-items:center;gap:.8rem;padding:0}
+.review footer img{width:48px;height:48px;border-radius:14px;background:#f2ede6;padding:5px;object-fit:contain}
+.review footer b{display:block;color:#fff}
+.review footer span{color:#b9adbf;font-size:.9rem}
+.review-link{color:#ffb4b7;text-decoration:underline;text-underline-offset:3px;font-weight:600;text-decoration:none;justify-self:start}
+.review-link:hover{text-decoration:underline}
+.reply{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,4vw,40px);display:grid;gap:.8rem;align-content:center}
+.reply .big{font-family:var(--display);font-weight:700;font-size:clamp(3rem,6vw,4.2rem);line-height:1;color:var(--accent);letter-spacing:-.04em}
+.reply .big small{font-size:.4em;color:var(--ink)}
+.reply h3{font-size:1.35rem}
+.reply p{color:var(--ink-soft)}
+.trust-grid.solo{grid-template-columns:1fr;max-width:560px}
+@media (max-width:820px){.trust-grid{grid-template-columns:1fr}}
+
+/* ---------- Steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step.wide{grid-column:span 2}
+.step ul{list-style:none;margin:.9rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1.2rem}
+.step li{display:flex;gap:.5rem;color:var(--ink-soft)}
+.step li::before{content:"✓";color:var(--ink);font-weight:700}
+.change-note{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:1rem 1.4rem;align-items:start;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid #f3cfcb}
+.change-note .ico{width:44px;height:44px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center}
+.change-note .ico svg{width:22px;height:22px}
+.change-note h3{font-size:1.25rem;margin-bottom:.35rem}
+.change-note p{color:var(--ink)}
+.step{position:relative;padding:26px 24px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
+.step::before{counter-increment:s;content:"0" counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent-deep);font-family:var(--display);font-weight:600;font-size:.95rem;margin-bottom:1rem}
+.step h3{font-size:1.25rem;margin-bottom:.4rem}
+.step p{color:var(--ink-soft)}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.step.wide{grid-column:auto}.step ul{grid-template-columns:1fr}.change-note{grid-template-columns:1fr}}
+
+/* ---------- Pricing ---------- */
+.compare{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.compare table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.compare th,.compare td{padding:16px 12px;text-align:center;vertical-align:middle}
+.compare col.feat-col{width:44%}
+.compare thead th{vertical-align:bottom;padding-top:30px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.compare thead th:first-child{text-align:left;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);padding-left:28px}
+.plan-name{display:block;font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.01em;line-height:1}
+.plan-from{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin-top:.6rem}
+.plan-price{display:block;font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.05;color:var(--accent);white-space:nowrap}
+.plan-pill{display:inline-block;margin-bottom:.8rem;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px}
+.compare thead th.pro{background:var(--plum);color:#fff;border-top-left-radius:var(--radius)}
+.compare tfoot td.pro{border-bottom-left-radius:var(--radius)}
+.plan-terms{display:block;font-size:.74rem;color:var(--ink-soft);margin-top:.45rem}
+.compare thead th.pro .plan-from,.compare thead th.pro .plan-price,.compare thead th.pro .plan-terms{color:#fff}
+.compare thead th.pro .plan-terms,.compare thead th.pro .plan-from{color:#d9cfdc}
+.compare tbody th{text-align:left;font-weight:600;padding-left:28px}
+.compare tbody tr:nth-child(even){background:#faf8f4}
+.compare td.pro{background:#f2ede6}
+.compare tbody tr:nth-child(even) td.pro{background:#ece5db}
+.yes{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff}
+.yes svg{width:16px;height:16px}
+.no{display:inline-block;width:12px;height:2px;border-radius:2px;background:#8d848b;vertical-align:middle}
+.compare tr.support th,.compare tr.support td{border-top:1px solid var(--line);font-weight:700}
+.compare tfoot td,.compare tfoot th{padding:18px 12px 24px;border-top:1px solid var(--line)}
+.compare tfoot .btn{width:100%;max-width:160px}
+.compare tfoot .btn-accent{box-shadow:none}
+.price-note{margin-top:22px;color:var(--ink);font-weight:600;text-align:center}
+.price-note a{color:var(--accent);text-decoration:none}
+.price-note a:hover{text-decoration:underline}
+@media (max-width:700px){
+  .compare th,.compare td{padding:12px 3px}
+  .compare col.feat-col{width:38%}
+  .hide-sm{display:none}
+  .compare thead th:first-child,.compare tbody th,.compare tfoot th{padding-left:14px}
+  .compare thead th:first-child{font-size:.62rem;letter-spacing:.1em}
+  .compare tbody th{font-size:.84rem;line-height:1.3}
+  .plan-name{font-size:1.05rem}
+  .plan-from{font-size:.66rem;margin-top:.35rem}
+  .plan-price{font-size:.9rem}
+  .plan-terms{font-size:.56rem;line-height:1.25}
+  .plan-pill{font-size:.5rem;padding:.2rem .4rem;letter-spacing:.04em;margin-bottom:.5rem}
+  .yes{width:24px;height:24px}
+  .yes svg{width:13px;height:13px}
+  .compare tr.support td{font-size:.78rem}
+  .compare tfoot .btn{padding:.55rem .3rem;font-size:.74rem;width:100%;max-width:80px}
+  .compare tfoot td{padding-left:4px;padding-right:4px}
+}
+
+/* ---------- Package cards ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;margin-bottom:clamp(56px,8vw,96px)}
+.plan{position:relative;display:flex;flex-direction:column;gap:1rem;padding:30px 26px 26px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
+.plan-head{display:grid;gap:.35rem}
+.plan-head h3{font-size:1.7rem;letter-spacing:-.01em}
+.plan-head p{color:var(--ink-soft)}
+.plan-cost{display:grid;gap:.15rem;padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plan-cost small{font-size:.82rem;font-weight:600;color:var(--ink-soft)}
+.plan-cost strong{font-family:var(--display);font-size:2.5rem;line-height:1.05;color:var(--accent);letter-spacing:-.04em}
+.plan-cost span{font-size:.85rem;color:var(--ink-soft)}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;flex:1;align-content:start}
+.plan li{display:flex;gap:.6rem;line-height:1.45}
+.plan li::before{content:"✓";flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:.1rem;border-radius:50%;background:#f2ede6;color:var(--ink);font-size:.72rem;font-weight:700}
+.plan li.all{font-weight:700}
+.plan .btn{width:100%}
+.plan.featured{border:2px solid var(--accent);box-shadow:0 30px 60px -34px rgba(15,15,20,.25)}
+.plan.featured .pill{position:absolute;top:-13px;left:26px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px}
+.plan.featured li::before{background:var(--accent);color:#fff}
+.compare-head{display:grid;gap:.5rem;margin-bottom:24px}
+.compare-head h3{font-size:clamp(1.5rem,3vw,2.1rem)}
+.compare-head p{color:var(--ink-soft)}
+@media (max-width:900px){.plans{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}}
+
+/* ---------- Ownership ---------- */
+.own{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.own-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:grid;gap:.5rem;align-content:start}
+.own-card .tag-name{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.own-card .tag-name::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:.75rem;letter-spacing:0}
+.own-card h3{font-size:1.3rem}
+.own-card p{color:var(--ink-soft)}
+@media (max-width:820px){.own{grid-template-columns:1fr}}
+
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start}
+.faq-grid .section-head{position:sticky;top:100px}
+.faq{display:grid;gap:12px}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:18px 0;font-weight:600;font-size:1.05rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;font-weight:400;color:var(--ink-soft);transition:transform .2s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--ink-soft)}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}.faq-grid .section-head{position:static}}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--plum);color:#fff;border-radius:24px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
+.contact h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.8rem 0 1rem}
+.contact .eyebrow{color:#b9adbf}
+.contact .lead{color:#b9adbf}
+.contact-sub{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:600;letter-spacing:-.02em;color:#b9adbf;margin:-.4rem 0 1.2rem}
+.contact-alt{display:grid;gap:.8rem;margin-top:2rem}
+.contact-alt a{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff;font-weight:500}
+.contact-alt a span{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.contact-alt svg{width:20px;height:20px}
+form{display:grid;gap:14px;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
+.field{display:grid;gap:.35rem;align-content:start}
+.field label{font-weight:600;font-size:.9rem}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:.8rem .95rem;font-size:1rem}
+.field textarea{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:.85rem;color:var(--ink-soft)}
+.reply-note{display:flex;align-items:center;gap:.6rem;font-size:.92rem;font-weight:600;color:var(--ink);background:var(--bg);border-radius:12px;padding:.7rem .9rem}
+.reply-note svg{width:20px;height:20px;flex:none;color:var(--ink)}
+.form-error{font-size:.9rem;font-weight:600;color:var(--accent-deep)}
+.field .req{color:var(--accent)}
+.field .opt{font-weight:400;color:var(--ink-soft)}
+.check{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem;cursor:pointer;width:fit-content}
+.check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
+.field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f5}
+.field-error{font-size:.82rem;font-weight:600;color:var(--accent-deep)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form button[disabled]{opacity:.7;cursor:wait}
+.sent{display:grid;gap:.6rem;text-align:center;padding:30px 10px}
+.sent h3{font-size:1.6rem}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px));color:var(--ink-soft)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center;border-top:1px solid var(--line);padding-top:28px}
+.foot nav{display:flex;flex-wrap:wrap;gap:1.4rem}
+.foot nav a{text-decoration:none}
+.foot nav a:hover{color:var(--ink)}
+.legal{flex-basis:100%;font-size:.88rem}
+
+
+/* ---------- Subtila animationer ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-grid > div:first-child > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) backwards}
+.hero-grid > div:first-child > :nth-child(2){animation-delay:.08s}
+.hero-grid > div:first-child > :nth-child(3){animation-delay:.16s}
+.hero-grid > div:first-child > :nth-child(4){animation-delay:.24s}
+.hero-grid > div:first-child > :nth-child(5){animation-delay:.32s}
+.hero-grid > div:first-child > :nth-child(6){animation-delay:.4s}
+.stage .shot-a{animation:rise .9s .2s cubic-bezier(.2,.7,.2,1) backwards}
+.stage .shot-c{animation:rise .9s .38s cubic-bezier(.2,.7,.2,1) backwards}
+.stage .case{animation:rise .8s .55s cubic-bezier(.2,.7,.2,1) backwards}
+.stage .sticker{animation:rise .8s .7s cubic-bezier(.2,.7,.2,1) backwards}
+.feat,.ex,.step,.plan,.own-card,.price-tag{transition:translate .3s ease,box-shadow .3s ease,border-color .3s ease}
+.feat:hover,.ex:hover,.step:hover,.plan:hover,.own-card:hover{translate:0 -3px;box-shadow:0 18px 36px -24px rgba(15,15,20,.28);border-color:#d8d0c5}
+.ex img{transition:transform .6s ease}
+.ex:hover img{transform:scale(1.03)}
+.js-anim .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js-anim .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js-anim .reveal{opacity:1;transform:none}
+}
+/* Tillgänglighet: platshållartext med tillräcklig kontrast */
+::placeholder{color:#736a75;opacity:1}
+/* Kalender överst i kontaktformuläret */
+.pick{display:grid;gap:12px;padding-bottom:18px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.step-t{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.02em;margin:0}
+.step-t span{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-family:var(--body);font-size:.8rem;font-weight:700;flex:none}
+.step-t small{font-family:var(--body);font-weight:500;font-size:.82rem;color:var(--ink-soft);letter-spacing:0}
+.cal-top{display:flex;align-items:center;justify-content:space-between}
+.cal-top b{font-size:1rem;text-transform:capitalize}
+.cal-nav{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:1.1rem;line-height:1}
+.cal-nav:disabled{opacity:.35;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.cal .dow{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);padding:.2rem 0}
+.cal button{aspect-ratio:1;border:0;border-radius:10px;background:var(--bg);font-weight:600;font-size:.92rem;cursor:pointer;transition:background .15s,color .15s}
+.cal button:hover:not(:disabled){background:var(--accent-soft)}
+.cal button:disabled{background:transparent;color:#736a75;text-decoration:line-through;text-decoration-color:rgba(113,106,117,.45);cursor:default;font-weight:400}
+.cal button.today{box-shadow:inset 0 0 0 1.5px var(--line)}
+.cal button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.slots button{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:.55rem 0;font-weight:600;font-size:.9rem;cursor:pointer}
+.slots button:hover{border-color:var(--ink)}
+.slots button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.hint{color:var(--ink-soft);font-size:.92rem}
+.picked{display:flex;align-items:center;gap:.6rem;background:var(--bg);border-radius:12px;padding:.7rem .9rem;font-weight:600;font-size:.95rem}
+.picked svg{width:20px;height:20px;color:var(--ink);flex:none}
+.alt-time{color:var(--ink-soft);font-size:.88rem}
+.alt-time a{color:var(--accent-deep);font-weight:600}
+@media (max-width:420px){.slots{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Sabi – till toppen"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#ingar">Tjänster</a></li>
+      <li><a href="#exempel">Exempel</a></li>
+      <li><a href="#sa-funkar-det">Så går det till</a></li>
+      <li><a href="#priser">Paket</a></li>
+      <li><a href="/om-oss">Om oss</a></li>
+      <li><a href="#fragor">FAQ</a></li>
+      <li><a class="btn btn-accent btn-sm" href="#kontakt">Kontakta oss</a></li>
+    </ul>
+    <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><b>Webbyrå</b> i Borås · Digitalt i hela Sverige</span>
+        <h1>Hemsidan som tar emot <em class="hl">beställningar</em> åt dig.</h1>
+        <p class="lead">Vi bygger snygga hemsidor för alla typer av småföretag – butiker, salonger, caféer, hantverkare och allt däremellan. Med produktlista, beställningar och en egen adminpanel där du ser allt.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-accent" href="#priser">Se paketen från 800 kr →</a>
+          <a class="btn btn-line" href="#kontakt" data-book>Boka ett gratis samtal</a>
+        </div>
+        <div class="trust">
+          <span>Skräddarsydd design</span>
+          <span>Funkar perfekt i mobilen</span>
+          <span>Du äger din sida</span>
+        </div>
+        <div class="price-tag"><span class="from"><small>Från</small>800 kr</span><p><b>Fast engångspris</b> exkl. moms.<br>Inga månadsavgifter till oss.</p></div>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage">
+          <a class="stage-link" href="https://cookiemunch.se" target="_blank" rel="noopener" aria-label="Besök Cookie Munch – en hemsida byggd av Sabimedia (öppnas i ny flik)">
+            <div class="shot shot-a"><div class="shot-bar"><i></i><i></i><i></i><span class="url">cookiemunch.se</span></div><div class="shot-view"><img src="bilder/cookiemunch-desktop.jpg" alt="Cookie Munchs hemsida i datorn"></div></div>
+            <div class="shot shot-c"><div class="shot-view"><img src="bilder/cookiemunch-mobil.jpg" alt="Cookie Munchs hemsida i mobilen"></div></div>
+            <div class="sticker">Live exempel</div>
+            <div class="case"><img src="bilder/cookiemunch-logo.webp" alt=""><span><b>Cookie Munch, Borås</b><small>Webbshop med Swish &amp; admin · Besök sidan ↗</small></span></div>
+          </a>
+        </div>
+        <a class="btn btn-ink stage-more" href="/kundcase-cookie-munch">Läs mer om kundcaset →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="ingar">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Det här ingår</span>
+        <h2>Låt hemsidan göra det <em class="hl">tråkiga jobbet.</em></h2>
+        <p class="lead">Varje hemsida är byggd för små företag som säljer via Instagram idag och vill ha ett proffsigare sätt att ta emot beställningar.</p>
+      </div>
+      <div class="features">
+        <article class="feat big">
+          <div style="display:grid;gap:.7rem">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div>
+            <h3>Egen adminpanel</h3>
+            <p>Logga in och se allt på ett ställe. Inga fler missade DM:s eller beställningar i anteckningsappen.</p>
+            <ul>
+              <li>Se nya beställningar direkt</li>
+              <li>Alla beställningar sparade på ett ställe</li>
+              <li>Ändra status med ett klick</li>
+              <li>Funkar lika bra i mobilen</li>
+            </ul>
+          </div>
+          <div class="admin-mock" aria-hidden="true">
+            <div class="top"><strong>Senaste beställningar</strong><span>Idag</span></div>
+            <div class="row"><span><b>Amira</b> · 2 hijabs</span><span class="tag new">Ny</span></div>
+            <div class="row"><span><b>Johan</b> · Presentkort 500 kr</span><span class="tag wait">Pågår</span></div>
+            <div class="row"><span><b>Sara</b> · Doftljus 3 st</span><span class="tag ok">Klar</span></div>
+            <div class="row"><span><b>Leyla</b> · Tårta 10 bitar</span><span class="tag new">Ny</span></div>
+          </div>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg></div>
+          <h3>Produkter &amp; varukorg</h3>
+          <p>Kunderna bläddrar bland dina produkter, väljer antal och lägger i varukorgen – precis som i en riktig webbshop.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+          <h3>Ditt varumärke</h3>
+          <p>Dina färger, din logga, dina bilder och dina texter. Sidan ska kännas som du.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></div>
+          <h3>Betalning på sidan</h3>
+          <p>Kunden betalar direkt på hemsidan – smidigt för både dig och kunden.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h3>Beställningar via mejl</h3>
+          <p>Varje beställning landar i din mejl med vad kunden valt och ordersumman uträknad.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M6 21V11h12v10M12 11V7M9 4l3 3 3-3"/></svg></div>
+          <h3>Information &amp; kontakt</h3>
+          <p>Berätta om ditt företag, visa kontaktuppgifter och länka till dina sociala medier.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples -->
+  <section class="section" id="exempel" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Exempel</span>
+        <h2>Så kan din hemsida <em class="hl">se ut.</em></h2>
+        <p class="lead">Tre exempel på hemsidor för helt olika branscher – alla med en egen design.</p>
+      </div>
+      <div class="examples">
+        <div class="ex">
+          <div class="ex-shot"><img src="bilder/exempel-kladbutik.jpg?v=2" alt="Exempel på hemsida för en klädbutik" loading="lazy"></div>
+          <div class="ex-body"><small>Klädbutik</small><h3>Studio Ofelia</h3><p>Webbshop med kategorier, storlekar och varukorg.</p></div>
+        </div>
+        <div class="ex">
+          <div class="ex-shot"><img src="bilder/exempel-foodtruck.jpg" alt="Exempel på hemsida för en food truck" loading="lazy"></div>
+          <div class="ex-body"><small>Food truck</small><h3>Krabbvagnen</h3><p>Seafood boil-meny, veckans platser och catering-bokning.</p></div>
+        </div>
+        <div class="ex">
+          <div class="ex-shot"><img src="bilder/exempel-frisor.jpg?v=2" alt="Exempel på hemsida för en frisörsalong" loading="lazy"></div>
+          <div class="ex-body"><small>Frisör</small><h3>Luna Hårstudio</h3><p>Behandlingar, priser, frisörer och onlinebokning.</p></div>
+        </div>
+      </div>
+      <p class="ex-note">Exempel med påhittade företag.</p>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="section" id="omdomen" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Kunderna om oss</span>
+        <h2>Det här kan du <em class="hl">räkna med.</em></h2>
+      </div>
+      <div class="trust-grid" id="trust-grid">
+        <figure class="review" id="review" hidden>
+          <div class="stars" aria-label="5 av 5 stjärnor">★★★★★</div>
+          <blockquote id="review-quote"></blockquote>
+          <footer><img src="bilder/cookiemunch-logo.webp" alt=""><div><b id="review-name"></b><span id="review-company"></span></div></footer>
+          <a class="review-link" href="/kundcase-cookie-munch">Läs hela kundcaset →</a>
+        </figure>
+        <div class="reply">
+          <div class="big">24 <small>tim</small></div>
+          <h3>Snabbt svar, varje gång</h3>
+          <p>Skickar du en förfrågan hör vi av oss inom ett dygn. Du blir aldrig lämnad utan svar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section band" id="sa-funkar-det">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Arbetsprocess</span>
+        <h2>Från idé till färdig hemsida, <em class="hl">steg för steg.</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step wide"><h3>Uppstart &amp; kravmöte</h3><p>En personlig genomgång där vi tillsammans går igenom dina behov, önskemål och idéer innan utvecklingen börjar. Vi pratar om:</p>
+          <ul>
+            <li>Vad du behöver</li>
+            <li>Din målgrupp</li>
+            <li>Vilka sidor som ska finnas</li>
+            <li>Funktioner</li>
+            <li>Färger och stil</li>
+            <li>Hemsidor du gillar</li>
+            <li>Vad du vill kunna göra med hemsidan</li>
+          </ul>
+        </div>
+        <div class="step"><h3>Första utkast</h3><p>Vi bygger hemsidan utifrån det vi har kommit överens om.</p></div>
+        <div class="step"><h3>Feedbackmöte</h3><p>Vi går igenom hemsidan tillsammans och du berättar vad som behöver ändras. Vi fångar upp feedbacken direkt – du behöver inte skriva några långa listor.</p></div>
+        <div class="step"><h3>Ändringsrunda</h3><p>Vi genomför ändringarna från feedbackmötet. Mindre justeringar utifrån den feedback vi kommit överens om ingår i paketet.</p></div>
+        <div class="step"><h3>Slutkontroll &amp; lansering</h3><p>Vi kontrollerar att allt fungerar och att du är nöjd – först då publiceras hemsidan.</p></div>
+      </div>
+      <div class="change-note">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <div><h3>Vad ingår i en ändringsrunda?</h3><p>Mindre justeringar av text, bilder, färger, layout och design ingår. Nya sidor, funktioner eller större förändringar av projektets omfattning offereras separat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="priser" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Paket</span>
+        <h2>Välj det som <em class="hl">passar dig.</em></h2>
+        <p class="lead">Fast pris och tydligt innehåll. Välj det paket som passar hur ditt företag tar emot kunder.</p>
+      </div>
+      <div class="plans" id="plans"></div>
+      <div class="compare-head">
+        <h3>Jämför paketen i detalj</h3>
+        <p>Se exakt vilka funktioner som ingår i varje paket.</p>
+      </div>
+      <div class="compare" id="prices"></div>
+      <p class="price-note" id="price-note"></p>
+    </div>
+  </section>
+
+  <!-- Ownership -->
+  <section class="section" id="agande" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Du äger allt</span>
+        <h2>Allt står i <em class="hl">ditt namn.</em></h2>
+        <p class="lead">Du hyr ingenting av oss. Domän, webbhotell och hemsida registreras på dig – så du har full kontroll, även om du en dag vill byta leverantör.</p>
+      </div>
+      <div class="own">
+        <div class="own-card"><span class="tag-name">Ditt namn</span><h3>Domänen</h3><p>Din adress, till exempel dittforetag.se, registreras i ditt namn på ditt eget konto.</p></div>
+        <div class="own-card"><span class="tag-name">Ditt namn</span><h3>Webbhotellet</h3><p>Platsen där sidan ligger står också på dig. Inget är låst till oss.</p></div>
+        <div class="own-card"><span class="tag-name">Ditt namn</span><h3>Hemsidan</h3><p>Sidan är din från dagen den går live – du kan använda den hur länge du vill.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="fragor" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Vanliga frågor</span>
+        <h2>Undrar du något?</h2>
+        <p class="lead">Hittar du inte svaret här? Hör av dig så hjälper vi dig.</p>
+        <div><a class="btn btn-ink" href="mailto:hej@sabimedia.se?subject=Fr%C3%A5ga%20till%20Sabimedia">Ställ en fråga</a></div>
+      </div>
+      <div class="faq">
+        <details open><summary>Får jag en egen design?</summary><p>Ja. Varje hemsida skräddarsys efter ditt företag – dina färger, din logga, dina bilder och dina texter.</p></details>
+        <details><summary>Hur lång tid tar det?</summary><p>Det tar allt från några dagar upp till några veckor, beroende på vilket paket och vilka funktioner du väljer. Tiden räknas från att vi fått ditt material (logga, bilder, produkter och priser).</p></details>
+        <details><summary>Tillkommer det dolda kostnader?</summary><p>Nej. Priset är fast och godkänns innan vi börjar. Det enda som är löpande är domän och webbhotell, och dem betalar du direkt till leverantören på ditt eget konto – inte till oss.</p></details>
+        <details><summary>Tänk om jag inte gillar sidan?</summary><p>Efter projektstart får du se en riktig, klickbar första version som du kan påverka. Inget går live innan du har godkänt det.</p></details>
+        <details><summary>Jag har ingen tid för en hemsida.</summary><p>Du behöver vara så lite inblandad som möjligt. Vi tar reda på vad du behöver och gör resten – du läser bara igenom och godkänner.</p></details>
+        <details><summary>Vad händer om ni försvinner?</summary><p>Sidan byggs med vanlig och beprövad teknik som vilken webbutvecklare som helst kan ta över, och domän och konton ligger hos dig. Allt ska fungera även utan oss.</p></details>
+        <details><summary>Vad händer om hemsidan blir hackad och slutar fungera?</summary><p>Sidan byggs med modern teknik utan tillägg som hela tiden måste uppdateras, och den körs med SSL. Behöver du hjälp efter supportperioden tar vi det per timme.</p></details>
+        <details><summary>Kan jag ändra produkter och priser själv?</summary><p>Med Pro får du en administrationssida där du ser alla beställningar och ändrar deras status. Vill du ändra produkter eller priser hjälper vi dig – det ingår i supporten efter lansering.</p></details>
+        <details><summary>Hur får jag betalt?</summary><p>Med Pro kan kunden betala direkt på hemsidan. Med Grow skickas beställningen till dig via mejl med ordersumman uträknad, och du tar betalt som du brukar.</p></details>
+        <details><summary>Vem äger hemsidan?</summary><p>Du. Domän, webbhotell och hemsida står i ditt namn, så du är aldrig inlåst hos oss.</p></details>
+        <details><summary>Ingår publicering?</summary><p>Ja, publicering av hemsidan ingår i alla paket. Efter lansering har du support i 1 månad (Start) eller 2 månader (Grow och Pro).</p></details>
+        <details><summary>Passar det mitt företag?</summary><p>Absolut. Vi bygger hemsidor för alla typer av småföretag – butiker, salonger, caféer, hantverkare, konsulter och mycket mer. Allt som säljs eller bokas kan få en hemsida.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h2>Låt dina kunder enkelt hitta, välja och beställa</h2>
+          <p class="contact-sub">– med en egen hemsida.</p>
+          <p class="lead">Berätta lite om ditt företag och vilket paket du är intresserad av. Vi återkommer inom 24 timmar med ett förslag – helt utan förpliktelser.</p>
+          <div class="contact-alt" id="contact-alt"></div>
+        </div>
+        <form id="form" novalidate>
+          <div class="pick">
+            <p class="step-t"><span>1</span>Välj dag och tid för ett gratis samtal <small>(valfritt)</small></p>
+            <div class="cal-top">
+              <button class="cal-nav" id="prev" type="button" aria-label="Föregående månad">‹</button>
+              <b id="month" aria-live="polite"></b>
+              <button class="cal-nav" id="next" type="button" aria-label="Nästa månad">›</button>
+            </div>
+            <div class="cal" id="cal"></div>
+            <div id="slots"><p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p></div>
+            <p class="picked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span id="picked-text">Ingen tid vald än</span></p>
+            <p class="alt-time">Funkar inte tiderna? <a id="alt-mail" href="mailto:hej@sabimedia.se">Skicka ett mejl</a> så hittar vi en tid.</p>
+          </div>
+          <p class="step-t"><span>2</span>Dina uppgifter</p>
+          <div class="two">
+            <div class="field"><label for="f-name">Ditt namn <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-company">Företag</label><input id="f-company" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="f-phone">Telefon <span class="opt">(valfritt)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="070-123 45 67"></div>
+            <div class="field"><label for="f-email">E-post <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="namn@foretag.se" required></div>
+          </div>
+          <label class="check"><input type="checkbox" id="f-has-web" aria-controls="web-field" aria-expanded="false">Jag har redan en hemsida</label>
+          <div class="field" id="web-field" hidden><label for="f-web">Nuvarande hemsida</label><input id="f-web" name="website" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="dittforetag.se" disabled></div>
+          <div class="field"><label for="f-plan">Paket</label><select id="f-plan" name="plan"><option value="">Vet inte än</option></select></div>
+          <div class="field"><label for="f-msg">Berätta om ditt företag</label><textarea id="f-msg" name="message" placeholder="Vad säljer du? Har du Instagram? Något särskilt du vill ha på sidan?"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-accent" type="submit" id="form-submit">Skicka förfrågan</button>
+          <p class="reply-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Vi svarar på din förfrågan inom 24 timmar.</p>
+          <p class="form-note">Fält med * måste fyllas i. Dina uppgifter används bara för att besvara din förfrågan – läs mer i vår <a href="/integritetspolicy">integritetspolicy</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand brand-foot" href="#top" aria-label="Sabi – till toppen"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"></a>
+    <nav><a href="#ingar">Det här ingår</a><a href="#priser">Priser</a><a href="#kontakt">Kontakt</a><a href="/kundcase-cookie-munch">Kundcase</a><a href="/integritetspolicy">Integritetspolicy</a><a href="https://instagram.com/sabimediaa" target="_blank" rel="noopener">Instagram</a></nav>
+    <span>© <span id="year"></span> Sabimedia · Webbyrå i Borås · Digitalt i hela Sverige</span>
+    <p class="legal">Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></p>
+  </div>
+</footer>
+
+<script>
+/* ======= Ändra här: kontaktuppgifter och priser ======= */
+const CONFIG = {
+  email: "hej@sabimedia.se",        // dit förfrågningar skickas
+  /* FormSubmit skickar formuläret direkt till e-posten ovan. Första förfrågan måste bekräftas via en länk i mejlet.
+     Tom sträng = formuläret öppnar mejlprogrammet i stället */
+  formEndpoint: "https://formsubmit.co/ajax/hej@sabimedia.se",
+  phone: "",                        // t.ex. "070-123 45 67" (visas om ifyllt)
+  whatsapp: "",                     // t.ex. "46701234567" (utan + och nolla)
+  instagram: "sabimediaa",         // t.ex. "sabimedia"
+  /* Länk till bokningskalender (Calendly eller Google Kalender). Tom sträng = knapparna leder till kontaktformuläret */
+  booking: "/boka",                 // egen bokningssida, eller t.ex. en Calendly-länk
+  /* Kundomdöme – visas först när quote är ifyllt */
+  review: { quote: "Sedan vi fick vår nya hemsida är det så mycket enklare för kunderna att beställa. Vi lägger knappt någon tid på DM längre – beställningarna kommer in samlade och organiserade, så vi kan fokusera på det som faktiskt är viktigt: att baka.", name: "Cookie Munch", company: "Handelsbolag i Borås" },
+  plans: [
+    { name: "Start", price: "800",
+      tagline: "För dig som behöver en enkel och professionell hemsida.",
+      items: ["1–3 sidor", "Anpassad design efter ditt varumärke", "Mobilanpassad hemsida", "Information och bilder om företaget",
+              "Kontaktuppgifter och sociala medier", "Grundläggande SEO", "Klickbar första version att godkänna före lansering",
+              "Publicering av hemsidan", "Domän, webbhotell och hemsida i ditt namn", "1 månads support efter lansering"] },
+    { name: "Grow", price: "1 400",
+      tagline: "För dig som vill göra det enklare för kunder att beställa.",
+      items: ["Allt i Start", "Produkt- och prislista", "Beställningsformulär där kunden väljer produkter och antal",
+              "Ordersumman räknas ut automatiskt", "E-postnotis till dig vid varje ny beställning",
+              "Enkel hantering av produkter och beställningar", "2 månaders support efter lansering"] },
+    { name: "Pro", price: "2 000", featured: "Mest komplett",
+      tagline: "För dig som vill ha en komplett beställningslösning.",
+      items: ["Allt i Grow", "Betalning direkt på hemsidan", "Beställningar sparas i en databas", "Administrationssida för beställningar",
+              "Ändra status på beställningar", "Kund- och orderinformation", "Mer avancerad design",
+              "Anpassade funktioner efter din verksamhet", "Prioriterad support", "2 månaders support efter lansering"] }
+  ],
+  /* Funktion och vilka paket som har den: [Start, Grow, Pro] */
+  features: [
+    ["Professionell, skräddarsydd design", 1, 1, 1],
+    ["Mobilanpassad hemsida", 1, 1, 1],
+    ["Information om företaget", 1, 1, 1],
+    ["Kontaktuppgifter och sociala medier", 1, 1, 1],
+    ["Produkt- och prislista", 0, 1, 1],
+    ["Beställningsformulär", 0, 1, 1],
+    ["Kunden väljer produkter och antal", 0, 1, 1],
+    ["Beställning skickas via mejl", 0, 1, 1],
+    ["Enkel beräkning av ordersumma", 0, 1, 1],
+    ["Beställningar sparas i databas", 0, 0, 1],
+    ["Administrationssida för beställningar", 0, 0, 1],
+    ["Ändra beställningsstatus", 0, 0, 1],
+    ["Betalning direkt på hemsidan", 0, 0, 1],
+    ["Publicering av hemsidan", 1, 1, 1]
+  ],
+  support: ["1 månad", "2 månader", "2 månader"]
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+
+/* ---------- Nav ---------- */
+const links = $("#nav-links"), menuBtn = $("#menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+links.addEventListener("click", e => { if (e.target.closest("a")) { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
+
+/* ---------- Review ---------- */
+if (CONFIG.review.quote) {
+  $("#review-quote").textContent = `”${CONFIG.review.quote}”`;
+  $("#review-name").textContent = CONFIG.review.name;
+  $("#review-company").textContent = CONFIG.review.company;
+  $("#review").hidden = false;
+} else {
+  $("#trust-grid").classList.add("solo");
+}
+
+/* ---------- Pricing ---------- */
+const YES = '<span class="yes" aria-label="Ingår"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>';
+const NO = '<span class="no" aria-label="Ingår inte"></span>';
+const pro = i => CONFIG.plans[i].featured ? ' class="pro"' : "";
+$("#prices").innerHTML = `<table aria-label="Jämförelse av hemsidepaket">
+  <colgroup><col class="feat-col"><col><col><col></colgroup>
+  <thead><tr><th scope="col">Funktion</th>${CONFIG.plans.map((p, i) => `<th scope="col"${pro(i)}>
+    ${p.featured ? `<span class="plan-pill">${esc(p.featured)}</span>` : ""}
+    <span class="plan-name">${esc(p.name.toUpperCase())}</span>
+    <span class="plan-from">Pris från</span>
+    <span class="plan-price">${esc(p.price)} kr</span>
+    <span class="plan-terms">engångspris · exkl. moms</span></th>`).join("")}</tr></thead>
+  <tbody>
+    ${CONFIG.features.map(([f, ...has]) => `<tr><th scope="row">${esc(f)}</th>${has.map((h, i) => `<td${pro(i)}>${h ? YES : NO}</td>`).join("")}</tr>`).join("")}
+    <tr class="support"><th scope="row">Support efter lansering</th>${CONFIG.support.map((t, i) => `<td${pro(i)}>${esc(t)}</td>`).join("")}</tr>
+  </tbody>
+  <tfoot><tr><th></th>${CONFIG.plans.map((p, i) => `<td${pro(i)}><button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}"><span class="hide-sm">Välj </span>${esc(p.name)}</button></td>`).join("")}</tr></tfoot>
+</table>`;
+$("#price-note").innerHTML = `Alla priser är engångspriser exklusive moms.<br>Osäker på vilket paket som passar? <a href="${CONFIG.instagram ? `https://ig.me/m/${encodeURIComponent(CONFIG.instagram)}" target="_blank" rel="noopener` : "#kontakt"}">Skicka ett DM till oss.</a>`;
+$("#plans").innerHTML = CONFIG.plans.map(p => `
+  <article class="plan${p.featured ? " featured" : ""}">
+    ${p.featured ? `<span class="pill">${esc(p.featured)}</span>` : ""}
+    <div class="plan-head"><h3>${esc(p.name)}</h3><p>${esc(p.tagline)}</p></div>
+    <div class="plan-cost"><small>Pris från</small><strong>${esc(p.price)} kr</strong><span>engångspris · exkl. moms</span></div>
+    <ul>${p.items.map(x => `<li${x.startsWith("Allt i") ? ' class="all"' : ""}>${esc(x)}</li>`).join("")}</ul>
+    <button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}">Välj ${esc(p.name)}</button>
+  </article>`).join("");
+$("#plans").addEventListener("click", e => {
+  const b = e.target.closest("[data-plan]"); if (!b) return;
+  $("#f-plan").value = b.dataset.plan;
+  $("#kontakt").scrollIntoView();
+  setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
+});
+$("#prices").addEventListener("click", e => {
+  const b = e.target.closest("[data-plan]"); if (!b) return;
+  $("#f-plan").value = b.dataset.plan;
+  $("#kontakt").scrollIntoView();
+  setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
+});
+
+/* ---------- Contact ---------- */
+$("#f-plan").insertAdjacentHTML("beforeend", CONFIG.plans.map(p => `<option>${esc(p.name)}</option>`).join(""));
+const ICON = {
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  insta: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
+  cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>'
+};
+const alt = [];
+if (CONFIG.whatsapp) alt.push(`<a href="https://wa.me/${encodeURIComponent(CONFIG.whatsapp)}" target="_blank" rel="noopener"><span>${ICON.chat}</span>Skriv på WhatsApp</a>`);
+if (CONFIG.phone) alt.push(`<a href="tel:${esc(CONFIG.phone.replace(/[^\d+]/g, ""))}"><span>${ICON.phone}</span>${esc(CONFIG.phone)}</a>`);
+alt.push(`<a href="mailto:${esc(CONFIG.email)}"><span>${ICON.mail}</span>${esc(CONFIG.email)}</a>`);
+if (CONFIG.instagram) alt.push(`<a href="https://instagram.com/${encodeURIComponent(CONFIG.instagram)}" target="_blank" rel="noopener"><span>${ICON.insta}</span>@${esc(CONFIG.instagram)}</a>`);
+if (CONFIG.booking) {
+  const ext = /^https?:/.test(CONFIG.booking) ? ' target="_blank" rel="noopener"' : "";
+  document.querySelectorAll("[data-book]").forEach(a => { a.href = CONFIG.booking; if (ext) { a.target = "_blank"; a.rel = "noopener"; } });
+}
+$("#contact-alt").innerHTML = alt.join("");
+
+/* Kalender: vardagar kl. 10–20 i 30-minuterspass. Vald tid skickas med förfrågan. */
+const pad = n => String(n).padStart(2, "0");
+const dayFmt = new Intl.DateTimeFormat("sv-SE", { weekday: "long", day: "numeric", month: "long" });
+const monthFmt = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "numeric" });
+const today = new Date(); today.setHours(0, 0, 0, 0);
+let view = new Date(today.getFullYear(), today.getMonth(), 1);
+const lastView = new Date(today.getFullYear(), today.getMonth() + 2, 1);
+let picked = { date: null, time: null };
+function slotsFor(date) {
+  const out = [], now = new Date();
+  for (let m = 10 * 60; m < 20 * 60; m += 30) {
+    const t = new Date(date); t.setHours(0, m, 0, 0);
+    if (t - now >= 60 * 60 * 1000) out.push(`${pad(Math.floor(m / 60))}:${pad(m % 60)}`);
+  }
+  return out;
+}
+const bookable = d => d.getDay() % 6 !== 0 && d >= today && slotsFor(d).length > 0;
+const cap = s => s.replace(/^./, c => c.toUpperCase());
+function renderCal() {
+  $("#month").textContent = monthFmt.format(view);
+  $("#prev").disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
+  $("#next").disabled = view >= lastView;
+  const cells = ["mån", "tis", "ons", "tor", "fre", "lör", "sön"].map(d => `<span class="dow">${d}</span>`);
+  for (let i = 0; i < (view.getDay() + 6) % 7; i++) cells.push("<span></span>");
+  const n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+  for (let i = 1; i <= n; i++) {
+    const d = new Date(view.getFullYear(), view.getMonth(), i);
+    cells.push(`<button type="button" data-d="${+d}" ${bookable(d) ? "" : "disabled"} class="${+d === +today ? "today" : ""}" aria-pressed="${!!picked.date && +d === +picked.date}" aria-label="${dayFmt.format(d)}">${i}</button>`);
+  }
+  $("#cal").innerHTML = cells.join("");
+}
+function renderSlots() {
+  $("#slots").innerHTML = picked.date
+    ? `<div class="slots">${slotsFor(picked.date).map(t => `<button type="button" data-t="${t}" aria-pressed="${t === picked.time}">${t}</button>`).join("")}</div>`
+    : '<p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p>';
+  $("#picked-text").textContent = picked.date && picked.time ? cap(`${dayFmt.format(picked.date)} kl. ${picked.time}`)
+    : picked.date ? cap(`${dayFmt.format(picked.date)} – välj en tid`) : "Ingen tid vald än";
+}
+$("#cal").addEventListener("click", e => {
+  const b = e.target.closest("button[data-d]"); if (!b) return;
+  picked = { date: new Date(+b.dataset.d), time: null };
+  renderCal(); renderSlots();
+});
+$("#slots").addEventListener("click", e => {
+  const b = e.target.closest("button[data-t]"); if (!b) return;
+  picked.time = b.dataset.t; renderSlots();
+});
+$("#prev").addEventListener("click", () => { view.setMonth(view.getMonth() - 1); renderCal(); });
+$("#next").addEventListener("click", () => { view.setMonth(view.getMonth() + 1); renderCal(); });
+$("#alt-mail").href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Önskar en annan tid för samtal")}`;
+renderCal();
+
+/* Fältkontroller: namn och e-post krävs, telefon är valfritt men måste vara ett giltigt nummer om det fylls i */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+/* Webbadress: valfritt http(s):// och www, minst en punkt och en ändelse på två bokstäver, t.ex. sabimedia.se */
+const WEB_RE = /^(https?:\/\/)?([a-z0-9åäö]([a-z0-9åäö-]*[a-z0-9åäö])?\.)+[a-z]{2,}(:\d+)?(\/\S*)?$/i;
+function validPhone(v) {
+  if (!/^\+?[\d\s\-()]+$/.test(v)) return false;
+  const digits = v.replace(/\D/g, "");
+  return digits.length >= 7 && digits.length <= 15;
+}
+function setFieldError(el, msg) {
+  const field = el.closest(".field");
+  let note = field.querySelector(".field-error");
+  if (msg) {
+    if (!note) { note = document.createElement("p"); note.className = "field-error"; note.id = el.id + "-err"; field.append(note); }
+    note.textContent = msg;
+    el.setAttribute("aria-invalid", "true");
+    el.setAttribute("aria-describedby", note.id);
+  } else {
+    note?.remove();
+    el.removeAttribute("aria-invalid");
+    el.removeAttribute("aria-describedby");
+  }
+}
+function validate(f) {
+  const checks = [
+    [$("#f-name"), !f.name.trim() ? "Skriv ditt namn." : ""],
+    [$("#f-email"), !f.email.trim() ? "Skriv din e-postadress." : !EMAIL_RE.test(f.email.trim()) ? "E-postadressen ser inte rätt ut, t.ex. namn@foretag.se." : ""],
+    [$("#f-phone"), f.phone.trim() && !validPhone(f.phone.trim()) ? "Telefonnumret ser inte rätt ut, t.ex. 070-123 45 67." : ""],
+    [$("#f-web"), $("#f-has-web").checked && !(f.website || "").trim() ? "Skriv adressen till din hemsida, t.ex. dittforetag.se." : (f.website || "").trim() && !WEB_RE.test(f.website.trim()) ? "Webbadressen ser inte rätt ut, t.ex. dittforetag.se." : ""]
+  ];
+  checks.forEach(([el, msg]) => setFieldError(el, msg));
+  return checks.filter(([, msg]) => msg).map(([el, msg]) => ({ el, msg }));
+}
+/* Fältet för nuvarande hemsida visas bara när rutan är ikryssad */
+$("#f-has-web").addEventListener("change", e => {
+  const on = e.target.checked, input = $("#f-web");
+  $("#web-field").hidden = !on; input.disabled = !on;
+  e.target.setAttribute("aria-expanded", on);
+  if (on) input.focus(); else { input.value = ""; setFieldError(input, ""); }
+});
+["#f-name", "#f-email", "#f-phone", "#f-web"].forEach(sel => $(sel).addEventListener("input", e => {
+  if (e.target.getAttribute("aria-invalid")) validate(Object.fromEntries(new FormData($("#form"))));
+}));
+
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const form = e.target, f = Object.fromEntries(new FormData(form));
+  const error = $("#form-error"), submit = $("#form-submit");
+  const showError = html => { error.innerHTML = html; error.hidden = false; };
+  const problems = validate(f);
+  if (problems.length) {
+    if (problems.length > 1) showError("Kolla de markerade fälten, tack!"); else error.hidden = true;
+    problems[0].el.focus();
+    return;
+  }
+  if (f._honey) return;
+  error.hidden = true;
+  const when = picked.date && picked.time ? `${dayFmt.format(picked.date)} kl. ${picked.time}` : "";
+  const subject = when ? `Bokat samtal: ${when} – ${f.name}` : `Ny hemsideförfrågan från ${f.company || f.name}`;
+  const body = [
+    `Namn: ${f.name}`, `Företag: ${f.company || "-"}`, `Telefon: ${f.phone || "-"}`, `E-post: ${f.email || "-"}`, `Nuvarande hemsida: ${f.website || "Ingen"}`,
+    `Paket: ${f.plan || "Vet inte än"}`, "", f.message || ""
+  ].join("\n");
+  const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const thanks = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din förfrågan och svarar inom 24 timmar.</p></div>`;
+
+  if (!CONFIG.formEndpoint) {
+    location.href = mailto;
+    form.innerHTML = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Ditt mejlprogram öppnas med förfrågan ifylld – tryck bara på skicka. Vi svarar inom 24 timmar.</p></div>`;
+    return;
+  }
+  submit.disabled = true; submit.textContent = "Skickar…";
+  try {
+    const data = new FormData(form);
+    if (when) data.append("Önskad tid för samtal", when);
+    data.append("_subject", subject);
+    data.append("_template", "table");
+    const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
+    form.innerHTML = thanks;
+  } catch (err) {
+    console.warn("Formuläret kunde inte skickas:", err.message);
+    submit.disabled = false; submit.textContent = "Skicka förfrågan";
+    showError(`Något gick fel och förfrågan skickades inte. Försök igen eller <a href="${esc(mailto)}">mejla oss direkt</a>.`);
+  }
+});
+
+$("#year").textContent = new Date().getFullYear();
+
+/* Subtila animationer: korten glider in när man scrollar fram till dem */
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("js-anim");
+  const groups = [".section-head", ".features > *", ".examples > *", ".trust-grid > *", ".steps > *", ".change-note", ".plans > *", ".compare", ".own > *", ".faq > *", ".contact"];
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -8% 0px" });
+  groups.forEach(sel => document.querySelectorAll(sel).forEach((el, i) => {
+    el.classList.add("reveal");
+    el.style.setProperty("--d", Math.min(i, 5) * 0.07 + "s");
+    io.observe(el);
+  }));
+}
+</script>
+</body>
+</html>

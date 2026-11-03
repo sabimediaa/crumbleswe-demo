@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Ofelia · Kläder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+<style>
+/* Exempelsida: skandinavisk klädbutik – stenvitt, svart, färgblock i lera, salvia och himmelsblått. */
+:root{--bg:#f4f3ef;--paper:#ffffff;--ink:#111111;--soft:#5f5d58;--line:#dcdad3;--stone:#e3ded4;--clay:#c9a58a;--sage:#b9c2ad;--sky:#bfcbd6;--sale:#2f45ff;--font:"Archivo",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,select,input{font:inherit;color:inherit}
+h1,h2,h3{margin:0;font-weight:700;line-height:.95;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.cond{font-stretch:68%;text-transform:uppercase}
+.bar{background:var(--ink);color:#fff;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:.6rem 0}
+.bar .wrap{display:flex;justify-content:space-between;gap:1rem}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px;gap:1rem}
+.nav nav{display:flex;gap:1.6rem;font-size:.86rem;font-weight:500}
+.logo{font-stretch:62%;font-weight:800;font-size:1.9rem;letter-spacing:.04em;text-transform:uppercase}
+.icons{display:flex;gap:1.3rem;justify-content:flex-end;align-items:center;font-size:.86rem;font-weight:500}
+.cart b{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:.35rem;border-radius:50%;background:var(--ink);color:#fff;font-size:.7rem}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px;border-bottom:1px solid var(--line)}
+.hero-txt{padding:56px 48px 48px 0;display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
+.kick{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.hero h1{font-size:clamp(4rem,9.5vw,8.4rem);font-stretch:62%;text-transform:uppercase;font-weight:800;margin-top:.8rem}
+.hero-bottom{display:grid;gap:1.4rem;max-width:420px}
+.hero-bottom p{color:var(--soft);font-size:1.02rem}
+.btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.4rem;font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);background:transparent;cursor:pointer}
+.btn.dark{background:var(--ink);color:#fff}
+.hero-art{position:relative;background:var(--clay);display:grid;place-items:center;overflow:hidden}
+.hero-art svg{width:58%;height:auto}
+.hero-art .label{position:absolute;left:20px;bottom:20px;background:var(--paper);padding:.65rem .9rem;font-size:.8rem;display:grid;gap:.1rem}
+.hero-art .label b{font-size:.9rem}
+.hero-art .no{position:absolute;right:20px;top:20px;font-stretch:62%;font-weight:800;font-size:4.5rem;line-height:1;color:rgba(17,17,17,.12)}
+.usp{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.usp div{padding:16px 20px;font-size:.84rem;color:var(--soft);border-right:1px solid var(--line)}
+.usp div:last-child{border:0}
+.usp b{color:var(--ink);font-weight:600;margin-right:.35rem}
+section{padding:72px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:24px}
+.head h2{font-size:clamp(2.4rem,5vw,3.8rem);font-stretch:62%;text-transform:uppercase;font-weight:800}
+.head a{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{position:relative;aspect-ratio:3/4;display:grid;place-items:center;overflow:hidden}
+.cat svg{width:56%}
+.cat span{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 14px}
+.prod .img{position:relative;aspect-ratio:3/4;display:grid;place-items:center;margin-bottom:12px}
+.prod .img svg{width:55%}
+.prod .new{position:absolute;top:12px;left:12px;background:var(--paper);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .55rem}
+.prod .new.sale{background:var(--sale);color:#fff}
+.prod .meta{display:flex;justify-content:space-between;gap:.6rem;font-size:.92rem}
+.prod h3{font-size:.92rem;font-weight:500;letter-spacing:0;line-height:1.3}
+.prod .price{font-weight:600;white-space:nowrap}
+.prod .price s{color:var(--soft);font-weight:400;margin-right:.3rem}
+.dots{display:flex;gap:6px;margin:.6rem 0}
+.dots i{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.row{display:flex;gap:6px}
+.row select{flex:1;border:1px solid var(--line);background:var(--paper);padding:.55rem .6rem;font-size:.82rem}
+.row button{border:0;background:var(--ink);color:#fff;padding:.55rem .9rem;font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.look{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.look .txt{background:var(--ink);color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:420px}
+.look .txt h2{font-size:clamp(2.4rem,4.5vw,3.6rem);font-stretch:62%;text-transform:uppercase;font-weight:800}
+.look .txt p{color:#bdbbb6;max-width:34ch}
+.look .txt .btn{border-color:#fff;color:#fff;align-self:flex-start}
+.look .art{display:grid;place-items:center}
+.look .art svg{width:52%}
+.news{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:48px 0}
+.news h2{font-size:clamp(2.2rem,4vw,3.2rem);font-stretch:62%;text-transform:uppercase;font-weight:800}
+.news p{color:var(--soft);margin-top:.6rem}
+.news form{display:flex}
+.news input{flex:1;border:1px solid var(--ink);border-right:0;background:var(--paper);padding:.95rem 1rem}
+footer{padding:48px 0 28px;font-size:.86rem;color:var(--soft)}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+.foot .logo{color:var(--ink);font-size:2.4rem}
+.foot h4{color:var(--ink);margin:0 0 .7rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.demo{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.78rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:.85rem 1.2rem;font-size:.86rem;transition:transform .3s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media (max-width:900px){
+  .nav{grid-template-columns:auto 1fr}
+  .nav nav{display:none}
+  .hero,.news{grid-template-columns:1fr}
+  .hero-txt{padding:40px 0}
+  .hero-art{min-height:420px}
+  .cats,.products{grid-template-columns:1fr 1fr}
+  .usp{grid-template-columns:1fr 1fr}
+  .usp div:nth-child(2){border-right:0}
+  .look{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><span>Fri frakt över 499 kr</span><span>30 dagars öppet köp</span></div></div>
+<header>
+  <div class="wrap nav">
+    <nav><a href="#nyheter">Nyheter</a><a href="#kategorier">Dam</a><a href="#kategorier">Herr</a><a href="#lookbook">Lookbook</a></nav>
+    <a class="logo" href="#">Studio Ofelia</a>
+    <div class="icons"><span>Sök</span><span>Konto</span><span class="cart">Varukorg<b id="count">0</b></span></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-txt">
+      <div>
+        <span class="kick">Höstkollektion 2026</span>
+        <h1>Tidlösa plagg. Varje dag.</h1>
+      </div>
+      <div class="hero-bottom">
+        <p>Mjuka material, rena linjer och färger som går att kombinera. Designat i Sverige och gjort för att hålla länge.</p>
+        <div class="btns"><a class="btn dark" href="#nyheter">Handla nyheter →</a><a class="btn" href="#lookbook">Lookbook</a></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <span class="no">01</span>
+      <svg viewBox="0 0 120 160"><path d="M42 8h36l6 14 22 10-8 30-12-4v94H34V58l-12 4-8-30 22-10z" fill="#f4f3ef"/><path d="M60 14v146" stroke="#d9d4c9" stroke-width="2"/><circle cx="66" cy="60" r="2.6" fill="#111"/><circle cx="66" cy="84" r="2.6" fill="#111"/><circle cx="66" cy="108" r="2.6" fill="#111"/></svg>
+      <span class="label"><b>Ullkappa Edith</b>1 499 kr</span>
+    </div>
+  </div>
+
+  <div class="wrap usp">
+    <div><b>Fri frakt</b>över 499 kr</div>
+    <div><b>Öppet köp</b>i 30 dagar</div>
+    <div><b>Betala smidigt</b>kort eller Swish</div>
+    <div><b>Snabb leverans</b>1–3 vardagar</div>
+  </div>
+
+  <section id="kategorier">
+    <div class="wrap">
+      <div class="head"><h2>Kategorier</h2><a href="#nyheter">Visa allt</a></div>
+      <div class="cats">
+        <a class="cat" href="#nyheter" style="background:var(--stone)"><svg viewBox="0 0 100 120"><path d="M38 6h24l4 18 16 50-14 4-6-20v56H38V58l-6 20-14-4 16-50z" fill="#111"/></svg><span>Klänningar<small>24</small></span></a>
+        <a class="cat" href="#nyheter" style="background:var(--sage)"><svg viewBox="0 0 100 100"><path d="M26 14h48l14 18-12 8v48H24V40l-12-8z" fill="#f4f3ef"/></svg><span>Toppar<small>38</small></span></a>
+        <a class="cat" href="#nyheter" style="background:var(--sky)"><svg viewBox="0 0 100 120"><path d="M30 8h40l4 104H56l-6-64-6 64H26z" fill="#111"/></svg><span>Byxor<small>19</small></span></a>
+        <a class="cat" href="#nyheter" style="background:var(--clay)"><svg viewBox="0 0 100 120"><path d="M36 6h28l6 12 20 10-8 34-10-4v58H28V58l-10 4-8-34 20-10z" fill="#f4f3ef"/></svg><span>Ytterplagg<small>12</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="nyheter" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Nyheter</h2><a href="#">Alla nyheter</a></div>
+      <div class="products" id="products"></div>
+    </div>
+  </section>
+
+  <section id="lookbook" style="padding-top:0">
+    <div class="wrap look">
+      <div class="txt">
+        <span class="kick" style="color:#bdbbb6">Lookbook</span>
+        <h2>Lager på lager inför hösten.</h2>
+        <div style="display:grid;gap:1.4rem"><p>Våra favoritkombinationer – från stickat och linne till den perfekta kappan.</p><a class="btn" href="#nyheter">Se lookbooken →</a></div>
+      </div>
+      <div class="art" style="background:var(--sage)" aria-hidden="true"><svg viewBox="0 0 100 120"><path d="M38 6h24l4 18 16 50-14 4-6-20v56H38V58l-6 20-14-4 16-50z" fill="#f4f3ef"/></svg></div>
+      <div class="art" style="background:var(--stone)" aria-hidden="true"><svg viewBox="0 0 100 120"><path d="M30 8h40l4 104H56l-6-64-6 64H26z" fill="#c9a58a"/></svg></div>
+    </div>
+  </section>
+
+  <div class="wrap news">
+    <div><h2>10 % på första köpet</h2><p>Få nyheter, erbjudanden och stylingtips direkt i inkorgen.</p></div>
+    <form onsubmit="event.preventDefault();toast('Tack! Kolla din inkorg.')"><input type="email" placeholder="Din e-post" aria-label="E-post"><button class="btn dark" type="submit">Prenumerera</button></form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><span class="logo">Studio Ofelia</span><p style="margin-top:.6rem;max-width:32ch">Tidlösa plagg designade i Sverige. Butik och showroom på Storgatan 12.</p></div>
+      <div><h4>Handla</h4><ul><li>Nyheter</li><li>Dam</li><li>Herr</li><li>Rea</li></ul></div>
+      <div><h4>Kundservice</h4><ul><li>Frakt &amp; leverans</li><li>Returer</li><li>Storleksguide</li><li>Kontakt</li></ul></div>
+      <div><h4>Följ oss</h4><ul><li>Instagram</li><li>TikTok</li><li>Pinterest</li></ul></div>
+    </div>
+    <div class="demo"><span>© 2026 Studio Ofelia</span><span>Exempelsida med påhittat företag · Gjord av Sabimedia</span></div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const shirt = c => `<svg viewBox="0 0 100 100"><path d="M26 14h48l14 18-12 8v48H24V40l-12-8z" fill="${c}"/></svg>`;
+const dress = c => `<svg viewBox="0 0 100 120"><path d="M38 6h24l4 18 16 50-14 4-6-20v56H38V58l-6 20-14-4 16-50z" fill="${c}"/></svg>`;
+const pants = c => `<svg viewBox="0 0 100 120"><path d="M30 8h40l4 104H56l-6-64-6 64H26z" fill="${c}"/></svg>`;
+const coat = c => `<svg viewBox="0 0 100 120"><path d="M36 6h28l6 12 20 10-8 34-10-4v58H28V58l-10 4-8-34 20-10z" fill="${c}"/></svg>`;
+const PRODUCTS = [
+  { name: "Stickad tröja Alva", price: 649, bg: "#e3ded4", art: shirt("#111111"), colors: ["#111111", "#c9a58a", "#f4f3ef"], tag: "Nyhet" },
+  { name: "Linneklänning Siri", price: 899, bg: "#b9c2ad", art: dress("#f4f3ef"), colors: ["#b9c2ad", "#f4f3ef"], tag: "Nyhet" },
+  { name: "Vida byxor Nora", price: 599, was: 749, bg: "#bfcbd6", art: pants("#111111"), colors: ["#111111", "#8a8f99"], tag: "Rea", sale: true },
+  { name: "Ullkappa Edith", price: 1499, bg: "#c9a58a", art: coat("#f4f3ef"), colors: ["#c9a58a", "#5f5d58", "#111111"] }
+];
+let count = 0;
+const kr = n => n.toLocaleString("sv-SE") + " kr";
+document.getElementById("products").innerHTML = PRODUCTS.map((p, i) => `
+  <article class="prod">
+    <div class="img" style="background:${p.bg}">${p.tag ? `<span class="new${p.sale ? " sale" : ""}">${p.tag}</span>` : ""}${p.art}</div>
+    <div class="meta"><h3>${p.name}</h3><span class="price">${p.was ? `<s>${kr(p.was)}</s>` : ""}${kr(p.price)}</span></div>
+    <div class="dots">${p.colors.map(c => `<i style="background:${c}"></i>`).join("")}</div>
+    <div class="row"><select aria-label="Storlek"><option>XS</option><option selected>S</option><option>M</option><option>L</option><option>XL</option></select><button type="button" data-i="${i}">Köp</button></div>
+  </article>`).join("");
+document.getElementById("products").addEventListener("click", e => {
+  const b = e.target.closest("[data-i]"); if (!b) return;
+  document.getElementById("count").textContent = ++count;
+  toast(`${PRODUCTS[b.dataset.i].name} ligger i varukorgen`);
+});
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2200);
+}
+</script>
+</body>
+</html>
