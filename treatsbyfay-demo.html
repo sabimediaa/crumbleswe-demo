@@ -1,0 +1,1876 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>treatsbyfay – Cinnamon rolls, cookies & pop ups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Outfit:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: chocolate top bar, blush heroes (from the logo), cream content sheets with dusty-mauve accents; admin is a separate sidebar app on a cream ground. */
+:root{
+  --sky:#F6E1DF;
+  --sky-deep:#9C6B72;
+  --ink:#653F2C;
+  --ink-soft:#7C5E52;
+  --paper:#FFFCF7;
+  --mist:#F4EFE7;
+  --line:#EEDDD9;
+  --rose:#C9A1A4;
+  --ok:#1F8A57;
+  --ok-bg:#E2F5EA;
+  --warn:#9A5B00;
+  --warn-bg:#FFF1D6;
+  --new-bg:#F6E1E6;
+  --done:#7A6A64;
+  --done-bg:#EFE8E3;
+  --bad:#B4344A;
+  --bad-bg:#FDE7EA;
+  --closed:#CBB9B1;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-deep)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;border-radius:999px;padding:.95rem 1.6rem;font:600 1rem var(--body);cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;text-decoration:none}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--sky-deep);outline-offset:3px}
+.btn-ink{background:var(--ink);color:var(--paper);box-shadow:0 10px 24px -10px rgba(101,63,44,.6)}
+.btn-ghost{background:rgba(255,255,255,.22);color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(101,63,44,.25)}
+.btn-sky{background:var(--sky);color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+.cookie{display:block;aspect-ratio:1}
+.cookie .photo{width:100%;height:100%;display:block;object-fit:contain;user-select:none}
+
+/* ---------- Logo ---------- */
+.logo{width:48px;height:48px;border-radius:50%;background:#F7E7E6 url(bilder/treatsbyfay-logo.jpg) 62% 56%/112% auto no-repeat;box-shadow:0 0 0 3px var(--paper);flex:none;display:block}
+.side .logo{width:40px;height:40px}
+.logo-foot{width:96px;height:96px}
+.logo-hero{width:min(240px,62%);height:auto;aspect-ratio:1;box-shadow:0 0 0 6px var(--sky),0 20px 40px -20px rgba(101,63,44,.45)}
+
+/* ---------- Placeholders ---------- */
+.ph{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;font-family:var(--display);font-style:italic;font-weight:700;font-size:1.4em;color:var(--paper);box-shadow:inset 0 0 0 4px rgba(255,252,247,.55)}
+.hero-art .frame{position:absolute;inset:8% 10% 4% 14%;background:var(--paper);border-radius:28px;border:12px solid var(--sky-deep);outline:3px dashed var(--paper);outline-offset:-22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center;padding:1.5rem;color:var(--ink-soft);box-shadow:0 30px 50px -24px rgba(101,63,44,.45);animation:float 7s ease-in-out infinite}
+.hero-art .frame strong{font-family:var(--display);font-style:italic;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--rose);line-height:1.05}
+.hero-art .frame span{font-size:.92rem}
+
+/* ---------- Top bar ---------- */
+.top{background:var(--ink);border-bottom:0;color:var(--paper);position:relative;z-index:5;box-shadow:0 10px 30px -18px rgba(101,63,44,.8)}
+.top .brand{color:var(--sky);font-size:1.65rem;letter-spacing:.01em;font-style:normal}
+.top .logo{width:54px;height:54px;box-shadow:0 0 0 3px var(--sky)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.2rem}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-style:italic;font-size:1.5rem;font-weight:700;color:var(--ink);text-decoration:none}
+.brand .cookie{width:42px;height:42px}
+.navlinks{display:flex;gap:.3rem;font-weight:500}
+.navlinks a{text-decoration:none;padding:.5rem .95rem;border-radius:999px;transition:background .2s, color .2s;color:var(--paper);opacity:.85}
+.navlinks a:hover{background:rgba(255,255,255,.1);opacity:1}
+.navlinks a.on{background:var(--sky);color:var(--ink);opacity:1}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.admin-pill{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;font-weight:600;padding:.6rem 1rem;border-radius:999px;background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);transition:transform .2s ease, background .2s ease}
+.admin-pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+@media (max-width:520px){.admin-pill{padding:.6rem .75rem}.admin-pill span{display:none}}
+.cart-pill{display:flex;align-items:center;gap:.6rem;background:var(--paper);color:var(--ink);border-radius:999px;padding:.55rem .6rem .55rem 1.1rem;font-weight:600;box-shadow:0 8px 20px -12px rgba(101,63,44,.5);text-decoration:none;border:0;cursor:pointer}
+.cart-pill b{background:var(--ink);color:var(--paper);border-radius:999px;min-width:28px;height:28px;display:grid;place-items:center;font-size:.85rem;padding:0 .4rem}
+.cart-pill.bump b{animation:bump .4s ease}
+@keyframes bump{50%{transform:scale(1.3)}}
+
+/* ---------- Hero (home) ---------- */
+.hero{background:var(--sky);position:relative;overflow:hidden;padding-bottom:7rem}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(closest-side, rgba(255,255,255,.35), transparent);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2rem;padding-top:2.75rem;position:relative}
+.hero-copy{display:flex;flex-direction:column;gap:1.6rem;min-width:0}
+.hero h1{font-size:clamp(2.6rem, 6.2vw, 5.2rem);line-height:.98}
+.hero h1 em,.page-hero h1 em{font-style:italic;font-weight:500;color:var(--sky-deep)}
+.hero-copy p{font-size:1.15rem;max-width:30rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.trust{display:flex;flex-wrap:wrap;gap:1.6rem;font-size:.92rem;font-weight:500}
+.trust div{display:flex;flex-direction:column}
+.trust strong{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+.hero-art{position:relative;aspect-ratio:1;max-width:100%;width:min(520px,100%);justify-self:center}
+.hero-art .big{position:absolute;inset:6%;filter:drop-shadow(0 30px 40px rgba(101,63,44,.28));animation:float 6s ease-in-out infinite}
+.hero-art .small{position:absolute;width:30%;right:-2%;bottom:4%;filter:drop-shadow(0 18px 24px rgba(101,63,44,.25));animation:float 6s ease-in-out -3s infinite}
+.price-badge{position:absolute;top:4%;left:-2%;width:clamp(110px,26%,140px);aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center;text-align:center;transform:rotate(-12deg);box-shadow:0 14px 30px -14px rgba(101,63,44,.55)}
+.price-badge span{display:block;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.price-badge strong{display:block;font-family:var(--display);font-size:2.4rem;line-height:1}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(3deg)}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:90px;width:100%;display:block}
+
+/* ---------- Page hero (inner pages) ---------- */
+.page-hero{background:var(--sky);position:relative;overflow:hidden;padding-block:2.75rem 6.5rem}
+.page-hero .wrap{display:flex;flex-direction:column;gap:1rem;position:relative}
+.page-hero .eyebrow{color:var(--ink);opacity:.7}
+.page-hero h1{font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1}
+.page-hero p{max-width:36rem;font-size:1.1rem}
+.page-hero .deco{position:absolute;right:max(16px, env(safe-area-inset-right, 0px));bottom:-1.5rem;width:clamp(110px,18vw,200px);filter:drop-shadow(0 20px 26px rgba(101,63,44,.25));animation:float 7s ease-in-out infinite}
+
+/* ---------- Marquee ---------- */
+.strip{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding-block:.9rem;font-family:var(--display);font-style:italic;font-size:1.25rem}
+.strip-track{display:inline-flex;gap:2.5rem;animation:slide 32s linear infinite;padding-left:2.5rem}
+.strip-track span::after{content:"♥";margin-left:2.5rem;font-style:normal;color:var(--sky)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+.sec{padding-block:5rem}
+.sec.tight{padding-block:3rem 5rem}
+.sec.mist{background:var(--mist)}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin-top:.4rem}
+.hint{font-size:.9rem;color:var(--ink-soft);margin-top:.5rem}
+.link-arrow{font-weight:600;text-decoration:none;border-bottom:2px solid var(--sky);padding-bottom:2px}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{border-radius:999px;padding:.5rem 1rem;font-weight:500;font-size:.92rem;background:var(--mist);color:var(--ink-soft);border:0;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--paper)}
+
+/* ---------- Menu cards ---------- */
+.shop-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:2rem;align-items:start}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:1rem 1rem 1.2rem;display:flex;flex-direction:column;gap:.9rem;transition:transform .25s ease, box-shadow .25s ease;cursor:pointer;min-width:0}
+.item:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(101,63,44,.35)}
+.item.out{opacity:.6}
+.item-art{background:var(--mist);border-radius:18px;aspect-ratio:1/.82;display:grid;place-items:center;position:relative}
+.item-art .cookie{width:68%;filter:drop-shadow(0 14px 16px rgba(101,63,44,.22));transition:transform .4s ease}
+.item:hover .item-art .cookie{transform:rotate(14deg) scale(1.04)}
+.tag{position:absolute;z-index:2;top:.7rem;left:.7rem;background:var(--paper);color:var(--ink);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px}
+.tag.new{background:var(--sky-deep);color:var(--paper)}
+.info-btn{position:absolute;z-index:2;top:.7rem;right:.7rem;display:inline-flex;align-items:center;gap:.35rem;background:var(--paper);font-size:.75rem;font-weight:600;padding:.3rem .7rem .3rem .4rem;border-radius:999px;box-shadow:0 4px 12px -6px rgba(101,63,44,.35)}
+.info-btn i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:.72rem}
+.item h3{font-size:1.25rem;line-height:1.15}
+.item p{font-size:.9rem;color:var(--ink-soft);min-height:2.8em}
+.item-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:auto}
+.price{font-family:var(--display);font-weight:700;font-size:1.3rem}
+.price small{font-family:var(--body);font-weight:500;font-size:.8rem;color:var(--ink-soft)}
+.add{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:1.4rem;line-height:1;border:0;cursor:pointer;transition:transform .15s}
+.add:hover{transform:scale(1.08)}
+.stepper{display:flex;align-items:center;gap:.2rem;background:var(--sky);border-radius:999px;padding:.25rem}
+.stepper button{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;font-weight:600;background:var(--paper);border:0;cursor:pointer;font-size:1.05rem}
+.stepper b{min-width:26px;text-align:center;font-variant-numeric:tabular-nums}
+.soldout{font-size:.82rem;font-weight:600;background:var(--done-bg);color:var(--done);padding:.4rem .8rem;border-radius:999px}
+
+/* ---------- Order card ---------- */
+.order{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 1.2rem);background:var(--ink);color:var(--paper);border-radius:28px;padding:1.6rem;display:flex;flex-direction:column;gap:1.3rem;box-shadow:0 30px 60px -30px rgba(101,63,44,.7)}
+.order h3{font-size:1.6rem}
+.order-head{display:flex;justify-content:space-between;align-items:baseline}
+.order-head span{font-size:.85rem;opacity:.7}
+.toggle{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.1);border-radius:999px;padding:.3rem;font-weight:600;font-size:.92rem;text-align:center}
+.toggle button{padding:.55rem;border-radius:999px;opacity:.75;background:transparent;border:0;cursor:pointer;color:var(--paper)}
+.toggle button.on{background:var(--paper);color:var(--ink);opacity:1}
+.lines{display:flex;flex-direction:column;gap:.85rem;list-style:none;margin:0;padding:0}
+.lines li{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:.8rem}
+.lines .cookie{width:40px;height:40px}
+.lines .name{font-weight:500;line-height:1.25}
+.lines .qty{display:block;font-size:.82rem;opacity:.65}
+.lines .sum{font-variant-numeric:tabular-nums;font-weight:600}
+.empty{opacity:.7;font-size:.95rem;padding:.6rem 0}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.field{background:rgba(255,255,255,.08);border-radius:14px;padding:.6rem .8rem}
+.field small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.field div{font-weight:500}
+.totals{border-top:1px dashed rgba(255,255,255,.25);padding-top:1rem;display:flex;flex-direction:column;gap:.4rem;font-variant-numeric:tabular-nums}
+.totals div{display:flex;justify-content:space-between;font-size:.95rem;opacity:.8}
+.totals .grand{opacity:1;font-family:var(--display);font-size:1.7rem;font-weight:700;margin-top:.3rem}
+.order .btn{justify-content:center;width:100%;font-size:1.05rem}
+.order .note{font-size:.8rem;text-align:center;opacity:.6}
+
+/* ---------- Boxes ---------- */
+.box-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.box{background:var(--paper);border-radius:28px;padding:1.8rem;display:flex;flex-direction:column;gap:1.2rem;border:1px solid var(--line)}
+.box.feature{background:var(--sky);border-color:transparent}
+.box-cookies{display:flex;flex-wrap:wrap;gap:.3rem;min-height:84px;align-content:center}
+.box-cookies .cookie{width:38px;height:38px}
+.box h3{font-size:1.6rem}
+.box p{color:var(--ink-soft)}
+.box.feature p{color:var(--ink)}
+.box-price{display:flex;align-items:baseline;justify-content:space-between;margin-top:auto;border-top:1px solid var(--line);padding-top:1rem}
+.box.feature .box-price{border-color:rgba(101,63,44,.18)}
+.box-price strong{font-family:var(--display);font-size:2rem}
+.box-price span{font-size:.88rem;color:var(--ink-soft)}
+.box.feature .box-price span{color:var(--ink)}
+
+/* ---------- Steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2.4rem 0 0;list-style:none;padding:0}
+.steps li{display:flex;flex-direction:column;gap:.6rem;border-top:2px solid var(--ink);padding-top:1.2rem}
+.steps .n{font-family:var(--display);font-style:italic;color:var(--sky-deep);font-weight:700}
+.steps h3{font-size:1.4rem}
+.steps p{color:var(--ink-soft);max-width:30ch}
+
+/* ---------- CTA band ---------- */
+.band{background:var(--ink);color:var(--paper);border-radius:32px;padding:clamp(1.8rem,4vw,3rem);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;position:relative;overflow:hidden}
+.band h2{font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.05}
+.band h2 em{color:var(--sky);font-weight:500}
+.band p{opacity:.8;margin-top:.7rem;max-width:34rem}
+
+/* ---------- Catering ---------- */
+.catering{background:var(--ink);color:var(--paper);padding-block:5.5rem;position:relative;overflow:hidden}
+.catering::after{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-180px;border-radius:50%;background:radial-gradient(closest-side, rgba(242,208,205,.35), transparent);pointer-events:none}
+.cat-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.cat-copy{display:flex;flex-direction:column;gap:1.4rem;min-width:0}
+.catering .eyebrow{color:var(--sky)}
+.catering h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.02}
+.catering h2 em{font-style:italic;font-weight:500;color:var(--sky)}
+.cat-copy > p{font-size:1.1rem;opacity:.85;max-width:34rem}
+.occasions{display:flex;flex-wrap:wrap;gap:.5rem}
+.occasions button{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.45rem 1rem;font-size:.92rem;font-weight:500;background:transparent;color:var(--paper);cursor:pointer}
+.occasions button.on{background:var(--sky);color:var(--ink);border-color:var(--sky)}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.6rem;list-style:none;margin:0;padding:0}
+.perks li{display:flex;flex-direction:column;gap:.2rem;border-top:1px solid rgba(255,255,255,.18);padding-top:.9rem}
+.perks strong{font-family:var(--display);font-size:1.15rem}
+.perks span{font-size:.92rem;opacity:.72}
+.quote{background:var(--paper);color:var(--ink);border-radius:28px;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem;box-shadow:0 40px 70px -35px rgba(0,0,0,.6);min-width:0}
+.quote-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.quote h3{font-size:1.5rem}
+.quote-head .tag{position:static;background:var(--mist);color:var(--sky-deep)}
+.quote .field{background:var(--mist);border:1px solid var(--line)}
+.quote .field small{color:var(--ink-soft);opacity:1}
+.quote .field.wide{grid-column:1/-1}
+.qty-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--sky);border-radius:18px;padding:1rem 1.1rem}
+.qty-row small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;opacity:.7}
+.qty-row strong{font-family:var(--display);font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.qty-row .stepper{background:var(--paper)}
+.qty-row .stepper button{background:var(--sky)}
+.quote-total{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-variant-numeric:tabular-nums;border-top:1px dashed var(--line);padding-top:1rem}
+.quote-total span{color:var(--ink-soft);font-size:.92rem}
+.quote-total strong{font-family:var(--display);font-size:1.8rem}
+.quote .btn{justify-content:center;width:100%}
+.quote .note{font-size:.8rem;text-align:center;color:var(--ink-soft)}
+
+/* Catering form */
+.cat-grid{align-items:start}
+.qf{display:flex;flex-direction:column;gap:1rem}
+.quote label,.qlabel{display:flex;flex-direction:column;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.qlabel{flex-direction:row;justify-content:space-between;align-items:baseline}
+.qlabel span{font-weight:400;font-size:.8rem}
+.quote input,.quote select,.quote textarea{font:500 1rem var(--body);color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:.75rem .9rem;width:100%;min-width:0}
+.quote textarea{min-height:90px;resize:vertical}
+.quote input:focus,.quote select:focus,.quote textarea:focus{outline:2px solid var(--sky-deep);outline-offset:1px;background:var(--paper)}
+.quote select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4rem;cursor:pointer}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.cal{border:1px solid var(--line);border-radius:18px;padding:.9rem;margin-top:-.6rem}
+.cal-head{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:var(--display);font-size:1.1rem}
+.cal-head button{width:34px;height:34px;border-radius:50%;border:0;background:var(--mist);cursor:pointer;font-size:1.2rem;line-height:1}
+.cal-head button:disabled{opacity:.35;cursor:not-allowed}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:.7rem;text-align:center}
+.cal-dow{font-size:.7rem;color:var(--ink-soft);font-weight:600;letter-spacing:.06em;padding:.2rem 0 .35rem}
+.day{aspect-ratio:1;border:0;border-radius:10px;background:var(--mist);color:var(--ink);font:500 .9rem var(--body);cursor:pointer;font-variant-numeric:tabular-nums;position:relative;padding:0;min-width:0}
+.day:hover:not(:disabled){background:var(--sky)}
+.day.closed{background:transparent;color:var(--closed);cursor:not-allowed}
+.day.booked{background:var(--bad-bg);color:var(--bad);cursor:not-allowed;text-decoration:line-through}
+.day.sel{background:var(--ink);color:var(--paper)}
+.day.today::after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--sky-deep)}
+.cal-legend{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin-top:.8rem;font-size:.75rem;color:var(--ink-soft)}
+.cal-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.cal-legend b{width:12px;height:12px;border-radius:4px;display:inline-block}
+.lg-free{background:var(--mist);box-shadow:inset 0 0 0 1px var(--line)}
+.lg-booked{background:var(--bad-bg);box-shadow:inset 0 0 0 1px var(--bad)}
+.lg-closed{background:transparent;box-shadow:inset 0 0 0 1px var(--closed)}
+.lg-sel{background:var(--ink)}
+.cal-picked{font-size:.9rem;font-weight:600;margin-top:-.4rem}
+.cal-picked.none{color:var(--ink-soft);font-weight:400}
+.flav{display:flex;flex-wrap:wrap;gap:.45rem}
+.flav button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:.45rem .9rem;font-size:.88rem;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+.flav button .cookie{width:18px;height:18px}
+.flav button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.qerr{background:var(--bad-bg);color:var(--bad);border-radius:12px;padding:.6rem .9rem;font-size:.9rem;font-weight:500}
+.qthanks{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem;padding:1rem 0}
+.qthanks .cookie{width:90px}
+.qthanks h3{font-size:1.6rem}
+.qthanks p{color:var(--ink-soft);font-size:.92rem}
+.qthanks dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem;width:100%;text-align:left;background:var(--mist);border-radius:16px;padding:1rem 1.1rem;font-size:.92rem}
+.qthanks dt{color:var(--ink-soft)}
+.qthanks dd{margin:0;font-weight:600;text-align:right}
+@media (max-width:520px){.qrow{grid-template-columns:1fr}.cal{padding:.6rem}.day{font-size:.82rem;border-radius:8px}}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:.7rem;max-width:820px}
+.faq details{border:1px solid var(--line);border-radius:18px;padding:1.1rem 1.3rem;background:var(--paper)}
+.faq summary{cursor:pointer;font-family:var(--display);font-size:1.2rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--body);font-weight:500;font-size:1.4rem;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:.7rem;color:var(--ink-soft);max-width:65ch}
+
+/* ---------- Pop up ---------- */
+.page-hero .logo.deco{height:auto;aspect-ratio:1;box-shadow:0 0 0 5px var(--paper)}
+.pnext{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);background:var(--ink);color:var(--paper);border-radius:32px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(101,63,44,.7)}
+.pnext-main{padding:clamp(1.6rem,4vw,2.8rem);display:flex;flex-direction:column;gap:1.2rem;min-width:0}
+.plive{display:inline-flex;align-items:center;gap:.55rem;align-self:flex-start;background:rgba(255,255,255,.12);border-radius:999px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.plive i{width:9px;height:9px;border-radius:50%;background:var(--sky);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(246,225,223,.7)}70%{box-shadow:0 0 0 10px rgba(246,225,223,0)}100%{box-shadow:0 0 0 0 rgba(246,225,223,0)}}
+.pnext h2{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1}
+.pmeta{display:flex;flex-wrap:wrap;gap:.5rem}
+.pmeta span{background:rgba(255,255,255,.1);border-radius:999px;padding:.4rem .9rem;font-size:.92rem}
+.pcount{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;max-width:26rem}
+.pcount div{background:var(--paper);color:var(--ink);border-radius:18px;padding:.7rem .3rem;text-align:center}
+.pcount strong{display:block;font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1;font-variant-numeric:tabular-nums}
+.pcount small{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.pn-map{color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);background:transparent}
+.pnext-side{background:var(--sky);color:var(--ink);padding:clamp(1.6rem,4vw,2.8rem);display:flex;flex-direction:column;gap:1rem;min-width:0}
+.pnext-side p{font-size:.92rem;color:var(--ink-soft)}
+.pmenu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.pmenu li{display:flex;align-items:center;gap:.7rem;background:var(--paper);border-radius:999px;padding:.35rem 1rem .35rem .35rem;font-weight:500}
+.pmenu .cookie{width:34px;height:34px;flex:none;font-size:.7rem}
+.stops{display:flex;flex-direction:column;gap:.8rem}
+.stop{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:1.2rem;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:1rem 1.2rem;transition:transform .25s, box-shadow .25s}
+.stop:hover{transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(101,63,44,.45)}
+.sdate{aspect-ratio:1;border-radius:18px;background:var(--sky);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.sdate small{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.sdate strong{font-family:var(--display);font-size:2rem;margin:.12rem 0;color:var(--sky-deep)}
+.sdate span{font-size:.75rem;font-weight:600}
+.sinfo{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.sinfo h3{font-size:1.25rem;line-height:1.15}
+.sinfo p{color:var(--ink-soft);font-size:.92rem}
+.stags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.2rem}
+.stags span{background:var(--mist);border-radius:999px;padding:.2rem .7rem;font-size:.76rem;font-weight:600}
+.sact{display:flex;gap:.45rem}
+.sact button,.sact a{width:44px;height:44px;border-radius:50%;border:0;display:grid;place-items:center;background:var(--mist);color:var(--ink);cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.sact button:hover,.sact a:hover{background:var(--ink);color:var(--paper)}
+.sact svg{width:18px;height:18px}
+@media (max-width:820px){.pnext{grid-template-columns:1fr}}
+@media (max-width:560px){.stop{grid-template-columns:64px minmax(0,1fr);gap:.9rem;padding:.9rem}.sdate strong{font-size:1.6rem}.sact{grid-column:1/-1;justify-content:flex-end;margin-top:-.3rem}.pcount{gap:.4rem}.pcount div{border-radius:14px}}
+
+/* ---------- Om oss ---------- */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}
+.about-text{display:flex;flex-direction:column;gap:1.1rem;max-width:34rem}
+.about-text h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05}
+.about-text p{color:var(--ink-soft);font-size:1.05rem}
+.about-art{background:var(--sky);border-radius:32px;aspect-ratio:1/.9;position:relative;overflow:hidden;max-width:100%}
+.about-art .cookie{position:absolute;filter:drop-shadow(0 18px 22px rgba(101,63,44,.28))}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.value{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:1.6rem;display:flex;flex-direction:column;gap:.5rem}
+.value h3{font-size:1.35rem}
+.value p{color:var(--ink-soft)}
+
+/* ---------- Kontakt ---------- */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2rem;align-items:start}
+.cinfo{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cinfo div{background:var(--mist);border-radius:20px;padding:1.2rem 1.3rem;display:flex;flex-direction:column;gap:.2rem}
+.cinfo small{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--sky-deep)}
+.cinfo span{font-weight:500}
+.form{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:1.8rem;display:flex;flex-direction:column;gap:1rem}
+.form h3{font-size:1.5rem}
+.form label{display:flex;flex-direction:column;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.form input,.form textarea,.form select{font:500 1rem var(--body);color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;width:100%}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{outline:2px solid var(--sky-deep);outline-offset:1px;background:var(--paper)}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.thanks{text-align:center;padding:2rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.thanks .cookie{width:90px}
+.thanks h3{font-size:1.8rem}
+.thanks p{color:var(--ink-soft)}
+
+/* ---------- Footer ---------- */
+.socials{display:flex;gap:.6rem;align-items:center}
+.socials a{width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;transition:transform .2s ease, background .2s ease}
+.socials a:hover{transform:translateY(-3px);background:var(--sky-deep)}
+footer{background:var(--sky);padding-block:4rem 2.5rem;position:relative}
+.foot-top h2{color:var(--ink)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
+.foot-top h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1}
+.foot-top h2 em{color:var(--sky-deep);font-weight:500}
+.foot-col{display:flex;flex-direction:column;gap:.35rem}
+.foot-col a{text-decoration:none}
+.foot-col a:hover{text-decoration:underline}
+.foot-col .eyebrow{color:var(--ink);opacity:.6;margin-bottom:.3rem}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(101,63,44,.18);font-size:.88rem}
+.foot-bottom a{font-weight:600}
+
+/* ---------- Info dialog ---------- */
+dialog.info{border:0;padding:0;border-radius:28px;width:min(760px, calc(100% - 32px));max-height:calc(100% - 32px);background:var(--paper);color:var(--ink);box-shadow:0 40px 90px -30px rgba(101,63,44,.6);overflow:auto}
+dialog.info::backdrop{background:rgba(101,63,44,.55);backdrop-filter:blur(4px)}
+dialog.info[open]{animation:pop .28s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.info-wrap{position:relative}
+.info-grid{display:grid;grid-template-columns:260px minmax(0,1fr)}
+.info-art{background:var(--sky);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:2rem 1.5rem}
+.info-art .cookie{width:180px;max-width:100%;filter:drop-shadow(0 20px 24px rgba(101,63,44,.3))}
+.info-art .price{font-size:1.8rem}
+.info-body{padding:2rem;display:flex;flex-direction:column;gap:1.4rem;min-width:0}
+.info-body h2{font-size:2rem;line-height:1.05}
+.info-body .desc{color:var(--ink-soft)}
+.info-body h4{margin:0 0 .6rem;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-deep)}
+.ingr{margin:0;line-height:1.65}
+.allergens{display:flex;flex-wrap:wrap;gap:.5rem}
+.al{display:inline-block;border-radius:999px;padding:.4rem .95rem;font-size:.9rem;font-weight:600;background:var(--ink);color:var(--paper);cursor:default}
+.trace-note{margin-top:.7rem;font-size:.85rem;color:var(--ink-soft)}
+.trace-note b{color:var(--ink);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem}
+.facts span{background:var(--mist);border-radius:999px;padding:.4rem .9rem;font-size:.85rem;font-weight:500}
+.info-actions .btn{width:100%;justify-content:center}
+.info-actions .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:0 6px 16px -8px rgba(101,63,44,.5);z-index:2}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom, 0px) + 24px);transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:.85rem 1.3rem;border-radius:999px;font-weight:500;box-shadow:0 20px 40px -18px rgba(101,63,44,.7);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:50;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Admin ---------- */
+.admin{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh;background:var(--mist)}
+.side{background:var(--ink);color:var(--paper);padding-block:1.6rem;padding-left:max(1.2rem, env(safe-area-inset-left, 0px));padding-right:1.2rem;display:flex;flex-direction:column;gap:1.6rem;position:sticky;top:0;height:100vh}
+.side .brand{color:var(--sky);font-size:1.15rem;flex-wrap:wrap;row-gap:.3rem}
+.side .brand small{font-family:var(--body);font-style:normal;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--sky);color:var(--ink);padding:.15rem .5rem;border-radius:999px}
+.side-nav{display:flex;flex-direction:column;gap:.3rem}
+.side-nav button{display:flex;align-items:center;justify-content:space-between;gap:.6rem;text-align:left;padding:.75rem 1rem;border-radius:14px;border:0;background:transparent;color:var(--paper);opacity:.75;font-weight:500;cursor:pointer}
+.side-nav button:hover{opacity:1;background:rgba(255,255,255,.06)}
+.side-nav button.on{background:rgba(255,255,255,.12);opacity:1}
+.side-nav .count{background:var(--sky);color:var(--ink);font-size:.75rem;font-weight:700;border-radius:999px;padding:.05rem .5rem}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:.8rem;font-size:.88rem}
+.side-foot .who{display:flex;align-items:center;gap:.6rem;opacity:.85}
+.side-foot .who b{width:34px;height:34px;border-radius:50%;background:var(--sky);color:var(--ink);display:grid;place-items:center}
+.side-foot a{opacity:.75;text-decoration:none}
+.side-foot a:hover{opacity:1}
+.amain{padding-block:2rem 4rem;padding-left:max(16px, 2.2rem);padding-right:max(16px, env(safe-area-inset-right, 0px), 2.2rem);display:flex;flex-direction:column;gap:1.6rem;min-width:0}
+.ahead{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.ahead h1{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1}
+.ahead p{color:var(--ink-soft)}
+.demo-flag{font-size:.78rem;font-weight:600;background:var(--warn-bg);color:var(--warn);padding:.35rem .8rem;border-radius:999px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.kpi{background:var(--paper);border-radius:20px;padding:1.2rem 1.3rem;display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--line)}
+.kpi small{font-size:.82rem;color:var(--ink-soft);font-weight:500}
+.kpi strong{font-family:var(--display);font-size:2rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:.8rem;color:var(--ink-soft)}
+.kpi.hi{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.kpi.hi small,.kpi.hi span{color:var(--paper);opacity:.7}
+.acols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:1.2rem;align-items:start}
+.panel{background:var(--paper);border-radius:22px;border:1px solid var(--line);padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:1rem;min-width:0}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.panel h2{font-size:1.3rem}
+.panel-head .muted{font-size:.85rem;color:var(--ink-soft)}
+.tbl{overflow-x:auto;margin:0 -.4rem}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:560px}
+th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;text-align:left;padding:.5rem .4rem;border-bottom:1px solid var(--line)}
+td{padding:.75rem .4rem;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.cust{display:flex;flex-direction:column}
+.cust small{color:var(--ink-soft);font-size:.8rem}
+.pill{display:inline-flex;align-items:center;gap:.4rem;border:0;border-radius:999px;padding:.3rem .75rem;font-size:.8rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.s-ny{background:var(--new-bg);color:var(--sky-deep)}
+.pill.s-bakas{background:var(--warn-bg);color:var(--warn)}
+.pill.s-klar{background:var(--ok-bg);color:var(--ok)}
+.pill.s-hamtad{background:var(--done-bg);color:var(--done)}
+.bake{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.bake li{display:grid;grid-template-columns:34px minmax(0,1fr) auto auto;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.bake li:last-child{border-bottom:0}
+.bake .cookie{width:34px;height:34px}
+.bake strong{font-variant-numeric:tabular-nums;font-size:1.05rem}
+.bake li.done .nm{text-decoration:line-through;color:var(--ink-soft)}
+.check{width:28px;height:28px;border-radius:8px;border:2px solid var(--line);background:var(--paper);cursor:pointer;display:grid;place-items:center;font-size:.9rem;color:var(--paper)}
+.check.on{background:var(--ok);border-color:var(--ok)}
+.bake-foot{display:flex;justify-content:space-between;font-weight:600;padding-top:.4rem;font-variant-numeric:tabular-nums}
+.reqs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.req{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:1.3rem;display:flex;flex-direction:column;gap:.8rem}
+.req-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.req h3{font-size:1.25rem}
+.req dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem .9rem;font-size:.9rem}
+.req dt{color:var(--ink-soft)}
+.req dd{margin:0;font-weight:500;text-align:right}
+.req .sum{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:.8rem}
+.req .sum strong{font-family:var(--display);font-size:1.5rem}
+.req .btn{justify-content:center;padding:.75rem 1rem;font-size:.92rem}
+.mlist{display:flex;flex-direction:column}
+.mrow{display:grid;grid-template-columns:52px minmax(0,1fr) auto auto;gap:1rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.mrow:last-child{border-bottom:0}
+.mrow .cookie{width:52px;height:52px}
+.mrow .nm{font-weight:600}
+.mrow .nm small{display:block;color:var(--ink-soft);font-weight:400;font-size:.85rem}
+.mrow .pr{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums}
+.switch{position:relative;width:52px;height:30px;border-radius:999px;border:0;background:var(--line);cursor:pointer;transition:background .2s;flex:none}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--paper);box-shadow:0 2px 6px rgba(101,63,44,.25);transition:transform .2s}
+.switch[aria-checked="true"]{background:var(--ok)}
+.switch[aria-checked="true"]::after{transform:translateX(22px)}
+.sw-wrap{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--ink-soft);min-width:150px;justify-content:flex-end}
+
+/* Admin catering calendar */
+.acal-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:1.2rem;align-items:start}
+.cal.acal{margin-top:0;border:0;padding:0}
+.acal .day{background:transparent;cursor:pointer}
+.acal .day.closed{cursor:pointer}
+.acal .day:hover{background:var(--mist)}
+.acal .day.ev-ok{background:var(--ok-bg);color:var(--ok);font-weight:700}
+.acal .day.ev-quote{background:var(--warn-bg);color:var(--warn);font-weight:700}
+.acal .day.ev-new{background:var(--new-bg);color:var(--sky-deep);font-weight:700}
+.acal .day.asel{box-shadow:inset 0 0 0 2px var(--ink)}
+.lg-ok{background:var(--ok-bg);box-shadow:inset 0 0 0 1px var(--ok)}
+.lg-quote{background:var(--warn-bg);box-shadow:inset 0 0 0 1px var(--warn)}
+.lg-new{background:var(--new-bg);box-shadow:inset 0 0 0 1px var(--sky-deep)}
+.ev-head{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.ev-head .muted{font-size:.85rem;color:var(--ink-soft)}
+.ev-title{font-size:1.6rem;line-height:1.1;margin-top:.2rem}
+.ev-dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.55rem 1rem;font-size:.92rem}
+.ev-dl dt{color:var(--ink-soft)}
+.ev-dl dd{margin:0;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.ev-flav{display:flex;flex-wrap:wrap;gap:.35rem}
+.ev-flav > span{display:inline-flex;align-items:center;gap:.35rem;background:var(--mist);border-radius:999px;padding:.2rem .65rem .2rem .25rem;font-size:.82rem}
+.ev-flav .cookie{width:22px;height:22px;flex:none}
+.ev-note{background:var(--mist);border-radius:14px;padding:.8rem 1rem;font-size:.9rem}
+.ev-sum{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:.9rem;font-variant-numeric:tabular-nums}
+.ev-sum span{color:var(--ink-soft);font-size:.88rem}
+.ev-sum strong{font-family:var(--display);font-size:1.6rem}
+#ev-detail .btn{justify-content:center;padding:.8rem 1rem;font-size:.95rem}
+.ev-empty{color:var(--ink-soft);text-align:center;padding:2rem 1rem;display:flex;flex-direction:column;gap:.4rem}
+.ev-empty strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
+#ev-list tr{cursor:pointer}
+#ev-list tr:hover td{background:var(--mist)}
+#ev-list tr.sel td{background:var(--new-bg)}
+@media (max-width:1020px){.acal-grid{grid-template-columns:1fr}}
+
+/* Admin: pickup + menu editor */
+.acols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem;align-items:start}
+.aform{display:flex;flex-direction:column;gap:.9rem}
+.aform label,.ed label{display:flex;flex-direction:column;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.aform input,.aform textarea,.ed input,.ed textarea,.ed select{font:500 1rem var(--body);color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:.7rem .9rem;width:100%;min-width:0}
+.aform textarea,.ed textarea{resize:vertical;line-height:1.5}
+.aform input:focus,.aform textarea:focus,.ed input:focus,.ed textarea:focus,.ed select:focus{outline:2px solid var(--sky-deep);outline-offset:1px;background:var(--paper)}
+.aform .row2,.ed .row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.aform .btn,.ed .btn{justify-content:center;padding:.8rem 1.2rem;font-size:.95rem}
+.slots{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.slots li{display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:var(--mist);border-radius:14px;padding:.6rem .7rem .6rem 1rem;font-weight:600;font-variant-numeric:tabular-nums}
+.icon-btn{width:34px;height:34px;border-radius:50%;border:0;background:var(--paper);color:var(--ink);cursor:pointer;font-size:.95rem;display:grid;place-items:center;flex:none}
+.icon-btn:hover{background:var(--bad-bg);color:var(--bad)}
+.slot-add{display:grid;grid-template-columns:1fr auto 1fr auto;gap:.5rem;align-items:end}
+.slot-add span{padding-bottom:.75rem;color:var(--ink-soft)}
+.slot-add input{font:500 1rem var(--body);color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:.65rem .7rem;width:100%;min-width:0}
+.slot-add .btn{padding:.7rem 1rem;font-size:.92rem}
+.preview-card{background:var(--ink);color:var(--paper);border-radius:18px;padding:1rem 1.2rem;font-size:.92rem;display:flex;flex-direction:column;gap:.2rem}
+.preview-card small{opacity:.65;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.empty-note{color:var(--ink-soft);font-size:.92rem;padding:.4rem 0}
+.mrow{grid-template-columns:52px minmax(0,1fr) auto auto}
+.mrow .nm small{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.m-actions{display:flex;gap:.4rem}
+.m-actions button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:.45rem .9rem;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap}
+.m-actions button:hover{background:var(--mist)}
+.m-actions .del.arm{background:var(--bad);border-color:var(--bad);color:var(--paper)}
+.ph-cookie{width:100%;height:100%;border-radius:50%;background:var(--mist);border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:700;color:var(--sky-deep);font-size:1.4em}
+dialog.ed-dlg{border:0;padding:0;border-radius:28px;width:min(820px, calc(100% - 32px));max-height:calc(100% - 32px);background:var(--paper);color:var(--ink);box-shadow:0 40px 90px -30px rgba(101,63,44,.6);overflow:auto}
+dialog.ed-dlg::backdrop{background:rgba(101,63,44,.55);backdrop-filter:blur(4px)}
+.ed{display:flex;flex-direction:column;gap:1.2rem;padding:1.6rem}
+.ed-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.ed-head h2{font-size:1.6rem}
+.ed-head .close{position:static}
+.ed-grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.4rem;align-items:start}
+.ed-img{display:flex;flex-direction:column;align-items:center;gap:.8rem;background:var(--sky);border-radius:22px;padding:1.2rem}
+.ed-img .cookie{width:150px;height:150px;max-width:100%}
+.ed-img small{font-size:.75rem;text-align:center;color:var(--ink)}
+.ed-fields{display:flex;flex-direction:column;gap:.9rem;min-width:0}
+.ed-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.ed-chips button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;font-weight:500;cursor:pointer}
+.ed-chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.ed-hint{font-size:.8rem;color:var(--ink-soft);font-weight:400}
+.ed-actions{display:flex;justify-content:flex-end;gap:.6rem;flex-wrap:wrap}
+.ed-err{background:var(--bad-bg);color:var(--bad);border-radius:12px;padding:.6rem .9rem;font-size:.9rem;font-weight:500}
+.pickup-at{background:rgba(255,255,255,.08);border-radius:14px;padding:.7rem .9rem;font-size:.9rem;display:flex;flex-direction:column;gap:.15rem}
+.pickup-at small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.pickup-at em{font-style:normal;opacity:.7;font-size:.82rem}
+.field select{width:100%;background:transparent;border:0;color:var(--paper);font:500 1rem var(--body);padding:0;cursor:pointer}
+.field select option{color:var(--ink)}
+.qhint{font-size:.88rem;background:var(--mist);border-radius:14px;padding:.7rem .9rem;color:var(--ink)}
+@media (max-width:1020px){.acols2{grid-template-columns:1fr}}
+@media (max-width:640px){.ed-grid{grid-template-columns:1fr}.mrow{grid-template-columns:44px minmax(0,1fr)}.mrow .sw-wrap,.mrow .m-actions{grid-column:2}.mrow .sw-wrap{justify-content:flex-start}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1020px){
+  .shop-grid{grid-template-columns:1fr}
+  .order{position:static}
+  .menu{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .acols{grid-template-columns:1fr}
+  .reqs{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr 1fr}
+  .foot-top > :first-child{grid-column:1/-1}
+}
+@media (max-width:820px){
+  nav{flex-wrap:wrap}
+  .navlinks{order:3;width:100%;overflow-x:auto;padding-bottom:.2rem;scrollbar-width:none}
+  .navlinks a{white-space:nowrap;background:rgba(255,255,255,.08)}
+  .hero-grid{grid-template-columns:1fr;padding-top:1rem}
+  .hero-art{width:min(380px,90%)}
+  .box-grid,.steps,.values,.about,.contact{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .band{grid-template-columns:1fr}
+  .page-hero .deco{opacity:.35}
+  .admin{grid-template-columns:minmax(0,1fr)}
+  .side,.side-nav{min-width:0}
+  .side{position:static;height:auto;padding-right:max(16px, env(safe-area-inset-right, 0px));gap:1rem}
+  .side-nav{flex-direction:row;overflow-x:auto}
+  .side-nav button{white-space:nowrap}
+  .side-foot{flex-direction:row;justify-content:space-between;align-items:center}
+  .amain{padding-left:max(16px, env(safe-area-inset-left, 0px))}
+}
+@media (max-width:520px){
+  .menu{grid-template-columns:1fr}
+  .fields,.perks,.cinfo,.form .row2{grid-template-columns:1fr}
+  .cart-pill .lbl{display:none}
+  .hero{padding-bottom:5rem}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr}
+  .info-art{padding:1.5rem}
+  .info-art .cookie{width:130px}
+  .info-body{padding:1.5rem}
+  .allergens{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mrow{grid-template-columns:44px minmax(0,1fr) auto}
+  .mrow .pr{display:none}
+  .sw-wrap{min-width:0}
+  .sw-wrap span{display:none}
+}
+/* ---------- Add-to-cart controls ---------- */
+.item-foot{margin-top:auto}
+.in-cart{font-size:.8rem;font-weight:600;color:var(--ok);background:var(--ok-bg);padding:.25rem .65rem;border-radius:999px;animation:pop3 .35s cubic-bezier(.2,.9,.3,1.4)}
+.add-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:999px;padding:.8rem 1rem;background:var(--ink);color:var(--paper);font:600 .95rem var(--body);cursor:pointer;transition:transform .15s ease, background .2s ease, box-shadow .2s ease;box-shadow:0 10px 20px -14px rgba(101,63,44,.8)}
+.add-btn:hover{background:var(--sky-deep);transform:translateY(-1px)}
+.add-btn:active{transform:scale(.97)}
+.add-btn .plus{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:1rem;line-height:1;transition:transform .3s ease}
+.add-btn:hover .plus{transform:rotate(90deg)}
+.add-btn[disabled]{background:var(--done-bg);color:var(--done);box-shadow:none;cursor:not-allowed;transform:none}
+.qty-bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;background:var(--sky);border-radius:999px;padding:.3rem}
+.qty-bar button{width:38px;height:38px;border-radius:50%;border:0;background:var(--paper);font-size:1.15rem;font-weight:600;cursor:pointer;transition:transform .15s}
+.qty-bar button:active{transform:scale(.88)}
+.qty-bar span{text-align:center;font-weight:600;font-size:.92rem;font-variant-numeric:tabular-nums}
+.btn:active{transform:scale(.97)}
+
+/* ---------- Motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes spinIn{from{opacity:0;transform:scale(.6) rotate(-120deg)}to{opacity:1;transform:none}}
+@keyframes badgePop{0%{opacity:0;transform:scale(.3) rotate(-50deg)}70%{transform:scale(1.08) rotate(-8deg)}100%{opacity:1;transform:scale(1) rotate(-12deg)}}
+@keyframes pop3{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+.view.enter .hero-copy > *,.view.enter .page-hero .wrap > :not(.deco){animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.view.enter .hero-copy > :nth-child(2),.view.enter .page-hero .wrap > :nth-child(2){animation-delay:.08s}
+.view.enter .hero-copy > :nth-child(3),.view.enter .page-hero .wrap > :nth-child(3){animation-delay:.16s}
+.view.enter .hero-copy > :nth-child(4){animation-delay:.24s}
+.view.enter .hero-copy > :nth-child(5){animation-delay:.32s}
+.view.enter .hero-art .big{animation:spinIn 1s cubic-bezier(.2,.8,.2,1) both, float 6s ease-in-out 1s infinite}
+.view.enter .hero-art .small{animation:spinIn 1s cubic-bezier(.2,.8,.2,1) .25s both, float 6s ease-in-out 1.25s infinite}
+.view.enter .price-badge{animation:badgePop .7s cubic-bezier(.2,.8,.2,1) .55s both}
+.view.enter .page-hero .deco{animation:spinIn 1s cubic-bezier(.2,.8,.2,1) .15s both, float 7s ease-in-out 1.15s infinite}
+.view.enter .menu .item{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+.view.enter .menu .item:nth-child(2){animation-delay:.06s}
+.view.enter .menu .item:nth-child(3){animation-delay:.12s}
+.view.enter .menu .item:nth-child(4){animation-delay:.18s}
+.view.enter .menu .item:nth-child(5){animation-delay:.24s}
+.view.enter .menu .item:nth-child(6){animation-delay:.3s}
+.view.enter .menu .item:nth-child(n+7){animation-delay:.36s}
+.view.enter .order{animation:rise .7s cubic-bezier(.2,.8,.2,1) .2s both}
+.cart-pill.bump{animation:wiggle .45s ease}
+.flyer{position:fixed;z-index:60;pointer-events:none;border-radius:50%;object-fit:cover;filter:drop-shadow(0 10px 14px rgba(101,63,44,.35))}
+@supports (animation-timeline: view()){
+  .steps li,.box,.band,.value,.faq details,.about-art,.about-text,.cat-copy,.quote{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+
+<div id="site">
+  <header class="top">
+    <div class="wrap">
+      <nav aria-label="Huvudmeny">
+        <a class="brand" href="#hem" data-go="hem"><span class="logo" aria-hidden="true"></span>treatsbyfay</a>
+        <div class="navlinks">
+          <a href="#hem" data-go="hem">Hem</a>
+          <a href="#meny" data-go="meny">Meny</a>
+          <!-- <a href="#catering" data-go="catering">Catering</a> -->
+          <a href="#pop-up" data-go="pop-up">Pop up</a>
+          <a href="#om-oss" data-go="om-oss">Om oss</a>
+        </div>
+        <div class="nav-actions"><a class="admin-pill" href="#admin" data-go="admin" title="Gå till admin"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Admin</span></a><a class="cart-pill" href="#meny" data-go="meny" id="cart-pill"><span class="lbl">Varukorg</span><b id="cart-count">0</b></a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HEM ================= -->
+    <section class="view" data-view="hem" aria-label="Hem">
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow" style="color:var(--ink)">treatsbyfay · Bakat med kärlek</span>
+            <h1>Cinnamon rolls, cookies <em>&amp; crookies</em></h1>
+            <p>Fluffiga cinnamon rolls med tjock frosting, cookies med krispig kant och mjuk kärna, crookies och saftigt banana bread. Beställ en box, en hel cinnamon roll-tårta, eller hitta oss på nästa pop up.</p>
+            <div class="hero-actions">
+              <a class="btn btn-ink" href="#meny" data-go="meny">Beställ nu →</a>
+              <a class="btn btn-ghost" href="#pop-up" data-go="pop-up">Nästa pop up</a>
+            </div>
+            <div class="trust">
+              <div><strong>45 kr</strong>per styck</div>
+              <div><strong id="n-flavors">9</strong>sorter i veckan</div>
+              <div><strong>4,9 ★</strong>från kunder</div>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="frame"><span class="logo logo-hero"></span><span>Plats för era egna bilder</span></div>
+            <div class="price-badge"><div><span>Alla rolls</span><strong>45 kr</strong><span>per styck</span></div></div>
+          </div>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,55 C960,20 1200,80 1440,40 L1440,90 L0,90 Z" fill="#FFFCF7"/></svg>
+      </div>
+
+      <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+          <span>Helt oemotståndliga</span><span>Varma från ugnen</span><span>Extra mycket frosting</span><span>Krispig kant, mjuk kärna</span><span>Värda att köa för</span>
+          <span>Helt oemotståndliga</span><span>Varma från ugnen</span><span>Extra mycket frosting</span><span>Krispig kant, mjuk kärna</span><span>Värda att köa för</span>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Veckans favoriter</span>
+              <h2>Kunderna älskar de här</h2>
+              <p class="hint">Tryck på ett bakverk för att se ingredienser och allergener.</p>
+            </div>
+            <a class="link-arrow" href="#meny" data-go="meny">Se hela menyn →</a>
+          </div>
+          <div class="menu" data-menu="featured"></div>
+        </div>
+      </div>
+
+      <div class="sec mist">
+        <div class="wrap">
+          <span class="eyebrow">Så funkar det</span>
+          <h2 style="font-size:clamp(2rem,4vw,3rem);margin-top:.4rem">Från ugnen till dig</h2>
+          <ol class="steps">
+            <li><span class="n">Steg 1</span><h3>Välj dina treats</h3><p>Plocka favoriter bland cinnamon rolls, cookies och crookies, eller välj en färdig box.</p></li>
+            <li><span class="n">Steg 2</span><h3>Välj dag och tid</h3><p>Hämta upp hos oss eller få leverans samma dag inom stan.</p></li>
+            <li><span class="n">Steg 3</span><h3>Njut nybakat</h3><p>Vi bakar på morgonen så att rollsen är mjuka och nyfrostade när du får dem.</p></li>
+          </ol>
+        </div>
+      </div>
+
+<!-- CATERING (avstängd): cateringband på startsidan
+      <div class="sec">
+        <div class="wrap">
+          <div class="band">
+            <div>
+              <span class="eyebrow" style="color:var(--sky)">Catering</span>
+              <h2>Bakverk till kontoret, bröllopet eller <em>studenten</em></h2>
+              <p>Beställ från 24 st, mixa smaker fritt och få en offert inom 24 timmar.</p>
+            </div>
+            <a class="btn btn-sky" href="#catering" data-go="catering">Begär offert →</a>
+          </div>
+        </div>
+      </div>
+-->
+    </section>
+
+    <!-- ================= MENY ================= -->
+    <section class="view" data-view="meny" aria-label="Meny" hidden>
+      <div class="page-hero">
+        <div class="wrap">
+          <span class="eyebrow">Veckans meny</span>
+          <h1>Välj dina <em>favoriter</em></h1>
+          <p>Rolls, cookies, crookies och banana bread kostar 45 kr/st. Mixa fritt och välj upphämtning eller leverans.</p>
+          <span class="cookie deco" data-v="1" aria-hidden="true"></span>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,50 C300,90 600,10 900,45 C1150,75 1300,30 1440,50 L1440,90 L0,90 Z" fill="#FFFCF7"/></svg>
+      </div>
+
+      <div class="sec tight">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="hint" style="margin:0">Tryck på ett bakverk för att se ingredienser och allergener.</p>
+            <div class="filters" id="menu-filters">
+              <button class="chip on" data-f="alla">Alla</button>
+              <button class="chip" data-f="rolls">Cinnamon rolls</button>
+              <button class="chip" data-f="cookies">Cookies &amp; crookies</button>
+              <button class="chip" data-f="banana">Banana bread</button>
+              <button class="chip" data-f="tarta">Tårta</button>
+              <button class="chip" data-f="bast">Bästsäljare</button>
+            </div>
+          </div>
+          <div class="shop-grid">
+            <div class="menu" data-menu="all"></div>
+            <aside class="order" aria-label="Din beställning">
+              <div class="order-head"><h3>Din beställning</h3><span id="order-count">0 st</span></div>
+              <div class="toggle" id="mode">
+                <button class="on" data-mode="pickup">Upphämtning</button>
+                <button data-mode="delivery">Leverans</button>
+              </div>
+              <div class="pickup-at" id="pickup-at"></div>
+              <ul class="lines" id="order-lines"></ul>
+              <div class="fields">
+                <div class="field"><small>Datum</small><div>Fre 30 okt</div></div>
+                <label class="field" for="o-time"><small id="o-time-label">Hämttid</small><select id="o-time"></select></label>
+              </div>
+              <div class="totals">
+                <div><span id="t-label">Bakverk</span><span id="t-sub">0 kr</span></div>
+                <div><span id="t-mode">Upphämtning</span><span id="t-fee">0 kr</span></div>
+                <div class="grand"><span>Totalt</span><span id="t-total">0 kr</span></div>
+              </div>
+              <button class="btn btn-sky" id="checkout">Gå till kassan</button>
+              <p class="note">Betala med Swish eller kort</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec mist">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Treatboxar</span>
+              <h2>Mixa din egen box</h2>
+            </div>
+            <p style="max-width:32ch;color:var(--ink-soft)">Blanda rolls, cookies och crookies fritt. Perfekt till fika, kalas eller som present.</p>
+          </div>
+          <div class="box-grid">
+            <div class="box">
+              <div class="box-cookies" data-n="4"></div>
+              <h3>Liten box</h3>
+              <p>Fyra treats att dela, eller inte dela.</p>
+              <div class="box-price"><strong>180 kr</strong><span>4 × 45 kr</span></div>
+            </div>
+            <div class="box feature">
+              <div class="box-cookies" data-n="6"></div>
+              <h3>Fikabox</h3>
+              <p>Sex treats, vår mest beställda storlek.</p>
+              <div class="box-price"><strong>270 kr</strong><span>6 × 45 kr</span></div>
+            </div>
+            <div class="box">
+              <div class="box-cookies" data-n="12"></div>
+              <h3>Kalasbox</h3>
+              <p>Ett dussin till jobbet, festen eller familjen.</p>
+              <div class="box-price"><strong>540 kr</strong><span>12 × 45 kr</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- CATERING (avstängd): cateringsidan
+    <section class="view" data-view="catering" aria-label="Catering" hidden>
+      <div class="page-hero">
+        <div class="wrap">
+          <span class="eyebrow">Catering</span>
+          <h1>Bakverk till ditt <em>event</em></h1>
+          <p>Vi bakar till möten, bröllop, studentfester och företagsevent. Samma pris, 45 kr/st, oavsett hur många ni beställer.</p>
+          <span class="cookie deco" data-v="1" aria-hidden="true"></span>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C260,85 520,15 780,50 C1040,85 1240,25 1440,55 L1440,90 L0,90 Z" fill="#653F2C"/></svg>
+      </div>
+
+      <div class="catering">
+        <div class="wrap cat-grid">
+          <div class="cat-copy">
+            <span class="eyebrow">Så funkar catering</span>
+            <h2>Berätta om ert <em>tillfälle</em></h2>
+            <p>Välj smaker, antal och leveransdag så skickar vi en offert inom 24 timmar.</p>
+            <div class="occasions" id="occasions">
+              <button class="on">Företagsfika</button><button>Bröllop</button><button>Studentfest</button><button>Babyshower</button><button>Konferens</button><button>Födelsedag</button>
+            </div>
+            <ul class="perks">
+              <li><strong>Från 24 kakor</strong><span>Samma pris, 45 kr/st, oavsett hur många ni beställer.</span></li>
+              <li><strong>Mixa fritt</strong><span>Blanda alla smaker från menyn i samma beställning.</span></li>
+              <li><strong>Leverans till dörren</strong><span>Vi kör ut till kontoret eller festlokalen.</span></li>
+              <li><strong>Snygga fat och boxar</strong><span>Redo att ställas fram direkt när ni får dem.</span></li>
+            </ul>
+          </div>
+
+          <form class="quote" id="cq-form" aria-label="Offertförfrågan">
+            <div id="cq-fields" class="qf">
+              <div class="quote-head"><h3>Begär offert</h3><span class="tag">Svar inom 24 h</span></div>
+
+              <div class="qty-row">
+                <div><small>Antal kakor</small><strong id="cq-big">60 st</strong></div>
+                <div class="stepper"><button type="button" id="cq-dec" aria-label="Färre">−</button><b id="cq">60</b><button type="button" id="cq-inc" aria-label="Fler">+</button></div>
+              </div>
+
+              <div class="qrow">
+                <label for="q-name">Namn eller företag<input id="q-name" type="text" placeholder="t.ex. Anna Svensson" required></label>
+                <label for="q-phone">Telefon<input id="q-phone" type="tel" placeholder="070-123 45 67" required></label>
+              </div>
+              <label for="q-mail">E-post<input id="q-mail" type="email" placeholder="namn@exempel.se" required></label>
+              <div class="qrow">
+                <label for="q-occ">Tillfälle
+                  <select id="q-occ"><option>Företagsfika</option><option>Bröllop</option><option>Studentfest</option><option>Babyshower</option><option>Konferens</option><option>Födelsedag</option><option>Annat</option></select>
+                </label>
+                <label for="q-guests">Antal gäster<input id="q-guests" type="number" min="1" max="1000" placeholder="40" required></label>
+              </div>
+
+              <div class="qlabel" id="cal-label">Datum</div>
+              <div class="cal" aria-labelledby="cal-label">
+                <div class="cal-head">
+                  <button type="button" id="cal-prev" aria-label="Föregående månad">‹</button>
+                  <span id="cal-month">November 2026</span>
+                  <button type="button" id="cal-next" aria-label="Nästa månad">›</button>
+                </div>
+                <div class="cal-grid" id="cal-grid"></div>
+                <div class="cal-legend">
+                  <span><b class="lg-free"></b>Ledigt</span>
+                  <span><b class="lg-booked"></b>Bokat</span>
+                  <span><b class="lg-closed"></b>Stängt / för tidigt</span>
+                  <span><b class="lg-sel"></b>Valt</span>
+                </div>
+              </div>
+              <p class="cal-picked" id="cal-picked">Inget datum valt</p>
+
+              <div class="qrow">
+                <label for="q-time">Leveranstid
+                  <select id="q-time"></select>
+                </label>
+                <label for="q-mode">Leveranssätt
+                  <select id="q-mode"><option>Leverans</option><option>Upphämtning</option></select>
+                </label>
+              </div>
+              <p class="qhint" id="q-pickup" hidden></p>
+              <label for="q-addr" id="q-addr-wrap">Leveransadress<input id="q-addr" type="text" placeholder="Gata, postnummer och ort"></label>
+
+              <div class="qlabel">Smaker <span>välj en eller flera</span></div>
+              <div class="flav" id="q-flav"></div>
+
+              <label for="q-msg">Övrigt<textarea id="q-msg" placeholder="Allergier, önskemål om förpackning, logga, m.m."></textarea></label>
+
+              <div class="quote-total"><span id="cq-calc">Uppskattat pris (60 × 45 kr)</span><strong id="cq-sum">2 700 kr</strong></div>
+              <p class="qerr" id="q-err" hidden></p>
+              <button class="btn btn-ink" type="submit">Skicka förfrågan</button>
+              <p class="note">Leveransavgift beror på adress och anges i offerten</p>
+            </div>
+
+            <div class="qthanks" id="cq-thanks" hidden>
+              <span class="cookie" data-v="0" data-bite="1"></span>
+              <h3>Tack, vi har fått din förfrågan!</h3>
+              <dl id="cq-summary"></dl>
+              <p>Det här är en demo, så inget skickades. Förfrågan syns nu under Catering i Admin.</p>
+              <button class="btn btn-ghost" type="button" id="cq-new" style="justify-content:center">Gör en ny förfrågan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="wrap">
+          <div class="section-head"><div><span class="eyebrow">Vanliga frågor</span><h2>Bra att veta</h2></div></div>
+          <div class="faq">
+            <details open><summary>Hur långt i förväg behöver jag beställa?</summary><p>Minst tre dagar innan. Inför större event, som bröllop eller konferenser, gärna två veckor innan.</p></details>
+            <details><summary>Kan ni anpassa kakorna efter allergier?</summary><p>Hör av dig så berättar vi vad vi kan göra. Alla kakor bakas i samma kök, så vi kan inte garantera att de är helt fria från spår av allergener.</p></details>
+            <details><summary>Levererar ni?</summary><p>Ja, inom stan. Leveransavgiften beror på adress och står med i offerten.</p></details>
+            <details><summary>Kan vi få kakorna i förpackningar med vår logga?</summary><p>Ja, för företagsbeställningar från 100 kakor. Skriv det i förfrågan så återkommer vi med förslag.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+-->
+    <!-- ================= POP UP ================= -->
+    <section class="view" data-view="pop-up" aria-label="Pop up" hidden>
+      <div class="page-hero">
+        <div class="wrap">
+          <span class="eyebrow">Pop up</span>
+          <h1>Hitta oss på nästa <em>pop up</em></h1>
+          <p>Vi dyker upp på marknader, caféer och event runt om i stan med nybakade rolls direkt från ugnen. Kom tidigt, de brukar ta slut!</p>
+          <span class="logo deco" aria-hidden="true"></span>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,55 C960,20 1200,80 1440,40 L1440,90 L0,90 Z" fill="#FFFCF7"/></svg>
+      </div>
+      <div class="sec tight">
+        <div class="wrap">
+          <article class="pnext" id="pnext" aria-live="polite">
+            <div class="pnext-main">
+              <span class="plive"><i></i><span id="pn-label">Nästa pop up</span></span>
+              <h2 id="pn-name">–</h2>
+              <div class="pmeta" id="pn-meta"></div>
+              <div class="pcount" id="pn-count" aria-label="Nedräkning">
+                <div><strong data-u="d">00</strong><small>Dagar</small></div>
+                <div><strong data-u="h">00</strong><small>Tim</small></div>
+                <div><strong data-u="m">00</strong><small>Min</small></div>
+                <div><strong data-u="s">00</strong><small>Sek</small></div>
+              </div>
+              <div class="hero-actions">
+                <button class="btn btn-sky" type="button" id="pn-cal">Spara i kalendern</button>
+                <a class="btn btn-ghost pn-map" id="pn-map" href="#" target="_blank" rel="noopener">Vägbeskrivning →</a>
+              </div>
+            </div>
+            <div class="pnext-side">
+              <span class="eyebrow">På bordet</span>
+              <ul class="pmenu" id="pn-menu"></ul>
+              <p>Först till kvarn. Följ oss på Instagram för att se vad som finns kvar.</p>
+            </div>
+          </article>
+
+          <div class="section-head" style="margin-top:3.5rem">
+            <div><span class="eyebrow">Kalender</span><h2>Kommande pop ups</h2></div>
+          </div>
+          <div class="stops" id="stops"></div>
+
+          <div class="band" style="margin-top:3.5rem">
+            <div>
+              <span class="eyebrow" style="color:var(--sky)">För arrangörer</span>
+              <h2>Vill du ha treatsbyfay på ditt <em>event?</em></h2>
+              <p>Vi kommer gärna till marknader, caféer, skolor och företagsevent med ett bord fullt av rolls och cookies.</p>
+            </div>
+            <a class="btn btn-sky" href="mailto:hej@treatsbyfay.se?subject=Pop%20up%20p%C3%A5%20v%C3%A5rt%20event">Boka en pop up →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OM OSS ================= -->
+    <section class="view" data-view="om-oss" aria-label="Om oss" hidden>
+      <div class="page-hero">
+        <div class="wrap">
+          <span class="eyebrow">Om oss</span>
+          <h1>Bakat hemma, gjort <em>med kärlek</em></h1>
+          <p>treatsbyfay startade med en enda plåt cinnamon rolls till familj och vänner. Nu bakar vi till hela stan.</p>
+          <span class="logo deco" aria-hidden="true"></span>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,55 C960,20 1200,80 1440,40 L1440,90 L0,90 Z" fill="#FFFCF7"/></svg>
+      </div>
+      <div class="sec">
+        <div class="wrap about">
+          <div class="about-text">
+            <span class="eyebrow">Vår historia</span>
+            <h2>Så började allt</h2>
+            <p>Det började med Fays egna cinnamon rolls, bakade efter samma recept gång på gång tills degen blev precis så fluffig som den skulle. Folk började fråga efter fler, och plötsligt fanns treatsbyfay.</p>
+            <p>I dag bakar vi cinnamon rolls i fem smaker, cookies, crookies och banana bread, och gör hela cinnamon roll-tårtor på beställning. Du hittar oss på pop ups runt om i stan, eller beställer direkt här.</p>
+            <a class="btn btn-ink" href="#meny" data-go="meny" style="align-self:flex-start">Se veckans meny →</a>
+          </div>
+          <div class="about-art" aria-hidden="true">
+            <span class="cookie" data-v="0" style="width:52%;left:8%;top:12%"></span>
+            <span class="cookie" data-v="2" style="width:36%;right:8%;top:8%"></span>
+            <span class="cookie" data-v="1" style="width:30%;right:14%;bottom:10%"></span>
+            <span class="cookie" data-v="5" style="width:24%;left:20%;bottom:6%"></span>
+          </div>
+        </div>
+      </div>
+      <div class="sec mist">
+        <div class="wrap">
+          <div class="section-head"><div><span class="eyebrow">Det här står vi för</span><h2>Enkla regler, riktigt goda treats</h2></div></div>
+          <div class="values">
+            <div class="value"><h3>Riktigt smör</h3><p>Ingen margarin, inga genvägar. Bara smör, kanel och färskost i frostingen.</p></div>
+            <div class="value"><h3>Bakat samma dag</h3><p>Allt du köper är bakat samma morgon. Det som blir över skänker vi bort.</p></div>
+            <div class="value"><h3>Ett pris för alla</h3><p>45 kr per roll, cookie eller crookie, oavsett sort.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div style="display:flex;flex-direction:column;gap:1.2rem"><span class="logo logo-foot" aria-hidden="true"></span><h2>Sugen på en <em>treat?</em></h2></div>
+        <div class="foot-col">
+          <span class="eyebrow">Sidor</span>
+          <a href="#hem" data-go="hem">Hem</a>
+          <a href="#meny" data-go="meny">Meny</a>
+          <!-- <a href="#catering" data-go="catering">Catering</a> -->
+          <a href="#pop-up" data-go="pop-up">Pop up</a>
+          <a href="#om-oss" data-go="om-oss">Om oss</a>
+        </div>
+        <div class="foot-col">
+          <span class="eyebrow">Kontakt</span>
+          <a href="mailto:hej@treatsbyfay.se">hej@treatsbyfay.se</a>
+        </div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 treatsbyfay</span><div class="socials"><a href="#" aria-label="treatsbyfay på Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></a><a href="#" aria-label="treatsbyfay på TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div><a href="#admin" data-go="admin">Personal: Admin →</a></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ================= ADMIN ================= -->
+<div id="admin" class="admin" hidden>
+  <aside class="side">
+    <div class="brand"><span class="logo" aria-hidden="true"></span>treatsbyfay <small>Admin</small></div>
+    <div class="side-nav" id="side-nav">
+      <button class="on" data-a="oversikt">Översikt</button>
+      <button data-a="bestallningar">Beställningar <span class="count" id="new-count">2</span></button>
+      <!-- <button data-a="acatering">Catering <span class="count" id="req-count">1</span></button> -->
+      <button data-a="aupp">Upphämtning</button>
+      <button data-a="ameny">Meny</button>
+    </div>
+    <div class="side-foot">
+      <div class="who"><b>A</b>Inloggad som Admin</div>
+      <a href="#hem" data-go="hem">← Till hemsidan</a>
+    </div>
+  </aside>
+
+  <div class="amain">
+    <!-- Översikt -->
+    <div class="apanel" data-apanel="oversikt">
+      <div style="display:flex;flex-direction:column;gap:1.6rem">
+        <div class="ahead">
+          <div><p>Måndag 26 oktober</p><h1>God morgon!</h1></div>
+          <span class="demo-flag">Exempeldata</span>
+        </div>
+        <div class="kpis">
+          <div class="kpi hi"><small>Beställningar idag</small><strong>18</strong><span>8 visas i listan nedan</span></div>
+          <div class="kpi"><small>Att baka idag</small><strong>184</strong><span id="n-flavors2">9 sorter</span></div>
+          <div class="kpi"><small>Intäkter idag</small><strong>8 280 kr</strong><span>Rolls, cookies &amp; tårtor</span></div>
+          <!-- <div class="kpi"><small>Cateringevent</small><strong id="kpi-cat">13</strong><span id="kpi-cat-sub">1 ny att besvara</span></div> -->
+        </div>
+        <div class="acols">
+          <div class="panel">
+            <div class="panel-head"><h2>Bakningslista</h2><span class="muted" id="bake-progress">0 av 9 klara</span></div>
+            <ul class="bake" id="bake"></ul>
+            <div class="bake-foot"><span>Totalt</span><span id="bake-total">124 st</span></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h2>Senaste beställningar</h2><button class="link-arrow" style="background:none;border-left:0;border-right:0;border-top:0;cursor:pointer" data-a-go="bestallningar">Visa alla →</button></div>
+            <div class="tbl"><table><thead><tr><th>Order</th><th>Kund</th><th class="num">Antal</th><th>Status</th></tr></thead><tbody id="recent"></tbody></table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beställningar -->
+    <div class="apanel" data-apanel="bestallningar" hidden>
+      <div style="display:flex;flex-direction:column;gap:1.6rem">
+        <div class="ahead">
+          <div><p>Tryck på en status för att flytta beställningen vidare</p><h1>Beställningar</h1></div>
+          <span class="demo-flag">Exempeldata</span>
+        </div>
+        <div class="filters" id="order-filters">
+          <button class="chip on" data-s="alla">Alla</button>
+          <button class="chip" data-s="Ny">Nya</button>
+          <button class="chip" data-s="Bakas">Bakas</button>
+          <button class="chip" data-s="Klar">Klara</button>
+          <button class="chip" data-s="Hämtad">Hämtade</button>
+        </div>
+        <div class="panel">
+          <div class="tbl"><table><thead><tr><th>Order</th><th>Kund</th><th>Bakverk</th><th>Hämtas / levereras</th><th class="num">Summa</th><th>Status</th></tr></thead><tbody id="orders"></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+<!-- CATERING (avstängd): adminpanel
+    <div class="apanel" data-apanel="acatering" hidden>
+      <div style="display:flex;flex-direction:column;gap:1.6rem">
+        <div class="ahead">
+          <div><p>Tryck på ett datum eller ett event för att se detaljerna</p><h1>Catering</h1></div>
+          <span class="demo-flag">Exempeldata</span>
+        </div>
+        <div class="acal-grid">
+          <div class="panel">
+            <div class="cal acal">
+              <div class="cal-head">
+                <button type="button" id="acal-prev" aria-label="Föregående månad">‹</button>
+                <span id="acal-month">November 2026</span>
+                <button type="button" id="acal-next" aria-label="Nästa månad">›</button>
+              </div>
+              <div class="cal-grid" id="acal-grid"></div>
+              <div class="cal-legend">
+                <span><b class="lg-ok"></b>Bekräftad</span>
+                <span><b class="lg-quote"></b>Offert skickad</span>
+                <span><b class="lg-new"></b>Ny förfrågan</span>
+                <span><b class="lg-closed"></b>Stängt</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel" id="ev-detail" aria-live="polite"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>Alla event</h2><span class="muted" id="ev-count"></span></div>
+          <div class="tbl"><table><thead><tr><th>Datum</th><th>Kund</th><th>Tillfälle</th><th class="num">Kakor</th><th>Status</th></tr></thead><tbody id="ev-list"></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+-->
+    <!-- Upphämtning -->
+    <div class="apanel" data-apanel="aupp" hidden>
+      <div style="display:flex;flex-direction:column;gap:1.6rem">
+        <div class="ahead">
+          <div><p>Adressen och tiderna som kunderna ser när de väljer upphämtning</p><h1>Upphämtning</h1></div>
+          <span class="demo-flag">Exempeldata</span>
+        </div>
+        <div class="acols2">
+          <form class="panel aform" id="addr-form">
+            <div class="panel-head"><h2>Adress</h2></div>
+            <label for="pa-street">Gatuadress<input id="pa-street" type="text" required></label>
+            <div class="row2">
+              <label for="pa-zip">Postnummer<input id="pa-zip" type="text" required></label>
+              <label for="pa-city">Ort<input id="pa-city" type="text" required></label>
+            </div>
+            <label for="pa-note">Instruktioner till kunden<textarea id="pa-note" rows="3" placeholder="t.ex. Ingång från gården"></textarea></label>
+            <div class="preview-card"><small>Så här ser kunden det</small><span id="pa-preview"></span></div>
+            <button class="btn btn-ink" type="submit">Spara adress</button>
+          </form>
+          <div class="panel aform">
+            <div class="panel-head"><h2>Hämttider</h2><span class="muted" id="slot-count"></span></div>
+            <ul class="slots" id="slots"></ul>
+            <form class="slot-add" id="slot-form">
+              <label for="sl-from">Från<input id="sl-from" type="time" value="17:00" step="900" required></label>
+              <span>–</span>
+              <label for="sl-to">Till<input id="sl-to" type="time" value="18:00" step="900" required></label>
+              <button class="btn btn-ink" type="submit">Lägg till</button>
+            </form>
+            <p class="ed-err" id="slot-err" hidden></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meny -->
+    <div class="apanel" data-apanel="ameny" hidden>
+      <div style="display:flex;flex-direction:column;gap:1.6rem">
+        <div class="ahead">
+          <div><p>Lägg till, ändra eller ta bort produkter. Stäng av en produkt när den är slut för dagen.</p><h1>Meny</h1></div>
+          <button class="btn btn-ink" type="button" id="add-cookie">＋ Lägg till produkt</button>
+        </div>
+        <div class="panel"><div class="mlist" id="mlist"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie editor -->
+<dialog class="ed-dlg" id="ed" aria-labelledby="ed-title">
+  <form class="ed" id="ed-form">
+    <div class="ed-head"><h2 id="ed-title">Redigera bakverk</h2><button type="button" class="close" id="ed-close" aria-label="Stäng">✕</button></div>
+    <div class="ed-grid">
+      <div class="ed-img">
+        <span class="cookie" id="ed-preview"></span>
+        <label class="btn btn-ghost" for="ed-file" style="cursor:pointer">Välj bild</label>
+        <input type="file" id="ed-file" accept="image/*" hidden>
+        <small>Använd en kvadratisk bild på produkten</small>
+      </div>
+      <div class="ed-fields">
+        <label for="ed-name">Namn<input id="ed-name" type="text" required maxlength="40" placeholder="t.ex. Nutella Cinnamon Roll"></label>
+        <label for="ed-desc">Beskrivning<textarea id="ed-desc" rows="2" maxlength="160" placeholder="En mening om hur det smakar"></textarea></label>
+        <label for="ed-ingr">Ingredienser<textarea id="ed-ingr" rows="4" placeholder="Vetemjöl, smör, socker …"></textarea></label>
+        <div><div class="qlabel" style="margin-bottom:.4rem">Allergener <span class="ed-hint">tryck på de som bakverket innehåller</span></div><div class="ed-chips" id="ed-al"></div></div>
+        <div class="row2">
+          <label for="ed-tag">Etikett<select id="ed-tag"><option value="">Ingen</option><option>Bästsäljare</option><option>Nyhet</option></select></label>
+          <div><div class="qlabel" style="margin-bottom:.4rem">Kategori</div><div class="ed-chips" id="ed-cat"><button type="button" data-cat="rolls" aria-pressed="false">Cinnamon roll</button><button type="button" data-cat="cookies" aria-pressed="false">Cookie / crookie</button><button type="button" data-cat="banana" aria-pressed="false">Banana bread</button><button type="button" data-cat="tarta" aria-pressed="false">Tårta</button></div></div>
+        </div>
+        <p class="ed-err" id="ed-err" hidden></p>
+      </div>
+    </div>
+    <div class="ed-actions">
+      <button type="button" class="btn btn-ghost" id="ed-cancel">Avbryt</button>
+      <button type="submit" class="btn btn-ink" id="ed-save">Spara</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Info dialog -->
+<dialog class="info" id="info" aria-labelledby="info-name">
+  <div class="info-wrap">
+    <button class="close" id="info-close" aria-label="Stäng">✕</button>
+    <div class="info-grid">
+      <div class="info-art">
+        <span class="cookie" id="info-cookie"></span>
+        <span class="price" id="info-price">45 kr <small>/st</small></span>
+      </div>
+      <div class="info-body">
+        <div>
+          <span class="eyebrow" id="info-tag">Veckans meny</span>
+          <h2 id="info-name">Bakverk</h2>
+        </div>
+        <p class="desc" id="info-desc"></p>
+        <div class="facts" id="info-facts"></div>
+        <div>
+          <h4>Ingredienser</h4>
+          <p class="ingr" id="info-ingr"></p>
+        </div>
+        <div>
+          <h4>Allergener</h4>
+          <div class="allergens" id="info-allergens"></div>
+          <p class="trace-note" id="info-trace"></p>
+        </div>
+        <div class="info-actions">
+          <button class="btn btn-ink" id="info-add">Lägg i varukorgen · 45 kr</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var PRICE=45, FEE=49;
+  function pr(i){return (C[i]&&C[i].price)||PRICE;}
+  function $(id){return document.getElementById(id);}
+  function kr(n){return n.toLocaleString('sv-SE').replace(/ /g,' ')+' kr';}
+
+  // ---------- Cookie photos ----------
+  // Placeholder discs in the brand palette (no product photos)
+  var PAL=["#D8A7A4","#8E6573","#653F2C","#C9A27E","#B98A93","#7C5E52"];
+  function decor(v){return '<span class="ph" style="background:'+PAL[((+v||0)%PAL.length+PAL.length)%PAL.length]+'"></span>';}
+  function cookie(v){var c=C[v];if(c&&c.img)return '<img class="photo" src="'+c.img+'" alt="" draggable="false">';return '<span class="ph" style="background:'+PAL[v%PAL.length]+'">'+esc(c?(c.ab||c.name.charAt(0).toUpperCase()):'?')+'</span>';}
+  function paintCookies(root){
+    (root||document).querySelectorAll('.cookie[data-v]').forEach(function(el,i){
+      if(el.dataset.done)return; el.dataset.done='1';
+      el.innerHTML=decor(+el.dataset.v||0);
+    });
+  }
+  function cookieTag(v,cls,bite,seed){return '<span class="cookie '+(cls||'')+'">'+cookie(v,bite,seed)+'</span>';}
+
+  // ---------- Data ----------
+  var ALL=["Gluten","Mjölk","Ägg","Soja","Nötter","Jordnötter"], TRACE=["Nötter","Jordnötter"];
+  var C=[
+    {name:"Classic Cinnamon Roll",ab:"Cl",tag:"Bästsäljare",cat:["rolls","bast"],desc:"Originalet med vaniljsmak: fluffig deg, kanelfyllning och krämig vaniljfrosting.",
+     ingr:"Vetemjöl, smör, mjölk, socker, ägg, jäst, vaniljstång, kanel, färskost, florsocker, salt.",has:["Gluten","Mjölk","Ägg"]},
+    {name:"Biscoff Cinnamon Roll",ab:"Bi",tag:"Bästsäljare",cat:["rolls","bast"],desc:"Fylld med Biscoff-kräm, toppad med krossade kakor och ringlad Biscoff.",
+     ingr:"Vetemjöl, smör, mjölk, socker, ägg, jäst, kanel, Biscoff-kräm (karamelliserade kex), färskost, florsocker.",has:["Gluten","Mjölk","Ägg","Soja"]},
+    {name:"Apple Cinnamon Roll",ab:"Ap",tag:"",cat:["rolls"],desc:"Kanelfyllning med bitar av kokt äpple och en lätt vaniljfrosting.",
+     ingr:"Vetemjöl, smör, mjölk, socker, ägg, jäst, äpple, kanel, färskost, florsocker, vanilj.",has:["Gluten","Mjölk","Ägg"]},
+    {name:"Pecan & Caramel Roll",ab:"Pc",tag:"",cat:["rolls"],desc:"Klibbig hemkokt kola och rostade pekannötter över en varm kanelroll.",
+     ingr:"Vetemjöl, smör, mjölk, farinsocker, grädde, ägg, jäst, pekannötter, kanel, salt.",has:["Gluten","Mjölk","Ägg","Nötter"]},
+    {name:"Saffrans Cinnamon Roll",ab:"Sa",tag:"Nyhet",cat:["rolls","nyhet"],desc:"Säsongens favorit: saffransdeg, kanelfyllning och frosting med en touch av vanilj.",
+     ingr:"Vetemjöl, smör, mjölk, socker, ägg, jäst, saffran, kanel, färskost, florsocker, vanilj.",has:["Gluten","Mjölk","Ägg"]},
+    {name:"Chocolate Chip Cookie",ab:"Cc",tag:"",cat:["cookies"],desc:"Stor och tjock cookie med krispig kant, mjuk kärna och mycket mörk choklad.",
+     ingr:"Vetemjöl, smör, farinsocker, socker, ägg, mörk choklad (kakaomassa, socker, kakaosmör, emulgeringsmedel sojalecitin), bakpulver, salt.",has:["Gluten","Mjölk","Ägg","Soja"]},
+    {name:"Crookie",ab:"Cr",tag:"",cat:["cookies"],desc:"Smörig croissant fylld och toppad med cookiedeg, bakad tills den är gyllene.",
+     ingr:"Vetemjöl, smör, socker, mjölk, ägg, jäst, farinsocker, mörk choklad, salt.",has:["Gluten","Mjölk","Ägg","Soja"]},
+    {name:"Banana Bread",ab:"Bb",tag:"",cat:["banana"],desc:"Saftig skiva banana bread på mogna bananer, med en krispig sockerskorpa.",
+     ingr:"Mogen banan, vetemjöl, smör, farinsocker, ägg, bikarbonat, kanel, vanilj, salt.",has:["Gluten","Mjölk","Ägg"]},
+    {name:"Cinnamon Roll-tårta",ab:"Tå",price:495,tag:"",cat:["tarta"],desc:"En jättestor cinnamon roll som tårta, räcker till 8–10 bitar. Beställ minst 2 dagar innan.",
+     facts:["8–10 bitar","Beställ 2 dagar innan","Valfri text på toppen"],
+     ingr:"Vetemjöl, smör, mjölk, socker, ägg, jäst, kanel, färskost, florsocker, vanilj, salt.",has:["Gluten","Mjölk","Ägg"]}
+  ];
+  var qty=[2,1,0,0,1,0,0,0,0], avail=[true,true,true,true,true,true,true,true,true], mode='pickup', filter='alla';
+
+  // ---------- Menu rendering ----------
+  function control(i){
+    if(!avail[i]) return '<button class="add-btn" disabled>Slut för idag</button>';
+    if(qty[i]>0) return '<div class="qty-bar"><button data-act="dec" data-i="'+i+'" aria-label="Ta bort en '+esc(C[i].name)+'">−</button><span>'+qty[i]+' i varukorgen</span><button data-act="inc" data-i="'+i+'" aria-label="Lägg till en '+esc(C[i].name)+'">+</button></div>';
+    return '<button class="add-btn" data-act="inc" data-i="'+i+'" aria-label="Lägg till '+esc(C[i].name)+' i varukorgen"><span class="plus">+</span>Lägg till</button>';
+  }
+  function card(i){
+    var d=C[i], tag=d.tag?'<span class="tag'+(d.tag==='Nyhet'?' new':'')+'">'+d.tag+'</span>':'';
+    return '<article class="item'+(avail[i]?'':' out')+'" data-open="'+i+'" tabindex="0" role="button" aria-label="'+esc(d.name)+', visa ingredienser och allergener">'+
+      '<div class="item-art">'+tag+cookieTag(i,'',false,i*53+7)+'<span class="info-btn"><i>i</i>Info</span></div>'+
+      '<h3>'+esc(d.name)+'</h3><p>'+esc(d.desc)+'</p>'+
+      '<div class="item-foot"><span class="price">'+kr(pr(i))+' <small>/st</small></span>'+(qty[i]>0?'<span class="in-cart">✓ I varukorgen</span>':'')+'</div>'+control(i)+'</article>';
+  }
+  function featured(){var t=C.map(function(c,i){return i;}).filter(function(i){return C[i].tag;});C.forEach(function(c,i){if(t.length<3&&t.indexOf(i)<0)t.push(i);});return t.slice(0,3);}
+  function renderMenus(){
+    document.querySelectorAll('[data-menu]').forEach(function(m){
+      var list=m.dataset.menu==='featured'?featured():C.map(function(c,i){return i;}).filter(function(i){return filter==='alla'||C[i].cat.indexOf(filter)>-1;});
+      m.innerHTML=list.map(card).join('');
+    });
+  }
+  function renderCart(){
+    var n=qty.reduce(function(a,b){return a+b;},0), sub=qty.reduce(function(a,q,i){return a+q*pr(i);},0), fee=(mode==='delivery'&&n>0)?FEE:0;
+    $('cart-count').textContent=n;
+    $('order-count').textContent=n+' st';
+    var html='';
+    qty.forEach(function(q,i){ if(q>0) html+='<li>'+cookieTag(i,'',false,i*53+7)+'<span class="name">'+esc(C[i].name)+'<span class="qty">'+q+' × '+kr(pr(i))+'</span></span><span class="sum">'+kr(q*pr(i))+'</span></li>'; });
+    $('order-lines').innerHTML=html||'<li class="empty" style="display:block">Varukorgen är tom. Lägg till något gott från menyn.</li>';
+    $('t-label').textContent='Bakverk ('+n+' st)';
+    $('t-sub').textContent=kr(sub);
+    $('t-mode').textContent=mode==='delivery'?'Leverans':'Upphämtning';
+    $('t-fee').textContent=kr(fee);
+    $('t-total').textContent=kr(sub+fee);
+  }
+  function bump(){var p=$('cart-pill');p.classList.remove('bump');void p.offsetWidth;p.classList.add('bump');}
+  function flyToCart(src){
+    try{
+      if(!src||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      var img=src.querySelector('img'); var pill=$('cart-pill'); if(!img||!pill||!pill.getClientRects().length)return;
+      var a=img.getBoundingClientRect(), b=pill.getBoundingClientRect(); if(!a.width)return;
+      var f=img.cloneNode(); f.className='flyer'; var s=Math.min(a.width,90);
+      f.style.cssText='left:'+(a.left+a.width/2-s/2)+'px;top:'+(a.top+a.height/2-s/2)+'px;width:'+s+'px;height:'+s+'px';
+      document.body.appendChild(f);
+      var dx=b.left+b.width-28-(a.left+a.width/2), dy=b.top+b.height/2-(a.top+a.height/2);
+      var an=f.animate([{transform:'translate(0,0) scale(1) rotate(0)',opacity:1},{transform:'translate('+dx*.5+'px,'+(dy*.5-80)+'px) scale(.7) rotate(180deg)',opacity:1,offset:.55},{transform:'translate('+dx+'px,'+dy+'px) scale(.18) rotate(360deg)',opacity:.6}],{duration:750,easing:'cubic-bezier(.5,0,.3,1)'});
+      an.onfinish=function(){f.remove();bump();};
+    }catch(err){}
+  }
+  function changeQty(i,delta,src){
+    if(!avail[i])return;
+    if(delta>0&&src)flyToCart(src.closest('.item')||src);
+    qty[i]=Math.max(0,qty[i]+delta);
+    renderMenus();renderCart();
+    if(delta>0){bump();toast(C[i].name+' tillagd i varukorgen');}
+  }
+
+  // ---------- Toast ----------
+  var tt;
+  function toast(msg){var t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2400);}
+
+  // ---------- Info dialog ----------
+  var dlg=$('info'), current=0;
+  function openInfo(i){
+    var d=C[i]; current=i;
+    $('info-cookie').innerHTML=cookie(i,true,i*53+7);
+    $('info-name').textContent=d.name;
+    $('info-tag').textContent=d.tag||'Veckans meny';
+    $('info-desc').textContent=d.desc;
+    $('info-price').innerHTML=kr(pr(i))+' <small>/st</small>';
+    $('info-facts').innerHTML=(d.facts||['Bakad samma dag','Godast inom 2 dagar']).map(function(f){return '<span>'+esc(f)+'</span>';}).join('');
+    $('info-ingr').textContent=d.ingr;
+    $('info-allergens').innerHTML=d.has.map(function(a){return '<span class="al">'+a+'</span>';}).join('');
+    var tr=TRACE.filter(function(a){return d.has.indexOf(a)<0;});
+    $('info-trace').innerHTML=tr.length?'<b>Kan innehålla spår av:</b> '+tr.join(' och ').toLowerCase()+'.':'';
+    $('info-trace').hidden=!tr.length;
+    var add=$('info-add');
+    add.disabled=!avail[i];
+    add.textContent=avail[i]?'Lägg i varukorgen · '+kr(pr(i)):'Slut för idag';
+    if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
+  }
+  function closeInfo(){if(dlg.close){dlg.close();}else{dlg.removeAttribute('open');}}
+  $('info-close').addEventListener('click',closeInfo);
+  $('info-add').addEventListener('click',function(){changeQty(current,1,$('info-cookie'));closeInfo();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)closeInfo();});
+
+  // ---------- Global clicks ----------
+  document.addEventListener('click',function(e){
+    var act=e.target.closest('[data-act]');
+    if(act){e.preventDefault();changeQty(+act.dataset.i, act.dataset.act==='inc'?1:-1, act);return;}
+    var go=e.target.closest('[data-go]');
+    if(go){e.preventDefault();route(go.dataset.go);return;}
+    var open=e.target.closest('[data-open]');
+    if(open){openInfo(+open.dataset.open);return;}
+  });
+  document.addEventListener('keydown',function(e){
+    var open=e.target.closest&&e.target.closest('[data-open]');
+    if(open&&e.target===open&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openInfo(+open.dataset.open);}
+  });
+
+  $('menu-filters').addEventListener('click',function(e){
+    var b=e.target.closest('[data-f]'); if(!b)return;
+    filter=b.dataset.f;
+    this.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===b);});
+    renderMenus();
+  });
+  $('mode').addEventListener('click',function(e){
+    var b=e.target.closest('[data-mode]'); if(!b)return;
+    mode=b.dataset.mode;
+    this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+    renderCart(); renderPickup();
+  });
+  $('checkout').addEventListener('click',function(){
+    var n=qty.reduce(function(a,b){return a+b;},0);
+    toast(n?'Demo: här går kunden vidare till betalning med Swish eller kort':'Lägg till minst ett bakverk först');
+  });
+
+  var flav=[true,false,false,false,false,true,false,false,false]; // valda smaker i cateringformuläret
+
+  // ---------- Catering quote ----------
+  /* CATERING (avstängd): offertformulär
+  var cq=60, picked=new Date(2026,10,12), TODAY=new Date(2026,9,26);
+  var MONTHS=['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
+  var DAYS=['söndag','måndag','tisdag','onsdag','torsdag','fredag','lördag'];
+  var minDate=new Date(TODAY.getFullYear(),TODAY.getMonth(),TODAY.getDate()+3);
+  var maxMonth=new Date(TODAY.getFullYear(),TODAY.getMonth()+5,1);
+  var view=new Date(picked.getFullYear(),picked.getMonth(),1);
+  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function longDate(d){var s=DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()];return s.charAt(0).toUpperCase()+s.slice(1);}
+  function dayState(d){
+    if(d<minDate)return 'closed';
+    if(d.getDay()===1||d.getDay()===2)return 'closed';
+    if(isBooked(iso(d)))return 'booked';
+    return 'free';
+  }
+  function renderCal(){
+    var y=view.getFullYear(),m=view.getMonth();
+    $('cal-month').textContent=MONTHS[m].charAt(0).toUpperCase()+MONTHS[m].slice(1)+' '+y;
+    $('cal-prev').disabled=(y===TODAY.getFullYear()&&m===TODAY.getMonth());
+    $('cal-next').disabled=(view>=maxMonth);
+    var html=['Mån','Tis','Ons','Tor','Fre','Lör','Sön'].map(function(d){return '<span class="cal-dow">'+d+'</span>';}).join('');
+    var first=new Date(y,m,1), lead=(first.getDay()+6)%7, days=new Date(y,m+1,0).getDate();
+    for(var i=0;i<lead;i++)html+='<span></span>';
+    for(var d=1;d<=days;d++){
+      var dt=new Date(y,m,d), st=dayState(dt), sel=picked&&iso(dt)===iso(picked);
+      var title=st==='booked'?'Fullbokat':(st==='closed'?'Går inte att boka':'Ledigt');
+      html+='<button type="button" class="day'+(st!=='free'?' '+st:'')+(sel?' sel':'')+(iso(dt)===iso(TODAY)?' today':'')+'" data-day="'+iso(dt)+'"'+(st!=='free'?' disabled':'')+' title="'+title+'" aria-label="'+longDate(dt)+', '+title.toLowerCase()+'"'+(sel?' aria-pressed="true"':'')+'>'+d+'</button>';
+    }
+    $('cal-grid').innerHTML=html;
+    var p=$('cal-picked');
+    p.textContent=picked?'Valt datum: '+longDate(picked):'Inget datum valt';
+    p.classList.toggle('none',!picked);
+  }
+  $('cal-grid').addEventListener('click',function(e){
+    var b=e.target.closest('[data-day]'); if(!b||b.disabled)return;
+    var p=b.dataset.day.split('-'); picked=new Date(+p[0],+p[1]-1,+p[2]);
+    $('q-err').hidden=true; renderCal();
+  });
+  $('cal-prev').addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCal();});
+  $('cal-next').addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCal();});
+
+  $('q-mode').addEventListener('change',function(){
+    var del=this.value==='Leverans';
+    $('q-addr-wrap').hidden=!del; $('q-addr').required=del;
+    $('q-time').previousSibling.textContent=del?'Leveranstid':'Hämttid';
+    fillCatTimes();
+  });
+  $('q-addr').required=true;
+
+  // flavours
+  function renderFlav(){
+    $('q-flav').innerHTML=C.map(function(d,i){return '<button type="button" data-flav="'+i+'" aria-pressed="'+flav[i]+'">'+cookieTag(i,'',false,i*53+7)+esc(d.name)+'</button>';}).join('');
+  }
+  $('q-flav').addEventListener('click',function(e){var b=e.target.closest('[data-flav]');if(!b)return;flav[+b.dataset.flav]=!flav[+b.dataset.flav];renderFlav();});
+
+  function renderQuote(){
+    $('cq').textContent=cq; $('cq-big').textContent=cq+' st';
+    $('cq-calc').textContent='Uppskattat pris ('+cq+' × 45 kr)';
+    $('cq-sum').textContent=kr(cq*PRICE);
+  }
+  $('cq-dec').addEventListener('click',function(){cq=Math.max(24,cq-12);renderQuote();});
+  $('cq-inc').addEventListener('click',function(){cq=Math.min(600,cq+12);renderQuote();});
+  function syncOcc(name){
+    $('occasions').querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.textContent===name);});
+  }
+  $('occasions').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    $('q-occ').value=b.textContent; syncOcc(b.textContent);
+  });
+  $('q-occ').addEventListener('change',function(){syncOcc(this.value);});
+
+  $('cq-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=$('q-err');
+    if(!picked){err.textContent='Välj ett datum i kalendern.';err.hidden=false;return;}
+    var chosen=C.filter(function(d,i){return flav[i];}).map(function(d){return d.name;});
+    if(!chosen.length){err.textContent='Välj minst en smak.';err.hidden=false;return;}
+    err.hidden=true;
+    var mode=$('q-mode').value, who=$('q-name').value.trim();
+    var rows=[['Namn',who],['Tillfälle',$('q-occ').value],['Datum',longDate(picked)],[mode==='Leverans'?'Leveranstid':'Upphämtning','kl. '+$('q-time').value],['Antal',cq+' kakor'],['Smaker',chosen.join(', ')],['Uppskattat pris',kr(cq*PRICE)]];
+    $('cq-summary').innerHTML=rows.map(function(r){var v=document.createElement('dd');v.textContent=r[1];return '<dt>'+r[0]+'</dt>'+v.outerHTML;}).join('');
+    EVENTS.push({iso:iso(picked),who:who,occ:$('q-occ').value,n:cq,g:+$('q-guests').value||0,time:$('q-time').value,mode:mode,addr:$('q-addr').value.trim(),phone:$('q-phone').value.trim(),mail:$('q-mail').value.trim(),flav:chosen,note:$('q-msg').value.trim(),s:'Ny'});
+    aSel=iso(picked); aView=new Date(picked.getFullYear(),picked.getMonth(),1);
+    renderAdmin();
+    $('cq-fields').hidden=true; $('cq-thanks').hidden=false;
+    paintCookies($('cq-thanks'));
+    toast('Förfrågan skickad (demo)');
+  });
+  $('cq-new').addEventListener('click',function(){
+    $('cq-form').reset(); $('q-addr-wrap').hidden=false; $('q-addr').required=true;
+    fillCatTimes(); $('q-time').value='09:30'; picked=null; renderCal(); syncOcc('Företagsfika');
+    $('cq-fields').hidden=false; $('cq-thanks').hidden=true;
+  });
+
+  */
+  // ---------- Admin ----------
+  var STEPS=["Ny","Bakas","Klar","Hämtad"];
+  var CLS={"Ny":"s-ny","Bakas":"s-bakas","Klar":"s-klar","Hämtad":"s-hamtad"};
+  var orders=[
+    {id:1048,name:"Sara L.",items:"Fikabox, mixad",n:6,when:"Upphämtning 15:00",s:"Ny"},
+    {id:1047,name:"Ahmed K.",items:"Classic Cinnamon Roll, Saffrans Cinnamon Roll",n:4,when:"Leverans 14:30",s:"Ny"},
+    {id:1046,name:"Emma J.",items:"Kalasbox, mixad",n:12,when:"Leverans 13:00",s:"Bakas"},
+    {id:1045,name:"Johan P.",items:"Biscoff Cinnamon Roll",n:2,when:"Upphämtning 12:30",s:"Bakas"},
+    {id:1044,name:"Fatima H.",items:"Fikabox, mixad",n:6,when:"Upphämtning 12:00",s:"Klar"},
+    {id:1043,name:"Lina B.",items:"Crookie, Chocolate Chip Cookie",n:3,when:"Upphämtning 11:30",s:"Klar"},
+    {id:1042,name:"Oskar N.",items:"Pecan & Caramel Roll",n:1,when:"Upphämtning 11:00",s:"Hämtad"},
+    {id:1041,name:"Maja S.",items:"Liten box, mixad",n:4,when:"Leverans 10:30",s:"Hämtad"}
+  ];
+  var bake=[36,30,18,18,24,20,16,20,2], baked=[false,false,false,false,false,false,false,false,false];
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+  /* CATERING (avstängd): event och adminkalender
+  var EVENTS=[
+    {iso:"2026-10-31",who:"Café Linnea",occ:"Födelsedag",n:48,g:30,time:"13:00",mode:"Leverans",addr:"Storgatan 4, 123 45 Staden",phone:"070-111 22 33",mail:"linnea@exempel.se",flav:["Exempelprodukt 1","Exempelprodukt 5","Exempelprodukt 6"],note:"Skriv \"Grattis Linnea 30 år\" på kortet.",s:"Bekräftad"},
+    {iso:"2026-11-01",who:"Familjen Ali",occ:"Babyshower",n:36,g:25,time:"11:00",mode:"Upphämtning",addr:"",phone:"073-222 33 44",mail:"ali@exempel.se",flav:["Exempelprodukt 3","Exempelprodukt 2"],note:"Gärna i rosa och blå boxar.",s:"Bekräftad"},
+    {iso:"2026-11-06",who:"Familjen Berg",occ:"Födelsedag",n:80,g:55,time:"12:00",mode:"Leverans",addr:"Björkvägen 12, 123 46 Staden",phone:"076-333 44 55",mail:"berg@exempel.se",flav:["Exempelprodukt 1","Exempelprodukt 4"],note:"En gäst har nötallergi. Exempelprodukt 4 packas separat.",s:"Bekräftad"},
+    {iso:"2026-11-07",who:"Byggfirman Norr AB",occ:"Konferens",n:120,g:80,time:"09:00",mode:"Leverans",addr:"Industrivägen 8, 123 50 Staden",phone:"08-123 456 78",mail:"event@byggfirmannorr.exempel",flav:["Exempelprodukt 1","Exempelprodukt 4","Exempelprodukt 5","Exempelprodukt 6"],note:"Faktura till ekonomi@byggfirmannorr.exempel. Märk med referens KONF-1107.",s:"Bekräftad"},
+    {iso:"2026-11-12",who:"Nordisk Konsult AB",occ:"Företagsfika",n:60,g:40,time:"09:30",mode:"Leverans",addr:"Kungsgatan 20, 123 40 Staden",phone:"070-444 55 66",mail:"fika@nordiskkonsult.exempel",flav:["Exempelprodukt 1","Exempelprodukt 6"],note:"Vill ha offert med och utan leverans.",s:"Ny"},
+    {iso:"2026-11-14",who:"Sara & Johan",occ:"Bröllop",n:200,g:130,time:"15:00",mode:"Leverans",addr:"Herrgården Ekudden, 123 60 Staden",phone:"072-555 66 77",mail:"saraochjohan@exempel.se",flav:["Exempelprodukt 3","Exempelprodukt 2","Exempelprodukt 1","Exempelprodukt 4"],note:"Leverans till köksingången. Kontakt på plats: Maria, 070-999 88 77.",s:"Bekräftad"},
+    {iso:"2026-11-21",who:"Elin & Marcus",occ:"Bröllop",n:150,g:100,time:"14:00",mode:"Leverans",addr:"Sjöbodarna, Hamnvägen 3, 123 70 Staden",phone:"073-666 77 88",mail:"elinmarcus@exempel.se",flav:["Exempelprodukt 6","Exempelprodukt 3","Exempelprodukt 5"],note:"Undrar om vi kan göra mini-kakor till barnen.",s:"Offert skickad"},
+    {iso:"2026-11-22",who:"Stadens IK",occ:"Annat",n:96,g:70,time:"16:00",mode:"Upphämtning",addr:"",phone:"070-777 88 99",mail:"kansli@stadensik.exempel",flav:["Exempelprodukt 1","Exempelprodukt 5","Exempelprodukt 4"],note:"Säsongsavslutning för ungdomslagen.",s:"Bekräftad"},
+    {iso:"2026-11-28",who:"Familjen Nilsson",occ:"Födelsedag",n:36,g:20,time:"12:00",mode:"Upphämtning",addr:"",phone:"076-888 99 00",mail:"nilsson@exempel.se",flav:["Exempelprodukt 5","Exempelprodukt 1"],note:"",s:"Bekräftad"},
+    {iso:"2026-12-05",who:"Tech Hub Staden",occ:"Företagsfika",n:150,g:100,time:"10:00",mode:"Leverans",addr:"Teknikparken 1, 123 80 Staden",phone:"08-234 567 89",mail:"office@techhub.exempel",flav:["Exempelprodukt 1","Exempelprodukt 4","Exempelprodukt 6"],note:"Julfika. Vill ha kakorna i boxar med deras logga.",s:"Bekräftad"},
+    {iso:"2026-12-12",who:"Advokatbyrån Lind",occ:"Annat",n:100,g:60,time:"18:00",mode:"Leverans",addr:"Torget 2, 123 41 Staden",phone:"08-345 678 90",mail:"reception@advlind.exempel",flav:["Exempelprodukt 4","Exempelprodukt 3","Exempelprodukt 1"],note:"Julfest. Serveras som dessert.",s:"Bekräftad"},
+    {iso:"2026-12-13",who:"Ekbackens skola",occ:"Annat",n:240,g:240,time:"08:30",mode:"Leverans",addr:"Skolvägen 5, 123 55 Staden",phone:"070-123 00 11",mail:"rektor@ekbacken.exempel",flav:["Exempelprodukt 1","Exempelprodukt 5"],note:"Luciafirande. Leverans till matsalen.",s:"Offert skickad"},
+    {iso:"2026-12-19",who:"Familjen Haddad",occ:"Födelsedag",n:60,g:40,time:"14:00",mode:"Upphämtning",addr:"",phone:"073-234 11 22",mail:"haddad@exempel.se",flav:["Exempelprodukt 1","Exempelprodukt 5","Exempelprodukt 2"],note:"",s:"Bekräftad"}
+  ];
+  var EVCLS={"Ny":"s-ny","Offert skickad":"s-bakas","Bekräftad":"s-klar"};
+  function isBooked(id){return EVENTS.some(function(e){return e.iso===id&&e.s!=='Ny';});}
+  function evOn(id){return EVENTS.filter(function(e){return e.iso===id;});}
+  function fromIso(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  var aView=new Date(2026,10,1), aSel="2026-11-12";
+  function renderAdminCal(){
+    var y=aView.getFullYear(),m=aView.getMonth();
+    $('acal-month').textContent=MONTHS[m].charAt(0).toUpperCase()+MONTHS[m].slice(1)+' '+y;
+    var html=['Mån','Tis','Ons','Tor','Fre','Lör','Sön'].map(function(d){return '<span class="cal-dow">'+d+'</span>';}).join('');
+    var lead=(new Date(y,m,1).getDay()+6)%7, days=new Date(y,m+1,0).getDate();
+    for(var i=0;i<lead;i++)html+='<span></span>';
+    for(var d=1;d<=days;d++){
+      var dt=new Date(y,m,d), id=iso(dt), ev=evOn(id)[0], cls='day';
+      if(ev)cls+=ev.s==='Bekräftad'?' ev-ok':(ev.s==='Ny'?' ev-new':' ev-quote');
+      else if(dt.getDay()===1||dt.getDay()===2)cls+=' closed';
+      if(id===aSel)cls+=' asel';
+      if(id===iso(TODAY))cls+=' today';
+      html+='<button type="button" class="'+cls+'" data-aday="'+id+'" aria-label="'+longDate(dt)+(ev?', '+esc(ev.who)+', '+ev.s.toLowerCase():'')+'"'+(id===aSel?' aria-pressed="true"':'')+'>'+d+'</button>';
+    }
+    $('acal-grid').innerHTML=html;
+  }
+  function renderEvent(){
+    var list=evOn(aSel), box=$('ev-detail');
+    if(!list.length){box.innerHTML='<div class="ev-empty"><strong>'+longDate(fromIso(aSel))+'</strong>Inga event den här dagen.</div>';return;}
+    var e=list[0], idx=EVENTS.indexOf(e);
+    var flav=e.flav.map(function(n){var i=C.map(function(c){return c.name;}).indexOf(n);return '<span>'+(i>-1?cookieTag(i):'')+esc(n)+'</span>';}).join('');
+    var btn=e.s==='Ny'?'<button class="btn btn-ink" data-evact="'+idx+'">Skicka offert</button>':(e.s==='Offert skickad'?'<button class="btn btn-sky" data-evact="'+idx+'">Markera som bekräftad</button>':'<button class="btn btn-ghost" disabled style="cursor:default">Bekräftad, klar att baka</button>');
+    box.innerHTML='<div class="ev-head"><span class="pill '+EVCLS[e.s]+'" style="cursor:default">'+e.s+'</span><span class="muted">'+longDate(fromIso(e.iso))+'</span></div>'+
+      '<div><span class="eyebrow">'+esc(e.occ)+'</span><h2 class="ev-title">'+esc(e.who)+'</h2></div>'+
+      '<dl class="ev-dl">'+
+        '<dt>'+(e.mode==='Leverans'?'Leverans':'Upphämtning')+'</dt><dd>kl. '+esc(e.time)+'</dd>'+
+        (e.mode==='Leverans'?'<dt>Adress</dt><dd>'+esc(e.addr||'–')+'</dd>':'')+
+        '<dt>Antal</dt><dd>'+e.n+' kakor'+(e.g?' · ca '+e.g+' gäster':'')+'</dd>'+
+        '<dt>Telefon</dt><dd>'+esc(e.phone||'–')+'</dd>'+
+        '<dt>E-post</dt><dd>'+esc(e.mail||'–')+'</dd>'+
+        '<dt>Smaker</dt><dd><div class="ev-flav">'+flav+'</div></dd>'+
+      '</dl>'+
+      (e.note?'<div class="ev-note"><strong>Önskemål:</strong> '+esc(e.note)+'</div>':'')+
+      '<div class="ev-sum"><span>'+e.n+' × 45 kr</span><strong>'+kr(e.n*PRICE)+'</strong></div>'+btn;
+  }
+  function renderEventList(){
+    var sorted=EVENTS.slice().sort(function(a,b){return a.iso<b.iso?-1:1;});
+    $('ev-list').innerHTML=sorted.map(function(e){
+      var d=fromIso(e.iso), dd=DAYS[d.getDay()].slice(0,3);
+      return '<tr data-evsel="'+e.iso+'"'+(e.iso===aSel?' class="sel"':'')+'><td>'+dd.charAt(0).toUpperCase()+dd.slice(1)+' '+d.getDate()+' '+MONTHS[d.getMonth()].slice(0,3)+'</td><td>'+esc(e.who)+'</td><td>'+esc(e.occ)+'</td><td class="num">'+e.n+'</td><td><span class="pill '+EVCLS[e.s]+'" style="cursor:pointer">'+e.s+'</span></td></tr>';
+    }).join('');
+    var nNew=EVENTS.filter(function(e){return e.s==='Ny';}).length;
+    $('ev-count').textContent=EVENTS.length+' event · '+nNew+' nya';
+    $('kpi-cat').textContent=EVENTS.length; $('kpi-cat-sub').textContent=nNew?nNew+(nNew===1?' ny att besvara':' nya att besvara'):'Inga nya att besvara';
+  }
+  function selectEvent(id){aSel=id;var d=fromIso(id);aView=new Date(d.getFullYear(),d.getMonth(),1);renderAdminCal();renderEvent();renderEventList();}
+  $('acal-prev').addEventListener('click',function(){aView=new Date(aView.getFullYear(),aView.getMonth()-1,1);renderAdminCal();});
+  $('acal-next').addEventListener('click',function(){aView=new Date(aView.getFullYear(),aView.getMonth()+1,1);renderAdminCal();});
+  */
+  var orderFilter='alla';
+  function pill(o,i){return '<button class="pill '+CLS[o.s]+'" data-cycle="'+i+'" title="Flytta till nästa status">'+o.s+'</button>';}
+  function renderAdmin(){
+    $('recent').innerHTML=orders.slice(0,5).map(function(o,i){
+      return '<tr><td>#'+o.id+'</td><td><span class="cust">'+o.name+'<small>'+o.when+'</small></span></td><td class="num">'+o.n+'</td><td>'+pill(o,i)+'</td></tr>';
+    }).join('');
+    $('orders').innerHTML=orders.map(function(o,i){
+      if(orderFilter!=='alla'&&o.s!==orderFilter)return '';
+      return '<tr><td>#'+o.id+'</td><td>'+o.name+'</td><td><span class="cust">'+o.n+' st<small>'+o.items.replace('&','&amp;')+'</small></span></td><td>'+o.when+'</td><td class="num">'+kr(o.n*PRICE)+'</td><td>'+pill(o,i)+'</td></tr>';
+    }).join('')||'<tr><td colspan="6" style="color:var(--ink-soft)">Inga beställningar med den statusen.</td></tr>';
+    var nNew=orders.filter(function(o){return o.s==='Ny';}).length;
+    $('new-count').textContent=nNew; $('new-count').hidden=!nNew;
+    // CATERING (avstängd): var nReq=EVENTS.filter(function(r){return r.s==='Ny';}).length; $('req-count').textContent=nReq; $('req-count').hidden=!nReq;
+    $('bake').innerHTML=bake.map(function(n,i){
+      return '<li class="'+(baked[i]?'done':'')+'">'+cookieTag(i,'',false,i*53+7)+'<span class="nm">'+esc(C[i].name)+'</span><strong>'+n+' st</strong><button class="check'+(baked[i]?' on':'')+'" data-bake="'+i+'" aria-label="Markera '+C[i].name+' som bakad" aria-pressed="'+baked[i]+'">✓</button></li>';
+    }).join('');
+    $('bake-progress').textContent=baked.filter(Boolean).length+' av '+bake.length+' klara';
+    // CATERING (avstängd): renderAdminCal(); renderEvent(); renderEventList();
+    $('mlist').innerHTML=C.length?C.map(function(d,i){
+      return '<div class="mrow">'+cookieTag(i)+'<span class="nm">'+esc(d.name)+(d.tag?' <span class="pill '+(d.tag==='Nyhet'?'s-ny':'s-klar')+'" style="cursor:default;margin-left:.3rem">'+d.tag+'</span>':'')+'<small>'+esc(d.desc||'Ingen beskrivning')+'</small></span>'+
+        '<span class="sw-wrap"><span>'+(avail[i]?'Tillgänglig':'Slut för idag')+'</span><button class="switch" role="switch" aria-checked="'+avail[i]+'" data-avail="'+i+'" aria-label="'+esc(d.name)+' tillgänglig"></button></span>'+
+        '<span class="m-actions"><button type="button" data-edit="'+i+'">Redigera</button><button type="button" class="del'+(armed===i?' arm':'')+'" data-del="'+i+'">'+(armed===i?'Bekräfta':'Ta bort')+'</button></span></div>';
+    }).join(''):'<p class="empty-note">Menyn är tom. Lägg till ett bakverk.</p>';
+  }
+  $('admin').addEventListener('click',function(e){
+    var t;
+    if((t=e.target.closest('[data-cycle]'))){var o=orders[+t.dataset.cycle];o.s=STEPS[(STEPS.indexOf(o.s)+1)%STEPS.length];renderAdmin();toast('Order #'+o.id+': '+o.s);return;}
+    if((t=e.target.closest('[data-bake]'))){var b=+t.dataset.bake;baked[b]=!baked[b];renderAdmin();return;}
+    if((t=e.target.closest('[data-edit]'))){openEditor(+t.dataset.edit);return;}
+    if((t=e.target.closest('[data-del]'))){var di=+t.dataset.del;clearTimeout(armTimer);if(armed===di){armed=-1;removeCookie(di);}else{armed=di;renderAdmin();armTimer=setTimeout(function(){armed=-1;renderAdmin();},4000);}return;}
+    if((t=e.target.closest('#add-cookie'))){openEditor(-1);return;}
+    if((t=e.target.closest('[data-slotdel]'))){var sl=SLOTS.splice(+t.dataset.slotdel,1)[0];renderPickup();toast('Hämttid '+slotTxt(sl)+' borttagen');return;}
+    // CATERING (avstängd): if((t=e.target.closest('[data-aday]'))){selectEvent(t.dataset.aday);return;}
+    // CATERING (avstängd): if((t=e.target.closest('[data-evsel]'))){selectEvent(t.dataset.evsel);return;}
+    // CATERING (avstängd): if((t=e.target.closest('[data-evact]'))){var ev=EVENTS[+t.dataset.evact];ev.s=ev.s==='Ny'?'Offert skickad':'Bekräftad';renderAdmin();renderCal();toast(ev.who+': '+ev.s.toLowerCase());return;}
+    if((t=e.target.closest('[data-avail]'))){var a=+t.dataset.avail;avail[a]=!avail[a];if(!avail[a])qty[a]=0;renderAdmin();renderMenus();renderCart();toast(C[a].name+(avail[a]?' är tillgänglig igen':' visas nu som slutsåld'));return;}
+    if((t=e.target.closest('[data-a],[data-a-go]'))){adminTab(t.dataset.a||t.dataset.aGo);return;}
+  });
+  $('order-filters').addEventListener('click',function(e){
+    var b=e.target.closest('[data-s]'); if(!b)return;
+    orderFilter=b.dataset.s;
+    this.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===b);});
+    renderAdmin();
+  });
+  function adminTab(name){
+    document.querySelectorAll('[data-apanel]').forEach(function(p){p.hidden=p.dataset.apanel!==name;});
+    document.querySelectorAll('#side-nav [data-a]').forEach(function(b){b.classList.toggle('on',b.dataset.a===name);});
+    window.scrollTo(0,0);
+  }
+
+
+  // ---------- Admin: pickup ----------
+  var PICKUP={street:"Exempelgatan 12",zip:"123 45",city:"Staden",note:"Ingång från gården. Ring på klockan."};
+  var SLOTS=[["11:00","12:00"],["12:00","13:00"],["14:00","15:00"],["15:00","16:00"],["16:00","17:00"]];
+  var DELIVERY_SLOTS=[["10:00","12:00"],["12:00","14:00"],["14:00","16:00"],["16:00","18:00"]];
+  function slotTxt(s){return s[0]+'–'+s[1];}
+  function addrTxt(){return PICKUP.street+', '+PICKUP.zip+' '+PICKUP.city;}
+  function fillPickupForm(){$('pa-street').value=PICKUP.street;$('pa-zip').value=PICKUP.zip;$('pa-city').value=PICKUP.city;$('pa-note').value=PICKUP.note;}
+  function renderPickup(){
+    SLOTS.sort(function(a,b){return a[0]<b[0]?-1:1;});
+    $('slots').innerHTML=SLOTS.length?SLOTS.map(function(s,i){return '<li><span>'+slotTxt(s)+'</span><button type="button" class="icon-btn" data-slotdel="'+i+'" aria-label="Ta bort '+slotTxt(s)+'" title="Ta bort">✕</button></li>';}).join(''):'<li class="empty-note" style="background:none">Inga hämttider. Lägg till minst en så att kunder kan hämta.</li>';
+    $('slot-count').textContent=SLOTS.length+(SLOTS.length===1?' tid':' tider');
+    $('pa-preview').innerHTML='<b>'+esc(addrTxt())+'</b>'+(PICKUP.note?'<br>'+esc(PICKUP.note):'');
+    // customer: order panel
+    var pk=mode==='pickup', cur=$('o-time').value;
+    var list=pk?SLOTS:DELIVERY_SLOTS;
+    $('o-time').innerHTML=list.length?list.map(function(s){var t=slotTxt(s);return '<option'+(t===cur?' selected':'')+'>'+t+'</option>';}).join(''):'<option>Inga tider</option>';
+    $('o-time-label').textContent=pk?'Hämttid':'Leveranstid';
+    $('pickup-at').innerHTML=pk?'<small>Hämtas på</small><b>'+esc(addrTxt())+'</b>'+(PICKUP.note?'<em>'+esc(PICKUP.note)+'</em>':''):'<small>Leverans</small><span>Du anger adressen i kassan</span>';
+    // customer: catering form
+    // CATERING (avstängd): fillCatTimes();
+  }
+  /* CATERING (avstängd): tider i offertformuläret
+  function fillCatTimes(){
+    var del=$('q-mode').value==='Leverans', cur=$('q-time').value, h='';
+    if(del){for(var t=8*60;t<=18*60;t+=30){var s=String(t/60|0).padStart(2,'0')+':'+String(t%60).padStart(2,'0');h+='<option'+(s===(cur||'09:30')?' selected':'')+'>'+s+'</option>';}}
+    else{h=SLOTS.map(function(s){var t=slotTxt(s);return '<option'+(t===cur?' selected':'')+'>'+t+'</option>';}).join('')||'<option>Inga tider</option>';}
+    $('q-time').innerHTML=h;
+    $('q-pickup').hidden=del;
+    $('q-pickup').innerHTML='Hämtas på <b>'+esc(addrTxt())+'</b>'+(PICKUP.note?'. '+esc(PICKUP.note):'');
+  }
+  */
+  $('addr-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    PICKUP={street:$('pa-street').value.trim(),zip:$('pa-zip').value.trim(),city:$('pa-city').value.trim(),note:$('pa-note').value.trim()};
+    renderPickup(); toast('Adressen för upphämtning är sparad');
+  });
+  $('addr-form').addEventListener('input',function(){
+    $('pa-preview').innerHTML='<b>'+esc($('pa-street').value+', '+$('pa-zip').value+' '+$('pa-city').value)+'</b>'+($('pa-note').value?'<br>'+esc($('pa-note').value):'');
+  });
+  $('slot-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var a=$('sl-from').value,b=$('sl-to').value,err=$('slot-err');
+    if(!a||!b||a>=b){err.textContent='Sluttiden måste vara efter starttiden.';err.hidden=false;return;}
+    if(SLOTS.some(function(s){return a<s[1]&&b>s[0];})){err.textContent='Tiden krockar med en tid som redan finns.';err.hidden=false;return;}
+    err.hidden=true; SLOTS.push([a,b]); renderPickup(); toast('Hämttid '+a+'–'+b+' tillagd');
+  });
+
+  // ---------- Admin: menu editor ----------
+  var edIdx=-1, edImg=null, edAl=[], edCat=[];
+  function openEditor(i){
+    edIdx=i; var d=i>-1?C[i]:{name:'',desc:'',ingr:'',has:[],tag:'',cat:[],img:null};
+    edImg=d.img; edAl=d.has.slice(); edCat=d.cat.filter(function(c){return ['rolls','cookies','banana','tarta'].indexOf(c)>-1;});
+    $('ed-title').textContent=i>-1?'Redigera '+d.name:'Nytt bakverk';
+    $('ed-save').textContent=i>-1?'Spara ändringar':'Lägg till i menyn';
+    $('ed-name').value=d.name; $('ed-desc').value=d.desc; $('ed-ingr').value=d.ingr; $('ed-tag').value=d.tag||'';
+    $('ed-err').hidden=true; $('ed-file').value='';
+    renderEditorBits();
+    var dl=$('ed'); if(dl.showModal)dl.showModal(); else dl.setAttribute('open','');
+    $('ed-name').focus();
+  }
+  function closeEditor(){var dl=$('ed'); if(dl.close)dl.close(); else dl.removeAttribute('open');}
+  function renderEditorBits(){
+    $('ed-preview').innerHTML=edImg?'<img class="photo" src="'+edImg+'" alt="">':'<span class="ph-cookie">'+esc(($('ed-name').value||'?').charAt(0).toUpperCase())+'</span>';
+    $('ed-al').innerHTML=ALL.map(function(a){return '<button type="button" data-al="'+a+'" aria-pressed="'+(edAl.indexOf(a)>-1)+'">'+a+'</button>';}).join('');
+    $('ed-cat').querySelectorAll('[data-cat]').forEach(function(b){b.setAttribute('aria-pressed',edCat.indexOf(b.dataset.cat)>-1);});
+  }
+  $('ed-al').addEventListener('click',function(e){var b=e.target.closest('[data-al]');if(!b)return;var a=b.dataset.al,k=edAl.indexOf(a);if(k>-1)edAl.splice(k,1);else edAl.push(a);edAl.sort(function(x,y){return ALL.indexOf(x)-ALL.indexOf(y);});renderEditorBits();});
+  $('ed-cat').addEventListener('click',function(e){var b=e.target.closest('[data-cat]');if(!b)return;var c=b.dataset.cat,k=edCat.indexOf(c);if(k>-1)edCat.splice(k,1);else edCat.push(c);renderEditorBits();});
+  $('ed-name').addEventListener('input',function(){if(!edImg)renderEditorBits();});
+  $('ed-file').addEventListener('change',function(){
+    var f=this.files&&this.files[0]; if(!f)return;
+    var r=new FileReader();
+    r.onload=function(){
+      var img=new Image();
+      img.onload=function(){
+        var s=Math.min(img.width,img.height), cv=document.createElement('canvas'); cv.width=cv.height=400;
+        var g=cv.getContext('2d'); g.beginPath(); g.arc(200,200,198,0,Math.PI*2); g.clip();
+        g.drawImage(img,(img.width-s)/2,(img.height-s)/2,s,s,0,0,400,400);
+        try{edImg=cv.toDataURL('image/webp',0.85);}catch(err){edImg=r.result;}
+        renderEditorBits();
+      };
+      img.src=r.result;
+    };
+    r.readAsDataURL(f);
+  });
+  $('ed-close').addEventListener('click',closeEditor);
+  $('ed-cancel').addEventListener('click',closeEditor);
+  $('ed').addEventListener('click',function(e){if(e.target===this)closeEditor();});
+  $('ed-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('ed-name').value.trim(), err=$('ed-err');
+    if(!name){err.textContent='Ge bakverket ett namn.';err.hidden=false;return;}
+    if(C.some(function(c,i){return i!==edIdx&&c.name.toLowerCase()===name.toLowerCase();})){err.textContent='Det finns redan ett bakverk som heter '+name+'.';err.hidden=false;return;}
+    var tag=$('ed-tag').value, cat=edCat.slice();
+    if(tag==='Bästsäljare')cat.push('bast'); if(tag==='Nyhet')cat.push('nyhet');
+    var old=edIdx>-1?C[edIdx]:{};
+    var obj={name:name,ab:old.ab,price:old.price,facts:old.facts,tag:tag,cat:cat,desc:$('ed-desc').value.trim(),ingr:$('ed-ingr').value.trim(),has:edAl.slice(),img:edImg};
+    if(edIdx>-1){C[edIdx]=obj;toast(name+' är uppdaterad');}
+    else{C.push(obj);qty.push(0);avail.push(true);flav.push(false);bake.push(0);baked.push(false);toast(name+' är tillagd i menyn');}
+    closeEditor(); refreshCookies();
+  });
+  function removeCookie(i){
+    var n=C[i].name;
+    [qty,avail,flav,bake,baked].forEach(function(a){a.splice(i,1);});
+    C.splice(i,1); refreshCookies(); toast(n+' är borttagen från menyn');
+  }
+  var armed=-1, armTimer;
+  function refreshCookies(){
+    renderMenus(); renderCart(); /* renderFlav(); CATERING */ renderAdmin(); renderCounts();
+  }
+  function renderCounts(){
+    $('n-flavors').textContent=C.length; $('n-flavors2').textContent=C.length+(C.length===1?' sort':' sorter');
+    $('bake-total').textContent=bake.reduce(function(a,b){return a+b;},0)+' st';
+  }
+
+  // ---------- Pop ups ----------
+  var STOPS=[
+    {name:"Höstmarknad på Stortorget",place:"Stortorget",city:"Stockholm",start:"2026-11-07T10:00",end:"2026-11-07T16:00",tags:["Utomhus","Saffransrolls"]},
+    {name:"Pop up på Café Mandel",place:"Café Mandel, Götgatan 41",city:"Stockholm",start:"2026-11-14T11:00",end:"2026-11-14T15:00",tags:["Inomhus","Kom tidigt"]},
+    {name:"Smaka Sthlm Matmässa",place:"Kistamässan",city:"Kista",start:"2026-11-21T10:00",end:"2026-11-22T17:00",tags:["Inomhus","2 dagar"]},
+    {name:"Julmarknad i Gamla stan",place:"Stortorget",city:"Stockholm",start:"2026-12-05T11:00",end:"2026-12-06T17:00",tags:["Julsmaker","Utomhus"]},
+    {name:"Lucia-pop up",place:"Café Mandel, Götgatan 41",city:"Stockholm",start:"2026-12-13T09:00",end:"2026-12-13T14:00",tags:["Saffransrolls","Begränsat antal"]}
+  ].map(function(o,i){o.id=i;o.s=new Date(o.start);o.e=new Date(o.end);return o;});
+  var PD=['Sön','Mån','Tis','Ons','Tor','Fre','Lör'], PM=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];
+  function p2(n){return String(n).padStart(2,'0');}
+  function hm(d){return p2(d.getHours())+':'+p2(d.getMinutes());}
+  function oneDay(o){return o.s.toDateString()===o.e.toDateString();}
+  function dayTxt(o){return oneDay(o)?PD[o.s.getDay()]+' '+o.s.getDate()+' '+PM[o.s.getMonth()]:PD[o.s.getDay()]+'–'+PD[o.e.getDay()]+' '+o.s.getDate()+'–'+o.e.getDate()+' '+PM[o.e.getMonth()];}
+  function mapUrl(o){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.place+', '+o.city);}
+  var PI={cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>'};
+  var nextStop=null;
+  function renderPopups(){
+    var now=new Date(), up=STOPS.filter(function(o){return o.e>now;});
+    nextStop=up[0]||null;
+    $('pnext').hidden=!nextStop;
+    if(nextStop){
+      var on=nextStop.s<=now;
+      $('pn-label').textContent=on?'Pågår just nu':'Nästa pop up';
+      $('pn-name').textContent=nextStop.name;
+      $('pn-meta').innerHTML='<span>'+esc(nextStop.place)+', '+esc(nextStop.city)+'</span><span>'+dayTxt(nextStop)+'</span><span>'+hm(nextStop.s)+'–'+hm(nextStop.e)+'</span>';
+      $('pn-map').href=mapUrl(nextStop);
+      $('pn-count').hidden=on;
+      $('pn-menu').innerHTML=[0,1,4,6,5].filter(function(i){return C[i];}).map(function(i){return '<li>'+cookieTag(i)+esc(C[i].name)+'</li>';}).join('');
+    }
+    $('stops').innerHTML=up.slice(nextStop?1:0).map(function(o){
+      return '<article class="stop"><div class="sdate"><small>'+PD[o.s.getDay()]+'</small><strong>'+o.s.getDate()+'</strong><span>'+(oneDay(o)?PM[o.s.getMonth()]:o.s.getDate()+'–'+o.e.getDate())+'</span></div>'+
+        '<div class="sinfo"><h3>'+esc(o.name)+'</h3><p>'+esc(o.place)+', '+esc(o.city)+' · '+dayTxt(o)+' · '+hm(o.s)+'–'+hm(o.e)+'</p><div class="stags">'+o.tags.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div></div>'+
+        '<div class="sact"><button type="button" data-ics="'+o.id+'" aria-label="Spara '+esc(o.name)+' i kalendern">'+PI.cal+'</button><a href="'+mapUrl(o)+'" target="_blank" rel="noopener" aria-label="Vägbeskrivning till '+esc(o.name)+'">'+PI.pin+'</a></div></article>';
+    }).join('')||'<p class="hint">Fler datum kommer snart. Håll utkik på Instagram!</p>';
+  }
+  function popTick(){
+    if(!nextStop)return;
+    var now=new Date();
+    if(nextStop.e<=now||(nextStop.s<=now&&!$('pn-count').hidden)){renderPopups();if(!nextStop)return;}
+    var d=Math.max(0,nextStop.s-now)/1000, v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
+    for(var k in v){var el=document.querySelector('#pn-count [data-u="'+k+'"]'); if(el)el.textContent=p2(v[k]);}
+  }
+  function ics(o){
+    function f(d){return d.getUTCFullYear()+p2(d.getUTCMonth()+1)+p2(d.getUTCDate())+'T'+p2(d.getUTCHours())+p2(d.getUTCMinutes())+'00Z';}
+    var body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//treatsbyfay//Pop ups//SV','BEGIN:VEVENT','UID:treatsbyfay-'+o.id+'-'+f(o.s),'DTSTAMP:'+f(new Date()),'DTSTART:'+f(o.s),'DTEND:'+f(o.e),
+      'SUMMARY:treatsbyfay – '+o.name,'LOCATION:'+o.place.replace(/,/g,'\\,')+'\\, '+o.city,'DESCRIPTION:Nybakade cinnamon rolls och cookies.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'}));
+    a.download='treatsbyfay-pop-up-'+o.s.getDate()+'-'+PM[o.s.getMonth()]+'.ics'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+    toast(o.name+' är sparad. Vi ses där!');
+  }
+  $('stops').addEventListener('click',function(e){var b=e.target.closest('[data-ics]');if(b)ics(STOPS[+b.dataset.ics]);});
+  $('pn-cal').addEventListener('click',function(){if(nextStop)ics(nextStop);});
+
+  // ---------- Router ----------
+  var VIEWS=['hem','meny',/* 'catering', */'pop-up','om-oss','admin'];
+  function route(v){
+    if(VIEWS.indexOf(v)<0)v='hem';
+    var isAdmin=v==='admin';
+    $('site').hidden=isAdmin; $('admin').hidden=!isAdmin;
+    document.querySelectorAll('.view').forEach(function(s){s.hidden=s.dataset.view!==v;s.classList.remove('enter');});
+    var cur=document.querySelector('.view[data-view="'+v+'"]'); if(cur){void cur.offsetWidth;cur.classList.add('enter');clearTimeout(route.t);route.t=setTimeout(function(){cur.classList.remove('enter');},1600);}
+    document.querySelectorAll('.navlinks a').forEach(function(a){a.classList.toggle('on',a.dataset.go===v);});
+    try{history.replaceState(null,'','#'+v);}catch(err){}
+    window.scrollTo(0,0);
+  }
+
+  // ---------- Boot ----------
+  document.querySelectorAll('.box-cookies').forEach(function(box){
+    var n=+box.dataset.n,h='';for(var i=0;i<n;i++)h+=cookieTag(i%C.length,'',false,i*17+n);box.innerHTML=h;
+  });
+  paintCookies();
+  renderMenus(); renderCart(); /* renderQuote(); renderCal(); renderFlav(); CATERING */ renderAdmin(); fillPickupForm(); renderPickup(); renderCounts(); renderPopups(); popTick(); setInterval(popTick,1000);
+  var start='hem'; try{start=(location.hash||'').slice(1)||'hem';}catch(err){}
+  route(start);
+  window.addEventListener('hashchange',function(){try{route(location.hash.slice(1));}catch(err){}});
+})();
+</script>
