@@ -46,6 +46,15 @@
           }
         ]
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/kontakt",
+        "function": {
+          "functionId": "kontakt",
+          "region": "europe-north1"
+        }
+      }
     ]
   },
   "emulators": {
@@ -54,6 +63,22 @@
     },
     "ui": {
       "enabled": false
+    },
+    "functions": {
+      "port": 5001
     }
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "*.local",
+        "firebase-debug.log"
+      ]
+    }
+  ]
 }

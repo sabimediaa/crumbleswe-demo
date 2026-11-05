@@ -221,7 +221,7 @@ menuBtn.addEventListener("click", () => {
 <script>
 const CONFIG = {
   email: "hej@sabimedia.se",
-  formEndpoint: "https://formsubmit.co/ajax/hej@sabimedia.se",
+  formEndpoint: "/api/kontakt",
   /* Bokningsbara tider: vardagar, första och sista starttid, minuter per samtal, hur många månader fram man kan boka */
   firstHour: 10, lastHour: 20, slotMinutes: 30, monthsAhead: 2
 };
@@ -317,6 +317,26 @@ function validate(f) {
   if (e.target.getAttribute("aria-invalid")) validate(Object.fromEntries(new FormData($("#book-form"))));
 }));
 
+/* Översätter ett misslyckat utskick till en begriplig förklaring med felkod */
+function sendErrorInfo(err) {
+  const code = err.code || "", status = err.status || 0;
+  if (!navigator.onLine) return ["Din enhet verkar sakna internetuppkoppling.", "OFFLINE", true];
+  if (err.name === "TimeoutError") return ["Vår server svarade inte inom 25 sekunder.", "TIMEOUT", false];
+  if (err instanceof TypeError) return ["Vi får ingen kontakt med vår server just nu. Det kan bero på din uppkoppling, en annonsblockerare eller en VPN.", "NO-CONTACT", true];
+  if (code === "NAME") return ["Namnet saknas.", code, true];
+  if (code === "EMAIL") return ["E-postadressen ser inte rätt ut.", code, true];
+  if (code === "RATE-LIMIT") return ["Formuläret har fått för många försök på kort tid.", code, true];
+  if (code === "MAIL-AUTH") return ["Vår mejlserver godkände inte inloggningen, så felet ligger hos oss.", code, true];
+  if (code === "MAIL-FAILED") return ["Vår mejlserver tog inte emot meddelandet, så felet ligger hos oss.", code, true];
+  if (status >= 500) return ["Vår server har ett tillfälligt fel.", String(status), true];
+  return ["Vår server gav ett oväntat svar, så vi vet inte om meddelandet kom fram.", code || (status ? String(status) : "UNEXPECTED"), false];
+}
+function sendErrorHtml(err, mailto) {
+  const [reason, code, notSent] = sendErrorInfo(err);
+  const state = notSent ? "Inget har skickats, men det du skrivit finns kvar." : "Det du skrivit finns kvar.";
+  return `<b>${reason}</b> ${state} Försök igen om en stund eller <a href="${esc(mailto)}">mejla oss direkt</a>. <small>Felkod: ${esc(code)}</small>`;
+}
+
 $("#book-form").addEventListener("submit", async e => {
   e.preventDefault();
   const form = e.target, f = Object.fromEntries(new FormData(form));
@@ -331,19 +351,20 @@ $("#book-form").addEventListener("submit", async e => {
   const subject = `Bokat samtal: ${when} – ${f.name}`;
   submit.disabled = true; submit.textContent = "Bokar…";
   try {
-    const data = new FormData(form);
-    data.append("Önskad tid", when);
-    data.append("_subject", subject);
-    data.append("_template", "table");
-    const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
+    const res = await fetch(CONFIG.formEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ ...f, when, source: "Bokningssidan" }),
+      signal: AbortSignal.timeout(25000)
+    });
     const json = await res.json().catch(() => ({}));
-    if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
+    if (!res.ok || json.ok !== true) throw Object.assign(new Error(json.code || `HTTP ${res.status}`), { status: res.status, code: json.code || "" });
     form.innerHTML = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din bokning för <b>${esc(when)}</b>. Du får en bekräftelse till ${esc(f.email)} inom 24 timmar.</p></div>`;
   } catch (err) {
     console.warn("Bokningen kunde inte skickas:", err.message);
     submit.disabled = false; submit.textContent = "Boka samtalet";
     const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}`;
-    showError(`Något gick fel och bokningen skickades inte. Försök igen eller <a href="${esc(mailto)}">mejla oss direkt</a>.`);
+    showError(sendErrorHtml(err, mailto));
   }
 });
 

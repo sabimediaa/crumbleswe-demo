@@ -4,4 +4,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 bash scripts/build-site.sh
-exec firebase emulators:start --only hosting --project demo-sabimedia
+exec firebase emulators:start --only hosting,functions --project demo-sabimedia
