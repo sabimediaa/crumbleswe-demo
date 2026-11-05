@@ -14,7 +14,7 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
 <link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#191919">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sv_SE">
 <meta property="og:site_name" content="Sabimedia">
@@ -65,7 +65,11 @@ p{margin:0}
 .section-head{display:grid;gap:.9rem;margin-bottom:clamp(32px,5vw,56px);max-width:760px}
 .section-head h2{font-size:clamp(2rem,4.4vw,3.3rem)}
 .section-head .lead b{color:var(--ink)}
-.section.band{background:#efe8de}
+.section.band{background:rgba(239,232,222,.62)}
+.bg-cube{position:fixed;top:0;left:0;z-index:-1;width:100%;height:100vh;height:100lvh;pointer-events:none;opacity:.55;-webkit-mask-image:linear-gradient(90deg,transparent 22%,#000 50%);mask-image:linear-gradient(90deg,transparent 22%,#000 50%)}
+@media (max-width:1200px){.bg-cube{-webkit-mask-image:linear-gradient(90deg,transparent 8%,#000 34%);mask-image:linear-gradient(90deg,transparent 8%,#000 34%)}}
+@media (max-width:960px){.bg-cube{opacity:.42;-webkit-mask-image:none;mask-image:none}}
+@media (max-width:600px){.bg-cube{opacity:.28}}
 em.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:0;border-radius:10px;padding:.9rem 1.4rem;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap}
@@ -86,22 +90,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .price-tag p b{color:var(--ink)}
 
 /* ---------- Nav ---------- */
-.nav{position:sticky;top:0;z-index:40;background:#000}
+.nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.9);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
 .brand{display:flex;align-items:center;text-decoration:none}
 .brand img{display:block;height:42px;width:auto}
 .brand-foot img{height:44px}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-weight:500;color:#d8d0c5}
+.nav-links a{text-decoration:none;font-weight:500;color:#ece8e2}
 .nav-links a:hover{color:#fff}
-.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:transparent;cursor:pointer;place-items:center}
+.nav-links a.btn,.nav-links a.btn:hover{color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;place-items:center}
 .menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (min-width:901px){
+  .nav-links a:not(.btn):not(.cta){position:relative;padding:.3rem 0;transition:color .2s ease}
+  .nav-links a:not(.btn):not(.cta)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links a:not(.btn):not(.cta):hover,.nav-links a:not(.btn):not(.cta):focus-visible{color:#fff}
+  .nav-links a:not(.btn):not(.cta):hover::after,.nav-links a:not(.btn):not(.cta):focus-visible::after,.nav-links a:not(.btn):not(.cta)[aria-current]::after{transform:scaleX(1)}
+}
 @media (max-width:900px){
   .brand img{height:36px}
-  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#0c0c0d;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
   .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
-  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.1rem}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:1.1rem}
   .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .nav-links li:not(:last-child) a{position:relative;transition:padding-left .25s ease,color .2s ease}
+  .nav-links li:not(:last-child) a::before{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--accent);transform:translateY(-50%) scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links li:not(:last-child) a:hover,.nav-links li:not(:last-child) a:focus-visible{padding-left:28px;color:#fff}
+  .nav-links li:not(:last-child) a:hover::before,.nav-links li:not(:last-child) a:focus-visible::before{transform:translateY(-50%) scaleX(1)}
   .menu-btn{display:grid}
 }
 
@@ -424,6 +439,7 @@ footer{padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px));color:var(--i
   </div>
 </header>
 
+<canvas class="bg-cube" id="bg-cube" aria-hidden="true"></canvas>
 <main id="top">
   <!-- Hero -->
   <section class="hero">
@@ -999,6 +1015,71 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
     io.observe(el);
   }));
 }
+// Kuben i sidans bakgrund: strålar genom ett rutnät, varje ruta blir en prick (halvton)
+(() => {
+  const canvas = $("#bg-cube");
+  const ctx = canvas.getContext("2d");
+  const LIGHT = [.45, -.7, -.55], SHADES = 5;
+  let W = 0, H = 0, cx = 0, cy = 0, size = 0, cell = 7;
+
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cell = W > 600 ? 7 : 6;
+    // Behåller storleken när fliken krymper, och glider mot mitten när bredden tar slut
+    size = Math.min(W * .42, Math.max(H * .36, 300));
+    cx = W * (.5 + .2 * Math.min(1, Math.max(0, (W - 600) / 840)));
+    cy = H * .55;
+    draw();
+  }
+
+  function draw() {
+    const a = .7, b = .55;
+    const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
+    // Kubens axlar uttryckta i skärmens koordinater (kolumner = x, y, z)
+    const m = [ca, sa * sb, sa * cb, 0, cb, -sb, -sa, ca * sb, ca * cb];
+    const buckets = Array.from({ length: SHADES }, () => []);
+    const R = size * 1.75, half = cell / 2;
+    const dx = m[6], dy = m[7], dz = m[8];
+    const lit = i => .22 + .78 * Math.max(0, -Math.sign(m[i + 6]) * (m[i] * LIGHT[0] + m[i + 3] * LIGHT[1] + m[i + 6] * LIGHT[2]));
+    const light = [lit(0), lit(1), lit(2)];
+    const x0 = Math.max(0, Math.floor((cx - R) / cell)), x1 = Math.min(W / cell, (cx + R) / cell);
+    const y0 = Math.max(0, Math.floor((cy - R) / cell)), y1 = Math.min(H / cell, (cy + R) / cell);
+    for (let gy = y0; gy <= y1; gy++) for (let gx = x0; gx <= x1; gx++) {
+      const px = (gx * cell + half - cx) / size, py = (gy * cell + half - cy) / size;
+      // Punkt på strålen i kubens rum: o + k * d
+      const ox = m[0] * px + m[3] * py, oy = m[1] * px + m[4] * py, oz = m[2] * px + m[5] * py;
+      let near = -Infinity, far = Infinity, axis = 0;
+      for (const [i, o, d] of [[0, ox, dx], [1, oy, dy], [2, oz, dz]]) {
+        const k1 = (-1 - o) / d, k2 = (1 - o) / d, lo = Math.min(k1, k2), hi = Math.max(k1, k2);
+        if (lo > near) { near = lo; axis = i; }
+        if (hi < far) far = hi;
+      }
+      if (near > far) continue;
+      const hit = [ox + near * dx, oy + near * dy, oz + near * dz];
+      const u = Math.abs(hit[(axis + 1) % 3]), v = Math.abs(hit[(axis + 2) % 3]), e = Math.max(u, v);
+      const noise = ((gx * 73856093 ^ gy * 19349663) >>> 0) % 100 / 100;
+      let tone = light[axis] * (.72 + noise * .4);
+      if (e > .94) tone = 1;                    // kant
+      else if (e > .62 && e < .67) tone += .28; // inre ram
+      if (tone < .2) continue;
+      buckets[Math.min(SHADES - 1, Math.floor(tone * SHADES))].push(gx * cell + half, gy * cell + half);
+    }
+    ctx.clearRect(0, 0, W, H);
+    buckets.forEach((pts, i) => {
+      const r = .7 + i * .22;
+      ctx.fillStyle = `rgba(27,22,32,${.12 + i * .085})`;
+      ctx.beginPath();
+      for (let n = 0; n < pts.length; n += 2) ctx.rect(pts[n] - r, pts[n + 1] - r, r * 2, r * 2);
+      ctx.fill();
+    });
+  }
+
+  new ResizeObserver(resize).observe(canvas);
+  resize();
+})();
 </script>
 </body>
 </html>

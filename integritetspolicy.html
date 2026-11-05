@@ -14,7 +14,7 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
 <link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#191919">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sv_SE">
 <meta property="og:site_name" content="Sabimedia">
@@ -38,23 +38,33 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font
 a{color:var(--accent-deep)}
 h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;line-height:1.12}
 .wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.nav{position:sticky;top:0;z-index:40;background:#000}
+.nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.9);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
 .brand{display:flex;align-items:center}
 .brand img{display:block;height:42px;width:auto}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-weight:500;color:#d8d0c5}
+.nav-links a{text-decoration:none;font-weight:500;color:#ece8e2}
 .nav-links a:hover{color:#fff}
 .nav-links .cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:.6rem 1rem;font-weight:600;font-size:.9rem}
 .nav-links .cta:hover{background:var(--accent-deep);color:#fff}
-.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:transparent;cursor:pointer;place-items:center}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;place-items:center}
 .menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (min-width:901px){
+  .nav-links a:not(.btn):not(.cta){position:relative;padding:.3rem 0;transition:color .2s ease}
+  .nav-links a:not(.btn):not(.cta)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links a:not(.btn):not(.cta):hover,.nav-links a:not(.btn):not(.cta):focus-visible{color:#fff}
+  .nav-links a:not(.btn):not(.cta):hover::after,.nav-links a:not(.btn):not(.cta):focus-visible::after,.nav-links a:not(.btn):not(.cta)[aria-current]::after{transform:scaleX(1)}
+}
 @media (max-width:900px){
   .brand img{height:36px}
-  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#0c0c0d;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
   .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
-  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.1rem}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:1.1rem}
   .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .nav-links li:not(:last-child) a{position:relative;transition:padding-left .25s ease,color .2s ease}
+  .nav-links li:not(:last-child) a::before{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--accent);transform:translateY(-50%) scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links li:not(:last-child) a:hover,.nav-links li:not(:last-child) a:focus-visible{padding-left:28px;color:#fff}
+  .nav-links li:not(:last-child) a:hover::before,.nav-links li:not(:last-child) a:focus-visible::before{transform:translateY(-50%) scaleX(1)}
   .menu-btn{display:grid}
 }
 .hero{padding:56px 0 32px}
@@ -95,6 +105,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 calc(32px + env(safe-area
 }
 /* Tillgänglighet: platshållartext med tillräcklig kontrast */
 ::placeholder{color:#736a75;opacity:1}
+@media (prefers-reduced-motion:reduce){.nav-links a,.nav-links a::before,.nav-links a::after{transition:none!important}}
 </style>
 </head>
 <body>
