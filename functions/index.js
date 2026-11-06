@@ -11,7 +11,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 // Fälten som får komma in, i den ordning de visas i mejlet
 const FIELDS = [
   ["when", "Önskad tid för samtal", 100],
-  ["how", "Samtalsform", 40],
+  ["how", "Möte via", 40],
   ["name", "Namn", 200],
   ["company", "Företag", 200],
   ["phone", "Telefon", 40],

@@ -21,10 +21,10 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <meta property="og:title" content="Boka ett gratis samtal · Sabimedia">
 <meta property="og:description" content="Välj en tid som passar dig för ett kostnadsfritt samtal med Sabimedia om din nya hemsida. Vardagar kl. 10–20.">
 <meta property="og:url" content="https://sabimedia.se/boka">
-<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg">
+<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 800 kr">
+<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 400 kr">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,15 +138,15 @@ form button[disabled]{opacity:.7;cursor:wait}
 .picked svg{width:20px;height:20px;color:var(--ink);flex:none}
 .alt-time{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.95rem}
 .alt-time a{color:var(--accent-deep);font-weight:600}
-.radio-row{display:flex;flex-wrap:wrap;gap:8px}
-.radio-row label{display:flex;align-items:center;gap:.45rem;border:1.5px solid var(--line);border-radius:999px;padding:.5rem .9rem;font-weight:500;cursor:pointer}
-.radio-row input{accent-color:var(--ink);width:auto;margin:0}
+.meet-note{font-size:.9rem;color:var(--ink-soft)}
 #book-form{padding:0;background:none}
 @media (max-width:900px){.book{grid-template-columns:1fr}}
 @media (max-width:420px){.slots{grid-template-columns:repeat(3,1fr)}}
 /* Tillgänglighet: platshållartext med tillräcklig kontrast */
 ::placeholder{color:#736a75;opacity:1}
 @media (prefers-reduced-motion:reduce){.nav-links a,.nav-links a::before,.nav-links a::after{transition:none!important}}
+.foot-ig{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;vertical-align:bottom}
+.foot-ig svg{width:18px;height:18px;flex:none}
 </style>
 </head>
 <body>
@@ -196,8 +196,7 @@ form button[disabled]{opacity:.7;cursor:wait}
         <div class="field"><label for="f-name">Ditt namn <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-email">E-post <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="namn@foretag.se" required></div>
         <div class="field"><label for="f-phone">Telefon <span class="opt">(valfritt)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="070-123 45 67"></div>
-        <div class="field"><span style="font-weight:600;font-size:.9rem">Hur vill du prata?</span>
-          <div class="radio-row"><label><input type="radio" name="how" value="Telefon" checked>Telefon</label><label><input type="radio" name="how" value="Videosamtal">Videosamtal</label></div></div>
+        <p class="meet-note">Mötet sker via Microsoft Teams.</p>
         <div class="field"><label for="f-msg">Något vi bör veta? <span class="opt">(valfritt)</span></label><textarea id="f-msg" name="message" placeholder="T.ex. vad ditt företag gör eller vilket paket du funderar på."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
         <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -209,7 +208,7 @@ form button[disabled]{opacity:.7;cursor:wait}
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Sabimedia · Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></div>
+  <div class="wrap">© 2026 Sabimedia · Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a> · <a class="foot-ig" href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@sabimediaa</a></div>
 </footer>
 <script>
 const links = document.getElementById("nav-links"), menuBtn = document.getElementById("menu-btn");
@@ -354,7 +353,7 @@ $("#book-form").addEventListener("submit", async e => {
     const res = await fetch(CONFIG.formEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...f, when, source: "Bokningssidan" }),
+      body: JSON.stringify({ ...f, when, how: "Teams", source: "Bokningssidan" }),
       signal: AbortSignal.timeout(25000)
     });
     const json = await res.json().catch(() => ({}));
