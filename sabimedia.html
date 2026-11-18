@@ -846,13 +846,13 @@ if (CONFIG.review.quote) {
 const YES = '<span class="yes" aria-label="Ingår"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>';
 const NO = '<span class="no" aria-label="Ingår inte"></span>';
 const pro = i => CONFIG.plans[i].featured ? ' class="pro"' : "";
-const priceText = p => p.quote ? `Från ${p.price} kr` : p.price ? `${p.price} kr` : "Pris på förfrågan";
+const priceText = p => p.price ? `Från ${p.price} kr` : "Pris på förfrågan";
 $("#prices").innerHTML = `<table aria-label="Jämförelse av hemsidepaket">
   <colgroup><col class="feat-col"><col><col><col></colgroup>
   <thead><tr><th scope="col">Funktion</th>${CONFIG.plans.map((p, i) => `<th scope="col"${pro(i)}>
     ${p.featured ? `<span class="plan-pill">${esc(p.featured)}</span>` : ""}
     <span class="plan-name">${esc(p.name.toUpperCase())}</span>
-    <span class="plan-from">${p.quote ? "Från" : "Pris"}</span>
+    <span class="plan-from">Från</span>
     <span class="plan-price">${esc(p.price ? `${p.price} kr` : "–")}</span>
     <span class="plan-terms">${p.quote ? "efter behov" : "exkl. moms"}</span></th>`).join("")}</tr></thead>
   <tbody>
@@ -861,7 +861,7 @@ $("#prices").innerHTML = `<table aria-label="Jämförelse av hemsidepaket">
   </tbody>
   <tfoot><tr><th></th>${CONFIG.plans.map((p, i) => `<td${pro(i)}><button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}"><span class="hide-sm">Välj </span>${esc(p.name)}</button></td>`).join("")}</tr></tfoot>
 </table>`;
-$("#price-note").textContent = "Alla priser är engångspriser exklusive moms. Custom börjar på 4 000 kr och slutpriset sätts i en offert efter behov.";
+$("#price-note").textContent = "Alla priser är från-priser och engångspriser exklusive moms. Slutpriset beror på vad du behöver, och för Custom sätts det i en offert.";
 $("#plans").innerHTML = CONFIG.plans.map(p => `
   <article class="plan${p.featured ? " featured" : ""}">
     ${p.featured ? `<span class="pill">${esc(p.featured)}</span>` : ""}
