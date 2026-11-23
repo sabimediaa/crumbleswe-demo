@@ -87,9 +87,7 @@
 .sok-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;height:44px;min-width:44px;padding:0 .8rem;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#ece8e2;font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;transition:border-color .2s,color .2s}
 .sok-btn:hover{border-color:#fff;color:#fff}
 .sok-btn svg{width:19px;height:19px;flex:none}
-.sok-btn kbd{font:inherit;font-size:.72rem;font-weight:600;color:#b9b2aa;border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:.05rem .35rem}
-@media (max-width:1100px){.sok-btn kbd{display:none}}
-@media (max-width:900px){.sok-btn{margin-left:auto;padding:0;width:44px}.sok-btn span,.sok-btn kbd{display:none}.sok-btn + .nav-cta{margin-left:.5rem}}
+@media (max-width:900px){.sok-btn{margin-left:auto;padding:0;width:44px}.sok-btn span{display:none}.sok-btn + .nav-cta{margin-left:.5rem}}
 .sok{border:0;padding:0;margin:0;max-width:none;max-height:none;width:100%;height:100%;background:transparent;color:var(--ink)}
 .sok::backdrop{background:rgba(20,16,24,.18)}
 .sok-panel{width:min(640px,calc(100% - 32px));margin:min(12vh,96px) auto 0;background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);overflow:hidden;animation:sok-in .22s cubic-bezier(.2,.7,.2,1)}
@@ -123,8 +121,8 @@
   const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
   const mac = /Mac|iPhone|iPad/.test(navigator.platform);
   const btn = document.createElement("button");
-  btn.type = "button"; btn.className = "sok-btn"; btn.setAttribute("aria-label", "Sök på sidan"); btn.setAttribute("aria-haspopup", "dialog");
-  btn.innerHTML = `${icon}<span>Sök</span><kbd aria-hidden="true">${mac ? "⌘K" : "Ctrl K"}</kbd>`;
+  btn.type = "button"; btn.className = "sok-btn"; btn.setAttribute("aria-label", "Sök på sidan"); btn.setAttribute("aria-haspopup", "dialog"); btn.setAttribute("aria-keyshortcuts", mac ? "Meta+K /" : "Control+K /");
+  btn.innerHTML = `${icon}<span>Sök</span>`;
   const navIn = document.querySelector(".nav-in");
   if (!navIn) return;
   navIn.insertBefore(btn, navIn.querySelector(".nav-cta") || navIn.querySelector(".menu-btn"));
