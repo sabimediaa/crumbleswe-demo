@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurang Ruta · Restaurang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Exempelsida: restaurang – kol, gräddvitt, valnöt och ett rutmönster från golvet. */
+:root{--bg:#f5efe6;--paper:#fffaf2;--ink:#1d1814;--soft:#6b5f55;--line:#e4d8c8;--wood:#8a4b2a;--gold:#c9a15b;--display:"Fraunces",Georgia,serif;--body:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.015em}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.top{background:var(--ink);color:#e9dfd0;font-size:.78rem;letter-spacing:.04em}
+.top .wrap{display:flex;justify-content:space-between;height:36px;align-items:center}
+.top b{color:var(--gold);font-weight:600}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-size:1.75rem;font-weight:600}
+.logo i{width:30px;height:30px;border-radius:6px;background:conic-gradient(var(--ink) 0 25%,#fff 0 50%,var(--ink) 0 75%,#fff 0) 0 0/15px 15px;box-shadow:0 0 0 1.5px var(--ink)}
+nav{display:flex;gap:2.1rem;font-size:.92rem;font-weight:500;color:var(--soft)}
+nav a:first-child{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.5rem;border-radius:999px;font-weight:600;font-size:.92rem}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.line{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:28px;padding:18px 0 56px;align-items:stretch}
+.hero-txt{padding:40px 8px 0 0;display:flex;flex-direction:column}
+.kick{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--wood)}
+.hero h1{font-size:clamp(3.4rem,6.4vw,5.6rem);margin:1.1rem 0 1.3rem}
+.hero h1 em{color:var(--wood)}
+.hero p{color:var(--soft);font-size:1.06rem;max-width:38ch}
+.btns{display:flex;gap:.7rem;margin-top:2rem}
+.hours{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:1.3rem;gap:12px}
+.hours b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:600}
+.hours span{font-size:.8rem;color:var(--soft)}
+.photo{position:relative;border-radius:28px;overflow:hidden;min-height:560px;background:#2b1d15}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 60%}
+.book{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(255,250,242,.96);border-radius:20px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:center;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.book small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.book strong{font-size:.98rem}
+.book .btn{padding:.8rem 1.2rem}
+.badge{position:absolute;top:22px;left:22px;background:rgba(29,24,20,.82);color:#fff;border-radius:999px;padding:.5rem .95rem;font-size:.82rem;font-weight:600}
+.badge b{color:var(--gold)}
+.menu-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;padding-bottom:24px}
+.menu-head h2{font-size:3.4rem}
+.menu-head h2 em{color:var(--wood)}
+.menu-head p{color:var(--soft);max-width:34ch}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:80px}
+.card{background:var(--paper);border-radius:22px;padding:26px 26px 24px;border:1px solid var(--line)}
+.card h3{font-size:1.7rem;margin-bottom:.8rem}
+.row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-top:1px dashed var(--line);font-size:.93rem}
+.row span:last-child{font-weight:600}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--soft);font-size:.82rem}
+footer .wrap{display:flex;justify-content:space-between}
+@media (max-width:900px){nav{display:none}.hero{grid-template-columns:1fr}.photo{min-height:420px}.cards{grid-template-columns:1fr}.menu-head{flex-direction:column;align-items:start}.book{grid-template-columns:1fr 1fr}.book .btn{grid-column:1/-1;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Storgatan 12 · Borås</span><span><b>Öppet i dag</b> 11:30–23:00</span></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><i aria-hidden="true"></i>Restaurang Ruta</a>
+  <nav><a href="#">Meny</a><a href="#">Lunch</a><a href="#">Event</a><a href="#">Hitta hit</a></nav>
+  <a class="btn dark" href="#">Boka bord</a>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="kick">Restaurang &amp; bar sedan 2016</span>
+      <h1>Middag i <em>god</em> sällskap.</h1>
+      <p>Säsongens råvaror, långkok och naturvin i en varm matsal med tegel, trä och rutigt golv.</p>
+      <div class="btns"><a class="btn dark" href="#">Boka bord →</a><a class="btn line" href="#">Se menyn</a></div>
+      <div class="hours"><div><b>11:30</b><span>Lunch mån–fre</span></div><div><b>17:00</b><span>Middag varje dag</span></div><div><b>4,8 ★</b><span>520 omdömen</span></div></div>
+    </div>
+    <div class="photo">
+      <img src="bilder/bistro-ruta.webp" alt="Matsalen på Restaurang Ruta med trägolv, rutigt golv och mönstrade stolar">
+      <span class="badge"><b>●</b> Lediga bord i kväll</span>
+      <div class="book">
+        <div><small>Datum</small><strong>I kväll</strong></div>
+        <div><small>Tid</small><strong>19:00</strong></div>
+        <div><small>Gäster</small><strong>2 personer</strong></div>
+        <a class="btn dark" href="#">Boka</a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="menu-head"><h2>Från <em>köket</em></h2><p>Menyn skiftar med säsongen. Fråga gärna om allergier – vi anpassar.</p></div>
+    <div class="cards">
+      <div class="card"><h3>Förrätter</h3><div class="row"><span>Rödbetor, chèvre &amp; valnöt</span><span>125 kr</span></div><div class="row"><span>Toast Skagen</span><span>145 kr</span></div></div>
+      <div class="card"><h3>Varmrätter</h3><div class="row"><span>Långkokt högrev, rotselleri</span><span>265 kr</span></div><div class="row"><span>Röding, brynt smör</span><span>245 kr</span></div></div>
+      <div class="card"><h3>Efterrätter</h3><div class="row"><span>Crème brûlée</span><span>95 kr</span></div><div class="row"><span>Chokladfondant</span><span>105 kr</span></div></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 Restaurang Ruta</span><span>Exempelsida med påhittat företag · Gjord av Sabimedia</span></div></footer>
+</body>
+</html>

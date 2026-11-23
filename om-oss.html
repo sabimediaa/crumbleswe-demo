@@ -220,6 +220,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .js-anim .reveal{opacity:1;transform:none}
 }
 html,body{overflow-x:clip}
+/* Helskärm: Kontakt i mitten av menyn med tre länkar på var sida, sökknappen längst till höger */
+@media (min-width:901px){
+  .nav-in{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem}
+  .brand{justify-self:start}
+  .sok-btn{grid-column:3;justify-self:end}
+  .nav-links{flex:none;margin:0;display:grid;grid-template-columns:repeat(3,92px) auto repeat(3,92px);column-gap:12px;align-items:center;justify-items:center}
+  .nav-links li:first-child{margin-left:0}
+  .nav-links li:nth-child(-n+3){order:1}
+  .nav-links li:last-child{order:2;margin:0 14px;padding-left:0;border-left:0}
+  .nav-links li:nth-child(n+4):not(:last-child){order:3}
+}
+@media (min-width:901px) and (max-width:1120px){.nav-links{grid-template-columns:repeat(3,78px) auto repeat(3,78px);column-gap:4px}.nav-links li:last-child{margin:0 8px}}
 </style>
 </head>
 <body>
@@ -230,6 +242,7 @@ html,body{overflow-x:clip}
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Hem</a></li>
       <li><a href="/#ingar">Tjänster</a></li>
+      <li><a href="/branscher">Branscher</a></li>
       <li><a href="/#priser">Priser</a></li>
       <li><a href="/om-oss" aria-current="page">Om oss</a></li>
       <li><a href="/#fragor">FAQ</a></li>
@@ -531,5 +544,6 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
     }));
 }
 </script>
+<script src="/sok.js" defer></script>
 </body>
 </html>

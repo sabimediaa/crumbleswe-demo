@@ -3,6 +3,7 @@
   <url><loc>https://sabimedia.se/</loc><priority>1.0</priority></url>
   <url><loc>https://sabimedia.se/kundcase-cookie-munch</loc><priority>0.8</priority></url>
   <url><loc>https://sabimedia.se/boka</loc><priority>0.8</priority></url>
+  <url><loc>https://sabimedia.se/branscher</loc><priority>0.8</priority></url>
   <url><loc>https://sabimedia.se/om-oss</loc><priority>0.7</priority></url>
   <url><loc>https://sabimedia.se/integritetspolicy</loc><priority>0.3</priority></url>
 </urlset>
