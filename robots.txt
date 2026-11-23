@@ -1,4 +1,7 @@
+# robots.txt för sabimedia.se
+# Alla sökmotorer får läsa hela sajten, utom formulärets API.
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://sabimedia.se/sitemap.xml
