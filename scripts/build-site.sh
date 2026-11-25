@@ -16,7 +16,7 @@ cp kundcase-cookie-munch.html site/kundcase-cookie-munch.html
 cp favicon.ico robots.txt sitemap.xml sok.js site/
 cp bilder/sabi-logo.png bilder/cookiemunch-desktop.jpg bilder/cookiemunch-mobil.jpg bilder/cookiemunch-logo.webp \
    bilder/exempel-kladbutik.jpg bilder/exempel-restaurang.jpg bilder/exempel-stad.jpg bilder/safiya.jpg \
-   bilder/favicon-32.png bilder/apple-touch-icon.png bilder/ikon-512.png bilder/delningsbild.jpg site/bilder/
+   bilder/favicon-32.png bilder/favicon-96.png bilder/favicon-192.png bilder/apple-touch-icon.png bilder/ikon-512.png bilder/delningsbild.jpg site/bilder/
 # Mindre WebP-storlekar som används via srcset
 cp bilder/{sabi-logo,cookiemunch-desktop,cookiemunch-mobil,cookiemunch-logo,exempel-kladbutik,exempel-restaurang,exempel-stad,safiya}-[0-9]*.webp site/bilder/
 
