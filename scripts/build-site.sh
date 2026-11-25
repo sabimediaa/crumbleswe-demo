@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 rm -rf site
-mkdir -p site/bilder
+mkdir -p site/bilder site/typsnitt
 
 cp sabimedia.html site/index.html
 cp integritetspolicy.html site/integritetspolicy.html
@@ -17,5 +17,29 @@ cp favicon.ico robots.txt sitemap.xml sok.js site/
 cp bilder/sabi-logo.png bilder/cookiemunch-desktop.jpg bilder/cookiemunch-mobil.jpg bilder/cookiemunch-logo.webp \
    bilder/exempel-kladbutik.jpg bilder/exempel-restaurang.jpg bilder/exempel-stad.jpg bilder/safiya.jpg \
    bilder/favicon-32.png bilder/apple-touch-icon.png bilder/ikon-512.png bilder/delningsbild.jpg site/bilder/
+# Mindre WebP-storlekar som används via srcset
+cp bilder/{sabi-logo,cookiemunch-desktop,cookiemunch-mobil,cookiemunch-logo,exempel-kladbutik,exempel-restaurang,exempel-stad,safiya}-[0-9]*.webp site/bilder/
+
+cp typsnitt/*.woff2 site/typsnitt/
+
+# Undersidorna Tjänster, Priser, FAQ och Kontakt skapas från startsidan
+python3 scripts/build-pages.py
+
+# Bilder och typsnitt cachas i ett år (firebase.json). Därför får varje adress en kod som
+# räknas fram ur filens innehåll: byts filen ut får den ny adress och hämtas på nytt.
+python3 - <<'PY'
+import glob, hashlib, re, sys
+def add(m):
+    path = m.group(1)
+    try:
+        with open("site/" + path.lstrip("/"), "rb") as f: code = hashlib.md5(f.read()).hexdigest()[:8]
+    except FileNotFoundError:
+        sys.exit("Filen saknas i site/: " + path)
+    return f"{path}?v={code}"
+for page in glob.glob("site/*.html"):
+    with open(page, encoding="utf-8") as f: html = f.read()
+    html = re.sub(r"(?<![\w/.-])(/?(?:bilder|typsnitt)/[\w.-]+\.(?:jpg|png|webp|woff2))(?:\?v=\w+)?", add, html)
+    with open(page, "w", encoding="utf-8") as f: f.write(html)
+PY
 
 echo "site/ klar: $(find site -type f | wc -l | tr -d ' ') filer"

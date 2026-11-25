@@ -9,6 +9,12 @@
 /* Skicka besökare från Firebase-adresserna och www vidare till huvudadressen sabimedia.se */
 if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
   location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
+/* Gamla länkar som sabimedia.se/#priser leder till sidans nya adress */
+else if (location.pathname === "/") {
+  const h = location.hash.slice(1);
+  const to = { ingar: "/tjanster", "sa-funkar-det": "/tjanster#sa-funkar-det", agande: "/tjanster#agande", priser: "/priser", fragor: "/faq", kontakt: "/kontakt" }[h] || (/^faq-\d+$/.test(h) ? "/faq#" + h : "");
+  if (to) location.replace(to);
+}
 </script>
 <meta name="description" content="Sabimedia är en webbyrå i Borås som bygger hemsidor för alla typer av småföretag – med produktlista, beställningar, betalning och egen adminpanel.">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -27,9 +33,18 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 1 200 kr">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://sabimedia.se/#foretag", "name": "Sabimedia", "url": "https://sabimedia.se/", "logo": "https://sabimedia.se/bilder/ikon-512.png", "image": "https://sabimedia.se/bilder/delningsbild.jpg?v=6", "email": "hej@sabimedia.se", "sameAs": ["https://instagram.com/sabimediaa"], "description": "Webbyrå i Borås som bygger hemsidor åt småföretag i hela Sverige. Fast engångspris från 1 200 kr exkl. moms.", "founder": {"@type": "Person", "name": "Safiya Ibrahim"}, "address": {"@type": "PostalAddress", "addressLocality": "Borås", "addressCountry": "SE"}, "areaServed": {"@type": "Country", "name": "Sverige"}, "priceRange": "1200–4000 kr", "makesOffer": [{"@type": "Offer", "name": "Start", "price": "1200", "priceCurrency": "SEK", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Start"}}, {"@type": "Offer", "name": "Business", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Business"}, "price": "2500", "priceCurrency": "SEK"}, {"@type": "Offer", "name": "Custom", "itemOffered": {"@type": "Service", "name": "Hemsidepaket Custom"}, "price": "4000", "priceCurrency": "SEK"}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" href="typsnitt/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="typsnitt/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="typsnitt/fraunces-kursiv.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Egna typsnitt (Open Font License). "Reserv" har samma mått, så att texten inte hoppar när typsnittet har laddats. */
+@font-face{font-family:"Inter";src:url(typsnitt/inter.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";src:url(typsnitt/inter-tight.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";src:url(typsnitt/fraunces-kursiv.woff2) format("woff2");font-style:italic;font-weight:500 600;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Reserv";src:local("Arial"),local("Roboto");size-adjust:106.59%;ascent-override:91%;descent-override:22.5%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight Reserv";src:local("Arial Bold"),local("Arial-BoldMT"),local("Roboto Bold"),local("Arial");size-adjust:95.8%;ascent-override:101.3%;descent-override:25%;line-gap-override:0%;font-weight:500 700;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces Reserv";src:local("Georgia Italic"),local("Georgia-Italic");font-style:italic;size-adjust:90.7%;ascent-override:108%;descent-override:28.7%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 /* Sabimedia: varma neutrala toner, mörk plommon-grafit som bas och rött från loggan som accent. */
 :root{
@@ -43,8 +58,8 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
   --accent-soft:#fbe8e6;
   --plum:#241a2b;
   --gold:#f5a524;
-  --display:"Inter Tight", "Inter", system-ui, sans-serif;
-  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display:"Inter Tight","Inter Tight Reserv","Inter", system-ui, sans-serif;
+  --body:"Inter","Inter Reserv", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius:16px;
   color-scheme:light;
 }
@@ -70,7 +85,7 @@ p{margin:0}
 @media (max-width:1200px){.bg-cube{-webkit-mask-image:linear-gradient(90deg,transparent 8%,#000 34%);mask-image:linear-gradient(90deg,transparent 8%,#000 34%)}}
 @media (max-width:960px){.bg-cube{opacity:.42;-webkit-mask-image:none;mask-image:none}}
 @media (max-width:600px){.bg-cube{opacity:.28}}
-em.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
+em.hl{font-family:"Fraunces","Fraunces Reserv",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:0;border-radius:10px;padding:.9rem 1.4rem;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap}
 .btn:hover{transform:translateY(-1px)}
@@ -155,8 +170,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .shot-view img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
 .stage-link{display:block;position:absolute;inset:0;text-decoration:none;color:inherit}
 .shot-a{width:88%;height:66%;right:0;top:8%;z-index:2}
-.shot-c{width:30%;height:76%;left:0;bottom:0;z-index:4;border-radius:28px;border:7px solid var(--ink)}
-.shot-c .shot-view{height:100%}
+.shot-c{width:30%;left:0;bottom:0;z-index:4;border-radius:28px;border:7px solid var(--ink)}
+.shot-c .shot-view{height:auto;aspect-ratio:780/1690} /* samma proportioner som bilden, så att inget klipps */
 .stage-link:hover .shot-a{transform:translateY(-4px)}
 .shot{transition:transform .3s ease}
 .case{position:absolute;z-index:5;right:0;bottom:2%;display:flex;align-items:center;gap:.7rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:.7rem 1rem .7rem .7rem;box-shadow:0 18px 36px -20px rgba(15,15,20,.45);max-width:62%}
@@ -167,8 +182,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sticker::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
 @media (max-width:900px){
   .hero-grid{grid-template-columns:minmax(0,1fr)}
-  .stage{max-width:560px;width:100%;margin:0 auto}
+  .stage{max-width:560px;width:100%;min-height:0;margin:0 auto}
   .stage-more{justify-self:center}
+}
+@media (max-width:560px){
+  .case{padding:.5rem .7rem .5rem .5rem;gap:.55rem;max-width:60%}
+  .case b{font-size:.85rem}
+  .case small{display:block;font-size:.75rem;line-height:1.35;margin-top:.15rem}
 }
 
 /* ---------- Features ---------- */
@@ -206,7 +226,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .ex-body small{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .ex-body h3{font-size:1.3rem}
 .ex-body p{color:var(--ink-soft)}
-.ex-note{margin-top:18px;color:var(--ink-soft);font-size:.92rem}
+.ex-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:22px}
+.ex-note{color:var(--ink-soft);font-size:.92rem}
 @media (max-width:900px){.examples{grid-template-columns:1fr;max-width:520px}}
 
 /* ---------- Trust ---------- */
@@ -267,7 +288,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .compare td.pro{background:#f2ede6}
 .compare tbody tr:nth-child(even) td.pro{background:#ece5db}
 .yes{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff}
-.yes svg{width:16px;height:16px}
+.yes::after{content:"";width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat}
 .no{display:inline-block;width:12px;height:2px;border-radius:2px;background:#8d848b;vertical-align:middle}
 .compare tr.support th,.compare tr.support td{border-top:1px solid var(--line);font-weight:700}
 .compare tfoot td,.compare tfoot th{padding:18px 12px 24px;border-top:1px solid var(--line)}
@@ -289,7 +310,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .plan-terms{font-size:.75rem;line-height:1.25}
   .plan-pill{font-size:.75rem;padding:.2rem .35rem;letter-spacing:0;margin-bottom:.5rem;line-height:1.2}
   .yes{width:24px;height:24px}
-  .yes svg{width:13px;height:13px}
+  .yes::after{width:13px;height:13px}
   .compare tr.support td{font-size:.78rem}
   .compare tfoot .btn{padding:.55rem .3rem;font-size:.8rem;width:100%;max-width:84px}
   .compare tfoot td{padding-left:4px;padding-right:4px}
@@ -316,6 +337,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .plan.featured{border:2px solid var(--accent);box-shadow:0 30px 60px -34px rgba(15,15,20,.25)}
 .plan.featured .pill{position:absolute;top:-13px;left:26px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px}
 .plan.featured li::before{background:var(--accent);color:#fff}
+.compare-link{display:flex;justify-content:center;margin-top:calc(26px - clamp(56px,8vw,96px))}
 .compare-head{display:grid;gap:.5rem;margin-bottom:24px}
 .compare-head h3{font-size:clamp(1.5rem,3vw,2.1rem)}
 .compare-head p{color:var(--ink-soft)}
@@ -396,6 +418,9 @@ footer{padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px));color:var(--i
 .hero-grid > div:first-child > :nth-child(4){animation-delay:.24s}
 .hero-grid > div:first-child > :nth-child(5){animation-delay:.32s}
 .hero-grid > div:first-child > :nth-child(6){animation-delay:.4s}
+/* Rubriken och texten glider in utan att tonas, så att de syns direkt (LCP) */
+@keyframes rise-syns{from{transform:translateY(18px)}to{transform:none}}
+.hero-grid > div:first-child > h1,.hero-grid > div:first-child > p{animation-name:rise-syns}
 .stage .shot-a{animation:rise .9s .2s cubic-bezier(.2,.7,.2,1) backwards}
 .stage .shot-c{animation:rise .9s .38s cubic-bezier(.2,.7,.2,1) backwards}
 .stage .case{animation:rise .8s .55s cubic-bezier(.2,.7,.2,1) backwards}
@@ -462,17 +487,17 @@ main:focus{outline:none}
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Sabi – till toppen"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#top" aria-current="page">Hem</a></li>
-      <li><a href="#ingar">Tjänster</a></li>
+      <li><a href="/" aria-current="page">Hem</a></li>
+      <li><a href="/tjanster">Tjänster</a></li>
       <li><a href="/branscher">Branscher</a></li>
-      <li><a href="#priser">Priser</a></li>
+      <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
-      <li><a href="#fragor">FAQ</a></li>
-      <li><a class="btn btn-accent btn-sm" href="#kontakt">Kontakt</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a class="btn btn-accent btn-sm" href="/kontakt">Kontakt</a></li>
     </ul>
-    <a class="nav-cta" href="#kontakt">Kontakt</a>
+    <a class="nav-cta" href="/kontakt">Kontakt</a>
     <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </div>
 </header>
@@ -487,8 +512,8 @@ main:focus{outline:none}
         <h1>Hemsidan som tar emot <em class="hl">beställningar</em> åt dig.</h1>
         <p class="lead">Vi bygger snygga hemsidor för alla typer av småföretag – butiker, salonger, caféer, hantverkare och allt däremellan. Med produktlista, beställningar och en egen adminpanel där du ser allt.</p>
         <div class="hero-ctas">
-          <a class="btn btn-accent" href="#priser">Se paketen från 1 200 kr →</a>
-          <a class="btn btn-line" href="#kontakt" data-book>Boka ett kostnadsfritt samtal</a>
+          <a class="btn btn-accent" href="/priser">Se paketen från 1 200 kr →</a>
+          <a class="btn btn-line" href="/boka" data-book>Boka ett kostnadsfritt samtal</a>
         </div>
         <div class="trust">
           <span>Skräddarsydd design</span>
@@ -500,10 +525,10 @@ main:focus{outline:none}
       <div class="stage-wrap">
         <div class="stage">
           <a class="stage-link" href="https://cookiemunch.se" target="_blank" rel="noopener" aria-label="Besök Cookie Munch – en hemsida byggd av Sabimedia (öppnas i ny flik)">
-            <div class="shot shot-a"><div class="shot-bar"><i></i><i></i><i></i><span class="url">cookiemunch.se</span></div><div class="shot-view"><img src="bilder/cookiemunch-desktop.jpg" alt="Cookie Munchs hemsida i datorn"></div></div>
-            <div class="shot shot-c"><div class="shot-view"><img src="bilder/cookiemunch-mobil.jpg" alt="Cookie Munchs hemsida i mobilen"></div></div>
+            <div class="shot shot-a"><div class="shot-bar"><i></i><i></i><i></i><span class="url">cookiemunch.se</span></div><div class="shot-view"><img src="bilder/cookiemunch-desktop.jpg" srcset="bilder/cookiemunch-desktop-480.webp 480w, bilder/cookiemunch-desktop-640.webp 640w, bilder/cookiemunch-desktop-960.webp 960w, bilder/cookiemunch-desktop-1440.webp 1440w" sizes="(max-width:560px) 88vw, (max-width:900px) 500px, (max-width:1240px) 40vw, 480px" alt="Cookie Munchs hemsida i datorn"></div></div>
+            <div class="shot shot-c"><div class="shot-view"><img src="bilder/cookiemunch-mobil.jpg" srcset="bilder/cookiemunch-mobil-200.webp 200w, bilder/cookiemunch-mobil-320.webp 320w, bilder/cookiemunch-mobil-480.webp 480w, bilder/cookiemunch-mobil-672.webp 672w" sizes="(max-width:560px) 27vw, 155px" alt="Cookie Munchs hemsida i mobilen"></div></div>
             <div class="sticker">Live exempel</div>
-            <div class="case"><img src="bilder/cookiemunch-logo.webp" alt=""><span><b>Cookie Munch, Borås</b><small>Webbshop med Swish &amp; admin · Besök sidan ↗</small></span></div>
+            <div class="case"><img src="bilder/cookiemunch-logo.webp" srcset="bilder/cookiemunch-logo-96.webp 96w, bilder/cookiemunch-logo-144.webp 144w" sizes="48px" alt=""><span><b>Cookie Munch, Borås</b><small>Webbshop med Swish &amp; admin · Besök sidan ↗</small></span></div>
           </a>
         </div>
         <a class="btn btn-ink stage-more" href="/kundcase-cookie-munch">Läs mer om kundcaset →</a>
@@ -579,19 +604,19 @@ main:focus{outline:none}
       </div>
       <div class="examples">
         <div class="ex">
-          <div class="ex-shot"><img src="bilder/exempel-kladbutik.jpg?v=3" alt="Exempel på hemsida för en klädbutik" loading="lazy"></div>
+          <div class="ex-shot"><img src="bilder/exempel-kladbutik.jpg?v=3" srcset="bilder/exempel-kladbutik-400.webp 400w, bilder/exempel-kladbutik-680.webp 680w, bilder/exempel-kladbutik-960.webp 960w" sizes="(max-width:560px) 92vw, (max-width:900px) 520px, (max-width:1240px) 31vw, 380px" alt="Exempel på hemsida för en klädbutik" loading="lazy"></div>
           <div class="ex-body"><small>Klädbutik</small><h3>Studio Ofelia</h3><p>Webbshop med kategorier, storlekar och varukorg.</p></div>
         </div>
         <div class="ex">
-          <div class="ex-shot"><img src="bilder/exempel-restaurang.jpg?v=3" alt="Exempel på hemsida för en restaurang" loading="lazy"></div>
+          <div class="ex-shot"><img src="bilder/exempel-restaurang.jpg?v=3" srcset="bilder/exempel-restaurang-400.webp 400w, bilder/exempel-restaurang-680.webp 680w, bilder/exempel-restaurang-960.webp 960w" sizes="(max-width:560px) 92vw, (max-width:900px) 520px, (max-width:1240px) 31vw, 380px" alt="Exempel på hemsida för en restaurang" loading="lazy"></div>
           <div class="ex-body"><small>Restaurang</small><h3>Restaurang Ruta</h3><p>Meny, bordsbokning, öppettider och event.</p></div>
         </div>
         <div class="ex">
-          <div class="ex-shot"><img src="bilder/exempel-stad.jpg?v=2" alt="Exempel på hemsida för ett städföretag" loading="lazy"></div>
+          <div class="ex-shot"><img src="bilder/exempel-stad.jpg?v=2" srcset="bilder/exempel-stad-400.webp 400w, bilder/exempel-stad-680.webp 680w, bilder/exempel-stad-960.webp 960w" sizes="(max-width:560px) 92vw, (max-width:900px) 520px, (max-width:1240px) 31vw, 380px" alt="Exempel på hemsida för ett städföretag" loading="lazy"></div>
           <div class="ex-body"><small>Lokalvård</small><h3>H.F StädService AB</h3><p>Tjänster, priskalkyl med RUT, referenser och offertformulär.</p></div>
         </div>
       </div>
-      <p class="ex-note">Exempel med påhittade företag.</p>
+      <div class="ex-foot"><p class="ex-note">Exempel med påhittade företag.</p><a class="btn btn-ink" href="/tjanster">Se våra tjänster →</a></div>
     </div>
   </section>
 
@@ -604,9 +629,9 @@ main:focus{outline:none}
       </div>
       <div class="trust-grid" id="trust-grid">
         <figure class="review" id="review" hidden>
-          <div class="stars" aria-label="5 av 5 stjärnor">★★★★★</div>
+          <div class="stars" role="img" aria-label="5 av 5 stjärnor">★★★★★</div>
           <blockquote id="review-quote"></blockquote>
-          <footer><img src="bilder/cookiemunch-logo.webp" alt=""><div><b id="review-name"></b><span id="review-company"></span></div></footer>
+          <footer><img src="bilder/cookiemunch-logo.webp" srcset="bilder/cookiemunch-logo-96.webp 96w, bilder/cookiemunch-logo-144.webp 144w" sizes="48px" alt=""><div><b id="review-name"></b><span id="review-company"></span></div></footer>
           <a class="review-link" href="/kundcase-cookie-munch">Läs hela kundcaset →</a>
         </figure>
         <div class="reply">
@@ -659,11 +684,16 @@ main:focus{outline:none}
       </div>
       <div class="plans" id="plans"></div>
       <p class="plan-extra"><b>Vill du ha något som inte ingår i paketet?</b> Då tar vi på Sabi fram en offert för tillägget och skräddarsyr funktionen efter dina behov.<br><b>Osäker på vilket paket som passar?</b> <a href="mailto:hej@sabimedia.se?subject=Vilket%20paket%20passar%20mig%3F">Skicka ett mejl till oss.</a></p>
-      <div class="compare-head">
+      <!-- bara-hem -->
+      <div class="compare-link"><a class="btn btn-ink" href="/priser#jamfor">Jämför paketen i detalj →</a></div>
+      <!-- /bara-hem -->
+      <!-- bara-priser: jämförelsen visas på /priser och tas bort från startsidan av scripts/build-pages.py -->
+      <div class="compare-head" id="jamfor">
         <h3>Jämför paketen i detalj</h3>
         <p>Se exakt vilka funktioner som ingår i varje paket.</p>
       </div>
       <div class="compare" id="prices"></div>
+      <!-- /bara-priser -->
       <p class="price-note" id="price-note"></p>
     </div>
   </section>
@@ -761,8 +791,8 @@ main:focus{outline:none}
 
 <footer>
   <div class="wrap foot">
-    <a class="brand brand-foot" href="#top" aria-label="Sabi – till toppen"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"></a>
-    <nav><a href="#ingar">Det här ingår</a><a href="#priser">Priser</a><a href="#kontakt">Kontakt</a><a href="/kundcase-cookie-munch">Kundcase</a><a href="/integritetspolicy">Integritetspolicy</a><a class="foot-ig" href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@sabimediaa</a></nav>
+    <a class="brand brand-foot" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"></a>
+    <nav><a href="/tjanster">Tjänster</a><a href="/priser">Priser</a><a href="/faq">FAQ</a><a href="/kontakt">Kontakt</a><a href="/kundcase-cookie-munch">Kundcase</a><a href="/integritetspolicy">Integritetspolicy</a><a class="foot-ig" href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@sabimediaa</a></nav>
     <span>© <span id="year"></span> Sabimedia · Webbyrå i Borås · Digitalt i hela Sverige</span>
     <p class="legal">Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></p>
   </div>
@@ -801,7 +831,7 @@ const CONFIG = {
               "Tydliga knappar och kontaktvägar som gör det enklare för besökare att bli kunder",
               "Utökad Google-anpassning för relevanta sökningar", "2 månaders support efter lansering"],
       fit: "Passar företag som vill använda sin hemsida aktivt för att skapa nya kundmöjligheter." },
-    { name: "Custom", price: "4 000", quote: true, terms: "Pris efter behov och omfattning", kicker: "Skräddarsydd lösning",
+    { name: "Custom", price: "4 000", quote: true, terms: "Engångskostnad · exkl. moms", kicker: "Skräddarsydd lösning",
       tagline: "För dig som har större ambitioner eller behöver funktioner anpassade efter hur din verksamhet fungerar.",
       lead: "Möjliga funktioner:",
       items: ["Kompletta bokningssystem med kalender och tillgängliga tider", "Webbshop med produkter, varukorg och betalning",
@@ -846,35 +876,38 @@ menuBtn.addEventListener("click", () => {
 links.addEventListener("click", e => { if (e.target.closest("a")) { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
 
 /* ---------- Review ---------- */
-if (CONFIG.review.quote) {
+if (!$("#review")) {
+  // sidan har inget omdöme
+} else if (CONFIG.review.quote) {
   $("#review-quote").textContent = `”${CONFIG.review.quote}”`;
   $("#review-name").textContent = CONFIG.review.name;
   $("#review-company").textContent = CONFIG.review.company;
   $("#review").hidden = false;
 } else {
-  $("#trust-grid").classList.add("solo");
+  $("#trust-grid")?.classList.add("solo");
 }
 
 /* ---------- Pricing ---------- */
-const YES = '<span class="yes" aria-label="Ingår"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>';
-const NO = '<span class="no" aria-label="Ingår inte"></span>';
+if ($("#plans")) {
+const YES = '<span class="yes" role="img" aria-label="Ingår"></span>';
+const NO = '<span class="no" role="img" aria-label="Ingår inte"></span>';
 const pro = i => CONFIG.plans[i].featured ? ' class="pro"' : "";
 const priceText = p => p.price ? `Från ${p.price} kr` : "Pris på förfrågan";
-$("#prices").innerHTML = `<table aria-label="Jämförelse av hemsidepaket">
+if ($("#prices")) $("#prices").innerHTML = `<table aria-label="Jämförelse av hemsidepaket">
   <colgroup><col class="feat-col"><col><col><col></colgroup>
   <thead><tr><th scope="col">Funktion</th>${CONFIG.plans.map((p, i) => `<th scope="col"${pro(i)}>
     ${p.featured ? `<span class="plan-pill">${esc(p.featured)}</span>` : ""}
     <span class="plan-name">${esc(p.name.toUpperCase())}</span>
     <span class="plan-from">Från</span>
     <span class="plan-price">${esc(p.price ? `${p.price} kr` : "–")}</span>
-    <span class="plan-terms">${p.quote ? "efter behov" : "exkl. moms"}</span></th>`).join("")}</tr></thead>
+    <span class="plan-terms">exkl. moms</span></th>`).join("")}</tr></thead>
   <tbody>
     ${CONFIG.features.map(([f, ...has]) => `<tr><th scope="row">${esc(f)}</th>${has.map((h, i) => `<td${pro(i)}>${h ? YES : NO}</td>`).join("")}</tr>`).join("")}
     <tr class="support"><th scope="row">Support efter lansering</th>${CONFIG.support.map((t, i) => `<td${pro(i)}>${esc(t)}</td>`).join("")}</tr>
   </tbody>
   <tfoot><tr><th></th>${CONFIG.plans.map((p, i) => `<td${pro(i)}><button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}"><span class="hide-sm">Välj </span>${esc(p.name)}</button></td>`).join("")}</tr></tfoot>
 </table>`;
-$("#price-note").textContent = "Alla priser är från-priser och engångspriser exklusive moms. Slutpriset beror på vad du behöver, och för Custom sätts det i en offert.";
+$("#price-note").textContent = "Alla priser är från-priser och engångspriser exklusive moms. Slutpriset beror på vad du behöver.";
 $("#plans").innerHTML = CONFIG.plans.map(p => `
   <article class="plan${p.featured ? " featured" : ""}">
     ${p.featured ? `<span class="pill">${esc(p.featured)}</span>` : ""}
@@ -885,21 +918,29 @@ $("#plans").innerHTML = CONFIG.plans.map(p => `
     <p class="plan-fit">${esc(p.fit)}</p>
     <button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}">Välj ${esc(p.name)}</button>
   </article>`).join("");
-$("#plans").addEventListener("click", e => {
+/* Välj paket: fyller i formuläret på startsidan, annars öppnas kontaktsidan med paketet valt */
+const choosePlan = e => {
   const b = e.target.closest("[data-plan]"); if (!b) return;
+  if (!$("#f-plan")) { location.href = "/kontakt?paket=" + encodeURIComponent(b.dataset.plan); return; }
   $("#f-plan").value = b.dataset.plan;
   $("#kontakt").scrollIntoView();
   setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
-});
-$("#prices").addEventListener("click", e => {
-  const b = e.target.closest("[data-plan]"); if (!b) return;
-  $("#f-plan").value = b.dataset.plan;
-  $("#kontakt").scrollIntoView();
-  setTimeout(() => $("#f-name").focus({ preventScroll: true }), 400);
-});
+};
+$("#plans").addEventListener("click", choosePlan);
+$("#prices")?.addEventListener("click", choosePlan);
+}
+
+if (CONFIG.booking) {
+  const ext = /^https?:/.test(CONFIG.booking) ? ' target="_blank" rel="noopener"' : "";
+  document.querySelectorAll("[data-book]").forEach(a => { a.href = CONFIG.booking; if (ext) { a.target = "_blank"; a.rel = "noopener"; } });
+}
 
 /* ---------- Contact ---------- */
+if ($("#form")) {
 $("#f-plan").insertAdjacentHTML("beforeend", CONFIG.plans.map(p => `<option>${esc(p.name)}</option>`).join(""));
+/* /kontakt?paket=Business väljer paketet i listan */
+const wantedPlan = new URLSearchParams(location.search).get("paket");
+if (CONFIG.plans.some(p => p.name === wantedPlan)) $("#f-plan").value = wantedPlan;
 const ICON = {
   chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
   phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
@@ -910,10 +951,6 @@ const alt = [];
 if (CONFIG.whatsapp) alt.push(`<a href="https://wa.me/${encodeURIComponent(CONFIG.whatsapp)}" target="_blank" rel="noopener"><span>${ICON.chat}</span>Skriv på WhatsApp</a>`);
 if (CONFIG.phone) alt.push(`<a href="tel:${esc(CONFIG.phone.replace(/[^\d+]/g, ""))}"><span>${ICON.phone}</span>${esc(CONFIG.phone)}</a>`);
 alt.push(`<a href="mailto:${esc(CONFIG.email)}"><span>${ICON.mail}</span>${esc(CONFIG.email)}</a>`);
-if (CONFIG.booking) {
-  const ext = /^https?:/.test(CONFIG.booking) ? ' target="_blank" rel="noopener"' : "";
-  document.querySelectorAll("[data-book]").forEach(a => { a.href = CONFIG.booking; if (ext) { a.target = "_blank"; a.rel = "noopener"; } });
-}
 $("#contact-alt").innerHTML = alt.join("");
 
 /* Kalender: vardagar kl. 10–20 i 30-minuterspass. Vald tid skickas med förfrågan. */
@@ -1064,7 +1101,7 @@ $("#form").addEventListener("submit", async e => {
     const res = await fetch(CONFIG.formEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...f, when, how: when ? "Teams" : "", source: "Startsidan" }),
+      body: JSON.stringify({ ...f, when, how: when ? "Teams" : "", source: $("#priser") ? "Startsidan" : "Kontaktsidan" }),
       signal: AbortSignal.timeout(25000)
     });
     const json = await res.json().catch(() => ({}));
@@ -1077,12 +1114,14 @@ $("#form").addEventListener("submit", async e => {
   }
 });
 
+}
+
 $("#year").textContent = new Date().getFullYear();
 
 /* Subtila animationer: korten glider in när man scrollar fram till dem */
 if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
   document.documentElement.classList.add("js-anim");
-  const groups = [".section-head", ".features > *", ".examples > *", ".trust-grid > *", ".steps > *", ".change-note", ".plans > *", ".compare", ".own > *", ".faq > *", ".contact"];
+  const groups = [".section-head", ".features > *", ".examples > *", ".trust-grid > *", ".steps > *", ".change-note", ".plans > *", ".compare", ".own > *", ".faq > *", ".next-box", ...($(".hero") ? [".contact"] : [])];
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add("in");
   }), { rootMargin: "0px 0px -8% 0px" });
@@ -1104,9 +1143,9 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
   const LIGHT = [.45, -.7, -.55], SHADES = 5;
   let W = 0, H = 0, cx = 0, cy = 0, size = 0, cell = 7;
 
-  function resize() {
+  function resize(w, h) {
     const dpr = Math.min(devicePixelRatio || 1, 2);
-    W = canvas.clientWidth; H = canvas.clientHeight;
+    W = w; H = h;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     cell = W > 600 ? 7 : 6;
@@ -1118,6 +1157,7 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
   }
 
   function draw() {
+    if (!W || !H) return;
     const a = .7, b = .55;
     const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
     // Kubens axlar uttryckta i skärmens koordinater (kolumner = x, y, z)
@@ -1134,14 +1174,15 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
       // Punkt på strålen i kubens rum: o + k * d
       const ox = m[0] * px + m[3] * py, oy = m[1] * px + m[4] * py, oz = m[2] * px + m[5] * py;
       let near = -Infinity, far = Infinity, axis = 0;
-      for (const [i, o, d] of [[0, ox, dx], [1, oy, dy], [2, oz, dz]]) {
+      for (let i = 0; i < 3; i++) {
+        const o = i === 0 ? ox : i === 1 ? oy : oz, d = i === 0 ? dx : i === 1 ? dy : dz;
         const k1 = (-1 - o) / d, k2 = (1 - o) / d, lo = Math.min(k1, k2), hi = Math.max(k1, k2);
         if (lo > near) { near = lo; axis = i; }
         if (hi < far) far = hi;
       }
       if (near > far) continue;
-      const hit = [ox + near * dx, oy + near * dy, oz + near * dz];
-      const u = Math.abs(hit[(axis + 1) % 3]), v = Math.abs(hit[(axis + 2) % 3]), e = Math.max(u, v);
+      const hx = Math.abs(ox + near * dx), hy = Math.abs(oy + near * dy), hz = Math.abs(oz + near * dz);
+      const e = axis === 0 ? Math.max(hy, hz) : axis === 1 ? Math.max(hx, hz) : Math.max(hx, hy);
       const noise = ((gx * 73856093 ^ gy * 19349663) >>> 0) % 100 / 100;
       let tone = light[axis] * (.72 + noise * .4);
       if (e > .94) tone = 1;                    // kant
@@ -1159,8 +1200,16 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
     });
   }
 
-  new ResizeObserver(resize).observe(canvas);
-  resize();
+  // Måtten kommer från ResizeObserver (tvingar inte fram en extra layout) och
+  // kuben ritas när webbläsaren har tid över, så att texten hinner visas först.
+  const idle = window.requestIdleCallback || (fn => setTimeout(fn, 60));
+  let box = null, waiting = false;
+  new ResizeObserver(entries => {
+    box = entries[entries.length - 1].contentRect;
+    if (waiting) return;
+    waiting = true;
+    idle(() => { waiting = false; resize(box.width, box.height); }, { timeout: 500 });
+  }).observe(canvas);
 })();
 </script>
 <script src="/sok.js" defer></script>

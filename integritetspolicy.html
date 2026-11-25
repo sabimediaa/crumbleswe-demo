@@ -26,12 +26,20 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 1 200 kr">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" href="typsnitt/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="typsnitt/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Egna typsnitt (Open Font License). "Reserv" har samma mått, så att texten inte hoppar när typsnittet har laddats. */
+@font-face{font-family:"Inter";src:url(typsnitt/inter.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";src:url(typsnitt/inter-tight.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";src:url(typsnitt/fraunces-kursiv.woff2) format("woff2");font-style:italic;font-weight:500 600;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Reserv";src:local("Arial"),local("Roboto");size-adjust:106.59%;ascent-override:91%;descent-override:22.5%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight Reserv";src:local("Arial Bold"),local("Arial-BoldMT"),local("Roboto Bold"),local("Arial");size-adjust:95.8%;ascent-override:101.3%;descent-override:25%;line-gap-override:0%;font-weight:500 700;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces Reserv";src:local("Georgia Italic"),local("Georgia-Italic");font-style:italic;size-adjust:90.7%;ascent-override:108%;descent-override:28.7%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 /* Samma grund som sabimedia.html: varma neutrala toner, mörk plommon-grafit och rött från loggan som accent. */
-:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--plum:#241a2b;--display:"Inter Tight","Inter",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--plum:#241a2b;--display:"Inter Tight","Inter Tight Reserv","Inter",system-ui,sans-serif;--body:"Inter","Inter Reserv",system-ui,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -143,17 +151,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 <a class="skip" href="#innehall">Hoppa till innehållet</a>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Hem</a></li>
-      <li><a href="/#ingar">Tjänster</a></li>
+      <li><a href="/tjanster">Tjänster</a></li>
       <li><a href="/branscher">Branscher</a></li>
-      <li><a href="/#priser">Priser</a></li>
+      <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
-      <li><a href="/#fragor">FAQ</a></li>
-      <li><a class="cta" href="/#kontakt">Kontakt</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a class="cta" href="/kontakt">Kontakt</a></li>
     </ul>
-    <a class="nav-cta" href="/#kontakt">Kontakt</a>
+    <a class="nav-cta" href="/kontakt">Kontakt</a>
     <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </div>
 </header>
@@ -163,7 +171,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
     <span class="eyebrow">Integritetspolicy</span>
     <h1>Så tar vi hand om dina uppgifter</h1>
     <p>Här förklarar vi vilka personuppgifter vi behandlar när du hör av dig till oss eller anlitar oss för en hemsida, varför vi gör det och vilka rättigheter du har. Vi samlar bara in det vi behöver.</p>
-    <p class="meta">Senast uppdaterad: 31 oktober 2026</p>
+    <p class="meta">Senast uppdaterad: 25 november 2026</p>
   </div>
 
   <div class="layout">
@@ -215,7 +223,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
         <h2><span>03</span>Vilka uppgifter vi behandlar</h2>
         <p><b>När du kontaktar oss</b> via formuläret, mejl, telefon eller sociala medier: namn, företagsnamn, telefonnummer, e-postadress, vilket paket du är intresserad av och det du skriver i ditt meddelande.</p>
         <p><b>När du blir kund:</b> kontakt- och faktureringsuppgifter, organisations- eller personnummer när det behövs för fakturering, samt det material du skickar till oss för hemsidan – till exempel logga, bilder och texter.</p>
-        <p><b>När du besöker vår hemsida:</b> vi använder inga verktyg för att följa eller kartlägga besökare. Däremot hämtas typsnitt från Google Fonts, vilket gör att din IP-adress skickas till Google när sidan laddas.</p>
+        <p><b>När du besöker vår hemsida:</b> vi använder inga verktyg för att följa eller kartlägga besökare. Typsnitten ligger på vår egen hemsida och hämtas inte från någon annan. För att kunna skicka sidan till dig hanterar Google Firebase, som driftar den, din IP-adress.</p>
       </section>
 
       <section id="syfte">
@@ -226,7 +234,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
             <tr><td>Svara på din förfrågan och ge dig ett prisförslag</td><td>Berättigat intresse – att kunna besvara dig när du hör av dig</td></tr>
             <tr><td>Bygga, publicera och ge support på din hemsida</td><td>Avtal – för att kunna leverera det vi kommit överens om</td></tr>
             <tr><td>Fakturering och bokföring</td><td>Rättslig förpliktelse – enligt bokföringslagen</td></tr>
-            <tr><td>Visa vår hemsida med rätt typsnitt</td><td>Berättigat intresse – att sidan ska fungera och se ut som den ska</td></tr>
+            <tr><td>Visa vår hemsida för dig</td><td>Berättigat intresse – att sidan ska fungera och se ut som den ska</td></tr>
           </tbody>
         </table>
         <p>Vi använder aldrig dina uppgifter för att skicka reklam utan att du har bett om det, och vi säljer dem aldrig vidare.</p>
@@ -240,7 +248,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
           <li><b>Leverantörer av e-post och lagring</b> – där våra mejl och projektfiler sparas.</li>
           <li><b>Webbhotell och domänleverantörer</b> – när vi sätter upp din hemsida på ditt konto.</li>
           <li><b>Redovisning</b> – för fakturor och bokföring.</li>
-          <li><b>Google</b> – via Google Fonts när vår hemsida laddas.</li>
           <li><b>Myndigheter</b> – om vi är skyldiga enligt lag, till exempel Skatteverket.</li>
         </ul>
         <p>Leverantörer som behandlar uppgifter för vår räkning får bara använda dem för att utföra tjänsten åt oss.</p>

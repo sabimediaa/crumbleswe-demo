@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sabimedia.se/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://sabimedia.se/bilder/delningsbild.jpg</image:loc></image:image>
@@ -13,14 +13,38 @@
     <image:image><image:loc>https://sabimedia.se/bilder/exempel-stad.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://sabimedia.se/tjanster</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sabimedia.se/priser</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sabimedia.se/faq</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sabimedia.se/kontakt</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sabimedia.se/branscher</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabimedia.se/kundcase-cookie-munch</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://sabimedia.se/bilder/cookiemunch-desktop.jpg</image:loc></image:image>
@@ -28,20 +52,20 @@
   </url>
   <url>
     <loc>https://sabimedia.se/boka</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabimedia.se/om-oss</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://sabimedia.se/bilder/safiya.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://sabimedia.se/integritetspolicy</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -3,33 +3,35 @@
    Allt sökbart innehåll ligger i INDEX nedan. Ändrar du priser, paket eller frågor på sidan – uppdatera här också. */
 (() => {
   const INDEX = [
-    // Startsidan
+    // Startsidan, Tjänster, Priser, FAQ och Kontakt
     { t: "Startsidan", p: "Hem", u: "/", d: "Hemsidor för småföretag i hela Sverige med fast engångspris från 1 200 kr exkl. moms.", k: "webbyrå borås hemsida småföretag sverige" },
-    { t: "Tjänster – det här ingår", p: "Hem", u: "/#ingar", d: "Egen adminpanel, produkter och varukorg, ditt varumärke, betalning på sidan, beställningar via mejl, information och kontakt.", k: "funktioner adminpanel varukorg betalning beställningar mejl varumärke design" },
+    { t: "Tjänster – det här ingår", p: "Tjänster", u: "/tjanster", d: "Egen adminpanel, produkter och varukorg, ditt varumärke, betalning på sidan, beställningar via mejl, information och kontakt.", k: "funktioner adminpanel varukorg betalning beställningar mejl varumärke design" },
     { t: "Exempel på hemsidor", p: "Hem", u: "/#exempel", d: "Klädbutiken Studio Ofelia, Restaurang Ruta och städföretaget H.F StädService AB.", k: "exempel design studio ofelia restaurang ruta städ städservice klädbutik portfolio" },
     { t: "Kundomdömen", p: "Hem", u: "/#omdomen", d: "Vad kunderna säger, svar inom 24 timmar och vad du kan räkna med.", k: "recension omdöme cookie munch svarstid 24 timmar" },
-    { t: "Så funkar det", p: "Hem", u: "/#sa-funkar-det", d: "Från idé till färdig hemsida, steg för steg.", k: "process steg arbetsgång hur går det till leverans lansering" },
-    { t: "Priser och paket", p: "Hem", u: "/#priser", d: "Start från 1 200 kr, Business från 2 500 kr och Custom från 4 000 kr. Engångspris exkl. moms.", k: "pris priser kostnad kostar paket start business custom offert moms engångspris" },
-    { t: "Paket Start – från 1 200 kr", p: "Priser", u: "/#priser", d: "Upp till 3 sidor, egen design, mobilanpassning, kontaktformulär, karta och grundläggande Google-anpassning. 1 månads support.", k: "pris kostnad start billigast enkel liten hemsida 1200" },
-    { t: "Paket Business – från 2 500 kr", p: "Priser", u: "/#priser", d: "Allt i Start plus fler sidor, formulär för offert, bokning eller beställning, recensioner, gallerier och automatiska mejl. 2 månaders support.", k: "pris kostnad business mest komplett bokning offert recensioner galleri 2500" },
-    { t: "Paket Custom – från 4 000 kr", p: "Priser", u: "/#priser", d: "Skräddarsydd lösning: bokningssystem med kalender, webbshop med betalning, kundkonton, adminpanel och integrationer.", k: "pris kostnad custom webbshop bokningssystem kalender kundkonton adminpanel integrationer betalning 4000 offert" },
-    { t: "Tillägg utanför paketen", p: "Priser", u: "/#priser", d: "Vill du ha något som inte ingår i paketet? Då tar vi fram en offert och skräddarsyr funktionen.", k: "tillägg extra funktion offert skräddarsy" },
-    { t: "Allt står i ditt namn", p: "Hem", u: "/#agande", d: "Domän, webbhotell och hemsida står på dig – du är aldrig inlåst hos oss.", k: "äga ägande domän webbhotell inlåst" },
-    { t: "Vanliga frågor (FAQ)", p: "Hem", u: "/#fragor", d: "Svar på de vanligaste frågorna om pris, tid, ägande och support.", k: "faq frågor svar hjälp" },
-    { t: "Kontakt och förfrågan", p: "Hem", u: "/#kontakt", d: "Skicka en förfrågan eller boka ett kostnadsfritt samtal via Microsoft Teams. Vi svarar inom 24 timmar.", k: "kontakt kontakta mejl e-post hej@sabimedia.se formulär förfrågan" },
+    { t: "Så funkar det", p: "Tjänster", u: "/tjanster#sa-funkar-det", d: "Från idé till färdig hemsida, steg för steg.", k: "process steg arbetsgång hur går det till leverans lansering" },
+    { t: "Priser och paket", p: "Priser", u: "/priser", d: "Start från 1 200 kr, Business från 2 500 kr och Custom från 4 000 kr. Engångspris exkl. moms.", k: "pris priser kostnad kostar paket start business custom offert moms engångspris" },
+    { t: "Paket Start – från 1 200 kr", p: "Priser", u: "/priser", d: "Upp till 3 sidor, egen design, mobilanpassning, kontaktformulär, karta och grundläggande Google-anpassning. 1 månads support.", k: "pris kostnad start billigast enkel liten hemsida 1200" },
+    { t: "Paket Business – från 2 500 kr", p: "Priser", u: "/priser", d: "Allt i Start plus fler sidor, formulär för offert, bokning eller beställning, recensioner, gallerier och automatiska mejl. 2 månaders support.", k: "pris kostnad business mest komplett bokning offert recensioner galleri 2500" },
+    { t: "Paket Custom – från 4 000 kr", p: "Priser", u: "/priser", d: "Skräddarsydd lösning: bokningssystem med kalender, webbshop med betalning, kundkonton, adminpanel och integrationer.", k: "pris kostnad custom webbshop bokningssystem kalender kundkonton adminpanel integrationer betalning 4000 offert" },
+    { t: "Jämför paketen i detalj", p: "Priser", u: "/priser#jamfor", d: "Se exakt vilka funktioner som ingår i Start, Business och Custom.", k: "jämför jämförelse tabell skillnad funktioner paket ingår" },
+    { t: "Tillägg utanför paketen", p: "Priser", u: "/priser", d: "Vill du ha något som inte ingår i paketet? Då tar vi fram en offert och skräddarsyr funktionen.", k: "tillägg extra funktion offert skräddarsy" },
+    { t: "Exempel: Cookie Munch", p: "Tjänster", u: "/tjanster#cookie-munch", d: "Webbshop med Swish och adminsida för ett bageri i Borås, med kundens omdöme.", k: "exempel cookie munch recension omdöme webbshop bageri kundcase" },
+    { t: "Allt står i ditt namn", p: "Tjänster", u: "/tjanster#agande", d: "Domän, webbhotell och hemsida står på dig – du är aldrig inlåst hos oss.", k: "äga ägande domän webbhotell inlåst" },
+    { t: "Vanliga frågor (FAQ)", p: "FAQ", u: "/faq", d: "Svar på de vanligaste frågorna om pris, tid, ägande och support.", k: "faq frågor svar hjälp" },
+    { t: "Kontakt och förfrågan", p: "Kontakt", u: "/kontakt", d: "Skicka en förfrågan eller boka ett kostnadsfritt samtal via Microsoft Teams. Vi svarar inom 24 timmar.", k: "kontakt kontakta mejl e-post hej@sabimedia.se formulär förfrågan" },
     // Vanliga frågor
-    { t: "Får jag en egen design?", p: "FAQ", u: "/#faq-1", d: "Ja. Varje hemsida skräddarsys efter ditt företag – dina färger, din logga, dina bilder och dina texter.", k: "design unik mall logga färger" },
-    { t: "Hur lång tid tar det?", p: "FAQ", u: "/#faq-2", d: "Allt från några dagar upp till några veckor, beroende på paket och funktioner.", k: "tid leveranstid veckor dagar snabbt" },
-    { t: "Tillkommer det dolda kostnader?", p: "FAQ", u: "/#faq-3", d: "Nej. Priset är fast och godkänns innan vi börjar. Domän och webbhotell betalar du direkt till leverantören.", k: "dolda kostnader avgift månadsavgift löpande" },
-    { t: "Tänk om jag inte gillar sidan?", p: "FAQ", u: "/#faq-4", d: "Du får se en klickbar första version som du kan påverka. Inget går live innan du har godkänt det.", k: "ändringar godkänna nöjd" },
-    { t: "Jag har ingen tid för en hemsida", p: "FAQ", u: "/#faq-5", d: "Du behöver vara så lite inblandad som möjligt – du läser bara igenom och godkänner.", k: "tid upptagen enkelt" },
-    { t: "Vad händer om ni försvinner?", p: "FAQ", u: "/#faq-6", d: "Sidan byggs med beprövad teknik som vilken webbutvecklare som helst kan ta över.", k: "försvinner ta över utvecklare" },
-    { t: "Vad händer om hemsidan blir hackad?", p: "FAQ", u: "/#faq-7", d: "Modern teknik utan tillägg som måste uppdateras, och SSL. Hjälp efter supportperioden tar vi per timme.", k: "hackad säkerhet ssl underhåll timpris" },
-    { t: "Kan jag ändra produkter och priser själv?", p: "FAQ", u: "/#faq-8", d: "Med Custom får du en administrationssida. Annars hjälper vi dig under supportperioden.", k: "ändra själv admin cms uppdatera" },
-    { t: "Hur får jag betalt?", p: "FAQ", u: "/#faq-9", d: "Med Custom kan kunden betala direkt på hemsidan. Med Business skickas beställningar till dig via mejl.", k: "betalning betalt swish kort kassa" },
-    { t: "Vem äger hemsidan?", p: "FAQ", u: "/#faq-10", d: "Du. Domän, webbhotell och hemsida står i ditt namn.", k: "äga ägare" },
-    { t: "Ingår publicering?", p: "FAQ", u: "/#faq-11", d: "Ja, i alla paket. Support i 1 månad (Start), 2 månader (Business) eller enligt offert (Custom).", k: "publicering lansering support underhåll" },
-    { t: "Passar det mitt företag?", p: "FAQ", u: "/#faq-12", d: "Vi bygger hemsidor för alla typer av småföretag – butiker, salonger, caféer, hantverkare, konsulter och mer.", k: "passar bransch företag" },
+    { t: "Får jag en egen design?", p: "FAQ", u: "/faq#faq-1", d: "Ja. Varje hemsida skräddarsys efter ditt företag – dina färger, din logga, dina bilder och dina texter.", k: "design unik mall logga färger" },
+    { t: "Hur lång tid tar det?", p: "FAQ", u: "/faq#faq-2", d: "Allt från några dagar upp till några veckor, beroende på paket och funktioner.", k: "tid leveranstid veckor dagar snabbt" },
+    { t: "Tillkommer det dolda kostnader?", p: "FAQ", u: "/faq#faq-3", d: "Nej. Priset är fast och godkänns innan vi börjar. Domän och webbhotell betalar du direkt till leverantören.", k: "dolda kostnader avgift månadsavgift löpande" },
+    { t: "Tänk om jag inte gillar sidan?", p: "FAQ", u: "/faq#faq-4", d: "Du får se en klickbar första version som du kan påverka. Inget går live innan du har godkänt det.", k: "ändringar godkänna nöjd" },
+    { t: "Jag har ingen tid för en hemsida", p: "FAQ", u: "/faq#faq-5", d: "Du behöver vara så lite inblandad som möjligt – du läser bara igenom och godkänner.", k: "tid upptagen enkelt" },
+    { t: "Vad händer om ni försvinner?", p: "FAQ", u: "/faq#faq-6", d: "Sidan byggs med beprövad teknik som vilken webbutvecklare som helst kan ta över.", k: "försvinner ta över utvecklare" },
+    { t: "Vad händer om hemsidan blir hackad?", p: "FAQ", u: "/faq#faq-7", d: "Modern teknik utan tillägg som måste uppdateras, och SSL. Hjälp efter supportperioden tar vi per timme.", k: "hackad säkerhet ssl underhåll timpris" },
+    { t: "Kan jag ändra produkter och priser själv?", p: "FAQ", u: "/faq#faq-8", d: "Med Custom får du en administrationssida. Annars hjälper vi dig under supportperioden.", k: "ändra själv admin cms uppdatera" },
+    { t: "Hur får jag betalt?", p: "FAQ", u: "/faq#faq-9", d: "Med Custom kan kunden betala direkt på hemsidan. Med Business skickas beställningar till dig via mejl.", k: "betalning betalt swish kort kassa" },
+    { t: "Vem äger hemsidan?", p: "FAQ", u: "/faq#faq-10", d: "Du. Domän, webbhotell och hemsida står i ditt namn.", k: "äga ägare" },
+    { t: "Ingår publicering?", p: "FAQ", u: "/faq#faq-11", d: "Ja, i alla paket. Support i 1 månad (Start), 2 månader (Business) eller enligt offert (Custom).", k: "publicering lansering support underhåll" },
+    { t: "Passar det mitt företag?", p: "FAQ", u: "/faq#faq-12", d: "Vi bygger hemsidor för alla typer av småföretag – butiker, salonger, caféer, hantverkare, konsulter och mer.", k: "passar bransch företag" },
     // Branscher
     { t: "Branscher vi hjälper", p: "Branscher", u: "/branscher", d: "Tio branscher vi bygger hemsidor åt – från restauranger till föreningar.", k: "branscher bransch kategorier" },
     { t: "Mat & livsmedel", p: "Branscher", u: "/branscher#mat", d: "Restauranger, caféer, bagerier och catering.", k: "restaurang lunch café kafé konditori bageri foodtruck gatukök catering gårdsbutik livsmedel mat" },
@@ -48,6 +50,7 @@
     { t: "Företagsuppgifter", p: "Om oss", u: "/om-oss#team", d: "Enskild firma med F-skatt, org.nr 010928-2947, Borås.", k: "org.nr organisationsnummer f-skatt enskild firma adress instagram" },
     // Övriga sidor
     { t: "Boka ett kostnadsfritt samtal", p: "Boka", u: "/boka", d: "Välj dag och tid för ett samtal via Microsoft Teams.", k: "boka samtal möte teams tid kalender gratis kostnadsfritt" },
+    { t: "Så tar vi hand om dig", p: "Boka", u: "/boka#omtanke", d: "Vi lyssnar först, du får ett fast pris före start, inget publiceras utan ditt godkännande och support ingår efter lansering.", k: "omtanke trygghet trygg support hjälp kund process godkänna team" },
     { t: "Kundcase: Cookie Munch", p: "Kundcase", u: "/kundcase-cookie-munch", d: "Hur bageriet Cookie Munch fick beställningarna samlade på en egen hemsida.", k: "kundcase case referens cookie munch bageri resultat" },
     { t: "Integritetspolicy", p: "Integritet", u: "/integritetspolicy", d: "Hur vi behandlar personuppgifter, dina rättigheter och hur länge vi sparar uppgifter.", k: "integritet gdpr personuppgifter cookies dataskydd policy" },
     { t: "Dina rättigheter (GDPR)", p: "Integritet", u: "/integritetspolicy#rattigheter", d: "Rätt till information, rättelse, radering och att invända.", k: "gdpr rättigheter radera" },
@@ -150,7 +153,7 @@
     panel.classList.toggle("has-q", !!v); q.setAttribute("aria-expanded", String(!!v));
     head.textContent = v ? (results.length ? `${results.length} träff${results.length === 1 ? "" : "ar"}` : "") : "";
     empty.hidden = !!results.length || !v;
-    empty.innerHTML = `Inga träffar för ”${esc(v)}”. Prova ett annat ord eller <a href="/#kontakt">fråga oss direkt</a>.`;
+    empty.innerHTML = `Inga träffar för ”${esc(v)}”. Prova ett annat ord eller <a href="/kontakt">fråga oss direkt</a>.`;
     list.innerHTML = results.map((r, i) => `<li role="option" id="sok-o${i}" aria-selected="${i === 0}"><a href="${r.u}" tabindex="-1"><b>${mark(r.t, v)}</b><em>${esc(r.p)}</em><small>${mark(r.d, v)}</small></a></li>`).join("");
     q.setAttribute("aria-activedescendant", results.length ? "sok-o0" : "");
     status.textContent = v ? (results.length ? `${results.length} träffar` : "Inga träffar") : "";

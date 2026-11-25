@@ -10,7 +10,7 @@
 if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
   location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
 </script>
-<meta name="description" content="Välj en tid som passar dig för ett kostnadsfritt samtal med Sabimedia om din nya hemsida. Vardagar kl. 10–20.">
+<meta name="description" content="Boka ett kostnadsfritt samtal med Sabimedia om din nya hemsida. Välj en tid, träffa teamet och se hur vi tar hand om dig från första samtalet till efter lanseringen.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
 <link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
@@ -19,20 +19,29 @@ if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostnam
 <meta property="og:locale" content="sv_SE">
 <meta property="og:site_name" content="Sabimedia">
 <meta property="og:title" content="Boka ett kostnadsfritt samtal · Sabimedia">
-<meta property="og:description" content="Välj en tid som passar dig för ett kostnadsfritt samtal med Sabimedia om din nya hemsida. Vardagar kl. 10–20.">
+<meta property="og:description" content="Boka ett kostnadsfritt samtal med Sabimedia om din nya hemsida. Välj en tid, träffa teamet och se hur vi tar hand om dig från första samtalet till efter lanseringen.">
 <meta property="og:url" content="https://sabimedia.se/boka">
 <meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg?v=6">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 1 200 kr">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" href="typsnitt/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="typsnitt/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Egna typsnitt (Open Font License). "Reserv" har samma mått, så att texten inte hoppar när typsnittet har laddats. */
+@font-face{font-family:"Inter";src:url(typsnitt/inter.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";src:url(typsnitt/inter-tight.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";src:url(typsnitt/fraunces-kursiv.woff2) format("woff2");font-style:italic;font-weight:500 600;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Reserv";src:local("Arial"),local("Roboto");size-adjust:106.59%;ascent-override:91%;descent-override:22.5%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight Reserv";src:local("Arial Bold"),local("Arial-BoldMT"),local("Roboto Bold"),local("Arial");size-adjust:95.8%;ascent-override:101.3%;descent-override:25%;line-gap-override:0%;font-weight:500 700;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces Reserv";src:local("Georgia Italic"),local("Georgia-Italic");font-style:italic;size-adjust:90.7%;ascent-override:108%;descent-override:28.7%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 /* Samma grund som sabimedia.html: varma neutrala toner, mörk plommon-grafit och rött från loggan som accent. */
-:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--gold:#f5a524;--plum:#241a2b;--radius:16px;--display:"Inter Tight","Inter",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--accent-soft:#fbe8e6;--gold:#f5a524;--plum:#241a2b;--radius:16px;--display:"Inter Tight","Inter Tight Reserv","Inter",system-ui,sans-serif;--body:"Inter","Inter Reserv",system-ui,sans-serif}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--accent-deep)}
@@ -82,28 +91,47 @@ h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.03
 }
 .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
 .eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
-.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
+.hl{font-family:"Fraunces","Fraunces Reserv",Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--accent)}
 .page{padding-top:56px;padding-bottom:80px}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:.85rem 1.4rem;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
 .btn-ink{background:var(--ink);color:#fff}
 .btn-ink:hover{background:#000;transform:translateY(-1px)}
 .nav-links a[aria-current]{color:#fff;font-weight:600}
+/* About */
+footer{border-top:1px solid var(--line);padding:28px 0 calc(32px + env(safe-area-inset-bottom,0px));color:var(--ink-soft);font-size:.9rem}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:clamp(56px,8vw,96px)}
+.values article{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.values h2{font-size:1.2rem;margin-bottom:.5rem}
+.values p{color:var(--ink-soft);margin:0}
+.team-wrap{display:grid;gap:1rem;margin-bottom:clamp(40px,6vw,72px)}
+.sec-h{font-size:clamp(2rem,4.4vw,3.2rem);margin:0 0 1rem}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.member{display:flex;align-items:center;gap:20px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.member-photo{flex:none;width:96px;height:96px;border-radius:50%;padding:3px;background:var(--accent)}
+.member-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid var(--paper);display:block}
+.member-initial{display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-deep);font-family:var(--display);font-weight:700;font-size:2.4rem;padding:0;box-shadow:inset 0 0 0 3px var(--accent)}
+.member h3{font-size:1.35rem}
+.member .role{color:var(--ink-soft);margin:.2rem 0 0}
+@media (max-width:820px){.values,.team{grid-template-columns:1fr}}
+@media (max-width:600px){.page{padding-top:28px;padding-bottom:56px}}
 .lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-soft);max-width:60ch;margin:0}
 button,input,select,textarea{font:inherit;color:inherit}
 .btn-accent{background:var(--accent);color:#fff;border:0;cursor:pointer;box-shadow:0 12px 28px -12px rgba(15,15,20,.18)}
 .btn-accent:hover{background:var(--accent-deep)}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-#kontakt{margin-top:24px;scroll-margin-top:96px}
+#kontakt{scroll-margin-top:96px}
 .contact p{margin:0}
 .form-note a{color:var(--accent-deep)}
 /* ---------- Contact ---------- */
-.contact{background:var(--plum);color:#fff;border-radius:32px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
-.contact h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:.8rem 0 1rem}
+.contact{background:var(--plum);color:#fff;border-radius:24px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
+.contact h1{font-size:clamp(2rem,4.4vw,3.2rem);margin:.8rem 0 1rem}
 .contact .eyebrow{color:#b9adbf}
 .contact .lead{color:#b9adbf}
+.contact-sub{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:600;letter-spacing:-.02em;color:#b9adbf;margin:-.4rem 0 1.2rem}
 .contact-alt{display:grid;gap:.8rem;margin-top:2rem}
 .contact-alt a{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff;font-weight:500}
-.contact-alt a span{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.contact-alt a span{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.contact-alt svg{width:20px;height:20px}
 form{display:grid;gap:14px;background:var(--paper);color:var(--ink);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
 .field{display:grid;gap:.35rem;align-content:start}
 .field label{font-weight:600;font-size:.9rem}
@@ -116,6 +144,8 @@ form{display:grid;gap:14px;background:var(--paper);color:var(--ink);border-radiu
 .form-error{font-size:.9rem;font-weight:600;color:var(--accent-deep)}
 .field .req{color:var(--accent)}
 .field .opt{font-weight:400;color:var(--ink-soft)}
+.check{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem;cursor:pointer;width:fit-content}
+.check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
 .field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f5}
 .field-error{font-size:.82rem;font-weight:600;color:var(--accent-deep)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -124,39 +154,35 @@ form button[disabled]{opacity:.7;cursor:wait}
 .sent h3{font-size:1.6rem}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
 @media (max-width:480px){.two{grid-template-columns:1fr}}
-#kontakt{margin:0}
-.book-head{display:grid;gap:1rem;max-width:760px;margin-bottom:clamp(28px,4vw,44px)}
-.book-head h1{font-size:clamp(2.2rem,5vw,3.4rem)}
-.book{display:grid;grid-template-columns:1fr;gap:20px;align-items:start;max-width:760px}
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,30px)}
-.step-t{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:1.25rem;margin:0 0 1rem}
-.step-t span{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;font-family:var(--body);font-size:.85rem;font-weight:700}
-.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}
-.cal-top b{font-size:1.05rem;text-transform:capitalize}
-.cal-nav{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:1.1rem;line-height:1}
-.cal-nav:disabled{opacity:.35;cursor:default}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
-.cal .dow{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:.3rem 0}
-.cal button{aspect-ratio:1;border:0;border-radius:12px;background:var(--bg);font-weight:600;cursor:pointer;transition:background .15s,color .15s,transform .15s}
-.cal button:hover:not(:disabled){background:var(--accent-soft,#f2ede6);transform:translateY(-1px)}
-.cal button:disabled{background:transparent;color:#736a75;text-decoration:line-through;text-decoration-color:rgba(113,113,122,.45);cursor:default;font-weight:400}
-.cal button.today{box-shadow:inset 0 0 0 1.5px var(--line)}
-.cal button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.slots button{border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:.65rem 0;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s}
-.slots button:hover{border-color:var(--ink)}
-.slots button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.hint{color:var(--ink-soft);margin:0}
-.picked{display:flex;align-items:center;gap:.6rem;background:var(--bg);border-radius:12px;padding:.75rem .9rem;font-weight:600;margin:0 0 4px}
-.picked svg{width:20px;height:20px;color:var(--ink);flex:none}
-.alt-time{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.95rem}
-.alt-time a{color:var(--accent-deep);font-weight:600}
-.meet-note{font-size:.9rem;color:var(--ink-soft)}
-#book-form{padding:0;background:none}
-@media (max-width:900px){.book{grid-template-columns:1fr}}
-@media (max-width:420px){.slots{grid-template-columns:repeat(3,1fr)}}
 /* Tillgänglighet: platshållartext med tillräcklig kontrast */
 ::placeholder{color:#736a75;opacity:1}
+/* Kalender överst i kontaktformuläret */
+.pick{display:grid;gap:12px;padding-bottom:18px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.step-t{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.02em;margin:0}
+.step-t span{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-family:var(--body);font-size:.8rem;font-weight:700;flex:none}
+.step-t small{font-family:var(--body);font-weight:500;font-size:.82rem;color:var(--ink-soft);letter-spacing:0}
+.cal-top{display:flex;align-items:center;justify-content:space-between}
+.cal-top b{font-size:1rem;text-transform:capitalize}
+.cal-nav{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:1.1rem;line-height:1}
+.cal-nav:disabled{opacity:.35;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.cal .dow{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);padding:.2rem 0}
+.cal button{aspect-ratio:1;border:0;border-radius:10px;background:var(--bg);font-weight:600;font-size:.92rem;cursor:pointer;transition:background .15s,color .15s}
+.cal button:hover:not(:disabled){background:var(--accent-soft)}
+.cal button:disabled{background:transparent;color:#736a75;text-decoration:line-through;text-decoration-color:rgba(113,106,117,.45);cursor:default;font-weight:400}
+.cal button.today{box-shadow:inset 0 0 0 1.5px var(--line)}
+.cal button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.slots button{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:.55rem 0;font-weight:600;font-size:.9rem;cursor:pointer}
+.slots button:hover{border-color:var(--ink)}
+.slots button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.hint{color:var(--ink-soft);font-size:.92rem}
+.meet-note{font-size:.9rem;color:var(--ink-soft)}
+.picked{display:flex;align-items:center;gap:.6rem;background:var(--bg);border-radius:12px;padding:.7rem .9rem;font-weight:600;font-size:.95rem}
+.picked svg{width:20px;height:20px;color:var(--ink);flex:none}
+.alt-time{color:var(--ink-soft);font-size:.88rem}
+.alt-time a{color:var(--accent-deep);font-weight:600}
+@media (max-width:420px){.slots{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){.nav-links a,.nav-links a::before,.nav-links a::after{transition:none!important}}
 .foot-ig{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;vertical-align:bottom}
 .foot-ig svg{width:18px;height:18px;flex:none}
@@ -164,6 +190,31 @@ form button[disabled]{opacity:.7;cursor:wait}
 .skip:focus{top:12px}
 main:focus{outline:none}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+/* Animationer: korten glider in när man scrollar fram till dem */
+.values article,.member{transition:translate .3s ease,box-shadow .3s ease,border-color .3s ease}
+.values article:hover,.member:hover{translate:0 -3px;box-shadow:0 18px 36px -24px rgba(15,15,20,.28);border-color:#d8d0c5}
+.member-photo{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.member:hover .member-photo{transform:scale(1.05) rotate(-3deg)}
+.js-anim .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js-anim .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js-anim .reveal{opacity:1;transform:none}
+}
+html,body{overflow-x:clip}
+/* Bokningssidan */
+.page{padding-top:32px}
+.contact{margin-bottom:clamp(56px,8vw,96px)}
+.how{list-style:none;counter-reset:how;margin:2rem 0 0;padding:1.8rem 0 0;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:1.2rem}
+.how li{counter-increment:how;position:relative;padding-left:56px;min-height:40px;color:#b9adbf}
+.how li::before{content:counter(how);position:absolute;left:0;top:2px;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-weight:700;display:grid;place-items:center}
+.how b{display:block;color:#fff;font-weight:600}
+@media (min-width:861px){.contact > div{position:sticky;top:108px;align-self:start}}
+.care{margin-bottom:clamp(56px,8vw,96px)}
+.care .sec-h{margin:.8rem 0 1.6rem}
+.care .values{margin:0}
+.values h3{font-size:1.2rem;margin-bottom:.5rem}
+.team-wrap .lead{margin:-.4rem 0 .6rem}
 /* Helskärm: Kontakt i mitten av menyn med tre länkar på var sida, sökknappen längst till höger */
 @media (min-width:901px){
   .nav-in{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem}
@@ -182,60 +233,98 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 <a class="skip" href="#innehall">Hoppa till innehållet</a>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Hem</a></li>
-      <li><a href="/#ingar">Tjänster</a></li>
+      <li><a href="/tjanster">Tjänster</a></li>
       <li><a href="/branscher">Branscher</a></li>
-      <li><a href="/#priser">Priser</a></li>
+      <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
-      <li><a href="/#fragor">FAQ</a></li>
-      <li><a class="cta" href="/#kontakt">Kontakt</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a class="cta" href="/kontakt">Kontakt</a></li>
     </ul>
-    <a class="nav-cta" href="/#kontakt">Kontakt</a>
+    <a class="nav-cta" href="/kontakt">Kontakt</a>
     <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </div>
 </header>
 
 <main class="wrap page" id="innehall" tabindex="-1">
-  <div class="book-head">
-    <span class="eyebrow">Kostnadsfritt samtal</span>
-    <h1>Boka en tid som <em class="hl">passar dig.</em></h1>
-    <p class="lead">Vi pratar om ditt företag, vad du behöver av hemsidan och vilket paket som passar – helt utan förpliktelser. Välj en dag och en tid nedan, vardagar mellan kl. 10 och 20.</p>
-  </div>
-
-  <div class="book">
-    <section class="panel" aria-labelledby="t-day">
-      <h2 class="step-t" id="t-day"><span>1</span>Välj dag</h2>
-      <div class="cal-top">
-        <button class="cal-nav" id="prev" type="button" aria-label="Föregående månad">‹</button>
-        <b id="month" aria-live="polite"></b>
-        <button class="cal-nav" id="next" type="button" aria-label="Nästa månad">›</button>
+      <div class="contact" id="kontakt">
+        <div>
+          <span class="eyebrow">Kostnadsfritt samtal</span>
+          <h1>Boka en tid som passar dig</h1>
+          <p class="contact-sub">– så pratar vi om din hemsida.</p>
+          <p class="lead">Välj en tid och berätta lite om ditt företag. Vi går igenom vad du behöver och vilket paket som passar – helt utan förpliktelser.</p>
+          <ol class="how">
+            <li><b>Du väljer en tid</b>Vardagar mellan kl. 10 och 20. Samtalet är kostnadsfritt.</li>
+            <li><b>Vi bekräftar inom 24 timmar</b>Du får svar på mejl. Samtalet sker via Microsoft Teams.</li>
+            <li><b>Du får ett förslag</b>Efter samtalet återkommer vi med ett förslag och ett fast pris.</li>
+          </ol>
+          <div class="contact-alt" id="contact-alt"><a href="mailto:hej@sabimedia.se"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>hej@sabimedia.se</a></div>
+        </div>
+        <form id="form" novalidate>
+          <div class="pick">
+            <p class="step-t"><span>1</span>Välj dag och tid för ett kostnadsfritt samtal <small>(valfritt)</small></p>
+            <div class="cal-top">
+              <button class="cal-nav" id="prev" type="button" aria-label="Föregående månad">‹</button>
+              <b id="month" aria-live="polite"></b>
+              <button class="cal-nav" id="next" type="button" aria-label="Nästa månad">›</button>
+            </div>
+            <div class="cal" id="cal"></div>
+            <div id="slots"><p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p></div>
+            <p class="picked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span id="picked-text">Ingen tid vald än</span></p>
+            <p class="meet-note">Mötet sker via Microsoft Teams.</p>
+            <p class="alt-time">Funkar inte tiderna? <a id="alt-mail" href="mailto:hej@sabimedia.se">Skicka ett mejl</a> så hittar vi en tid.</p>
+          </div>
+          <p class="step-t"><span>2</span>Dina uppgifter</p>
+          <div class="two">
+            <div class="field"><label for="f-name">Ditt namn <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-company">Företag</label><input id="f-company" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="f-phone">Telefon <span class="opt">(valfritt)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="070-123 45 67"></div>
+            <div class="field"><label for="f-email">E-post <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="namn@foretag.se" required></div>
+          </div>
+          <label class="check"><input type="checkbox" id="f-has-web" aria-controls="web-field" aria-expanded="false">Jag har redan en hemsida</label>
+          <div class="field" id="web-field" hidden><label for="f-web">Nuvarande hemsida</label><input id="f-web" name="website" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="dittforetag.se" disabled></div>
+          <div class="field"><label for="f-plan">Paket</label><select id="f-plan" name="plan"><option value="">Vet inte än</option><option>Start</option><option>Business</option><option>Custom</option></select></div>
+          <div class="field"><label for="f-msg">Berätta om ditt företag</label><textarea id="f-msg" name="message" placeholder="Vad säljer du? Har du Instagram? Något särskilt du vill ha på sidan?"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-accent" type="submit" id="form-submit">Skicka förfrågan</button>
+          <p class="reply-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Vi svarar på din förfrågan inom 24 timmar.</p>
+          <p class="form-note">Fält med * måste fyllas i. Dina uppgifter används bara för att besvara din förfrågan – läs mer i vår <a href="/integritetspolicy">integritetspolicy</a>.</p>
+        </form>
       </div>
-      <div class="cal" id="cal"></div>
 
-      <h2 class="step-t" id="t-time" style="margin-top:1.6rem"><span>2</span>Välj tid</h2>
-      <div id="slots"><p class="hint">Välj en dag först.</p></div>
+      <section class="care" id="omtanke">
+        <span class="eyebrow">Så tar vi hand om dig</span>
+        <h2 class="sec-h">Trygg hela vägen, <em class="hl">även efteråt.</em></h2>
+        <div class="values">
+          <article><h3>Vi lyssnar först</h3><p>Vi börjar med dina behov, din målgrupp och vad du vill att hemsidan ska göra. Sedan föreslår vi en lösning.</p></article>
+          <article><h3>Fast pris före start</h3><p>Du vet vad det kostar innan vi börjar och godkänner priset själv. Inga löpande avgifter till oss.</p></article>
+          <article><h3>Vi gör jobbet</h3><p>Du behöver vara så lite inblandad som möjligt. Vi bygger sidan, du läser igenom och säger vad du tycker.</p></article>
+          <article><h3>Du bestämmer</h3><p>Du får se en klickbar första version som du kan påverka. Inget publiceras innan du har godkänt det.</p></article>
+          <article><h3>Allt i ditt namn</h3><p>Domän, webbhotell och hemsida står på dig. Du är aldrig inlåst hos oss.</p></article>
+          <article><h3>Vi finns kvar</h3><p>Efter lanseringen har du support i 1 månad med Start och 2 månader med Business. För Custom gäller offerten.</p></article>
+        </div>
+      </section>
 
-      <p class="alt-time">Funkar inte dessa tider för dig? <a id="alt-mail" href="mailto:hej@sabimedia.se">Skicka ett mejl</a> så hittar vi en tid tillsammans.</p>
-    </section>
-
-    <section class="panel" aria-labelledby="t-info">
-      <h2 class="step-t" id="t-info"><span>3</span>Dina uppgifter</h2>
-      <form id="book-form" novalidate>
-        <p class="picked" id="picked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span id="picked-text">Ingen tid vald än</span></p>
-        <div class="field"><label for="f-name">Ditt namn <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="f-email">E-post <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="namn@foretag.se" required></div>
-        <div class="field"><label for="f-phone">Telefon <span class="opt">(valfritt)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="070-123 45 67"></div>
-        <p class="meet-note">Mötet sker via Microsoft Teams.</p>
-        <div class="field"><label for="f-msg">Något vi bör veta? <span class="opt">(valfritt)</span></label><textarea id="f-msg" name="message" placeholder="T.ex. vad ditt företag gör eller vilket paket du funderar på."></textarea></div>
-        <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
-        <p class="form-error" id="form-error" role="alert" hidden></p>
-        <button class="btn btn-accent" type="submit" id="form-submit">Boka samtalet</button>
-        <p class="form-note">Du får en bekräftelse via mejl inom 24 timmar. Dina uppgifter används bara för samtalet – läs mer i vår <a href="/integritetspolicy">integritetspolicy</a>.</p>
-      </form>
-    </section>
-  </div>
+      <section class="team-wrap" id="team">
+        <span class="eyebrow">Team</span>
+        <h2 class="sec-h">Personerna bakom <em class="hl">Sabi.</em></h2>
+        <p class="lead">Du pratar direkt med oss som bygger din sida, från första samtalet till lanseringen och efteråt.</p>
+        <div class="team">
+          <article class="member">
+            <div class="member-photo"><img src="bilder/safiya.jpg" srcset="bilder/safiya-180.webp 180w, bilder/safiya-320.webp 320w" sizes="90px" alt="Safiya Ibrahim" width="640" height="640"></div>
+            <div><h3>Safiya Ibrahim</h3><p class="role">Grundare, affärsutvecklare och lead developer</p></div>
+          </article>
+          <article class="member">
+            <div class="member-photo member-initial" aria-hidden="true">W</div>
+            <div><h3>Warda</h3><p class="role">Head of design och user experience</p></div>
+          </article>
+        </div>
+      </section>
 </main>
 
 <footer>
@@ -249,78 +338,69 @@ menuBtn.addEventListener("click", () => {
 });
 </script>
 <script>
-const CONFIG = {
-  email: "hej@sabimedia.se",
-  formEndpoint: "/api/kontakt",
-  /* Bokningsbara tider: vardagar, första och sista starttid, minuter per samtal, hur många månader fram man kan boka */
-  firstHour: 10, lastHour: 20, slotMinutes: 30, monthsAhead: 2
-};
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+const CONFIG = {
+  email: "hej@sabimedia.se",
+  formEndpoint: "/api/kontakt"
+};
+
+/* Kalender: vardagar kl. 10–20 i 30-minuterspass. Vald tid skickas med förfrågan. */
 const pad = n => String(n).padStart(2, "0");
 const dayFmt = new Intl.DateTimeFormat("sv-SE", { weekday: "long", day: "numeric", month: "long" });
 const monthFmt = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "numeric" });
-
 const today = new Date(); today.setHours(0, 0, 0, 0);
 let view = new Date(today.getFullYear(), today.getMonth(), 1);
-const lastView = new Date(today.getFullYear(), today.getMonth() + CONFIG.monthsAhead, 1);
+const lastView = new Date(today.getFullYear(), today.getMonth() + 2, 1);
 let picked = { date: null, time: null };
-
-/* Starttider för en dag; idag visas bara tider som ligger minst en timme fram */
 function slotsFor(date) {
   const out = [], now = new Date();
-  for (let m = CONFIG.firstHour * 60; m < CONFIG.lastHour * 60; m += CONFIG.slotMinutes) {
+  for (let m = 10 * 60; m < 20 * 60; m += 30) {
     const t = new Date(date); t.setHours(0, m, 0, 0);
     if (t - now >= 60 * 60 * 1000) out.push(`${pad(Math.floor(m / 60))}:${pad(m % 60)}`);
   }
   return out;
 }
 const bookable = d => d.getDay() % 6 !== 0 && d >= today && slotsFor(d).length > 0;
-
+const cap = s => s.replace(/^./, c => c.toUpperCase());
 function renderCal() {
   $("#month").textContent = monthFmt.format(view);
   $("#prev").disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
   $("#next").disabled = view >= lastView;
-  const days = ["mån", "tis", "ons", "tor", "fre", "lör", "sön"].map(d => `<span class="dow">${d}</span>`);
-  const offset = (view.getDay() + 6) % 7;
-  const cells = Array(offset).fill("<span></span>");
+  const cells = ["mån", "tis", "ons", "tor", "fre", "lör", "sön"].map(d => `<span class="dow">${d}</span>`);
+  for (let i = 0; i < (view.getDay() + 6) % 7; i++) cells.push("<span></span>");
   const n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
   for (let i = 1; i <= n; i++) {
     const d = new Date(view.getFullYear(), view.getMonth(), i);
-    const sel = picked.date && +d === +picked.date;
-    cells.push(`<button type="button" data-d="${+d}" ${bookable(d) ? "" : "disabled"} class="${+d === +today ? "today" : ""}" aria-pressed="${sel}" aria-label="${dayFmt.format(d)}">${i}</button>`);
+    cells.push(`<button type="button" data-d="${+d}" ${bookable(d) ? "" : "disabled"} class="${+d === +today ? "today" : ""}" aria-pressed="${!!picked.date && +d === +picked.date}" aria-label="${dayFmt.format(d)}">${i}</button>`);
   }
-  $("#cal").innerHTML = days.concat(cells).join("");
+  $("#cal").innerHTML = cells.join("");
 }
 function renderSlots() {
-  if (!picked.date) { $("#slots").innerHTML = '<p class="hint">Välj en dag först.</p>'; return; }
-  $("#slots").innerHTML = `<div class="slots">${slotsFor(picked.date).map(t =>
-    `<button type="button" data-t="${t}" aria-pressed="${t === picked.time}">${t}</button>`).join("")}</div>`;
+  $("#slots").innerHTML = picked.date
+    ? `<div class="slots">${slotsFor(picked.date).map(t => `<button type="button" data-t="${t}" aria-pressed="${t === picked.time}">${t}</button>`).join("")}</div>`
+    : '<p class="hint">Välj en dag för att se lediga tider. Vardagar kl. 10–20.</p>';
+  $("#picked-text").textContent = picked.date && picked.time ? cap(`${dayFmt.format(picked.date)} kl. ${picked.time}`)
+    : picked.date ? cap(`${dayFmt.format(picked.date)} – välj en tid`) : "Ingen tid vald än";
 }
-function renderPicked() {
-  $("#picked-text").textContent = picked.date && picked.time
-    ? `${dayFmt.format(picked.date)} kl. ${picked.time}`.replace(/^./, c => c.toUpperCase())
-    : picked.date ? `${dayFmt.format(picked.date)} – välj en tid`.replace(/^./, c => c.toUpperCase()) : "Ingen tid vald än";
-}
-
 $("#cal").addEventListener("click", e => {
   const b = e.target.closest("button[data-d]"); if (!b) return;
   picked = { date: new Date(+b.dataset.d), time: null };
-  renderCal(); renderSlots(); renderPicked();
-  if (matchMedia("(max-width:900px)").matches) $("#t-time").scrollIntoView({ behavior: "smooth", block: "start" });
+  renderCal(); renderSlots();
 });
 $("#slots").addEventListener("click", e => {
   const b = e.target.closest("button[data-t]"); if (!b) return;
-  picked.time = b.dataset.t;
-  renderSlots(); renderPicked(); $("#form-error").hidden = true;
-  if (matchMedia("(max-width:900px)").matches) $("#t-info").scrollIntoView({ behavior: "smooth", block: "start" });
+  picked.time = b.dataset.t; renderSlots();
 });
 $("#prev").addEventListener("click", () => { view.setMonth(view.getMonth() - 1); renderCal(); });
 $("#next").addEventListener("click", () => { view.setMonth(view.getMonth() + 1); renderCal(); });
-$("#alt-mail").href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Önskar en annan tid för samtal")}&body=${encodeURIComponent("Hej!\n\nJag vill gärna boka ett samtal men tiderna passar inte. Det här passar mig bättre:\n\n")}`;
+$("#alt-mail").href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Önskar en annan tid för samtal")}`;
+renderCal();
 
-/* Fältkontroller som på startsidan */
+/* Fältkontroller: namn och e-post krävs, telefon är valfritt men måste vara ett giltigt nummer om det fylls i */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+/* Webbadress: valfritt http(s):// och www, minst en punkt och en ändelse på två bokstäver, t.ex. sabimedia.se */
+const WEB_RE = /^(https?:\/\/)?([a-z0-9åäö]([a-z0-9åäö-]*[a-z0-9åäö])?\.)+[a-z]{2,}(:\d+)?(\/\S*)?$/i;
 function validPhone(v) {
   if (!/^\+?[\d\s\-()]+$/.test(v)) return false;
   const digits = v.replace(/\D/g, "");
@@ -331,20 +411,34 @@ function setFieldError(el, msg) {
   let note = field.querySelector(".field-error");
   if (msg) {
     if (!note) { note = document.createElement("p"); note.className = "field-error"; note.id = el.id + "-err"; field.append(note); }
-    note.textContent = msg; el.setAttribute("aria-invalid", "true"); el.setAttribute("aria-describedby", note.id);
-  } else { note?.remove(); el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+    note.textContent = msg;
+    el.setAttribute("aria-invalid", "true");
+    el.setAttribute("aria-describedby", note.id);
+  } else {
+    note?.remove();
+    el.removeAttribute("aria-invalid");
+    el.removeAttribute("aria-describedby");
+  }
 }
 function validate(f) {
   const checks = [
     [$("#f-name"), !f.name.trim() ? "Skriv ditt namn." : ""],
     [$("#f-email"), !f.email.trim() ? "Skriv din e-postadress." : !EMAIL_RE.test(f.email.trim()) ? "E-postadressen ser inte rätt ut, t.ex. namn@foretag.se." : ""],
-    [$("#f-phone"), f.phone.trim() && !validPhone(f.phone.trim()) ? "Telefonnumret ser inte rätt ut, t.ex. 070-123 45 67." : ""]
+    [$("#f-phone"), f.phone.trim() && !validPhone(f.phone.trim()) ? "Telefonnumret ser inte rätt ut, t.ex. 070-123 45 67." : ""],
+    [$("#f-web"), $("#f-has-web").checked && !(f.website || "").trim() ? "Skriv adressen till din hemsida, t.ex. dittforetag.se." : (f.website || "").trim() && !WEB_RE.test(f.website.trim()) ? "Webbadressen ser inte rätt ut, t.ex. dittforetag.se." : ""]
   ];
   checks.forEach(([el, msg]) => setFieldError(el, msg));
-  return checks.filter(([, msg]) => msg).map(([el]) => el);
+  return checks.filter(([, msg]) => msg).map(([el, msg]) => ({ el, msg }));
 }
-["#f-name", "#f-email", "#f-phone"].forEach(sel => $(sel).addEventListener("input", e => {
-  if (e.target.getAttribute("aria-invalid")) validate(Object.fromEntries(new FormData($("#book-form"))));
+/* Fältet för nuvarande hemsida visas bara när rutan är ikryssad */
+$("#f-has-web").addEventListener("change", e => {
+  const on = e.target.checked, input = $("#f-web");
+  $("#web-field").hidden = !on; input.disabled = !on;
+  e.target.setAttribute("aria-expanded", on);
+  if (on) input.focus(); else { input.value = ""; setFieldError(input, ""); }
+});
+["#f-name", "#f-email", "#f-phone", "#f-web"].forEach(sel => $(sel).addEventListener("input", e => {
+  if (e.target.getAttribute("aria-invalid")) validate(Object.fromEntries(new FormData($("#form"))));
 }));
 
 /* Översätter ett misslyckat utskick till en begriplig förklaring med felkod */
@@ -367,38 +461,68 @@ function sendErrorHtml(err, mailto) {
   return `<b>${reason}</b> ${state} Försök igen om en stund eller <a href="${esc(mailto)}">mejla oss direkt</a>. <small>Felkod: ${esc(code)}</small>`;
 }
 
-$("#book-form").addEventListener("submit", async e => {
+$("#form").addEventListener("submit", async e => {
   e.preventDefault();
   const form = e.target, f = Object.fromEntries(new FormData(form));
   const error = $("#form-error"), submit = $("#form-submit");
   const showError = html => { error.innerHTML = html; error.hidden = false; };
-  if (!picked.date || !picked.time) { showError("Välj en dag och en tid först."); $("#t-day").scrollIntoView({ behavior: "smooth" }); return; }
-  const bad = validate(f);
-  if (bad.length) { bad[0].focus(); error.hidden = true; return; }
+  const problems = validate(f);
+  if (problems.length) {
+    if (problems.length > 1) showError("Kolla de markerade fälten, tack!"); else error.hidden = true;
+    problems[0].el.focus();
+    return;
+  }
   if (f._honey) return;
   error.hidden = true;
-  const when = `${dayFmt.format(picked.date)} kl. ${picked.time}`;
-  const subject = `Bokat samtal: ${when} – ${f.name}`;
-  submit.disabled = true; submit.textContent = "Bokar…";
+  const when = picked.date && picked.time ? `${dayFmt.format(picked.date)} kl. ${picked.time}` : "";
+  const subject = when ? `Bokat samtal: ${when} – ${f.name}` : `Ny hemsideförfrågan från ${f.company || f.name}`;
+  const body = [
+    `Namn: ${f.name}`, `Företag: ${f.company || "-"}`, `Telefon: ${f.phone || "-"}`, `E-post: ${f.email || "-"}`, `Nuvarande hemsida: ${f.website || "Ingen"}`, ...(when ? ["Möte via: Teams"] : []),
+    `Paket: ${f.plan || "Vet inte än"}`, "", f.message || ""
+  ].join("\n");
+  const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const thanks = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din förfrågan och svarar inom 24 timmar.</p></div>`;
+
+  if (!CONFIG.formEndpoint) {
+    location.href = mailto;
+    form.innerHTML = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Ditt mejlprogram öppnas med förfrågan ifylld – tryck bara på skicka. Vi svarar inom 24 timmar.</p></div>`;
+    return;
+  }
+  submit.disabled = true; submit.textContent = "Skickar…";
   try {
     const res = await fetch(CONFIG.formEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...f, when, how: "Teams", source: "Bokningssidan" }),
+      body: JSON.stringify({ ...f, when, how: when ? "Teams" : "", source: "Bokningssidan" }),
       signal: AbortSignal.timeout(25000)
     });
     const json = await res.json().catch(() => ({}));
     if (!res.ok || json.ok !== true) throw Object.assign(new Error(json.code || `HTTP ${res.status}`), { status: res.status, code: json.code || "" });
-    form.innerHTML = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din bokning för <b>${esc(when)}</b>. Du får en bekräftelse till ${esc(f.email)} inom 24 timmar.</p></div>`;
+    form.innerHTML = thanks;
   } catch (err) {
-    console.warn("Bokningen kunde inte skickas:", err.message);
-    submit.disabled = false; submit.textContent = "Boka samtalet";
-    const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}`;
+    console.warn("Formuläret kunde inte skickas:", err.message);
+    submit.disabled = false; submit.textContent = "Skicka förfrågan";
     showError(sendErrorHtml(err, mailto));
   }
 });
-
-renderCal();
+/* Korten glider in varje gång de kommer in i bild */
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("js-anim");
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("in");
+  }), { rootMargin: "0px 0px -8% 0px" });
+  // När ett kort har lämnat skärmen helt nollställs det, så att animationen spelas igen nästa gång
+  const reset = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) e.target.classList.remove("in");
+  }));
+  [".care > .eyebrow", ".care > .sec-h", ".values > *", ".team-wrap > .eyebrow", ".team-wrap > .sec-h", ".team-wrap > .lead", ".team > *"].forEach(sel =>
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add("reveal");
+      el.style.setProperty("--d", Math.min(i, 5) * 0.07 + "s");
+      io.observe(el);
+      reset.observe(el);
+    }));
+}
 </script>
 <script src="/sok.js" defer></script>
 </body>

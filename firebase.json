@@ -29,7 +29,7 @@
         ]
       },
       {
-        "source": "**/!(*.@(jpg|png|webp|ico))",
+        "source": "**/!(*.@(jpg|png|webp|ico|woff2))",
         "headers": [
           {
             "key": "Cache-Control",
@@ -38,11 +38,11 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|png|webp)",
+        "source": "**/*.@(jpg|png|webp|woff2)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=604800"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       }
