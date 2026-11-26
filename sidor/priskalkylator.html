@@ -1,0 +1,72 @@
+<!--
+title: Priskalkylator – vad kostar din hemsida? · Sabimedia
+description: Kryssa i vad hemsidan ska kunna göra och se direkt vilket paket som passar och vad det kostar. Alla paket börjar under 5 000 kr exkl. moms.
+updated: 2026-11-26
+type: WebPage
+cta: Vill du ha ett fast pris?
+cta_text: Boka ett kostnadsfritt samtal, så går vi igenom ditt resultat tillsammans.
+-->
+  <section class="section page-first">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Verktyg · Priskalkylator</span>
+        <h1>Vad kostar <em class="hl">din hemsida?</em></h1>
+        <p class="lead">Kryssa i vad hemsidan ska kunna göra, så ser du direkt vilket paket som passar och vad det kostar. Alla paket börjar under 5 000 kr exklusive moms.</p>
+      </div>
+      <form class="calc" id="calc" aria-describedby="calc-result">
+        <fieldset>
+          <legend>Vad ska hemsidan kunna göra?</legend>
+          <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Fler än 3 sidor"><span><b>Fler än 3 sidor</b><small>Till exempel egna sidor för tjänster, meny eller referenser</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Formulär för bokning, offert eller beställning"><span><b>Ta emot bokningar, offerter eller beställningar</b><small>Kunden fyller i ett formulär, och du får ett mejl</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Kundomdömen"><span><b>Kundomdömen</b><small>Visa vad kunderna tycker om dig</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="custom" data-label="Bokningssystem med kalender"><span><b>Bokningssystem med kalender</b><small>Kunden ser lediga tider och bokar direkt</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="custom" data-label="Webbshop med betalning"><span><b>Sälja och ta betalt på sidan</b><small>Webbshop med varukorg och betalning</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="custom" data-label="Adminpanel"><span><b>Egen adminpanel</b><small>Se och hantera beställningar och bokningar</small></span></label>
+        </fieldset>
+        <div class="calc-result" id="calc-result" aria-live="polite">
+          <span class="plan-kicker" id="calc-kicker">Ditt paket</span>
+          <h2 id="calc-name">Start</h2>
+          <p class="calc-price"><strong id="calc-price">Från 1 500 kr</strong><span>Engångskostnad · exkl. moms</span></p>
+          <p id="calc-text">En professionell hemsida med upp till 3 sidor, kontaktformulär och karta.</p>
+          <p class="calc-note">Domän och webbhotell betalar du till leverantören. Ingen månadsavgift till oss. Hjälp efter supportperioden kostar 400 kr i timmen exkl. moms (200 kr med uppdateringsavtal).</p>
+          <div class="calc-btns"><a class="btn btn-accent" id="calc-go" href="/kontakt?paket=Start">Skicka förfrågan</a><a class="btn btn-line" id="calc-more" href="/priser#paket-start">Se vad som ingår</a></div>
+        </div>
+      </form>
+      <script>
+      (() => {
+        const P = {
+          start: ["Start", "Från 1 500 kr", "En professionell hemsida med upp till 3 sidor, kontaktformulär och karta."],
+          business: ["Business", "Från 2 800 kr", "Fler sidor, formulär för bokning, offert eller beställning, kundomdömen och automatiska mejl."],
+          custom: ["Custom", "Från 4 300 kr", "Bokningssystem, webbshop med betalning och adminpanel. Slutpriset beror på funktionerna, och du får ett fast pris innan vi börjar."]
+        };
+        const form = document.getElementById("calc"), $ = id => document.getElementById(id);
+        const update = () => {
+          const v = [...form.querySelectorAll("input:checked")].map(i => i.value);
+          const k = v.includes("custom") ? "custom" : v.includes("business") ? "business" : "start";
+          const [name, price, text] = P[k];
+          $("calc-name").textContent = name; $("calc-price").textContent = price; $("calc-text").textContent = text;
+          $("calc-go").href = "/kontakt?paket=" + name; $("calc-more").href = "/priser#paket-" + k;
+        };
+        form.addEventListener("change", update);
+        form.addEventListener("submit", e => e.preventDefault());
+        update();
+      })();
+      </script>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap faq-grid">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Vanliga frågor</span>
+        <h2>Frågor om <em class="hl">kalkylatorn.</em></h2>
+        <div class="link-row" style="margin-top:0"><a class="btn btn-ink" href="/priser#anpassa">Har du redan domän eller logga? Anpassa paketet →</a><a class="btn btn-line" href="/vad-kostar-en-hemsida">Vad kostar en hemsida?</a><a class="btn btn-line" href="/hemsida-med-bokning">Hemsida med bokning</a></div>
+      </div>
+      <div class="faq">
+        <details open><summary>Är priset i kalkylatorn slutpriset?</summary><p>Det är ett från-pris. Innan vi börjar får du ett fast pris att godkänna, och det ändras bara om du själv beställer något mer.</p></details>
+        <details><summary>Vad kostar det efter lanseringen?</summary><p>Domän och webbhotell betalar du direkt till leverantören. Vi tar ingen månadsavgift. Hjälp efter supportperioden kostar 400 kr i timmen exkl. moms (200 kr med uppdateringsavtal).</p></details>
+        <details><summary>Vet du inte vad du behöver?</summary><p>Boka ett kostnadsfritt samtal, så föreslår vi ett paket utifrån hur ditt företag tar emot kunder.</p></details>
+      </div>
+    </div>
+  </section>
+

@@ -22,8 +22,14 @@ cp bilder/{sabi-logo,cookiemunch-desktop,cookiemunch-mobil,cookiemunch-logo,exem
 
 cp typsnitt/*.woff2 site/typsnitt/
 
-# Undersidorna Tjänster, Priser, FAQ och Kontakt skapas från startsidan
+# Undersidorna Tjänster, Priser, FAQ och Kontakt samt sidorna i sidor/ skapas från startsidan
 python3 scripts/build-pages.py
+
+# Klickbara demosidor med påhittade företag
+python3 scripts/build-demos.py
+
+# Paketen och prisjämförelsen läggs direkt i HTML-koden så att sökmotorer ser dem utan JavaScript
+node scripts/prerender-priser.js
 
 # Bilder och typsnitt cachas i ett år (firebase.json). Därför får varje adress en kod som
 # räknas fram ur filens innehåll: byts filen ut får den ny adress och hämtas på nytt.
