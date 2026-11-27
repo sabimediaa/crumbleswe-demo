@@ -45,7 +45,7 @@ cta_text: Boka ett kostnadsfritt samtal, så går vi igenom ditt resultat tillsa
           const k = v.includes("custom") ? "custom" : v.includes("business") ? "business" : "start";
           const [name, price, text] = P[k];
           $("calc-name").textContent = name; $("calc-price").textContent = price; $("calc-text").textContent = text;
-          $("calc-go").href = "/kontakt?paket=" + name; $("calc-more").href = "/priser#paket-" + k;
+          $("calc-go").href = "/kontakt?paket=" + name; $("calc-more").href = "/priser#paket-" + name.toLowerCase();
         };
         form.addEventListener("change", update);
         form.addEventListener("submit", e => e.preventDefault());

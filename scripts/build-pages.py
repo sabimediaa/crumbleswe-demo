@@ -141,6 +141,7 @@ PRISFRAGOR = '''  <section class="section" id="vad-kostar" style="padding-top:0"
       <div class="faq">
         <details open><summary>Får jag en hemsida till fast pris?</summary><p>Ja. Priserna ovan är från-priser, men innan vi börjar får du ett fast pris att godkänna. Då vet du vad din hemsida kostar.</p></details>
         <details><summary>Hur många sidor ingår?</summary><p>Start har upp till 4 sidor och Business upp till 12. Varje extra sida kostar 200 kr exkl. moms. I Pro bestäms antalet i offerten.</p></details>
+        <details><summary>Vad betyder Google-anpassning i paketen?</summary><p>Det är grundläggande SEO, alltså hur hemsidan är byggd: tydliga rubriker och titlar, snabb i mobilen och lätt att använda, så att den både hittas och leder till köp. Det ingår i alla paket. <a href="/synas-pa-google">Läs mer om att synas på Google</a>.</p></details>
         <details><summary>Kan jag köpa en hemsida utan abonnemang?</summary><p>Ja, hos oss får du en hemsida utan abonnemang. Du betalar en gång, och sedan är hemsidan din. Vi tar ingen månadsavgift.</p></details>
         <details><summary>Vilken kostnad har en hemsida efter lansering?</summary><p>Räkna med avgifter för domän och webbhotell, som du betalar till den leverantör du väljer. När supporttiden är slut kostar vår hjälp 400 kr i timmen exkl. moms (200 kr med uppdateringsavtal).</p></details>
         <details><summary>Är en billig hemsida för småföretag bra nog?</summary><p>Det kan den vara. Med Start får du en billig hemsida med egen design, mobilanpassning och kontaktformulär. Vill du ha en hemsida billigt till att börja med kan du lägga till funktioner senare mot offert.</p></details>
@@ -219,6 +220,7 @@ TJANSTFRAGOR = '''  <section class="section band" id="tjanst-fragor">
         <details open><summary>Hur lång tid tar det?</summary><p>Första utkastet får du inom 24 timmar. Hela hemsidan tar från några dagar upp till några veckor, beroende på paket och funktioner. Tiden räknas från att vi fått ditt material.</p></details>
         <details><summary>Vad behöver jag skicka?</summary><p>Logga, bilder, produkter eller tjänster och priser. <a href="/checklista-ny-hemsida">Se checklistan</a>.</p></details>
         <details><summary>Vem äger hemsidan?</summary><p>Du. Domän, webbhotell och hemsida står i ditt namn. <a href="/vem-ager-hemsidan">Så fungerar ägandet</a>.</p></details>
+        <details><summary>Ingår SEO?</summary><p>Ja, grundläggande SEO ingår i alla paket. Vi bygger hemsidan rätt från början, så att den både hittas på Google och leder besökaren till att boka eller köpa. Mer omfattande SEO? <a href="/boka">Boka ett möte med Safiya</a>. <a href="/synas-pa-google">Så syns du på Google</a>.</p></details>
         <details><summary>Använder ni AI?</summary><p>Ja, för kod och textutkast. Designen bestämmer vi tillsammans med dig, och vi granskar allt. <a href="/sa-anvander-vi-ai">Så använder vi AI</a>.</p></details>
         <details><summary>Vad kostar hjälp efter lanseringen?</summary><p>400 kr i timmen exkl. moms (200 kr med uppdateringsavtal) när supportperioden är slut. Ingen månadsavgift.</p></details>
       </div>
@@ -427,6 +429,36 @@ SIDOR_CSS = """/* Sidor från sidor/ (scripts/build-pages.py) */
 .calc-price span,.calc-note{font-size:.88rem;color:var(--ink-soft)}
 .calc-btns{display:flex;flex-wrap:wrap;gap:10px}
 @media (max-width:900px){.calc{grid-template-columns:minmax(0,1fr)}.calc-result{position:static}}
+.sidor-note{margin-top:18px;font-size:.92rem;color:var(--ink-soft)}
+.check-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.check-list li{position:relative;padding:14px 16px 14px 46px;background:var(--paper);border:1px solid var(--line);border-radius:14px;font-weight:500}
+.check-list li::before{content:"";position:absolute;left:14px;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:6px;border:2px solid var(--accent)}
+.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0}
+.glossary div{padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.glossary dt{font-family:var(--display);font-weight:700;font-size:1.05rem;margin-bottom:.25rem}
+.glossary dd{margin:0;color:var(--ink-soft)}
+.check-list li{padding:0}
+.check-list li::before{content:none}
+.check-list label{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;cursor:pointer;border-radius:14px}
+.check-list input{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--accent)}
+.check-list li:has(input:checked){border-color:var(--accent);background:rgba(212,44,51,.05)}
+.check-list li:has(input:checked) span{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(212,44,51,.5)}
+.check-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.check-head p{margin:0;font-weight:700;font-family:var(--display);font-size:1.1rem}
+.check-btns{display:flex;gap:8px}
+.check-bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-bottom:14px}
+.check-bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s}
+.incl{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,28px)}
+.incl h3{margin-bottom:12px}
+.incl-table{width:100%;border-collapse:collapse;font-size:.97rem}
+.incl-table th,.incl-table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:center}
+.incl-table thead th{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.incl-table th[scope=row],.incl-table thead th:first-child{text-align:left;font-weight:500}
+.incl-table tbody tr:last-child th,.incl-table tbody tr:last-child td{border-bottom:0}
+.incl-table .yes{color:var(--accent);font-weight:700;font-size:1.1rem}
+.incl-table .no{color:var(--ink-soft)}
+@media (max-width:760px){.check-list,.glossary{grid-template-columns:1fr}.incl-table{font-size:.88rem}.incl-table th,.incl-table td{padding:10px 6px}}
+@media print{.nav,header,footer,.next-step,.sabi-chat,.check-btns{display:none!important}.section:not(#checklista){display:none!important}#checklista{padding:0!important;background:#fff!important}.check-list{grid-template-columns:1fr}}
 </style>
 </head>"""
 import glob, os
