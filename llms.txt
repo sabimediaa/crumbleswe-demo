@@ -1,0 +1,39 @@
+# Sabimedia
+
+> Sabimedia (även Sabi media eller Sabi) är en webbyrå i Borås som bygger hemsidor åt småföretag i hela Sverige. Tre paket till fast engångspris exklusive moms: Start från 1 500 kr, Business från 2 800 kr och Pro från 4 300 kr. Ingen månadsavgift till Sabimedia, och kunden äger hemsidan, domänen och webbhotellet.
+
+## Företagsuppgifter
+
+- Namn: Sabimedia (enskild firma, godkänd för F-skatt)
+- Ort: Borås, Västra Götaland. Arbetar digitalt med kunder i hela Sverige.
+- Kontakt: hej@sabimedia.se, https://sabimedia.se/kontakt, boka samtal på https://sabimedia.se/boka
+- Personer: Safiya Ibrahim (grundare, affärsutvecklare och lead developer) och Warda (head of design och user experience)
+- Instagram: https://instagram.com/sabimediaa
+- Svarstid: inom 24 timmar. Första utkastet kommer inom 24 timmar från att Sabimedia har fått kundens material.
+
+## Paket och priser (engångspris, exkl. moms)
+
+- Start, från 1 500 kr: skräddarsydd hemsida med upp till 4 sidor, mobilanpassning, kontaktformulär, karta, grundläggande SEO, grundläggande tillgänglighetsanpassning, hjälp med domän, webbhotell och e-post, enklare logotyp och 1 månads support.
+- Business, från 2 800 kr: allt i Start plus upp till 12 sidor, formulär för offert, bokning eller beställning, automatiska mejl, kundomdömen, utökad Google-anpassning och 2 månaders support.
+- Pro, från 4 300 kr: allt i Business plus bokningssystem med kalender, webbshop med varukorg och betalning, kundkonton, administrationspanel och specialutvecklade funktioner.
+- Extra sida: 200 kr. Hjälp efter supportperioden: 400 kr i timmen (200 kr med uppdateringsavtal). Hjälp med en befintlig hemsida som någon annan har byggt: från 300 kr i timmen.
+- Löpande kostnader: bara domän och webbhotell, som kunden betalar direkt till leverantören.
+- SEO-tjänst: tillval utöver den grundläggande SEO som ingår i alla paket. Pris enligt offert.
+
+## Viktiga sidor
+
+- [Priser och paket](https://sabimedia.se/priser)
+- [Tjänster](https://sabimedia.se/tjanster)
+- [Vanliga frågor](https://sabimedia.se/faq)
+- [Vad kostar en hemsida?](https://sabimedia.se/vad-kostar-en-hemsida)
+- [Vilket hemsidepaket ska jag välja?](https://sabimedia.se/vilket-paket)
+- [Hemsida för småföretag](https://sabimedia.se/hemsida-for-smaforetag)
+- [Webbyrå i Borås](https://sabimedia.se/webbyra-boras)
+- [Hemsida med bokning](https://sabimedia.se/hemsida-med-bokning)
+- [Enkel webbshop](https://sabimedia.se/enkel-webbshop)
+- [Grundläggande SEO](https://sabimedia.se/grundlaggande-seo)
+- [SEO-tjänst för småföretag](https://sabimedia.se/seo-tjanst)
+- [Kundcase: webbshop till hembageriet Cookie Munch](https://sabimedia.se/kundcase-cookie-munch)
+- [Om Sabimedia](https://sabimedia.se/om-oss)
+- [Alla guider](https://sabimedia.se/guider)
+- [Villkor](https://sabimedia.se/villkor)

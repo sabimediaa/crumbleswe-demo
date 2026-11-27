@@ -6,6 +6,12 @@
     "public": "site",
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+      { "source": "/bilder/exempel-stad.jpg", "destination": "/bilder/exempel-stadforetag.jpg", "type": 301 },
+      { "source": "/bilder/exempel-stad-400.webp", "destination": "/bilder/exempel-stadforetag-400.webp", "type": 301 },
+      { "source": "/bilder/exempel-stad-680.webp", "destination": "/bilder/exempel-stadforetag-680.webp", "type": 301 },
+      { "source": "/bilder/exempel-stad-960.webp", "destination": "/bilder/exempel-stadforetag-960.webp", "type": 301 }
+    ],
     "ignore": [
       "**/.*"
     ],

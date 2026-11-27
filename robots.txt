@@ -1,5 +1,6 @@
 # robots.txt för sabimedia.se
-# Alla sökmotorer får läsa hela sajten, utom formulärets API.
+# Alla sökmotorer och AI-tjänster (till exempel GPTBot, ClaudeBot, PerplexityBot och Google-Extended)
+# får läsa hela sajten, utom formulärets API. Fakta om Sabimedia för AI finns i /llms.txt.
 User-agent: *
 Allow: /
 Disallow: /api/

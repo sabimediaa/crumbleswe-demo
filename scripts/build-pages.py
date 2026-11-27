@@ -230,25 +230,27 @@ TJANSTFRAGOR = '''  <section class="section band" id="tjanst-fragor">
 
 PAGES = {
     "tjanster": dict(
-        menu="Tjänster", title="Skapa hemsida för företag – webbdesign · Sabimedia",
-        desc="Vill du skapa hemsida för företag? Vi jobbar med webbdesign och webbutveckling och bygger funktioner som förenklar vardagen. Se vad som ingår.",
-        eyebrow="Tjänster", h1='Webbdesign och hemsidor <em class="hl">för småföretag.</em>', parts=["ingar", "sa-funkar-det", "agande"],
+        menu="Tjänster", title="Skapa hemsida för företag – webbdesign · Sabimedia", keyword="skapa hemsida för företag",
+        desc="Skapa hemsida för företag med Sabimedia: webbdesign och webbutveckling med funktioner som bokning, beställning och betalning. Se vad som ingår.",
+        eyebrow="Tjänster", h1='Skapa hemsida för företag <em class="hl">– utan krångel.</em>', parts=["ingar", "sa-funkar-det", "agande"],
         after=TJANSTFRAGOR + next_step("Vad kostar det?", "Tre paket med fast pris. Jämför dem eller fråga oss vad som passar dig.",
                         [("btn-accent", "/priser", "Se priserna →"), ("btn-line", "/kontakt", "Kontakta oss")])),
     "priser": dict(
-        menu="Priser", title="Billig hemsida till fast pris – priser och paket · Sabimedia",
+        menu="Priser", title="Billig hemsida till fast pris – priser och paket · Sabimedia", keyword="billig hemsida",
         desc="Billig hemsida från 1 500 kr exkl. moms. Se vad en hemsida kostar och jämför tre paket med fast engångspris, utan månadsavgift till Sabimedia.",
         eyebrow="Priser", h1='Billig hemsida <em class="hl">till fast pris.</em>', parts=["priser"],
         after=next_step("Osäker på vilket paket som passar?", "Boka ett kostnadsfritt samtal så går vi igenom vad du behöver.",
                         [("btn-accent", "/boka", "Boka samtal →"), ("btn-line", "/faq", "Vanliga frågor")])),
     "faq": dict(
-        menu="FAQ", title="Vanliga frågor om hemsidor · Sabimedia",
-        desc="Svar på vanliga frågor om pris, tid, ägande, publicering och support när Sabimedia bygger din hemsida.",
-        eyebrow="FAQ", h1='Vanliga frågor <em class="hl">om hemsidor.</em>', parts=["fragor"], after=""),
+        menu="FAQ", title="Vanliga frågor om hemsidor – pris, tid och ägande · Sabimedia", keyword="vanliga frågor om hemsidor",
+        desc="Vanliga frågor om hemsidor: svar om pris, tid, ägande, publicering och support när Sabimedia bygger din hemsida.",
+        eyebrow="FAQ", h1='Vanliga frågor <em class="hl">om hemsidor.</em>', parts=["fragor"],
+        after=next_step("Redo att komma igång?", "Boka ett kostnadsfritt samtal så går vi igenom vad din hemsida behöver.",
+                        [("btn-accent", "/boka", "Boka samtal →"), ("btn-line", "/priser", "Se priserna")])),
     "kontakt": dict(
-        menu="Kontakt", title="Kontakt – skicka en förfrågan · Sabimedia",
-        desc="Berätta om ditt företag och välj en tid för ett kostnadsfritt samtal. Sabimedia svarar inom 24 timmar.",
-        eyebrow="Kontakt", h1=None, parts=["kontakt"], after=""),
+        menu="Kontakt", title="Kontakta Sabimedia – förfrågan om ny hemsida", keyword="kontakta Sabimedia",
+        desc="Kontakta Sabimedia: berätta om ditt företag och välj en tid för ett kostnadsfritt samtal om din nya hemsida. Vi svarar inom 24 timmar.",
+        eyebrow="Kontakt", h1="Kontakta Sabimedia", parts=["kontakt"], after=""),
 }
 
 CSS = """/* Undersidor skapade av scripts/build-pages.py */
@@ -334,10 +336,12 @@ for name, p in PAGES.items():
         body = re.sub(r'(<p class="lead">.*?</p>\n)', lambda m: m[1] + '        <div class="head-btns"><a class="btn btn-ink" href="#cookie-munch">Se exempel: Cookie Munch ↓</a></div>\n', body, count=1, flags=re.S)
         cut = body.index("</section>\n") + len("</section>\n")
         body = body[:cut] + cookie_munch() + WEBBDESIGN + body[cut:]
-        body = one(body, "Vi jobbar med webbdesign i Borås och i hela Sverige. Varje hemsida är byggd för små företag som", "Vi bygger hemsidor med funktioner som förenklar företagets vardag. Vårt jobb är webbdesign och webbutveckling för små företag som")
+        body = one(body, "Vi jobbar med webbdesign i Borås och i hela Sverige. Varje hemsida är byggd för små företag som", "Sabimedia skapar hemsidor för företag: design, utveckling, publicering och support till fast engångspris från 1 500 kr exkl. moms, med funktioner som beställning, bokning och betalning. Vi gör webbdesign och webbutveckling för små företag som")
         body = one(body, "ett proffsigare sätt att ta emot beställningar.", "ett proffsigare sätt att ta emot beställningar online.")
+    if name == "kontakt":
+        body = one(body, '<p class="contact-sub">– med en egen hemsida.</p>', '<p class="contact-sub">– och låt dina kunder enkelt hitta, välja och beställa.</p>')
     if name == "priser":
-        body = one(body, "Vill du köpa hemsida till ditt företag? Sabi media är en webbyrå med fast pris och tydligt innehåll. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj den hemsida som passar din budget och hur ditt företag tar emot kunder.", "Att köpa hemsida ska vara enkelt. Alla våra paket börjar under 5 000 kr, och du betalar en gång, utan abonnemang och utan månadsavgift till Sabimedia. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj det paket som passar din budget och hur ditt företag tar emot kunder.") + PRISFRAGOR
+        body = one(body, "Vill du köpa hemsida till ditt företag? Sabi media är en webbyrå med fast pris och tydligt innehåll. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj den hemsida som passar din budget och hur ditt företag tar emot kunder.", "Start kostar från 1 500 kr, Business från 2 800 kr och Pro från 4 300 kr, exklusive moms. Du betalar en gång, utan abonnemang och utan månadsavgift till Sabimedia. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj det paket som passar din budget och hur ditt företag tar emot kunder.") + PRISFRAGOR
     body = re.sub(r'<section class="section([^"]*)" id="([^"]+)"( style="padding-top:0")?', r'<section class="section\1 page-first" id="\2"', body, count=1)
     body = re.sub(r'<span class="eyebrow">[^<]*</span>', f'<span class="eyebrow">{p["eyebrow"]}</span>', body, count=1)
     body = re.sub(r"<h2>(.*?)</h2>", lambda m: f'<h1>{p["h1"] or m[1]}</h1>', body, count=1, flags=re.S)
@@ -784,3 +788,31 @@ page = one(page, "</style>\n</head>", CSS)
 # Sidan kan visas på vilken adress som helst, därför räknas alla sökvägar från roten
 page = re.sub(r"(?<![\w/.-])(bilder|typsnitt)/", r"/\1/", page)
 open("site/404.html", "w", encoding="utf-8").write(page)
+
+# Sökord: varje indexerad sida har ett eget primärt sökord. Det ska stå i sidans titel och inte i någon annan sidas
+# titel, så att sidorna inte konkurrerar om samma sökning. Titlar och beskrivningar ska också vara unika.
+# Sökordet för sidorna i sidor/ står i rubrikkommentaren (keyword:), för Tjänster–Kontakt i PAGES och för resten här.
+KEYWORDS = {"index": "prisvärd webbyrå", "boka": "boka samtal om hemsida", "branscher": "hemsida för din bransch",
+            "om-oss": "om Sabimedia", "kundcase-cookie-munch": "webbshop till hembageri",
+            "integritetspolicy": "integritetspolicy", "villkor": "villkor för din hemsida"}
+KEYWORDS.update({n: p["keyword"] for n, p in PAGES.items()})
+for path in sorted(glob.glob("sidor/*.html")):
+    m = re.search(r"^keyword: (.+)$", open(path, encoding="utf-8").read(500), re.M)
+    if not m: raise SystemExit("build-pages: keyword saknas i " + path)
+    KEYWORDS[os.path.basename(path)[:-5]] = m[1]
+seen = {}
+for name in KEYWORDS:
+    page = open(f"site/{name}.html", encoding="utf-8").read()
+    t = H.unescape(re.search(r"<title>(.*?)</title>", page)[1])
+    d = H.unescape(re.search(r'<meta name="description" content="([^"]*)"', page)[1])
+    seen[name] = (t, d)
+for name, kw in KEYWORDS.items():
+    t, d = seen[name]
+    if kw.lower() not in t.lower(): raise SystemExit(f"build-pages: sökordet ”{kw}” saknas i titeln på {name}")
+    for other, (t2, d2) in seen.items():
+        if other == name: continue
+        if kw.lower() in t2.lower(): raise SystemExit(f"build-pages: sökordet ”{kw}” ({name}) står även i titeln på {other}")
+        if t == t2 or d == d2: raise SystemExit(f"build-pages: {name} och {other} har samma titel eller beskrivning")
+    if len(t) > 65: print(f"build-pages: OBS titeln på {name} är {len(t)} tecken (Google kortar ofta av efter ~60)")
+    if not 100 <= len(d) <= 170: print(f"build-pages: OBS beskrivningen på {name} är {len(d)} tecken (sikta på 120–160)")
+print(f"build-pages: {len(KEYWORDS)} sidor med unika sökord, titlar och beskrivningar")
