@@ -55,8 +55,8 @@ WEBBDESIGN = '''  <section class="section" id="webbdesign" style="padding-top:0"
         <div class="own-card"><h3>Ta emot beställningar online</h3><p>Med Business får du en hemsida med beställningsformulär, och alla onlinebeställningar kommer direkt till din mejl.</p></div>
         <div class="own-card"><h3>Skapa företagshemsida</h3><p>Har du ingen egen hemsida än? Vi börjar med ett möte om dina behov, din målgrupp och din stil. Sedan får du ett första utkast att tycka till om. <a href="/branscher">Se exempel för din bransch</a>.</p></div>
         <div class="own-card"><h3>Förbättra hemsida</h3><p>Känns din hemsida gammal, eller hör för få kunder av sig? <a href="/kontakt">Skicka länken till oss</a> så föreslår vi vad som kan bli bättre, eller om det är dags för en ny hemsida.</p></div>
-        <div class="own-card"><h3>Öppna webbutik</h3><p>Vill du ha en hemsida med produkter som kunden kan köpa direkt? Med Custom bygger vi en webbutik med varukorg, betalning och en egen adminpanel.</p></div>
-        <div class="own-card"><h3>Ta emot bokningar online</h3><p>Låt kunden skicka en bokningsförfrågan på hemsidan. Med Custom kan du få ett bokningssystem med kalender och lediga tider.</p></div>
+        <div class="own-card"><h3>Öppna webbutik</h3><p>Vill du ha en hemsida med produkter som kunden kan köpa direkt? Med Pro bygger vi en webbutik med varukorg, betalning och en egen adminpanel.</p></div>
+        <div class="own-card"><h3>Ta emot bokningar online</h3><p>Låt kunden skicka en bokningsförfrågan på hemsidan. Med Pro kan du få ett bokningssystem med kalender och lediga tider.</p></div>
       </div>
     </div>
   </section>
@@ -76,7 +76,7 @@ BYGG = '''  <section class="section band" id="anpassa">
             <div class="calc-plans">
               <label class="calc-opt"><input type="radio" name="paket" value="Start" data-price="1500" data-avtal="700"><span><b>Start</b><small>1 500 kr</small></span></label>
               <label class="calc-opt"><input type="radio" name="paket" value="Business" data-price="2800" data-avtal="1300" checked><span><b>Business</b><small>2 800 kr</small></span></label>
-              <label class="calc-opt"><input type="radio" name="paket" value="Custom" data-price="4300" data-avtal="2100"><span><b>Custom</b><small>från 4 300 kr</small></span></label>
+              <label class="calc-opt"><input type="radio" name="paket" value="Pro" data-price="4300" data-avtal="2100"><span><b>Pro</b><small>från 4 300 kr</small></span></label>
             </div>
           </fieldset>
           <fieldset style="margin-top:18px">
@@ -86,7 +86,7 @@ BYGG = '''  <section class="section band" id="anpassa">
           </fieldset>
           <fieldset style="margin-top:18px">
             <legend>3. Lägg till om du vill</legend>
-            <label class="calc-opt"><input type="checkbox" name="tillagg" value="avtal" data-label="Uppdateringsavtal, per år"><span><b>Uppdateringsavtal</b><small>Underhåll och 3–4 mindre ändringar per år, och timpris 200 kr i stället för 400 kr. Faktureras årsvis.</small></span><span class="calc-cost" id="avtal-cost">+1 300 kr/år</span></label>
+            <label class="calc-opt"><input type="checkbox" name="tillagg" value="avtal" data-label="Uppdateringsavtal, per år"><span><b>Uppdateringsavtal</b><small>Underhåll och 4 mindre ändringar per år, och timpris 200 kr i stället för 400 kr. Faktureras årsvis.</small></span><span class="calc-cost" id="avtal-cost">+1 300 kr/år</span></label>
           </fieldset>
         </div>
         <div class="calc-result" id="anpassa-result" aria-live="polite">
@@ -115,7 +115,7 @@ BYGG = '''  <section class="section band" id="anpassa">
           const medAvtal = form.querySelector("input[value=avtal]").checked;
           if (medAvtal) { total += avtal; lines.push(["Uppdateringsavtal, första året", "+" + kr(avtal), true]); }
           $("anpassa-lines").innerHTML = lines.map(([l, p]) => `<li><span>${esc(l)}</span><span>${p}</span></li>`).join("");
-          $("anpassa-total").textContent = (plan.value === "Custom" ? "Från " : "") + kr(total);
+          $("anpassa-total").textContent = (plan.value === "Pro" ? "Från " : "") + kr(total);
           $("anpassa-terms").textContent = medAvtal ? "Totalt första året · exkl. moms" : "Engångskostnad · exkl. moms";
           const q = new URLSearchParams({ paket: plan.value });
           if (utan.length) q.set("utan", utan.join(","));
@@ -136,16 +136,17 @@ PRISFRAGOR = '''  <section class="section" id="vad-kostar" style="padding-top:0"
       <div class="section-head" style="margin:0">
         <span class="eyebrow">Webbyrå · Priser</span>
         <h2>Vad kostar en hemsida <em class="hl">till företag?</em></h2>
-        <p class="lead">Vi är en webbyrå med fast pris. Hos oss kostar en hemsida från 1&nbsp;500&nbsp;kr med Start, från 2&nbsp;800&nbsp;kr med Business och från 4&nbsp;300&nbsp;kr med Custom. Priset är en engångskostnad exklusive moms.</p>
+        <p class="lead">Vi är en webbyrå med fast pris. Hos oss kostar en hemsida från 1&nbsp;500&nbsp;kr med Start, från 2&nbsp;800&nbsp;kr med Business och från 4&nbsp;300&nbsp;kr med Pro. Priset är en engångskostnad exklusive moms.</p>
       </div>
       <div class="faq">
         <details open><summary>Får jag en hemsida till fast pris?</summary><p>Ja. Priserna ovan är från-priser, men innan vi börjar får du ett fast pris att godkänna. Då vet du vad din hemsida kostar.</p></details>
+        <details><summary>Hur många sidor ingår?</summary><p>Start har upp till 4 sidor och Business upp till 12. Varje extra sida kostar 200 kr exkl. moms. I Pro bestäms antalet i offerten.</p></details>
         <details><summary>Kan jag köpa en hemsida utan abonnemang?</summary><p>Ja, hos oss får du en hemsida utan abonnemang. Du betalar en gång, och sedan är hemsidan din. Vi tar ingen månadsavgift.</p></details>
         <details><summary>Vilken kostnad har en hemsida efter lansering?</summary><p>Räkna med avgifter för domän och webbhotell, som du betalar till den leverantör du väljer. När supporttiden är slut kostar vår hjälp 400 kr i timmen exkl. moms (200 kr med uppdateringsavtal).</p></details>
         <details><summary>Är en billig hemsida för småföretag bra nog?</summary><p>Det kan den vara. Med Start får du en billig hemsida med egen design, mobilanpassning och kontaktformulär. Vill du ha en hemsida billigt till att börja med kan du lägga till funktioner senare mot offert.</p></details>
-        <details><summary>Hemsida för småföretag: vilket pris och paket passar?</summary><p>Start räcker långt om du vill synas och bli kontaktad. Business passar dig som tar emot förfrågningar, bokningar eller beställningar. Custom är för dig som behöver till exempel webbshop eller bokningssystem. Alla våra paket för en ny hemsida är gjorda för småföretag, och du ser priset innan du bestämmer dig.</p></details>
+        <details><summary>Hemsida för småföretag: vilket pris och paket passar?</summary><p>Start räcker långt om du vill synas och bli kontaktad. Business passar dig som tar emot förfrågningar, bokningar eller beställningar. Pro är för dig som behöver till exempel webbshop eller bokningssystem. Alla våra paket för en ny hemsida är gjorda för småföretag, och du ser priset innan du bestämmer dig.</p></details>
         <details><summary>Hur jämför jag priser hos olika webbyråer?</summary><p>När du jämför pris på hemsida bör du titta på vad som ingår, om det tillkommer månadsavgifter och vem som äger hemsidan. Jämför också med hemsidebyggare, som ofta tar en avgift varje månad. <a href="#jamfor">Här ser du vad som ingår hos oss.</a></p></details>
-        <details><summary>Måste jag begära offert?</summary><p>Nej, inte för Start och Business. Där gäller paketpriset, och innan vi börjar får du ett fast pris att godkänna. Offert behövs bara för Custom och för tillägg som inte ingår i något paket. Den kostar inget.</p></details>
+        <details><summary>Måste jag begära offert?</summary><p>Nej, inte för Start och Business. Där gäller paketpriset, och innan vi börjar får du ett fast pris att godkänna. Offert behövs bara för Pro och för tillägg som inte ingår i något paket. Den kostar inget.</p></details>
         <details><summary>Hur räknar jag ut vad hemsidan kostar totalt?</summary><p>Lägg ihop priset för hemsidan med domän och webbhotell under några år, och eventuella månadsavgifter. <a href="/vad-kostar-en-hemsida">Så räknar du ut totalkostnaden</a> eller läs om <a href="/hemsida-utan-manadskostnad">hemsida utan månadskostnad</a>.</p></details>
       </div>
     </div>
@@ -158,9 +159,9 @@ PRISFRAGOR = '''  <section class="section" id="vad-kostar" style="padding-top:0"
         <p class="lead">Ett lågt pris ska gå att lita på. Därför säger vi rakt ut vad varje paket inte innehåller. Behöver du det, finns det i nästa paket eller som tillägg till fast pris.</p>
       </div>
       <div class="own">
-        <div class="own-card"><span class="tag-name tag-no">Start</span><h3>Ingår inte i Start</h3><p>Fler än 3 sidor, formulär för bokning, offert eller beställning, kundomdömen, betalning och adminpanel. Support i 1 månad.</p></div>
+        <div class="own-card"><span class="tag-name tag-no">Start</span><h3>Ingår inte i Start</h3><p>Fler än 4 sidor, formulär för bokning, offert eller beställning, kundomdömen, betalning och adminpanel. Support i 1 månad.</p></div>
         <div class="own-card"><span class="tag-name tag-no">Business</span><h3>Ingår inte i Business</h3><p>Bokningssystem med kalender, betalning på sidan, webbshop, kundkonton och adminpanel. Support i 2 månader.</p></div>
-        <div class="own-card"><span class="tag-name tag-no">Custom</span><h3>Bestäms i offerten</h3><p>Integrationer med andra system och specialfunktioner prissätts efter vad du behöver. Du godkänner priset innan vi börjar.</p></div>
+        <div class="own-card"><span class="tag-name tag-no">Pro</span><h3>Bestäms i offerten</h3><p>Integrationer med andra system och specialfunktioner prissätts efter vad du behöver. Du godkänner priset innan vi börjar.</p></div>
       </div>
       <div class="link-row"><a class="btn btn-ink" href="/priskalkylator">Räkna ut ditt paket →</a></div>
     </div>
@@ -173,7 +174,7 @@ PRISFRAGOR = '''  <section class="section" id="vad-kostar" style="padding-top:0"
         <p class="lead">Allt här är frivilligt. Du betalar bara för det du väljer, och alla priser är exklusive moms.</p>
       </div>
       <div class="own">
-        <div class="own-card"><span class="tag-name">Frivilligt</span><h3>Uppdateringsavtal</h3><p>Underhåll av hemsidan och temat, plus mindre ändringar 3–4 gånger per år. Faktureras årsvis.</p><p class="answer-line">Start 700 kr · Business 1 300 kr · Custom 2 100 kr per år</p></div>
+        <div class="own-card"><span class="tag-name">Frivilligt</span><h3>Uppdateringsavtal</h3><p>Underhåll av hemsidan och temat, plus mindre ändringar 4 gånger per år. Faktureras årsvis.</p><p class="answer-line">Start 700 kr · Business 1 300 kr · Pro 2 100 kr per år</p></div>
         <div class="own-card"><span class="tag-name">Ingår</span><h3>Domän och logotyp</h3><p>Hjälp med domän, webbhotell och e-post och en enklare logotyp med företagsfärger ingår i alla paket. Har du redan det dras 250 kr respektive 300 kr av. <a href="#anpassa">Anpassa ditt paket</a></p></div>
         <div class="own-card"><span class="tag-name">Vid behov</span><h3>Timpris</h3><p>När supportperioden är slut hjälper vi dig per timme.</p><p class="answer-line">400 kr i timmen, 200 kr med uppdateringsavtal</p></div>
       </div>
@@ -334,7 +335,7 @@ for name, p in PAGES.items():
         body = one(body, "Vi jobbar med webbdesign i Borås och i hela Sverige. Varje hemsida är byggd för små företag som", "Vi bygger hemsidor med funktioner som förenklar företagets vardag. Vårt jobb är webbdesign och webbutveckling för små företag som")
         body = one(body, "ett proffsigare sätt att ta emot beställningar.", "ett proffsigare sätt att ta emot beställningar online.")
     if name == "priser":
-        body = one(body, "Vill du köpa hemsida till ditt företag? Sabi media är en webbyrå med fast pris och tydligt innehåll. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj den hemsida som passar hur ditt företag tar emot kunder.", "Att köpa hemsida ska vara enkelt. Alla våra paket börjar under 5 000 kr, och du betalar en gång, utan abonnemang och utan månadsavgift till Sabimedia. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj det paket som passar hur ditt företag tar emot kunder.") + PRISFRAGOR
+        body = one(body, "Vill du köpa hemsida till ditt företag? Sabi media är en webbyrå med fast pris och tydligt innehåll. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj den hemsida som passar din budget och hur ditt företag tar emot kunder.", "Att köpa hemsida ska vara enkelt. Alla våra paket börjar under 5 000 kr, och du betalar en gång, utan abonnemang och utan månadsavgift till Sabimedia. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj det paket som passar din budget och hur ditt företag tar emot kunder.") + PRISFRAGOR
     body = re.sub(r'<section class="section([^"]*)" id="([^"]+)"( style="padding-top:0")?', r'<section class="section\1 page-first" id="\2"', body, count=1)
     body = re.sub(r'<span class="eyebrow">[^<]*</span>', f'<span class="eyebrow">{p["eyebrow"]}</span>', body, count=1)
     body = re.sub(r"<h2>(.*?)</h2>", lambda m: f'<h1>{p["h1"] or m[1]}</h1>', body, count=1, flags=re.S)

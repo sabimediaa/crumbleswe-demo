@@ -9,6 +9,7 @@ mkdir -p site/bilder site/typsnitt
 
 cp sabimedia.html site/index.html
 cp integritetspolicy.html site/integritetspolicy.html
+cp villkor.html site/villkor.html
 cp om-oss.html site/om-oss.html
 cp branscher.html site/branscher.html
 cp boka.html site/boka.html

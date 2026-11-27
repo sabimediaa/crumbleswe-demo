@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Villkor · Sabimedia</title>
+<link rel="canonical" href="https://sabimedia.se/villkor">
+<script>
+/* Skicka besökare från Firebase-adresserna och www vidare till huvudadressen sabimedia.se */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname) || location.hostname === "www.sabimedia.se")
+  location.replace("https://sabimedia.se" + location.pathname + location.search + location.hash);
+</script>
+<meta name="description" content="Villkoren som gäller när Sabimedia bygger din hemsida: vem som är part, hur betalningen går till, löpande kostnader, support och ansvar för säkerheten.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/bilder/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/bilder/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/bilder/favicon-192.png">
+<link rel="apple-touch-icon" href="/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#191919">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="Sabimedia">
+<meta property="og:title" content="Villkor · Sabimedia">
+<meta property="og:description" content="Villkoren som gäller när Sabimedia bygger din hemsida: vem som är part, hur betalningen går till, löpande kostnader, support och ansvar för säkerheten.">
+<meta property="og:url" content="https://sabimedia.se/villkor">
+<meta property="og:image" content="https://sabimedia.se/bilder/delningsbild.jpg?v=6">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sabimedia – hemsidor för småföretag från 1 500 kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="typsnitt/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="typsnitt/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Egna typsnitt (Open Font License). "Reserv" har samma mått, så att texten inte hoppar när typsnittet har laddats. */
+@font-face{font-family:"Inter";src:url(typsnitt/inter.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";src:url(typsnitt/inter-tight.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";src:url(typsnitt/fraunces-kursiv.woff2) format("woff2");font-style:italic;font-weight:500 600;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Reserv";src:local("Arial"),local("Roboto");size-adjust:106.59%;ascent-override:91%;descent-override:22.5%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight Reserv";src:local("Arial Bold"),local("Arial-BoldMT"),local("Roboto Bold"),local("Arial");size-adjust:95.8%;ascent-override:101.3%;descent-override:25%;line-gap-override:0%;font-weight:500 700;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces Reserv";src:local("Georgia Italic"),local("Georgia-Italic");font-style:italic;size-adjust:90.7%;ascent-override:108%;descent-override:28.7%;line-gap-override:0%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+<style>
+/* Samma grund som sabimedia.html: varma neutrala toner, mörk plommon-grafit och rött från loggan som accent. */
+:root{--bg:#f7f4ef;--paper:#fff;--ink:#1b1620;--ink-soft:#57505c;--line:#e8e1d7;--accent:#d42c33;--accent-deep:#b8232a;--plum:#241a2b;--display:"Inter Tight","Inter Tight Reserv","Inter",system-ui,sans-serif;--body:"Inter","Inter Reserv",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-deep)}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;line-height:1.12}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.9);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none}
+.brand-sub{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.5em;margin-right:-.5em;line-height:1;color:#ece8e2;text-transform:uppercase}
+.brand img{display:block;height:32px;width:auto}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;color:#ece8e2}
+.nav-links a:hover{color:#fff}
+.nav-links .cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:.6rem 1rem;font-weight:600;font-size:.9rem}
+.nav-links .cta:hover{background:var(--accent-deep);color:#fff}
+.nav-cta{display:none}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
+@media (min-width:901px){
+  /* Länkar och Kontakt samlas i mitten; marginalen till höger väger upp loggans bredd */
+  .nav-links{flex:1;margin-right:108px}
+  .nav-links li:first-child{margin-left:auto}
+  .nav-links li:last-child{margin-right:auto;display:flex;align-items:center;padding-left:1.6rem;border-left:1px solid rgba(255,255,255,.2)}
+  .nav-links li:last-child a{font-size:1rem;padding:.75rem 1.5rem}
+  .nav-links a:not(.btn):not(.cta){position:relative;padding:.3rem 0;transition:color .2s ease}
+  .nav-links a:not(.btn):not(.cta)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links a:not(.btn):not(.cta):hover,.nav-links a:not(.btn):not(.cta):focus-visible{color:#fff}
+  .nav-links a:not(.btn):not(.cta):hover::after,.nav-links a:not(.btn):not(.cta):focus-visible::after,.nav-links a:not(.btn):not(.cta)[aria-current]::after{transform:scaleX(1)}
+}
+@media (max-width:900px){
+  .brand img{height:28px}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#0c0c0d;padding:.5rem 16px 1.2rem;border-top:1px solid rgba(255,255,255,.12);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .3s ease,visibility .3s}
+  .nav-links.open{clip-path:inset(0 0 -40px 0);visibility:visible}
+  .nav-links li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:1.1rem}
+  .nav-links li:last-child a{border:0;margin-top:.8rem;text-align:center}
+  .nav-links li:last-child a.btn,.nav-links li:last-child a.cta,.nav-links li:last-child a.btn:hover,.nav-links li:last-child a.cta:hover{display:flex;align-items:center;justify-content:center;gap:.5rem;background:#fff;color:var(--ink);font-weight:700;font-size:1.05rem;padding:1rem;border-radius:12px;box-shadow:0 0 0 3px rgba(212,44,51,.55);transform:none}
+  .nav-links li:last-child a.btn::after,.nav-links li:last-child a.cta::after{content:"→";color:var(--accent);font-size:1.15rem}
+  .nav-links li:last-child a.btn:active,.nav-links li:last-child a.cta:active{background:#f2ede6}
+  .nav-links .cta{display:flex;padding:.9rem 1rem;font-size:1rem}
+  .nav-links li:not(:last-child) a{position:relative;transition:padding-left .25s ease,color .2s ease}
+  .nav-links li:not(:last-child) a::before{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--accent);transform:translateY(-50%) scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links li:not(:last-child) a:hover,.nav-links li:not(:last-child) a:focus-visible{padding-left:28px;color:#fff}
+  .nav-links li:not(:last-child) a:hover::before,.nav-links li:not(:last-child) a:focus-visible::before{transform:translateY(-50%) scaleX(1)}
+  .menu-btn{display:grid}
+  .nav-cta{display:inline-flex;align-items:center;margin-left:auto;margin-right:-.4rem;height:44px;padding:0 1.1rem;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none}
+  .nav-cta:active{background:var(--accent-deep)}
+}
+.hero{padding:56px 0 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);margin:.7rem 0 1rem}
+.hero p{color:var(--ink-soft);max-width:62ch;font-size:1.08rem}
+.meta{margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:48px;align-items:start;padding-bottom:80px}
+.toc{position:sticky;top:96px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.toc b{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.6rem}
+.toc ol{margin:0;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.93rem}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--accent-deep)}
+article{display:grid;gap:18px}
+article section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 30px}
+article h2{font-size:1.5rem;margin-bottom:.7rem;display:flex;gap:.7rem;align-items:baseline}
+article h2 span{font-family:var(--body);font-size:.85rem;font-weight:600;color:var(--ink-soft);min-width:1.6em}
+article p{margin:0 0 .8rem}
+article p:last-child,article ul:last-child{margin-bottom:0}
+article ul{margin:0 0 .8rem;padding-left:1.2rem;display:grid;gap:.35rem}
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin:.4rem 0 .8rem}
+th,td{text-align:left;padding:.65rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.2rem;margin:.4rem 0 0}
+.facts dt{color:var(--ink-soft)}
+.facts dd{margin:0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:28px 0 calc(32px + env(safe-area-inset-bottom,0px));color:var(--ink-soft);font-size:.9rem}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;gap:20px}
+  .toc{position:static}
+  article section{padding:22px 20px}
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{padding:.6rem 0;border-bottom:1px solid var(--line)}
+  td{border:0;padding:.15rem 0}
+  td:first-child{font-weight:700}
+}
+/* Tillgänglighet: platshållartext med tillräcklig kontrast */
+::placeholder{color:#736a75;opacity:1}
+@media (prefers-reduced-motion:reduce){.nav-links a,.nav-links a::before,.nav-links a::after{transition:none!important}}
+.foot-ig{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;vertical-align:bottom}
+.foot-ig svg{width:18px;height:18px;flex:none}
+.skip{position:absolute;left:16px;top:-80px;z-index:100;background:#fff;color:#1b1620;padding:.75rem 1.1rem;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 0 0 3px #d42c33}
+.skip:focus{top:12px}
+main:focus{outline:none}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+/* Helskärm: Kontakt i mitten av menyn med tre länkar på var sida, sökknappen längst till höger */
+@media (min-width:901px){
+  .nav-in{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem}
+  .brand{justify-self:start}
+  .sok-btn{grid-column:3;justify-self:end}
+  .nav-links{flex:none;margin:0;display:grid;grid-template-columns:repeat(3,92px) auto repeat(3,92px);column-gap:12px;align-items:center;justify-items:center}
+  .nav-links li:first-child{margin-left:0}
+  .nav-links li:nth-child(-n+3){order:1}
+  .nav-links li:last-child{order:2;margin:0 14px;padding-left:0;border-left:0}
+  .nav-links li:nth-child(n+4):not(:last-child){order:3}
+}
+@media (min-width:901px) and (max-width:1120px){.nav-links{grid-template-columns:repeat(3,78px) auto repeat(3,78px);column-gap:4px}.nav-links li:last-child{margin:0 8px}}
+</style>
+<style>
+/* Villkor: topp med sammanfattning */
+.hero.terms{position:relative;margin-top:28px;padding:clamp(28px,4vw,48px);background:var(--plum);color:#f4efe8;border-radius:24px;overflow:hidden;isolation:isolate}
+.hero.terms::before{content:"";position:absolute;right:-120px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(212,44,51,.55),rgba(212,44,51,0) 70%);z-index:-1}
+.hero.terms .eyebrow{color:#cfc6d3}
+.hero.terms h1{color:#fff;margin:.6rem 0 .9rem}
+.hero.terms h1 em{font-family:"Fraunces","Fraunces Reserv",Georgia,serif;font-style:italic;font-weight:500;color:#ff8a8f;letter-spacing:-.01em}
+.hero.terms p{color:#d9d1dc}
+.hero.terms .meta{display:inline-flex;align-items:center;gap:.5rem;margin-top:.4rem;padding:.35rem .8rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.85rem;color:#e6dfe8}
+.hero.terms .meta::before{content:"";width:7px;height:7px;border-radius:50%;background:#4ade80}
+.keyterms{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(22px,3vw,32px)}
+.keyterms a{display:grid;gap:.35rem;align-content:start;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.keyterms a:hover{background:rgba(255,255,255,.11);border-color:rgba(255,138,143,.6);transform:translateY(-2px)}
+.keyterms svg{width:22px;height:22px;color:#ff8a8f}
+.keyterms b{font-family:var(--display);font-size:1.02rem;letter-spacing:-.02em;line-height:1.25}
+.keyterms span{font-size:.88rem;line-height:1.45;color:#cfc6d3}
+.hero.terms + .layout{margin-top:32px}
+@media (max-width:900px){.keyterms{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.keyterms{gap:10px}.keyterms a{padding:14px}.keyterms span{display:none}.keyterms b{font-size:.95rem}.hero.terms{margin-top:16px;border-radius:20px}}
+@media (prefers-reduced-motion:reduce){.keyterms a{transition:none}.keyterms a:hover{transform:none}}
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:.4rem}
+.party{display:grid;gap:.6rem;align-content:start;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.party-main{grid-column:1/-1;background:var(--paper);border-color:rgba(212,44,51,.35);box-shadow:inset 4px 0 0 var(--accent)}
+.party-head{display:flex;align-items:center;gap:.8rem}
+.party-ico{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:rgba(212,44,51,.1);color:var(--accent)}
+.party-ico svg{width:22px;height:22px}
+.party small{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.party h3{font-size:1.15rem}
+.party p{margin:0;color:var(--ink-soft)}
+.party .facts{padding-top:.7rem;border-top:1px solid var(--line)}
+@media (max-width:640px){.parties{grid-template-columns:1fr}}
+.steps{list-style:none;margin:.4rem 0 12px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;counter-reset:none}
+.steps li{display:flex;gap:.9rem;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.steps h3{font-size:1.15rem;margin-bottom:.35rem}
+.steps small{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.steps p{margin:0;color:var(--ink-soft)}
+.step-no{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--display);font-weight:700;font-size:1.1rem}
+.note{display:flex;gap:.8rem;align-items:flex-start;margin:0 0 12px;padding:14px 18px;border-radius:14px;background:rgba(212,44,51,.07);border:1px solid rgba(212,44,51,.2)}
+.note svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:2px}
+.note p{margin:0}
+.parties + .note{margin-top:12px;margin-bottom:0}
+article section > .party-main{margin:.4rem 0 12px}
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:420px}
+.chips span{display:grid;gap:.05rem;padding:.55rem .8rem;border-radius:12px;background:var(--paper);border:1px solid var(--line);font-size:.95rem;font-weight:600;color:var(--ink)}
+.party-main .chips span{background:var(--bg)}
+.chips b{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.party .fine{font-size:.88rem}
+.party .price{font-family:var(--display);font-size:1.6rem;font-weight:700;letter-spacing:-.03em;color:var(--accent)}
+.party .price span{font-family:var(--body);font-size:.9rem;font-weight:500;color:var(--ink-soft);letter-spacing:0}
+.contact-card{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;background:var(--plum)!important;border-color:var(--plum)!important;color:#f4efe8}
+.contact-card h2{color:#fff;margin-bottom:.2rem}
+.contact-card h2 span{color:#cfc6d3}
+.contact-card p{color:#d9d1dc;margin:0}
+.contact-card > div{flex:1;min-width:200px}
+.contact-card .party-ico{background:rgba(255,255,255,.1);color:#ff8a8f}
+.mail-btn{display:inline-flex;align-items:center;padding:.8rem 1.3rem;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;transition:background .2s}
+.mail-btn:hover{background:var(--accent-deep)}
+.toc{padding:20px}
+.toc ol{list-style:none;padding:0;gap:4px}
+.toc ol a{display:flex;gap:.7rem;align-items:baseline;padding:.5rem .7rem;border-radius:10px;transition:background .2s,color .2s}
+.toc ol a span{font-size:.78rem;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.toc ol a:hover{background:var(--bg)}
+.toc ol a.active{background:rgba(212,44,51,.08);color:var(--accent-deep);font-weight:600}
+.toc ol a.active span{color:var(--accent)}
+.toc-mail{display:flex;align-items:center;gap:.5rem;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.9rem;font-weight:600;text-decoration:none;color:var(--accent-deep)}
+.toc-mail svg{width:18px;height:18px}
+@media (max-width:860px){.toc ol{grid-template-columns:1fr 1fr}.toc ol a{background:var(--bg)}}
+@media (max-width:640px){.chips{grid-template-columns:1fr;max-width:none;gap:6px}.chips span{display:flex;justify-content:space-between;align-items:center;padding:.5rem .8rem}.steps{grid-template-columns:1fr}.toc ol{grid-template-columns:1fr}.contact-card .mail-btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<a class="skip" href="#innehall">Hoppa till innehållet</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Hem</a></li>
+      <li><a href="/tjanster">Tjänster</a></li>
+      <li><a href="/branscher">Branscher</a></li>
+      <li><a href="/priser">Priser</a></li>
+      <li><a href="/om-oss">Om oss</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a class="cta" href="/kontakt">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="/kontakt">Kontakt</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Öppna meny" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  </div>
+</header>
+
+<main class="wrap" id="innehall" tabindex="-1">
+  <div class="hero terms">
+    <span class="eyebrow">Villkor</span>
+    <h1>Villkor för <em>din hemsida</em></h1>
+    <p>Här står vad som gäller när vi bygger en hemsida åt dig: vilka som är parter, när du betalar, vilka kostnader som kan komma senare och vad som ingår i support och underhåll.</p>
+    <p class="meta">Senast uppdaterad: 27 november 2026</p>
+    <div class="keyterms">
+      <a href="#betalning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg><b>Hälften nu, hälften vid leverans</b><span>Vi börjar när första betalningen har kommit in.</span></a>
+      <a href="#betalning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg><b>Ingen månadsavgift till oss</b><span>Domän och webbhotell betalar du direkt till leverantören.</span></a>
+      <a href="#support"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg><b>Support ingår</b><span>1 månad med Start, 2 månader med Business och Pro.</span></a>
+      <a href="#betalning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><b>Hemsidan blir din</b><span>När den är betald i sin helhet.</span></a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Innehåll">
+      <b>Innehåll</b>
+      <ol>
+        <li><a href="#parter"><span>01</span>Parterna</a></li>
+        <li><a href="#betalning"><span>02</span>Betalning och löpande kostnader</a></li>
+        <li><a href="#support"><span>03</span>Support och uppdateringsavtal</a></li>
+        <li><a href="#sakerhet"><span>04</span>Säkerhet och underhåll</a></li>
+        <li><a href="#kontakt"><span>05</span>Kontakta oss</a></li>
+      </ol>
+      <a class="toc-mail" href="mailto:hej@sabimedia.se"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Frågor? Mejla oss</a>
+    </nav>
+
+    <article>
+      <section id="parter">
+        <h2><span>01</span>Parterna</h2>
+        <p>Tre parter är inblandade när din hemsida byggs. Så här ser rollerna ut.</p>
+        <div class="parties">
+          <div class="party party-main">
+            <div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><small>Bygger hemsidan</small><h3>Sabimedia</h3></div></div>
+            <p>Vi tar fram, bygger och publicerar hemsidan enligt det paket och pris du har godkänt.</p>
+            <dl class="facts">
+              <dt>Företag</dt><dd>Sabimedia, enskild firma</dd>
+              <dt>Ansvarig</dt><dd>Safiya Ibrahim</dd>
+              <dt>Org.nr</dt><dd>010928-2947</dd>
+              <dt>E-post</dt><dd><a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></dd>
+              <dt>Ort</dt><dd>Borås – digitalt i hela Sverige</dd>
+            </dl>
+          </div>
+          <div class="party">
+            <div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div><small>Beställer och betalar</small><h3>Du som kund</h3></div></div>
+            <p>Den person eller det företag som åtar sig att betala för hemsidan. Oftast är det också du som använder den, och du äger den när den är betald.</p>
+          </div>
+          <div class="party">
+            <div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><small>Domän och webbhotell</small><h3>Leverantörerna</h3></div></div>
+            <p>Du har avtalet med dem direkt, och deras egna villkor gäller för domänen och webbhotellet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="betalning">
+        <h2><span>02</span>Betalning och löpande kostnader</h2>
+        <p>Hemsidan betalar du en gång, i två delar. Det fasta priset du har godkänt delas lika.</p>
+        <ol class="steps">
+          <li><span class="step-no">1</span><div><small>När vi har kommit överens</small><h3>Första hälften</h3><p>Du betalar halva det fasta priset när vi har kommit överens om uppdraget. Vi börjar arbetet först när den betalningen har kommit in.</p></div></li>
+          <li><span class="step-no">2</span><div><small>När hemsidan är levererad</small><h3>Andra hälften</h3><p>Den andra hälften faktureras när vi har levererat hemsidan och ska vara betald senast 14 dagar efter leveransen.</p></div></li>
+        </ol>
+        <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><p><b>Hemsidan blir din</b> när den är betald i sin helhet.</p></div>
+        <div class="parties">
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><small>Betalas till leverantören</small><h3>Löpande kostnader</h3></div></div><p>Domän och webbhotell betalar du direkt till den leverantör du har valt, oftast en gång per år. De räkningarna går inte via oss.</p></div>
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></svg></span><div><small>Frivilligt</small><h3>Uppdateringsavtal</h3></div></div><p>Väljer du till ett <a href="/priser">uppdateringsavtal</a> är det också en återkommande kostnad, men det är helt frivilligt.</p></div>
+        </div>
+      </section>
+
+      <section id="support">
+        <h2><span>03</span>Support och uppdateringsavtal</h2>
+        <p>Efter lansering ingår support i alla paket. Därefter väljer du själv om du vill ha ett uppdateringsavtal eller betala per timme. Alla priser är exklusive moms.</p>
+        <div class="party party-main"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><div><small>Ingår i alla paket</small><h3>Support efter lansering</h3></div></div><p>Under supporttiden hjälper vi dig utan extra kostnad.</p><div class="chips"><span><b>Start</b>1 månad</span><span><b>Business</b>2 månader</span><span><b>Pro</b>2 månader</span></div></div>
+        <div class="parties">
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></svg></span><div><small>Frivilligt · per år</small><h3>Uppdateringsavtal</h3></div></div><p>Underhåll av hemsidan och 4 mindre ändringar per år, till exempel nya priser, öppettider eller en ny meny. Större ändringar för halva timpriset, 200 kr i stället för 400 kr.</p><div class="chips"><span><b>Start</b>700 kr</span><span><b>Business</b>1 300 kr</span><span><b>Pro</b>2 100 kr</span></div><p class="fine">Gäller ett år i taget och faktureras årsvis. Du kan säga upp det inför varje nytt år.</p></div>
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Efter supporttiden</small><h3>Utan avtal</h3></div></div><p>Vi hjälper dig gärna när supporttiden är slut och debiterar då per påbörjad timme.</p><p class="price">400 kr <span>per timme</span></p></div>
+        </div>
+      </section>
+
+      <section id="sakerhet">
+        <h2><span>04</span>Säkerhet och underhåll</h2>
+        <p>Vem som ansvarar för hemsidan efter supporttiden beror på om du har ett uppdateringsavtal.</p>
+        <div class="parties">
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><small>Med uppdateringsavtal</small><h3>Vi sköter underhållet</h3></div></div><p>Löpande underhåll av hemsidan efter supporttiden gör vi när du har ett uppdateringsavtal.</p></div>
+          <div class="party"><div class="party-head"><span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></span><div><small>Utan avtal</small><h3>Du ansvarar själv</h3></div></div><p>Har du inget avtal ansvarar du själv för hemsidans säkerhet och underhåll från den dagen supporttiden tar slut.</p></div>
+        </div>
+        <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13 7 4 4"/></svg><p><b>Innehållet är alltid ditt ansvar.</b> Du ansvarar för text och bilder och för att du har rätt att använda dem. Vi kan ta fram textutkast som du går igenom och godkänner.</p></div>
+      </section>
+
+      <section id="kontakt" class="contact-card">
+        <span class="party-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <div>
+          <h2><span>05</span>Frågor om villkoren?</h2>
+          <p>Mejla oss innan du bestämmer dig, så förklarar vi.</p>
+        </div>
+        <a class="mail-btn" href="mailto:hej@sabimedia.se">hej@sabimedia.se</a>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Sabimedia · Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a> · <a href="/integritetspolicy">Integritetspolicy</a> · <a class="foot-ig" href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@sabimediaa</a></div>
+</footer>
+<script>
+const links = document.getElementById("nav-links"), menuBtn = document.getElementById("menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+</script>
+<script>
+/* Markera avsnittet du läser i innehållsförteckningen */
+const tocLinks=[...document.querySelectorAll(".toc ol a")];
+const secs=[...document.querySelectorAll("article section[id]")];
+function markToc(){let cur=secs[0];for(const x of secs)if(x.getBoundingClientRect().top<innerHeight*.35)cur=x;
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1];
+  tocLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur.id))}
+addEventListener("scroll",markToc,{passive:true});markToc();
+</script>
+<script src="/sok.js" defer></script>
+</body>
+</html>

@@ -16,7 +16,7 @@ cta_text: Boka ett kostnadsfritt samtal, så går vi igenom ditt resultat tillsa
       <form class="calc" id="calc" aria-describedby="calc-result">
         <fieldset>
           <legend>Vad ska hemsidan kunna göra?</legend>
-          <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Fler än 3 sidor"><span><b>Fler än 3 sidor</b><small>Till exempel egna sidor för tjänster, meny eller referenser</small></span></label>
+          <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Fler än 4 sidor"><span><b>Fler än 4 sidor</b><small>Till exempel egna sidor för tjänster, meny eller referenser</small></span></label>
           <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Formulär för bokning, offert eller beställning"><span><b>Ta emot bokningar, offerter eller beställningar</b><small>Kunden fyller i ett formulär, och du får ett mejl</small></span></label>
           <label class="calc-opt"><input type="checkbox" name="f" value="business" data-label="Kundomdömen"><span><b>Kundomdömen</b><small>Visa vad kunderna tycker om dig</small></span></label>
           <label class="calc-opt"><input type="checkbox" name="f" value="custom" data-label="Bokningssystem med kalender"><span><b>Bokningssystem med kalender</b><small>Kunden ser lediga tider och bokar direkt</small></span></label>
@@ -27,7 +27,7 @@ cta_text: Boka ett kostnadsfritt samtal, så går vi igenom ditt resultat tillsa
           <span class="plan-kicker" id="calc-kicker">Ditt paket</span>
           <h2 id="calc-name">Start</h2>
           <p class="calc-price"><strong id="calc-price">Från 1 500 kr</strong><span>Engångskostnad · exkl. moms</span></p>
-          <p id="calc-text">En professionell hemsida med upp till 3 sidor, kontaktformulär och karta.</p>
+          <p id="calc-text">En professionell hemsida med upp till 4 sidor, kontaktformulär och karta.</p>
           <p class="calc-note">Domän och webbhotell betalar du till leverantören. Ingen månadsavgift till oss. Hjälp efter supportperioden kostar 400 kr i timmen exkl. moms (200 kr med uppdateringsavtal).</p>
           <div class="calc-btns"><a class="btn btn-accent" id="calc-go" href="/kontakt?paket=Start">Skicka förfrågan</a><a class="btn btn-line" id="calc-more" href="/priser#paket-start">Se vad som ingår</a></div>
         </div>
@@ -35,9 +35,9 @@ cta_text: Boka ett kostnadsfritt samtal, så går vi igenom ditt resultat tillsa
       <script>
       (() => {
         const P = {
-          start: ["Start", "Från 1 500 kr", "En professionell hemsida med upp till 3 sidor, kontaktformulär och karta."],
+          start: ["Start", "Från 1 500 kr", "En professionell hemsida med upp till 4 sidor, kontaktformulär och karta."],
           business: ["Business", "Från 2 800 kr", "Fler sidor, formulär för bokning, offert eller beställning, kundomdömen och automatiska mejl."],
-          custom: ["Custom", "Från 4 300 kr", "Bokningssystem, webbshop med betalning och adminpanel. Slutpriset beror på funktionerna, och du får ett fast pris innan vi börjar."]
+          custom: ["Pro", "Från 4 300 kr", "Bokningssystem, webbshop med betalning och adminpanel. Slutpriset beror på funktionerna, och du får ett fast pris innan vi börjar."]
         };
         const form = document.getElementById("calc"), $ = id => document.getElementById(id);
         const update = () => {
