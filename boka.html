@@ -146,6 +146,9 @@ form{display:grid;gap:14px;background:var(--paper);color:var(--ink);border-radiu
 .form-error{font-size:.9rem;font-weight:600;color:var(--accent-deep)}
 .field .req{color:var(--accent)}
 .field .opt{font-weight:400;color:var(--ink-soft)}
+.svc{border:0;margin:0;padding:0;min-width:0}
+.svc legend{padding:0;margin-bottom:.5rem;font-weight:600;font-size:.9rem}
+.svc-opts{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
 .check{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem;cursor:pointer;width:fit-content}
 .check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
 .field input[aria-invalid="true"]{border-color:var(--accent);background:#fff5f5}
@@ -230,6 +233,31 @@ html,body{overflow-x:clip}
 }
 @media (min-width:901px) and (max-width:1120px){.nav-links{grid-template-columns:repeat(3,78px) auto repeat(3,78px);column-gap:4px}.nav-links li:last-child{margin:0 8px}}
 </style>
+<style>
+/* Undermeny under Tjänster: Webbdesign och SEO */
+.has-sub{position:relative}
+.has-sub .sub{display:grid;gap:2px}
+.has-sub .sub a{display:grid;gap:1px;text-decoration:none}
+.has-sub .sub b{font-weight:600}
+.has-sub .sub small{font-size:.78rem;font-weight:400;opacity:.65}
+@media (min-width:901px){
+  .has-sub .sub{position:absolute;top:100%;left:50%;min-width:230px;margin-top:10px;padding:8px;background:#0c0c0d;border:1px solid rgba(255,255,255,.14);border-radius:14px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60}
+  .has-sub .sub::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .has-sub>a::after{display:none}
+  .has-sub>a{padding-right:14px!important}
+  .has-sub>a::before{content:"";position:absolute;right:0;top:50%;width:6px;height:6px;margin-top:-5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);opacity:.7}
+  .nav-links .has-sub .sub a{padding:.65rem .8rem;border-radius:10px;color:#ece8e2;text-align:left;white-space:nowrap}
+  .nav-links .has-sub .sub a::after{display:none}
+  .nav-links .has-sub .sub a:hover,.nav-links .has-sub .sub a:focus-visible{background:rgba(255,255,255,.08);color:#fff}
+}
+@media (max-width:900px){
+  .has-sub .sub{padding-left:16px}
+  .nav-links .has-sub .sub a{font-size:1rem}
+  .has-sub .sub small{display:none}
+}
+@media (prefers-reduced-motion:reduce){.has-sub .sub{transition:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#innehall">Hoppa till innehållet</a>
@@ -238,7 +266,7 @@ html,body{overflow-x:clip}
     <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Hem</a></li>
-      <li><a href="/tjanster">Tjänster</a></li>
+      <li class="has-sub"><a href="/tjanster">Tjänster</a><div class="sub" aria-label="Tjänster"><a href="/tjanster"><b>Webbdesign</b><small>Hemsidor till fast pris</small></a><a href="/seo-tjanst"><b>SEO</b><small>Synas på fler sökningar</small></a></div></li>
       <li><a href="/branscher">Branscher</a></li>
       <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
@@ -289,6 +317,7 @@ html,body{overflow-x:clip}
           </div>
           <label class="check"><input type="checkbox" id="f-has-web" aria-controls="web-field" aria-expanded="false">Jag har redan en hemsida</label>
           <div class="field" id="web-field" hidden><label for="f-web">Nuvarande hemsida</label><input id="f-web" name="website" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="dittforetag.se" disabled></div>
+          <fieldset class="field svc"><legend>Vad vill du ha hjälp med?</legend><div class="svc-opts"><label class="check"><input type="checkbox" name="services" value="Webbdesign">Webbdesign – ny hemsida</label><label class="check"><input type="checkbox" name="services" value="SEO">SEO – synas på fler sökningar</label></div></fieldset>
           <div class="field"><label for="f-plan">Paket</label><select id="f-plan" name="plan"><option value="">Vet inte än</option><option>Start</option><option>Business</option><option>Pro</option></select></div>
           <div class="field"><label for="f-msg">Berätta om ditt företag</label><textarea id="f-msg" name="message" placeholder="Vad säljer du? Har du Instagram? Något särskilt du vill ha på sidan?"></textarea></div>
           <div class="hp" aria-hidden="true"><label for="f-hp">Lämna tomt</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
@@ -396,6 +425,9 @@ $("#slots").addEventListener("click", e => {
 });
 $("#prev").addEventListener("click", () => { view.setMonth(view.getMonth() - 1); renderCal(); });
 $("#next").addEventListener("click", () => { view.setMonth(view.getMonth() + 1); renderCal(); });
+/* Förval av tjänst från länken, t.ex. /boka?tjanst=seo */
+{ const t = new URLSearchParams(location.search).get("tjanst");
+  document.querySelectorAll('input[name="services"]').forEach(i => { if (t && i.value.toLowerCase() === t.toLowerCase()) i.checked = true; }); }
 $("#alt-mail").href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Önskar en annan tid för samtal")}`;
 renderCal();
 
@@ -466,6 +498,7 @@ function sendErrorHtml(err, mailto) {
 $("#form").addEventListener("submit", async e => {
   e.preventDefault();
   const form = e.target, f = Object.fromEntries(new FormData(form));
+  f.services = [...form.querySelectorAll('input[name="services"]:checked')].map(i => i.value).join(", ");
   const error = $("#form-error"), submit = $("#form-submit");
   const showError = html => { error.innerHTML = html; error.hidden = false; };
   const problems = validate(f);
@@ -480,7 +513,7 @@ $("#form").addEventListener("submit", async e => {
   const subject = when ? `Bokat samtal: ${when} – ${f.name}` : `Ny hemsideförfrågan från ${f.company || f.name}`;
   const body = [
     `Namn: ${f.name}`, `Företag: ${f.company || "-"}`, `Telefon: ${f.phone || "-"}`, `E-post: ${f.email || "-"}`, `Nuvarande hemsida: ${f.website || "Ingen"}`, ...(when ? ["Möte via: Teams"] : []),
-    `Paket: ${f.plan || "Vet inte än"}`, "", f.message || ""
+    `Tjänst: ${f.services || "Inte vald"}`, `Paket: ${f.plan || "Vet inte än"}`, "", f.message || ""
   ].join("\n");
   const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const thanks = `<div class="sent"><h3>Tack, ${esc(f.name.split(" ")[0])}!</h3><p class="form-note">Vi har fått din förfrågan och svarar inom 24 timmar.</p></div>`;

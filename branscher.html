@@ -178,6 +178,42 @@ html,body{overflow-x:clip}
 }
 @media (min-width:901px) and (max-width:1120px){.nav-links{grid-template-columns:repeat(3,78px) auto repeat(3,78px);column-gap:4px}.nav-links li:last-child{margin:0 8px}}
 </style>
+<style>
+/* Undermeny under Tjänster: Webbdesign och SEO */
+.has-sub{position:relative}
+.has-sub .sub{display:grid;gap:2px}
+.has-sub .sub a{display:grid;gap:1px;text-decoration:none}
+.has-sub .sub b{font-weight:600}
+.has-sub .sub small{font-size:.78rem;font-weight:400;opacity:.65}
+@media (min-width:901px){
+  .has-sub .sub{position:absolute;top:100%;left:50%;min-width:230px;margin-top:10px;padding:8px;background:#0c0c0d;border:1px solid rgba(255,255,255,.14);border-radius:14px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60}
+  .has-sub .sub::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .has-sub>a::after{display:none}
+  .has-sub>a{padding-right:14px!important}
+  .has-sub>a::before{content:"";position:absolute;right:0;top:50%;width:6px;height:6px;margin-top:-5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);opacity:.7}
+  .nav-links .has-sub .sub a{padding:.65rem .8rem;border-radius:10px;color:#ece8e2;text-align:left;white-space:nowrap}
+  .nav-links .has-sub .sub a::after{display:none}
+  .nav-links .has-sub .sub a:hover,.nav-links .has-sub .sub a:focus-visible{background:rgba(255,255,255,.08);color:#fff}
+}
+@media (max-width:900px){
+  .has-sub .sub{padding-left:16px}
+  .nav-links .has-sub .sub a{font-size:1rem}
+  .has-sub .sub small{display:none}
+}
+@media (prefers-reduced-motion:reduce){.has-sub .sub{transition:none}}
+</style>
+<style>
+/* Boka tid-knapp som följer med nere till höger */
+.fab-book{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:70;display:inline-flex;align-items:center;gap:.5rem;background:#d42c33;color:#fff;font:700 .98rem/1 "Inter","Inter Reserv",system-ui,sans-serif;padding:.9rem 1.2rem;border-radius:999px;text-decoration:none;box-shadow:0 14px 30px -10px rgba(212,44,51,.55),0 4px 12px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease,visibility .25s,background .2s}
+.fab-book.show{opacity:1;visibility:visible;transform:none}
+.fab-book:hover{background:#b8232a;color:#fff}
+.fab-book:focus-visible{outline:3px solid #1b1620;outline-offset:3px}
+.fab-book svg{width:18px;height:18px;flex:none}
+@media (max-width:600px){.fab-book{padding:.8rem 1rem;font-size:.92rem}}
+@media (prefers-reduced-motion:reduce){.fab-book{transition:none}}
+@media print{.fab-book{display:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#innehall">Hoppa till innehållet</a>
@@ -186,7 +222,7 @@ html,body{overflow-x:clip}
     <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Hem</a></li>
-      <li><a href="/tjanster">Tjänster</a></li>
+      <li class="has-sub"><a href="/tjanster">Tjänster</a><div class="sub" aria-label="Tjänster"><a href="/tjanster"><b>Webbdesign</b><small>Hemsidor till fast pris</small></a><a href="/seo-tjanst"><b>SEO</b><small>Synas på fler sökningar</small></a></div></li>
       <li><a href="/branscher" aria-current="page">Branscher</a></li>
       <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
@@ -348,5 +384,15 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObse
 }
 </script>
 <script src="/sok.js" defer></script>
+<a class="fab-book" id="fab-book" href="/boka"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Boka tid</a>
+<script>
+(() => {
+  const b = document.getElementById("fab-book");
+  if (/^\/boka/.test(location.pathname)) { b.remove(); return; }
+  if (/^\/seo-tjanst/.test(location.pathname)) b.href = "/boka?tjanst=seo";
+  const t = () => b.classList.toggle("show", scrollY > 320);
+  addEventListener("scroll", t, { passive: true }); t();
+})();
+</script>
 </body>
 </html>

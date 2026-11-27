@@ -17,6 +17,7 @@ const FIELDS = [
   ["phone", "Telefon", 40],
   ["email", "E-post", 254],
   ["website", "Nuvarande hemsida", 300],
+  ["services", "Tjänst", 100],
   ["plan", "Paket", 100],
   ["message", "Meddelande", 5000],
   ["source", "Skickat från", 60],
