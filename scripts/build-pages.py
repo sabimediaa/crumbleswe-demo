@@ -677,6 +677,13 @@ SIDOR_CSS = """/* Sidor från sidor/ (scripts/build-pages.py) */
 @media (max-width:1000px){.qa4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.qa4{grid-template-columns:1fr}}
 .plan-demo{display:block;margin-top:.5rem;font-size:.88rem;font-weight:600;color:var(--accent-deep);text-align:center}
+.pt-panel{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(232,225,215,.9);border-radius:var(--radius);padding:clamp(18px,3vw,30px);box-shadow:0 24px 50px -36px rgba(15,15,20,.35)}
+.pt-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,4vw,48px)}
+.pt-list li{position:relative;padding:14px 0 14px 40px;border-bottom:1px solid var(--line);color:var(--ink-soft);line-height:1.5}
+.pt-list li::before{content:"";position:absolute;left:0;top:13px;width:26px;height:26px;border-radius:50%;background:rgba(212,44,51,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d42c33' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17 19 7'/%3E%3C/svg%3E") center/14px no-repeat}
+.pt-list b{display:block;color:var(--ink);font-family:var(--display);font-size:1.02rem;margin-bottom:2px}
+.pt-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;font-size:.92rem;color:var(--ink-soft)}
+@media (max-width:700px){.pt-list{grid-template-columns:1fr}}
 .sidor-note{margin-top:18px;font-size:.92rem;color:var(--ink-soft)}
 .check-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .check-list li{position:relative;padding:14px 16px 14px 46px;background:var(--paper);border:1px solid var(--line);border-radius:14px;font-weight:500}
