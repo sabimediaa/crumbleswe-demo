@@ -113,6 +113,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .brand-sub{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.5em;margin-right:-.5em;line-height:1;color:#ece8e2;text-transform:uppercase}
 .brand img{display:block;height:32px;width:auto}
 .brand-foot img{height:44px}
+.brand-foot .brand-sub{color:var(--plum);font-size:.72rem}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0}
 .nav-links a{text-decoration:none;font-weight:500;color:#ece8e2}
 .nav-links a:hover{color:#fff}
@@ -336,6 +337,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .plan-kicker{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
 .plan-cost strong.quote{font-size:1.9rem}
 .plan-lead{font-weight:700}
+.plan-example{display:flex;align-items:center;gap:.6rem;margin-top:.8rem;padding:.75rem .9rem;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:.92rem;font-weight:600;text-decoration:none;transition:border-color .2s,background .2s}
+.plan-example svg{width:20px;height:20px;flex:none;color:var(--accent)}
+.plan-example span:nth-of-type(1){flex:1}
+.plan-example span:last-child{color:var(--accent)}
+.plan-example:hover{border-color:var(--accent);background:#fff}
+.plan.featured .plan-example{background:#fff}
 .plan-fit{font-size:.92rem;color:var(--ink-soft);padding-top:.9rem;border-top:1px solid var(--line)}
 .plan .btn{width:100%}
 .plan.featured{border:2px solid var(--accent);box-shadow:0 30px 60px -34px rgba(15,15,20,.25)}
@@ -534,7 +541,7 @@ main:focus{outline:none}
     <a class="brand" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/" aria-current="page">Hem</a></li>
-      <li class="has-sub"><a href="/tjanster">Tjänster</a><div class="sub" aria-label="Tjänster"><a href="/tjanster"><b>Webbdesign</b><small>Hemsidor till fast pris</small></a><a href="/seo-tjanst"><b>SEO</b><small>Synas på fler sökningar</small></a></div></li>
+      <li class="has-sub"><a href="/tjanster">Tjänster</a><div class="sub" aria-label="Tjänster"><a href="/tjanster"><b>Webbdesign</b><small>Hemsidor till fast pris</small></a><a href="/seo-tjanst"><b>SEO</b><small>Synas på fler sökningar</small></a><a href="/hjalp-med-befintlig-hemsida"><b>Befintlig hemsida</b><small>Hjälp från 300 kr/timme</small></a></div></li>
       <li><a href="/branscher">Branscher</a></li>
       <li><a href="/priser">Priser</a></li>
       <li><a href="/om-oss">Om oss</a></li>
@@ -730,7 +737,7 @@ main:focus{outline:none}
         <p class="lead">Vill du köpa hemsida till ditt företag? Sabi media är en webbyrå med fast pris och tydligt innehåll. Prisvärt, men aldrig slarvigt: innan något publiceras testar vi varje sida i mobil och dator, provar formulär och länkar och korrekturläser texterna. Välj den hemsida som passar din budget och hur ditt företag tar emot kunder.</p>
       </div>
       <div class="plans" id="plans"></div>
-      <p class="plan-extra"><b>Vill du ha något som inte ingår i paketet?</b> Då tar vi på Sabi fram en offert för tillägget och skräddarsyr funktionen efter dina behov.<br><b>Osäker på vilket paket som passar?</b> <a href="mailto:hej@sabimedia.se?subject=Vilket%20paket%20passar%20mig%3F">Skicka ett mejl till oss</a> eller läs <a href="/vad-kostar-en-hemsida">Vad kostar en hemsida?</a></p>
+      <p class="plan-extra"><b>Vill du ha något som inte ingår i paketet?</b> Då tar vi på Sabi fram en offert för tillägget och skräddarsyr funktionen efter dina behov.<br><b>Osäker på vilket paket som passar?</b> <a href="mailto:hej@sabimedia.se?subject=Vilket%20paket%20passar%20mig%3F">Skicka ett mejl till oss</a> , läs <a href="/vad-kostar-en-hemsida">Vad kostar en hemsida?</a> eller <a href="/vilket-paket">jämför paketen med exempel</a>.</p>
       <!-- bara-hem -->
       <div class="compare-link"><a class="btn btn-ink" href="/priser#jamfor">Jämför paketen i detalj →</a><a class="btn btn-line" href="/priser#anpassa">Har du redan domän eller logga? Anpassa paketet och se ditt pris →</a></div>
       <!-- /bara-hem -->
@@ -777,6 +784,8 @@ main:focus{outline:none}
         <details id="faq-16"><summary>Vad kostar en extra sida?</summary><p>200 kr exkl. moms per sida. Start har upp till 4 sidor och Business upp till 12. Behöver du fler lägger vi till dem för 200 kr styck, och du godkänner priset innan vi börjar. <a href="/priser">Jämför paketen</a>.</p></details>
         <details id="faq-17"><summary>Vad händer om jag inte gillar resultatet?</summary><p>I början av processen börjar vi med att gå igenom dina krav och önskemål tillsammans, så att första utkastet bygger på det du faktiskt behöver. När du har fått utkastet kommenterar du det du vill ändra på, och vi justerar innan vi tar fram den slutliga versionen. Inget publiceras förrän du är nöjd. Efter lansering ingår dessutom support, 1 månad med Start och 2 månader med Business och Pro, så om något inte känns rätt hjälper vi dig utan extra kostnad. Vill du ändra något efter det ingår 4 ändringar per år med våra <a href="/priser">uppdateringsavtal</a>.</p></details>
         <details id="faq-18"><summary>Ingår SEO i paketen?</summary><p>Ja, grundläggande SEO ingår i alla paket. Det handlar inte om att fylla sidan med sökord, utan om hur hemsidan är byggd. Vi designar den med fokus på UX och UI så att den både hittas på Google och får besökaren att stanna och faktiskt boka eller köpa. Vill du ha mer omfattande SEO kan du köpa till vår <a href="/seo-tjanst">SEO-tjänst</a>. <a href="/grundlaggande-seo">Se exakt vad som ingår</a>.</p></details>
+        <details id="faq-19"><summary>Kan ni hjälpa mig med min nuvarande hemsida?</summary><p>Ja, även om någon annan har byggt den. Det kostar från 300 kr i timmen exkl. moms. <a href="/hjalp-med-befintlig-hemsida">Läs mer om hjälp med befintlig hemsida</a>.</p></details>
+        <details id="faq-20"><summary>Ingår det att ni skriver texterna?</summary><p>Du står för innehållet, alltså text och bilder. Vi hjälper gärna till med textutkast som du går igenom och godkänner.</p></details>
         <details id="faq-4"><summary>Vad gör vi om jag vill ändra något?</summary><p>Då ändrar vi. Du klickar runt i ett utkast och berättar på <a href="/tjanster#sa-funkar-det">feedbackmötet</a> vad som inte känns rätt. Mindre ändringar ingår, och sidan läggs ut på nätet först när du säger ja.</p></details>
         <details id="faq-5"><summary>Hur mycket behöver jag göra själv?</summary><p>Lite. Du är med på ett uppstartsmöte, skickar logga, bilder och priser och tittar igenom utkastet. Bygget sköter vi.</p></details>
         <details id="faq-6"><summary>Kan någon annan ta över hemsidan?</summary><p>Ja. Hemsidan är inte knuten till ett system som bara vi har. Inloggningarna är dina, så du kan låta en annan webbyrå eller webbutvecklare fortsätta när du vill.</p></details>
@@ -845,7 +854,7 @@ main:focus{outline:none}
 
 <footer>
   <div class="wrap foot">
-    <a class="brand brand-foot" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"></a>
+    <a class="brand brand-foot" href="/" aria-label="Sabimedia – till startsidan"><img src="bilder/sabi-logo.png" srcset="bilder/sabi-logo-220.webp 220w, bilder/sabi-logo-340.webp 340w" sizes="(max-width:900px) 95px, 150px" alt="Sabi" width="554" height="164"><span class="brand-sub">media</span></a>
     <nav aria-label="Sidfot"><a href="/tjanster">Tjänster</a><a href="/branscher">Branscher</a><a href="/priser">Priser</a><a href="/kundcase-cookie-munch">Kundcase</a><a href="/om-oss">Om oss</a><a href="/faq">FAQ</a><a href="/guider">Guider</a><a href="/boka">Boka samtal</a><a href="/kontakt">Kontakt</a><a href="/integritetspolicy">Integritetspolicy</a><a href="/villkor">Villkor</a><a class="foot-ig" href="https://instagram.com/sabimediaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@sabimediaa</a></nav>
     <span>© <span id="year"></span> Sabimedia · <a href="/webbyra-boras">Webbyrå i Borås</a> · Digitalt i hela Sverige</span>
     <p class="legal">Enskild firma · Org.nr 010928-2947 · Godkänd för F-skatt · <a href="mailto:hej@sabimedia.se">hej@sabimedia.se</a></p>
@@ -866,7 +875,7 @@ const CONFIG = {
   /* Kundomdöme – visas först när quote är ifyllt */
   review: { quote: "Sedan vi fick vår nya hemsida är det så mycket enklare för kunderna att beställa. Vi lägger knappt någon tid på DM längre – beställningarna kommer in samlade och organiserade, så vi kan fokusera på det som faktiskt är viktigt: att baka.", name: "Cookie Munch", company: "Handelsbolag i Borås" },
   plans: [
-    { name: "Start", price: "1 500", terms: "Engångskostnad · exkl. moms",
+    { name: "Start", example: "/exempel-start", exampleLabel: "restaurang", price: "1 500", terms: "Engångskostnad · exkl. moms",
       tagline: "En professionell hemsida som gör det enkelt för kunder att hitta dig, lära känna din verksamhet och ta kontakt.",
       lead: "Det här ingår:",
       items: ["En skräddarsydd hemsida med upp till 4 sidor", "Design anpassad efter ditt företag och din visuella identitet",
@@ -876,7 +885,7 @@ const CONFIG = {
               "Grundläggande tillgänglighetsanpassning", "Hjälp med domän, webbhotell och e-post",
               "Enklare logotyp och företagsfärger", "1 månads support efter lansering"],
       fit: "Passar företag som vill etablera en professionell närvaro online." },
-    { name: "Business", price: "2 800", terms: "Engångskostnad · exkl. moms", kicker: "För dig som vill växa", featured: "Mest komplett",
+    { name: "Business", example: "/exempel-business", exampleLabel: "städfirma", price: "2 800", terms: "Engångskostnad · exkl. moms", kicker: "För dig som vill växa", featured: "Mest komplett",
       tagline: "En mer komplett hemsida som hjälper dig att presentera ditt erbjudande, nå fler kunder och ta emot förfrågningar, bokningar och beställningar.",
       lead: "Allt i Start, plus:",
       items: ["Upp till 12 sidor för att presentera dina tjänster, produkter eller erbjudanden",
@@ -886,7 +895,7 @@ const CONFIG = {
               "Tydliga knappar och kontaktvägar som gör det enklare för besökare att bli kunder",
               { text: "Utökad Google-anpassning för relevanta sökningar", href: "/grundlaggande-seo#utokad" }, "2 månaders support efter lansering"],
       fit: "Passar företag som vill använda sin hemsida aktivt för att skapa nya kundmöjligheter." },
-    { name: "Pro", price: "4 300", quote: true, terms: "Engångskostnad · exkl. moms", kicker: "Sälj och boka direkt",
+    { name: "Pro", example: "/exempel-pro", exampleLabel: "salong med bokning och webbshop", price: "4 300", quote: true, terms: "Engångskostnad · exkl. moms", kicker: "Sälj och boka direkt",
       tagline: "För dig som har större ambitioner eller behöver funktioner anpassade efter hur din verksamhet fungerar.",
       lead: "Allt i Business, plus:",
       items: ["Kompletta bokningssystem med kalender och tillgängliga tider", "Webbshop med produkter, varukorg och betalning",
@@ -972,6 +981,7 @@ if (!$("#plans").children.length) $("#plans").innerHTML = CONFIG.plans.map(p => 
     <p class="plan-lead">${esc(p.lead)}</p>
     <ul>${p.items.map(x => `<li>${typeof x === "string" ? esc(x) : `<a href="${esc(x.href)}">${esc(x.text)}</a>`}</li>`).join("")}</ul>
     <p class="plan-fit">${esc(p.fit)}</p>
+    ${p.example ? `<a class="plan-example" href="${esc(p.example)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg><span>Se exempel: ${esc(p.exampleLabel || p.name)}</span><span aria-hidden="true">→</span></a>` : ""}
     <button class="btn ${p.featured ? "btn-accent" : "btn-line"}" type="button" data-plan="${esc(p.name)}">Välj ${esc(p.name)}</button>
   </article>`).join("");
 /* Välj paket: fyller i formuläret på startsidan, annars öppnas kontaktsidan med paketet valt */
